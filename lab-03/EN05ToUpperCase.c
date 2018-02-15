@@ -7,28 +7,33 @@
 
 #define DEFAULT_COMMAND_LINE_POSITION 1
 
-main (int argc, char *argv[]) {
-  
+// Prototype of the function.
+void toUpperCase(char string[]);
+
+int main (int argc, char *argv[]) {
+
   char string[]=DEFAULT_STRING;
-  
+
   if (argc==2)
       strcpy(string, argv[DEFAULT_COMMAND_LINE_POSITION]);
-  
+
   toUpperCase(string);
   printf("Now, the string is %s\n",string);
-  
+
   exit(1);
 }
 
 void toUpperCase(char string[]) {
-  
+
   int i;
   int length=strlen(string);
-  
-  for (i=0; i<length;i++)
-    string[i]=toupper(string[i]);
-}
 
+  for (i=0; i<length;i++) {
+    if(string[i]>= 'a' && string[i] < 'l') {
+      string[i]=toupper(string[i]);
+    }
+  }
+}
 
 // 1. Compile using "gcc EN05ToUpperCase.c"
 // 2. Execute using "./a.out"

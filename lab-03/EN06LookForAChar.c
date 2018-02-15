@@ -8,8 +8,11 @@
 #define STRING_COMMAND_LINE_POSITION 1
 #define CHAR_COMMAND_LINE_POSITION 2
 
-main (int argc, char *argv[]) {
-  
+// Prototype of the function.
+void searchAndCount(char character, char *string);
+
+int main (int argc, char *argv[]) {
+
   if (argc==1)
     searchAndCount(DEFAULT_CHAR, DEFAULT_STRING);
   else
@@ -21,17 +24,22 @@ main (int argc, char *argv[]) {
 }
 
 void searchAndCount(char character, char *string) {
-  
+
   int i;
   int length=strlen(string);
-  
+  int appearances = 0;
+
   printf("Searching in string %s\n",string);
-  for (i=0;i<length;i++)
-    if (string[i]==character)
+  for (i=0;i<length;i++) {
+    if (string[i]==character) {
       printf("Position %d of the string contains character [%c]\n",i,character);
+      appearances++;
+    }
+  }
+  printf("The character %c appears %d times\n",DEFAULT_CHAR, appearances);
 }
-  
+
 // 1. Compile using "gcc EN06LookForAChar.c"
 // 2. Execute using "./a.out"
-// 3. Modify the searchAndCount function so that it counts and returns the number of matching characters in the string
-
+// 3. Modify the searchAndCount function so that it counts and returns the
+// number of matching characters in the string

@@ -2,15 +2,13 @@
 #include <stdlib.h>
 
 main (int argc, char *argv[]) {
-
-  int i;
-  
+	int i;
   printf("The number of strings in the command line is: %d\n", argc);
-  
   printf("The complete command line is: \"");
+
 	for (i=0; i<argc;i++) {
 		if(i%2==0)
-    printf("%s ",argv[i]);
+		printf("%s ",argv[i]);
 	}
   printf("\"\n");
   exit(1);
