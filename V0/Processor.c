@@ -78,7 +78,7 @@ void Processor_DecodeAndExecuteInstruction() {
   // Instruction MEMADD
   case 'm':
     Buses_write_AddressBus_From_To(CPU, MMU);
-    MainMemmory_readMemory();
+    MainMemory_readMemory();
     registerAccumulator_CPU =
         registerIR_CPU.operand1 + registerMBR_CPU.operand1;
     registerPC_CPU++;
