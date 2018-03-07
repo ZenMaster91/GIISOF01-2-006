@@ -53,10 +53,9 @@ void ComputerSystem_PrintProgramList() {
   int i;
   ComputerSystem_DebugMessage(101, INIT);
   for (i = 0; i < PROGRAMSMAXNUMBER; i++) {
-    if (userProgramsList[i] != NULL) {
-      ComputerSystem_DebugMessage(102, INIT,
-                                  userProgramsList[i]->executableName,
-                                  userProgramsList[i]->arrivalTime);
+    if (programList[i] != NULL) {
+      ComputerSystem_DebugMessage(102, INIT, programList[i]->executableName,
+                                  programList[i]->arrivalTime);
     }
   }
 }
