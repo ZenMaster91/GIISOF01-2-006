@@ -23,8 +23,6 @@ void ComputerSystem_PowerOn(int argc, char *argv[]) {
   nm = Messages_Load_Messages(nm, STUDENT_MESSAGES_FILE);
   printf("%d Messages Loaded\n", nm);
 
-  ComputerSystem_PrintProgramList();
-
   int na = Asserts_LoadAsserts();
   if (na == -1)
     printf("Asserts file unavailable\n");
@@ -33,6 +31,7 @@ void ComputerSystem_PowerOn(int argc, char *argv[]) {
 
   // Obtain a list of programs in the command line
   int daemonsBaseIndex = ComputerSystem_ObtainProgramList(argc, argv);
+  ComputerSystem_PrintProgramList();
 
   // Request the OS to do the initial set of tasks. The last one will be
   // the processor allocation to the process with the highest priority
