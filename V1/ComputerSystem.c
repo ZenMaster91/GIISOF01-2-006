@@ -8,6 +8,7 @@
 #include <stdlib.h>
 
 // Functions prototypes
+void ComputerSystem_PrintProgramList();
 
 // Array that contains basic data about all daemons
 // and all user programs specified in the command line
