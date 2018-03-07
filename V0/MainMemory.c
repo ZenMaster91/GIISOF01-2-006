@@ -7,7 +7,7 @@
 MEMORYCELL mainMemory[MAINMEMORYSIZE];
 
 // Main memory has a MAR register whose value identifies where
-// the next read/write operation will take place 
+// the next read/write operation will take place
 int registerMAR_MainMemory;
 
 // It also has a register that plays the rol of a buffer for the mentioned operations
@@ -23,7 +23,7 @@ void MainMemory_readMemory() {
 }
 
 // To write in a memory cell, the MAR and MBR registers are used, set by the processor,
-// as described previously 
+// as described previously
 void MainMemory_writeMemory() {
 
 	memcpy((void *) (&mainMemory[registerMAR_MainMemory]), (void *) (&registerMBR_MainMemory), sizeof(MEMORYCELL));
@@ -48,5 +48,3 @@ void MainMemory_GetMBR(MEMORYCELL *toRegister) {
 void MainMemory_SetMBR(MEMORYCELL *fromRegister) {
   memcpy((void*) (&registerMBR_MainMemory), (void *) fromRegister, sizeof(MEMORYCELL));
 }
-
-

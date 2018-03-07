@@ -13,7 +13,7 @@
 // sections are interesting for the user so it must show debug messages
 // related to them
 char *debugLevel;
-  
+
 // Only one colour messages. Set to 1 for more colours checking uppercase in debugLevel
 int COLOURED = 0 ;
 
@@ -30,7 +30,7 @@ void ComputerSystem_PowerOn(int argc, char *argv[]) {
 	// Load debug messages
 	nm=Messages_Load_Messages();
 	printf("%d Messages Loaded\n",nm);
-	
+
 	// To remember the simulator sections to be message-debugged and if messages must be coloured
 	debugLevel = argv[1];
 	for (i=0; i< strlen(debugLevel);i++)
@@ -38,29 +38,30 @@ void ComputerSystem_PowerOn(int argc, char *argv[]) {
 		COLOURED = 1;
 		debugLevel[i]=tolower(debugLevel[i]);
 	  }
-	
+
 	FILE *programFile;
 	// Initialize processor registers
 	Processor_InitializeRegisters(initialValueForPCRegister, initialValueForAccumulatorRegister, initialValueForPSWRegister);
-	
+
 	// If PROGRAM_TO_BE_EXECUTED exists, is executed
 	programFile= fopen(PROGRAM_TO_BE_EXECUTED, "r");
-	
+
 	// Check if programFile exists, if not, poweroff system
 	if (programFile==NULL)
 		ComputerSystem_PowerOff();
-	
+
 	// Load the program in main memory, beginning at the address given by the second argument
 	OperatingSystem_LoadProgram(programFile, initialValueForPCRegister);
-	
-	// Tell the processor to begin its instruction cycle 
+
+	// Tell the processor to begin its instruction cycle
 	Processor_InstructionCycleLoop();
-	
+
 }
 
 
 // Powers off the CS (the C program ends)
 void ComputerSystem_PowerOff() {
+    ComputerSystem_DebugMessage(4, HARDWARE);
 	exit(0);
 }
 
@@ -73,22 +74,22 @@ void ComputerSystem_DebugMessage(int msgNo, char section, ...) {
 	va_list lp;
 	char c, *format;
 	int count, youHaveToContinue, colour;
- 
+
 	int pos;
-	
+
         pos=Messages_Get_Pos(msgNo);
         if (pos==-1) {
          printf("Debug Message %d not defined\n",msgNo);
          return;
         }
         format=DebugMessages[pos].format;
-        	
+
 	va_start(lp, section);
-	
+
 	if ((strchr(debugLevel, ALL) != NULL) 		// Print the message because the user specified ALL
 	  || section == ERROR  						//  Always print ERROR section
 	  || (strchr(debugLevel,section)) != NULL){ //  or the section argument is included in the debugLevel string
-		
+
 		for (count = 0, youHaveToContinue = 1, colour=0; youHaveToContinue == 1; count++) {
 			//printf("(%c)",format[count]);
 			switch (format[count]) {
@@ -96,13 +97,13 @@ void ComputerSystem_DebugMessage(int msgNo, char section, ...) {
 				 	 switch (format[count]) {
 						case 'n': printf("\n");
 							  break;
-						case 't': printf("\t");	
+						case 't': printf("\t");
 							  break;
 						default: printf("\%c", format[count]);
 					} // switch Control Chars
 					break;
-				// case '%':			
-				case '@':	// Next color char		
+				// case '%':
+				case '@':	// Next color char
 		 			count++;
 					switch (format[count]) {
 			 			case 'R': // Text in red
@@ -140,7 +141,7 @@ void ComputerSystem_DebugMessage(int msgNo, char section, ...) {
 							  printf("%c[%d;%dm", 0x1B, 1, 36);
 							  if (!colour) colour=1;
 							}
-							break;		
+							break;
 						case 'W': // Text in white
 							if (COLOURED){
 							  printf("%c[%d;%dm", 0x1B, 1, 37);
@@ -150,10 +151,10 @@ void ComputerSystem_DebugMessage(int msgNo, char section, ...) {
 						case '@': // Text without color
 							if (COLOURED && colour)
 							    printf("%c[%dm", 0x1B, 0);
-							break;	
+							break;
 					}	// switch colors chars
 					break;
-				case '%':			
+				case '%':
 		 			count++;
 					switch (format[count]) {
 						case 's':
@@ -163,18 +164,18 @@ void ComputerSystem_DebugMessage(int msgNo, char section, ...) {
 							break;
 						case 'd':
 							printf("%d",va_arg(lp, int));
-							// if (colour) 
+							// if (colour)
 								// printf("%c[%dm", 0x1B, 0);
 							break;
 						case 'f':
 							printf("%f",va_arg(lp, double));
-							// if (colour) 
+							// if (colour)
 								// printf("%c[%dm", 0x1B, 0);
 							break;
 						case 'c':
 							c = (char) va_arg(lp, int);
 							printf("%c", c);
-							// if (colour) 
+							// if (colour)
 								// printf("%c[%dm", 0x1B, 0);
 							break;
 						default:
@@ -184,7 +185,7 @@ void ComputerSystem_DebugMessage(int msgNo, char section, ...) {
 				default:if (format[count]==0)
 						youHaveToContinue=0;
 					else
-						printf("%c",format[count]);				
+						printf("%c",format[count]);
 			} // switch
 		} // for
 		va_end(lp);
