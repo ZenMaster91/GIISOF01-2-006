@@ -124,20 +124,24 @@ int OperatingSystem_LongTermScheduler() {
       // ERROR: ERROR: There are not free entries in the process table for the
       // program [programName]
       ComputerSystem_DebugMessage(103, ERROR, programList[i]->executableName);
+      break;
 
     case PROGRAMDOESNOTEXIST:
       // ERROR: Program [programName] is not valid [-- cause of the error --]
       ComputerSystem_DebugMessage(104, ERROR, programList[i]->executableName,
                                   "it does not exists");
+      break;
 
     case PROGRAMNOTVALID:
       // ERROR: Program [programName] is not valid [-- cause of the error --]
       ComputerSystem_DebugMessage(104, ERROR, programList[i]->executableName,
                                   "invalid priority or size");
+      break;
 
     case TOOBIGPROCESS:
       // ERROR: Program [programName] is too big
       ComputerSystem_DebugMessage(105, ERROR, programList[i]->executableName);
+      break;
     }
     if (!(PID < 0)) {
       numberOfSuccessfullyCreatedProcesses++;
