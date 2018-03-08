@@ -118,9 +118,21 @@ int OperatingSystem_LongTermScheduler() {
   int PID, i, numberOfSuccessfullyCreatedProcesses = 0;
   for (i = 0; programList[i] != NULL && i < PROGRAMSMAXNUMBER; i++) {
     PID = OperatingSystem_CreateProcess(i);
-    if (PID == NOFREEENTRY) {
+    switch (PID) {
+    case NOFREENTRY:
       ComputerSystem_DebugMessage(103, ERROR, programList[i]->executableName);
+    case PROGRAMDOESNOTEXIST:
+      // Program [programName] is not valid [-- cause of the error --]
+      ComputerSystem_DebugMessage(104, ERROR, programList[i]->executableName,
+                                  PROGRAMDOESNOTEXIST);
+    case PROGRAMNOTVALID:
+      // Program [programName] is not valid [-- cause of the error --]
+      ComputerSystem_DebugMessage(104, ERROR, programList[i]->executableName,
+                                  PROGRAMNOTVALID);
+    case TOOBIGPROCESS:
+      ComputerSystem_DebugMessage(105, ERROR, programList[i]->executableName);
     }
+
     numberOfSuccessfullyCreatedProcesses++;
     if (programList[i]->type == USERPROGRAM)
       numberOfNotTerminatedUserProcesses++;
@@ -153,12 +165,21 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
   // Obtain the memory requirements of the program
   processSize = OperatingSystem_ObtainProgramSize(
       &programFile, executableProgram->executableName);
+  if (processSize < 0) {
+    return PROGRAMDOESNOTEXIST;
+  }
 
   // Obtain the priority for the process
   priority = OperatingSystem_ObtainPriority(programFile);
+  if (priority < 0) {
+    return PROGRAMNOTVALID;
+  }
 
   // Obtain enough memory space
   loadingPhysicalAddress = OperatingSystem_ObtainMainMemory(processSize, PID);
+  if (loadingPhysicalAddress < 0) {
+    return TOOBIGPROCESS;
+  }
 
   // Load program in the allocated memory
   OperatingSystem_LoadProgram(programFile, loadingPhysicalAddress, processSize);
