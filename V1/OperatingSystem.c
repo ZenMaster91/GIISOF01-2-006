@@ -128,12 +128,12 @@ int OperatingSystem_LongTermScheduler() {
     case PROGRAMDOESNOTEXIST:
       // ERROR: Program [programName] is not valid [-- cause of the error --]
       ComputerSystem_DebugMessage(104, ERROR, programList[i]->executableName,
-                                  'it does not exists');
+                                  "it does not exists");
 
     case PROGRAMNOTVALID:
       // ERROR: Program [programName] is not valid [-- cause of the error --]
       ComputerSystem_DebugMessage(104, ERROR, programList[i]->executableName,
-                                  'invalid priority or size');
+                                  "invalid priority or size");
 
     case TOOBIGPROCESS:
       // ERROR: Program [programName] is too big
