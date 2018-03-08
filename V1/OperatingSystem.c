@@ -139,12 +139,13 @@ int OperatingSystem_LongTermScheduler() {
       // ERROR: Program [programName] is too big
       ComputerSystem_DebugMessage(105, ERROR, programList[i]->executableName);
     }
-
-    numberOfSuccessfullyCreatedProcesses++;
-    if (programList[i]->type == USERPROGRAM)
-      numberOfNotTerminatedUserProcesses++;
-    // Move process to the ready state
-    OperatingSystem_MoveToTheREADYState(PID);
+    if (!(PID < 0)) {
+      numberOfSuccessfullyCreatedProcesses++;
+      if (programList[i]->type == USERPROGRAM)
+        numberOfNotTerminatedUserProcesses++;
+      // Move process to the ready state
+      OperatingSystem_MoveToTheREADYState(PID);
+    }
   }
   // Return the number of succesfully created processes
   return numberOfSuccessfullyCreatedProcesses;
