@@ -119,7 +119,7 @@ int OperatingSystem_LongTermScheduler() {
   for (i = 0; programList[i] != NULL && i < PROGRAMSMAXNUMBER; i++) {
     PID = OperatingSystem_CreateProcess(i);
     switch (PID) {
-    case NOFREENTRY:
+    case NOFREEENTRY:
       ComputerSystem_DebugMessage(103, ERROR, programList[i]->executableName);
     case PROGRAMDOESNOTEXIST:
       // Program [programName] is not valid [-- cause of the error --]
