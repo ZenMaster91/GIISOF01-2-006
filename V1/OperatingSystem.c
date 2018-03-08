@@ -178,7 +178,7 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
   processSize = OperatingSystem_ObtainProgramSize(
       &programFile, executableProgram->executableName);
   if (processSize < 0) {
-    return PROGRAMDOESNOTEXIST;
+    return processSize;
   }
 
   // Obtain the priority for the process
