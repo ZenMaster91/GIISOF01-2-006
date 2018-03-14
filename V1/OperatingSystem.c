@@ -75,7 +75,7 @@ void OperatingSystem_Initialize(int daemonsIndex) {
   OperatingSystem_PrepareDaemons(daemonsIndex);
 
   // Create all user processes from the information given in the command line
-  OperatingSystem_LongTermScheduler();
+  numberOfSuccessfullyCreatedProcesses = OperatingSystem_LongTermScheduler();
   if (numberOfSuccessfullyCreatedProcesses == 0) {
     OperatingSystem_ReadyToShutdown();
   }
