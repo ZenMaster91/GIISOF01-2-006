@@ -55,6 +55,7 @@ char *statesNames[5] = {"NEW", "READY", "EXECUTING", "BLOCKED", "EXIT"};
 void OperatingSystem_Initialize(int daemonsIndex) {
 
   int i, selectedProcess;
+  int numberOfSuccessfullyCreatedProcesses = 0;
   FILE *programFile; // For load Operating System Code
 
   // Obtain the memory requirements of the program
