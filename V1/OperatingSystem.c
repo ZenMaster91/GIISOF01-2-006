@@ -48,6 +48,9 @@ int numberOfReadyToRunProcesses = 0;
 // Variable containing the number of not terminated user processes
 int numberOfNotTerminatedUserProcesses = 0;
 
+// states of the processes
+char *statesNames[5] = {"NEW", "READY", "EXECUTING", "BLOCKED", "EXIT"};
+
 // Initial set of tasks of the OS
 void OperatingSystem_Initialize(int daemonsIndex) {
 
@@ -73,6 +76,9 @@ void OperatingSystem_Initialize(int daemonsIndex) {
 
   // Create all user processes from the information given in the command line
   OperatingSystem_LongTermScheduler();
+  if (numberOfSuccessfullyCreatedProcesses == 0) {
+    OperatingSystem_ReadyToShutdown();
+  }
 
   if (strcmp(programList[processTable[sipID].programListIndex]->executableName,
              "SystemIdleProcess")) {
@@ -104,7 +110,7 @@ void OperatingSystem_PrepareDaemons(int programListDaemonsBase) {
   programList[0]->arrivalTime = 0;
   programList[0]->type = DAEMONPROGRAM; // daemon program
 
-  sipID = INITIALPID % PROCESSTABLEMAXSIZE; // first PID for sipID
+  sipID = initialPhysicalAddress % PROCESSTABLEMAXSIZE; // first PID for sipID
 
   // Prepare aditionals daemons here
   // index for aditionals daemons program in programList
@@ -245,8 +251,13 @@ void OperatingSystem_MoveToTheREADYState(int PID) {
 
   if (Heap_add(PID, readyToRunQueue, QUEUE_PRIORITY,
                &numberOfReadyToRunProcesses, PROCESSTABLEMAXSIZE) >= 0) {
+    ComputerSystem_DebugMessage(110, SYSPROC, PID,
+                                statesNames[processTable[PID].state],
+                                statesNames[1]);
     processTable[PID].state = READY;
   }
+
+  OperatingSystem_PrintReadyToRunQueue();
 }
 
 // The STS is responsible of deciding which process to execute when specific
@@ -388,4 +399,41 @@ void OperatingSystem_InterruptLogic(int entryPoint) {
     OperatingSystem_HandleException();
     break;
   }
+}
+
+// Muestra por pantalla el contenido de la tabla de listos y la prioridad de
+// cada proceso
+void OperatingSystem_PrintReadyToRunQueue() {
+  int i;
+  int exit = 1;
+  ComputerSystem_DebugMessage(106, SHORTTERMSCHEDULE);
+  // Recorremos la cola de usuarios
+  ComputerSystem_DebugMessage(200, SHORTTERMSCHEDULE);
+  for (i = 0; i < numberOfReadyToRunProcesses[0]; i++) {
+    int pid = readyToRunQueue[0][i];
+    if (exit == 1) {
+      ComputerSystem_DebugMessage(107, SHORTTERMSCHEDULE, pid,
+                                  processTable[pid].priority);
+      exit = 0;
+    } else {
+      ComputerSystem_DebugMessage(108, SHORTTERMSCHEDULE, pid,
+                                  processTable[pid].priority);
+    }
+  }
+  ComputerSystem_DebugMessage(109, SHORTTERMSCHEDULE);
+  // Recorremos la cola del sistema
+  ComputerSystem_DebugMessage(201, SHORTTERMSCHEDULE);
+  exit = 1;
+  for (i = 0; i < numberOfReadyToRunProcesses[1]; i++) {
+    int pid = readyToRunQueue[1][i];
+    if (exit == 1) {
+      ComputerSystem_DebugMessage(112, SHORTTERMSCHEDULE, pid,
+                                  processTable[pid].priority);
+      exit = 0;
+    } else {
+      ComputerSystem_DebugMessage(113, SHORTTERMSCHEDULE, pid,
+                                  processTable[pid].priority);
+    }
+  }
+  ComputerSystem_DebugMessage(109, SHORTTERMSCHEDULE);
 }

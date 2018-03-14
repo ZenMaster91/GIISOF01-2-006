@@ -8,3 +8,4 @@
 103,@RERROR: There are not free entries in the process table for the program[%s]@@\n
 104,@RERROR: Program [%s] is not valid [--- %s ---]\n
 105,@RERROR: Program [%s] is too big\n
+110,Process [@G%d@@] moving from the [@G%s@@] state to the [@G%s@@] state\n
