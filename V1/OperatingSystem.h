@@ -48,7 +48,7 @@ typedef struct {
   int copyOfPCRegister;
   unsigned int copyOfPSWRegister;
   int programListIndex;
-  int queueIDM;
+  int queueID;
 } PCB;
 
 // These "extern" declaration enables other source code files to gain access
