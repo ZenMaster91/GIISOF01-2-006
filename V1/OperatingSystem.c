@@ -411,8 +411,8 @@ void OperatingSystem_PrintReadyToRunQueue() {
   ComputerSystem_DebugMessage(106, SHORTTERMSCHEDULE);
   // Recorremos la cola de usuarios
   ComputerSystem_DebugMessage(200, SHORTTERMSCHEDULE);
-  for (i = 0; i < numberOfReadyToRunProcesses[0]; i++) {
-    int pid = readyToRunQueue[0][i];
+  for (i = 0; i < numberOfReadyToRunProcesses; i++) {
+    int pid = readyToRunQueue[i];
     if (exit == 1) {
       ComputerSystem_DebugMessage(107, SHORTTERMSCHEDULE, pid,
                                   processTable[pid].priority);
@@ -427,7 +427,7 @@ void OperatingSystem_PrintReadyToRunQueue() {
   ComputerSystem_DebugMessage(201, SHORTTERMSCHEDULE);
   exit = 1;
   for (i = 0; i < numberOfReadyToRunProcesses[1]; i++) {
-    int pid = readyToRunQueue[1][i];
+    int pid = readyToRunQueue[i];
     if (exit == 1) {
       ComputerSystem_DebugMessage(112, SHORTTERMSCHEDULE, pid,
                                   processTable[pid].priority);
