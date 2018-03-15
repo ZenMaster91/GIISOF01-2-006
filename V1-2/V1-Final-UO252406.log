@@ -1,0 +1,74 @@
+26 Messages Loaded
+User program list:
+	Program [programaQueNoExiste] with arrival time [0]
+	Program [programEJ4c] with arrival time [0]
+	Program [programEJ5] with arrival time [0]
+	Program [programEJ6] with arrival time [0]
+	Program [programFinalV1] with arrival time [0]
+	Program [programYret] with arrival time [0]
+	Program [programOS] with arrival time [0]
+	Program [programMemadd ] with arrival time [0]
+New process [0] moving to the [NEW] state
+Process [0] moving from the [NEW] state to the [READY] state
+Ready-to-run processes queue:
+	USERS:
+	DAEMONS:[0,100]
+ERROR: Program [programaQueNoExiste] is not valid [--- it does not exist---]
+ERROR: Program [programEJ4c] is not valid [---invalid priority or size---]
+ERROR: Program [programEJ5] is too big
+ERROR: Program [programEJ6] is too big
+New process [1] moving to the [NEW] state
+Process [1] moving from the [NEW] state to the [READY] state
+Ready-to-run processes queue:
+	USERS:[1,199]
+	DAEMONS:[0,100]
+Process [1] created from program [programFinalV1]
+New process [2] moving to the [NEW] state
+Process [2] moving from the [NEW] state to the [READY] state
+Ready-to-run processes queue:
+	USERS:[2,5],[1,199]
+	DAEMONS:[0,100]
+Process [2] created from program [programYret]
+New process [3] moving to the [NEW] state
+Process [3] moving from the [NEW] state to the [READY] state
+Ready-to-run processes queue:
+	USERS:[2,5],[1,199],[3,7]
+	DAEMONS:[0,100]
+Process [3] created from program [programOS]
+ERROR: There are not free entries in the process table for the program[programMemadd ]
+Process [2] moving from the [READY] state to the [EXECUTING] state
+y 0 0 (PC: 0, Accumulator: 0, PSW: 2 [--------Z-])
+n 0 0 (PC: 1, Accumulator: 0, PSW: 2 [--------Z-])
+a 10 -13 (PC: 2, Accumulator: -3, PSW: 4 [-------N--])
+w 15 0 (PC: 3, Accumulator: -3, PSW: 4 [-------N--])
+y 0 0 (PC: 3, Accumulator: -3, PSW: 4 [-------N--])
+o 6 0 (PC: 253, Accumulator: -3, PSW: 132 [--X----N--])
+Process [2] has generated an exception and is terminating
+Process [2] moving from the [EXECUTING] state to the [EXIT] state
+Process [3] moving from the [READY] state to the [EXECUTING] state
+y 0 0 (PC: 0, Accumulator: 0, PSW: 2 [--------Z-])
+n 0 0 (PC: 1, Accumulator: 0, PSW: 2 [--------Z-])
+a 10 -13 (PC: 2, Accumulator: -3, PSW: 4 [-------N--])
+o 2 0 (PC: 2, Accumulator: -3, PSW: 4 [-------N--])
+o 6 0 (PC: 253, Accumulator: -3, PSW: 132 [--X----N--])
+Process [3] has generated an exception and is terminating
+Process [3] moving from the [EXECUTING] state to the [EXIT] state
+Process [1] moving from the [READY] state to the [EXECUTING] state
+y 0 0 (PC: 0, Accumulator: 0, PSW: 2 [--------Z-])
+a 1 98 (PC: 1, Accumulator: 99, PSW: 0 [----------])
+j 5 0 (PC: 6, Accumulator: 99, PSW: 0 [----------])
+i 5 0 (PC: 7, Accumulator: 104, PSW: 0 [----------])
+w 7 0 (PC: 8, Accumulator: 104, PSW: 0 [----------])
+m 6 7 (PC: 9, Accumulator: 12, PSW: 0 [----------])
+w 2 0 (PC: 10, Accumulator: 12, PSW: 0 [----------])
+n 0 0 (PC: 11, Accumulator: 12, PSW: 0 [----------])
+j -5 0 (PC: 6, Accumulator: 12, PSW: 0 [----------])
+i 5 0 (PC: 7, Accumulator: 17, PSW: 0 [----------])
+h 104 104 (PC: 7, Accumulator: 17, PSW: 0 [----------])
+o 6 0 (PC: 253, Accumulator: 17, PSW: 128 [--X-------])
+Process [1] has generated an exception and is terminating
+Process [1] moving from the [EXECUTING] state to the [EXIT] state
+Process [0] moving from the [READY] state to the [EXECUTING] state
+y 0 0 (PC: 3, Accumulator: 0, PSW: 130 [--X-----Z-])
+h 0 0 (PC: 3, Accumulator: 0, PSW: 131 [--X-----ZS])
+END of the simulation
