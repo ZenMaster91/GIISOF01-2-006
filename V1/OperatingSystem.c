@@ -426,7 +426,7 @@ void OperatingSystem_PrintReadyToRunQueue() {
   // Recorremos la cola del sistema
   ComputerSystem_DebugMessage(201, SHORTTERMSCHEDULE);
   exit = 1;
-  for (i = 0; i < numberOfReadyToRunProcesses[1]; i++) {
+  for (i = 0; i < numberOfReadyToRunProcesses; i++) {
     int pid = readyToRunQueue[i];
     if (exit == 1) {
       ComputerSystem_DebugMessage(112, SHORTTERMSCHEDULE, pid,
