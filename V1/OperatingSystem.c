@@ -43,8 +43,8 @@ int sipID;
 int baseDaemonsInProgramList;
 
 // Array that contains the identifiers of the READY processes
-int readyToRunQueue[PROCESSTABLEMAXSIZE];
-int numberOfReadyToRunProcesses = 0;
+int readyToRunQueue[NUMBEROFQUEUES][PROCESSTABLEMAXSIZE];
+int numberOfReadyToRunProcesses[NUMBEROFQUEUES] = {0, 0};
 
 // Variable containing the number of not terminated user processes
 int numberOfNotTerminatedUserProcesses = 0;
@@ -250,8 +250,7 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress,
 // Move a process to the READY state: it will be inserted, depending on its
 // priority, in a queue of identifiers of READY processes
 void OperatingSystem_MoveToTheREADYState(int PID) {
-
-  if (Heap_add(PID, readyToRunQueue, QUEUE_PRIORITY,
+  if (Heap_add(PID, readyToRunQueue[processTable[PID].queueID], QUEUE_PRIORITY,
                &numberOfReadyToRunProcesses, PROCESSTABLEMAXSIZE) >= 0) {
     ComputerSystem_DebugMessage(110, SYSPROC, PID,
                                 statesNames[processTable[PID].state],

@@ -26,6 +26,10 @@
 
 #define NOPROCESS -1
 
+#define NUMBEROFQUEUES 2
+#define USERPROCESSQUEUE 0
+#define DAEMONSQUEUE 1
+
 // Enumerated type containing all the possible process states
 enum ProcessStates { NEW, READY, EXECUTING, BLOCKED, EXIT };
 
