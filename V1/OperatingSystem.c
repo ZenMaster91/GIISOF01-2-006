@@ -414,12 +414,12 @@ void OperatingSystem_PrintReadyToRunQueue() {
   for (i = 0; i < numberOfReadyToRunProcesses; i++) {
     int pid = readyToRunQueue[i];
     if (exit == 1) {
-      // ComputerSystem_DebugMessage(107, SHORTTERMSCHEDULE, pid,
-                                  processTable[pid].priority);
-                                  exit = 0;
+      // ComputerSystem_DebugMessage(107, SHORTTERMSCHEDULE,
+      // pid,processTable[pid].priority);
+      exit = 0;
     } else {
-      // ComputerSystem_DebugMessage(108, SHORTTERMSCHEDULE, pid,
-                                  processTable[pid].priority);
+      // ComputerSystem_DebugMessage(108, SHORTTERMSCHEDULE,
+      // pid,processTable[pid].priority);
     }
   }
   // ComputerSystem_DebugMessage(109, SHORTTERMSCHEDULE);
@@ -429,12 +429,12 @@ void OperatingSystem_PrintReadyToRunQueue() {
   for (i = 0; i < numberOfReadyToRunProcesses; i++) {
     int pid = readyToRunQueue[i];
     if (exit == 1) {
-      // ComputerSystem_DebugMessage(112, SHORTTERMSCHEDULE, pid,
-                                  processTable[pid].priority);
-                                  exit = 0;
+      // ComputerSystem_DebugMessage(112, SHORTTERMSCHEDULE,
+      // pid,processTable[pid].priority);
+      exit = 0;
     } else {
-      // ComputerSystem_DebugMessage(113, SHORTTERMSCHEDULE, pid,
-                                  processTable[pid].priority);
+      // ComputerSystem_DebugMessage(113, SHORTTERMSCHEDULE,
+      // pid,processTable[pid].priority);
     }
   }
   // ComputerSystem_DebugMessage(109, SHORTTERMSCHEDULE);
