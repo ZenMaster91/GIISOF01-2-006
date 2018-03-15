@@ -280,6 +280,7 @@ int OperatingSystem_ExtractFromReadyToRun() {
 
   int selectedProcess = NOPROCESS;
 
+  // Add come value to index readyToRunQueue and numberOfReadyToRunProcesses...
   selectedProcess = Heap_poll(readyToRunQueue[0], QUEUE_PRIORITY,
                               &numberOfReadyToRunProcesses[0]);
 
@@ -409,6 +410,7 @@ void OperatingSystem_PrintReadyToRunQueue() {
   int i;
   int exit = 1;
   ComputerSystem_DebugMessage(106, SHORTTERMSCHEDULE);
+
   // Recorremos la cola de usuarios
   ComputerSystem_DebugMessage(200, SHORTTERMSCHEDULE);
   for (i = 0; i < numberOfReadyToRunProcesses[0]; i++) {
