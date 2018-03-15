@@ -192,13 +192,13 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
   // Obtain the priority for the process
   priority = OperatingSystem_ObtainPriority(programFile);
   if (priority < 0) {
-    return PROGRAMNOTVALID;
+    return priority;
   }
 
   // Obtain enough memory space
   loadingPhysicalAddress = OperatingSystem_ObtainMainMemory(processSize, PID);
   if (loadingPhysicalAddress < 0) {
-    return TOOBIGPROCESS;
+    return loadingPhysicalAddress;
   }
 
   // Load program in the allocated memory
