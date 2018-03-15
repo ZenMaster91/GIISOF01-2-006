@@ -280,7 +280,7 @@ int OperatingSystem_ExtractFromReadyToRun() {
 
   int selectedProcess = NOPROCESS;
 
-  selectedProcess = Heap_poll(readyToRunQueue, QUEUE_PRIORITY,
+  selectedProcess = Heap_poll(readyToRunQueue[0], QUEUE_PRIORITY,
                               &numberOfReadyToRunProcesses[0]);
 
   // Return most priority process or NOPROCESS if empty queue
