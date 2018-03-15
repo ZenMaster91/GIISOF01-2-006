@@ -251,7 +251,8 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress,
 // priority, in a queue of identifiers of READY processes
 void OperatingSystem_MoveToTheREADYState(int PID) {
   if (Heap_add(PID, readyToRunQueue[processTable[PID].queueID], QUEUE_PRIORITY,
-               &numberOfReadyToRunProcesses, PROCESSTABLEMAXSIZE) >= 0) {
+               &numberOfReadyToRunProcesses[processTable[PID].queueID],
+               PROCESSTABLEMAXSIZE) >= 0) {
     ComputerSystem_DebugMessage(110, SYSPROC, PID,
                                 statesNames[processTable[PID].state],
                                 statesNames[1]);
@@ -279,8 +280,8 @@ int OperatingSystem_ExtractFromReadyToRun() {
 
   int selectedProcess = NOPROCESS;
 
-  selectedProcess =
-      Heap_poll(readyToRunQueue, QUEUE_PRIORITY, &numberOfReadyToRunProcesses);
+  selectedProcess = Heap_poll(readyToRunQueue, QUEUE_PRIORITY,
+                              &numberOfReadyToRunProcesses[]);
 
   // Return most priority process or NOPROCESS if empty queue
   return selectedProcess;
@@ -410,7 +411,7 @@ void OperatingSystem_PrintReadyToRunQueue() {
   // ComputerSystem_DebugMessage(106, SHORTTERMSCHEDULE);
   // Recorremos la cola de usuarios
   // ComputerSystem_DebugMessage(200, SHORTTERMSCHEDULE);
-  for (i = 0; i < numberOfReadyToRunProcesses; i++) {
+  for (i = 0; i < numberOfReadyToRunProcesses[0]; i++) {
     // int pid = readyToRunQueue[i];
     if (exit == 1) {
       // ComputerSystem_DebugMessage(107, SHORTTERMSCHEDULE,
@@ -425,7 +426,7 @@ void OperatingSystem_PrintReadyToRunQueue() {
   // Recorremos la cola del sistema
   // ComputerSystem_DebugMessage(201, SHORTTERMSCHEDULE);
   exit = 1;
-  for (i = 0; i < numberOfReadyToRunProcesses; i++) {
+  for (i = 0; i < numberOfReadyToRunProcesses[1]; i++) {
     // int pid = readyToRunQueue[i];
     if (exit == 1) {
       // ComputerSystem_DebugMessage(112, SHORTTERMSCHEDULE,
