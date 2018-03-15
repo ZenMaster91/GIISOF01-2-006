@@ -112,7 +112,7 @@ void OperatingSystem_PrepareDaemons(int programListDaemonsBase) {
   programList[0]->arrivalTime = 0;
   programList[0]->type = DAEMONPROGRAM; // daemon program
 
-  sipID = initialPhysicalAddress % PROCESSTABLEMAXSIZE; // first PID for sipID
+  sipID = INITIALPID % PROCESSTABLEMAXSIZE; // first PID for sipID
 
   // Prepare aditionals daemons here
   // index for aditionals daemons program in programList
