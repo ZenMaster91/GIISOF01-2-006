@@ -6,7 +6,7 @@
 101,User program list:\n
 102,\tProgram [@B%s@@] with arrival time [@B%d@@]\n
 103,@RERROR: There are not free entries in the process table for the program[%s]@@\n
-104,@RERROR: Program [%s] is not valid [---%s---]\n
+104,@RERROR: Program [%s] is not valid [--- %s ---]\n
 105,@RERROR: Program [%s] is too big\n
 106,Ready-to-run processes queue:\n
 107,[@G%d@@,%d]
@@ -17,6 +17,6 @@
 112,[@G%d@@,%d]
 113,,[@G%d@@,%d]
 115,Process [@G%d@@] transfers control of the processor to process [@G%d@@]\n
-116,No se encuentra proceso\n
+116,Process not found\n
 200,\tUSERS:
 201,\tDAEMONS:
