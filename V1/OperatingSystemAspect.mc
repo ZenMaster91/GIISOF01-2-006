@@ -871,7 +871,7 @@ extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)
 # 943 "/usr/include/stdio.h" 3 4
 
 # 6 "OperatingSystem.h" 2
-# 30 "OperatingSystem.h"
+# 34 "OperatingSystem.h"
 enum ProcessStates { NEW, READY, EXECUTING, BLOCKED, EXIT };
 
 
@@ -889,6 +889,7 @@ typedef struct {
   int copyOfPCRegister;
   unsigned int copyOfPSWRegister;
   int programListIndex;
+  int queueID;
 } PCB;
 
 
@@ -2654,8 +2655,8 @@ int sipID;
 int baseDaemonsInProgramList;
 
 
-int readyToRunQueue[4];
-int numberOfReadyToRunProcesses = 0;
+int readyToRunQueue[2][4];
+int numberOfReadyToRunProcesses[2] = {0, 0};
 
 
 int numberOfNotTerminatedUserProcesses = 0;
@@ -2861,9 +2862,9 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress,
 
 
 void OperatingSystem_MoveToTheREADYState(int PID) {
-
-  if (Heap_add(PID, readyToRunQueue, 1,
-               &numberOfReadyToRunProcesses, 4) >= 0) {
+  if (Heap_add(PID, readyToRunQueue[processTable[PID].queueID], 1,
+               &numberOfReadyToRunProcesses[processTable[PID].queueID],
+               4) >= 0) {
     ComputerSystem_DebugMessage(110, 'p', PID,
                                 statesNames[processTable[PID].state],
                                 statesNames[1]);
@@ -2891,8 +2892,9 @@ int OperatingSystem_ExtractFromReadyToRun() {
 
   int selectedProcess = -1;
 
-  selectedProcess =
-      Heap_poll(readyToRunQueue, 1, &numberOfReadyToRunProcesses);
+
+  selectedProcess = Heap_poll(readyToRunQueue[0], 1,
+                              &numberOfReadyToRunProcesses[0]);
 
 
   return selectedProcess;
@@ -3019,34 +3021,36 @@ void OperatingSystem_InterruptLogic(int entryPoint) {
 void OperatingSystem_PrintReadyToRunQueue() {
   int i;
   int exit = 1;
+  ComputerSystem_DebugMessage(106, 's');
 
 
-
-  for (i = 0; i < numberOfReadyToRunProcesses; i++) {
-
+  ComputerSystem_DebugMessage(200, 's');
+  for (i = 0; i < numberOfReadyToRunProcesses[0]; i++) {
+    int pid = readyToRunQueue[i];
     if (exit == 1) {
-
-
+      ComputerSystem_DebugMessage(107, 's', pid,
+                                  processTable[pid].priority);
       exit = 0;
     } else {
-
-
+      ComputerSystem_DebugMessage(108, 's', pid,
+                                  processTable[pid].priority);
     }
   }
+  ComputerSystem_DebugMessage(109, 's');
 
 
-
+  ComputerSystem_DebugMessage(201, 's');
   exit = 1;
-  for (i = 0; i < numberOfReadyToRunProcesses; i++) {
-
+  for (i = 0; i < numberOfReadyToRunProcesses[1]; i++) {
+    int pid = readyToRunQueue[i];
     if (exit == 1) {
-
-
+      ComputerSystem_DebugMessage(112, 's', pid,
+                                  processTable[pid].priority);
       exit = 0;
     } else {
-
-
+      ComputerSystem_DebugMessage(113, 's', pid,
+                                  processTable[pid].priority);
     }
   }
-
+  ComputerSystem_DebugMessage(109, 's');
 }
