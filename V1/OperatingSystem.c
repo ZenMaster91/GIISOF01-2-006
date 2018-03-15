@@ -408,34 +408,35 @@ void OperatingSystem_InterruptLogic(int entryPoint) {
 void OperatingSystem_PrintReadyToRunQueue() {
   int i;
   int exit = 1;
-  // ComputerSystem_DebugMessage(106, SHORTTERMSCHEDULE);
+  ComputerSystem_DebugMessage(106, SHORTTERMSCHEDULE);
   // Recorremos la cola de usuarios
-  // ComputerSystem_DebugMessage(200, SHORTTERMSCHEDULE);
+  ComputerSystem_DebugMessage(200, SHORTTERMSCHEDULE);
   for (i = 0; i < numberOfReadyToRunProcesses[0]; i++) {
-    // int pid = readyToRunQueue[i];
+    int pid = readyToRunQueue[i];
     if (exit == 1) {
-      // ComputerSystem_DebugMessage(107, SHORTTERMSCHEDULE,
-      // pid,processTable[pid].priority);
+      ComputerSystem_DebugMessage(107, SHORTTERMSCHEDULE, pid,
+                                  processTable[pid].priority);
       exit = 0;
     } else {
-      // ComputerSystem_DebugMessage(108, SHORTTERMSCHEDULE,
-      // pid,processTable[pid].priority);
+      ComputerSystem_DebugMessage(108, SHORTTERMSCHEDULE, pid,
+                                  processTable[pid].priority);
     }
   }
-  // ComputerSystem_DebugMessage(109, SHORTTERMSCHEDULE);
+  ComputerSystem_DebugMessage(109, SHORTTERMSCHEDULE);
+
   // Recorremos la cola del sistema
-  // ComputerSystem_DebugMessage(201, SHORTTERMSCHEDULE);
+  ComputerSystem_DebugMessage(201, SHORTTERMSCHEDULE);
   exit = 1;
   for (i = 0; i < numberOfReadyToRunProcesses[1]; i++) {
-    // int pid = readyToRunQueue[i];
+    int pid = readyToRunQueue[i];
     if (exit == 1) {
-      // ComputerSystem_DebugMessage(112, SHORTTERMSCHEDULE,
-      // pid,processTable[pid].priority);
+      ComputerSystem_DebugMessage(112, SHORTTERMSCHEDULE, pid,
+                                  processTable[pid].priority);
       exit = 0;
     } else {
-      // ComputerSystem_DebugMessage(113, SHORTTERMSCHEDULE,
-      // pid,processTable[pid].priority);
+      ComputerSystem_DebugMessage(113, SHORTTERMSCHEDULE, pid,
+                                  processTable[pid].priority);
     }
   }
-  // ComputerSystem_DebugMessage(109, SHORTTERMSCHEDULE);
+  ComputerSystem_DebugMessage(109, SHORTTERMSCHEDULE);
 }
