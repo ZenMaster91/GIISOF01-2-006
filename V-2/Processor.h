@@ -4,7 +4,7 @@
 #include "MainMemory.h"
 
 #define INTERRUPTTYPES 10
-#define CLOCKINT_BIT = 9
+#define CLOCKINT_BIT 9
 
 // Enumerated type that connects bit positions in the PSW register with
 // processor events and status
