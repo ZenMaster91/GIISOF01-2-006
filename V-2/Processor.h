@@ -56,5 +56,7 @@ int Processor_GetRegisterA();
 // the process to which the processor is being assigned
 void Processor_SetPSW(unsigned int);
 
+void Processor_RaiseInterrupt();
+
 unsigned int Processor_GetPSW();
 #endif

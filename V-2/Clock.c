@@ -11,7 +11,7 @@ void Clock_Update() {
   // INTERVALBETWEENINTERRUPS.
   if (tics % INTERVALBETWEENINTERRUPS == 0 && tics != 0) {
     // Raise the exception.
-    OperatingSystem_HandleClockInterrupt();
+    Processor_RaiseInterrupt();
   }
   // ComputerSystem_DebugMessage(97,CLOCK,tics);
 }
