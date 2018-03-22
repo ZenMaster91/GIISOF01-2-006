@@ -10,7 +10,8 @@
 void Processor_FetchInstruction();
 void Processor_DecodeAndExecuteInstruction();
 void Processor_ManageInterrupts();
-void Processor_RaiseInterrupt(const unsigned int);
+// void Processor_RaiseInterrupt(const unsigned int); // Declared in the the .h
+// file
 void Processor_ACKInterrupt(const unsigned int);
 unsigned int Processor_GetInterruptLineStatus(const unsigned int);
 void Processor_ActivatePSW_Bit(const unsigned int);

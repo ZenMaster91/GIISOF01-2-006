@@ -56,7 +56,8 @@ int Processor_GetRegisterA();
 // the process to which the processor is being assigned
 void Processor_SetPSW(unsigned int);
 
-void Processor_RaiseInterrupt();
+// Prototype of raise interrupt.
+void Processor_RaiseInterrupt(const unsigned int);
 
 unsigned int Processor_GetPSW();
 #endif
