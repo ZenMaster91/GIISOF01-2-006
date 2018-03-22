@@ -65,7 +65,10 @@ void Processor_InstructionCycleLoop() {
   while (!Processor_PSW_BitState(POWEROFF_BIT)) {
     Processor_FetchInstruction();
     Processor_DecodeAndExecuteInstruction();
-    if (interruptLines_CPU)
+
+    // Manage interrups only ifthe mask is not set.
+    if (interruptLines_CPU &&
+        Processor_PSW_BitState(INTERRUPT_MASKED_BIT)) // Bit to check?
       Processor_ManageInterrupts();
   }
 }
@@ -452,6 +455,8 @@ char *Processor_ShowPSW() {
     pswmask[tam - ZERO_BIT] = 'Z';
   if (Processor_PSW_BitState(POWEROFF_BIT))
     pswmask[tam - POWEROFF_BIT] = 'S';
+  if (Processor_PSW_BitState(INTERRUPT_MASKED_BIT))
+    pswmask[tam - INTERRUPT_MASKED_BIT] = 'M';
   return pswmask;
 }
 
