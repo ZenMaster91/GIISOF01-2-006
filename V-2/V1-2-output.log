@@ -1,0 +1,76 @@
+26 Messages Loaded
+User program list:
+	Program [programV1-2a] with arrival time [0]
+	Program [programV1-2b] with arrival time [0]
+	Program [programV1-2c] with arrival time [0]
+New process [0] moving to the [NEW] state
+Process [0] moving from the [NEW] state to the [READY] state
+Ready-to-run processes queue:
+	USERS:
+	DAEMONS:[0,100]
+New process [1] moving to the [NEW] state
+Process [1] moving from the [NEW] state to the [READY] state
+Ready-to-run processes queue:
+	USERS:[1,10]
+	DAEMONS:[0,100]
+Process [1] created from program [programV1-2a]
+New process [2] moving to the [NEW] state
+Process [2] moving from the [NEW] state to the [READY] state
+Ready-to-run processes queue:
+	USERS:[1,10],[2,10]
+	DAEMONS:[0,100]
+Process [2] created from program [programV1-2b]
+New process [3] moving to the [NEW] state
+Process [3] moving from the [NEW] state to the [READY] state
+Ready-to-run processes queue:
+	USERS:[3,5],[2,10],[1,10]
+	DAEMONS:[0,100]
+Process [3] created from program [programV1-2c]
+Process [3] moving from the [READY] state to the [EXECUTING] state
+y 0 0 (PC: 0, Accumulator: 0, PSW: 2 [--------Z-])
+a 10 5 (PC: 1, Accumulator: 15, PSW: 0 [----------])
+y 0 0 (PC: 1, Accumulator: 15, PSW: 0 [----------])
+o 6 0 (PC: 253, Accumulator: 15, PSW: 128 [--X-------])
+Process [3] has generated an exception and is terminating
+Process [3] moving from the [EXECUTING] state to the [EXIT] state
+Process [1] moving from the [READY] state to the [EXECUTING] state
+y 0 0 (PC: 0, Accumulator: 0, PSW: 2 [--------Z-])
+a 20 10 (PC: 1, Accumulator: 30, PSW: 0 [----------])
+t 4 0 (PC: 2, Accumulator: 30, PSW: 0 [----------])
+o 2 0 (PC: 245, Accumulator: 30, PSW: 128 [--X-------])
+Process [1] moving from the [EXECUTING] state to the [READY] state
+Ready-to-run processes queue:
+	USERS:[2,10],[1,10]
+	DAEMONS:[0,100]
+Process [2] moving from the [READY] state to the [EXECUTING] state
+Process [1] transfers control of the processor to process [2]
+y 0 0 (PC: 0, Accumulator: 0, PSW: 2 [--------Z-])
+a 30 10 (PC: 1, Accumulator: 40, PSW: 0 [----------])
+t 4 0 (PC: 2, Accumulator: 40, PSW: 0 [----------])
+o 2 0 (PC: 245, Accumulator: 40, PSW: 128 [--X-------])
+Process [2] moving from the [EXECUTING] state to the [READY] state
+Ready-to-run processes queue:
+	USERS:[1,10],[2,10]
+	DAEMONS:[0,100]
+Process [1] moving from the [READY] state to the [EXECUTING] state
+Process [2] transfers control of the processor to process [1]
+y 0 0 (PC: 2, Accumulator: 30, PSW: 0 [----------])
+h 0 0 (PC: 2, Accumulator: 30, PSW: 0 [----------])
+o 6 0 (PC: 253, Accumulator: 30, PSW: 128 [--X-------])
+Process [1] has generated an exception and is terminating
+Process [1] moving from the [EXECUTING] state to the [EXIT] state
+Process [2] moving from the [READY] state to the [EXECUTING] state
+y 0 0 (PC: 2, Accumulator: 40, PSW: 0 [----------])
+z 2 0 (PC: 3, Accumulator: 40, PSW: 0 [----------])
+t 5 0 (PC: 4, Accumulator: 40, PSW: 0 [----------])
+o 2 0 (PC: 245, Accumulator: 40, PSW: 128 [--X-------])
+Process [2] has the processor assigned
+y 0 0 (PC: 4, Accumulator: 40, PSW: 0 [----------])
+o 222 0 (PC: 4, Accumulator: 40, PSW: 0 [----------])
+o 6 0 (PC: 253, Accumulator: 40, PSW: 128 [--X-------])
+Process [2] has generated an exception and is terminating
+Process [2] moving from the [EXECUTING] state to the [EXIT] state
+Process [0] moving from the [READY] state to the [EXECUTING] state
+y 0 0 (PC: 3, Accumulator: 0, PSW: 130 [--X-----Z-])
+h 0 0 (PC: 3, Accumulator: 0, PSW: 131 [--X-----ZS])
+END of the simulation
