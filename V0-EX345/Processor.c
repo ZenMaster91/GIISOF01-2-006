@@ -153,7 +153,7 @@ void Processor_DecodeAndExecuteInstruction() {
 			  break;
 	}
 	// Show final part of HARDWARE message with	CPU registers
-	ComputerSystem_DebugMessage(3,HARDWARE,registerPC_CPU,registerAccumulator_CPU,registerPSW_CPU);
+	ComputerSystem_DebugMessage(3,HARDWARE,registerPC_CPU,registerAccumulator_CPU,registerPSW_CPU); // Exercise 1
 }
 
 // Hardware interrup processing

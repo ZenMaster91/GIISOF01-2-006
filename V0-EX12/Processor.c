@@ -59,7 +59,7 @@ void Processor_FetchInstruction() {
 	sprintf(result,"%02X %03X %03X",((registerIR_CPU.cell>>24)&0xff),((registerIR_CPU.cell>>12)&0xfff),(registerIR_CPU.cell&0xfff));
 	ComputerSystem_DebugMessage(1, HARDWARE, Processor_DecodeOperationCode(registerIR_CPU), Processor_DecodeOperand1(registerIR_CPU), Processor_DecodeOperand2(registerIR_CPU), result);
 
-}	
+}
 
 // Decode and execute the instruction in the IR register
 void Processor_DecodeAndExecuteInstruction() {
@@ -70,29 +70,29 @@ void Processor_DecodeAndExecuteInstruction() {
 
 	// Execute
 	switch (operationCode) {
-	  
+
 		// Instruction ADD
 		// case 'a': registerAccumulator_CPU= registerIR_CPU.operand1 + registerIR_CPU.operand2;
 		case 'a': registerAccumulator_CPU= operand1 + operand2;
 			  registerPC_CPU++;
 			  break;
-		
+
 		// Instruction SHIFT (SAL and SAR)
-		case 's': 
+		case 's':
 			  operand1<0 ? (registerAccumulator_CPU <<= (-operand1)) : (registerAccumulator_CPU >>= operand1);
 			  registerPC_CPU++;
 			  break;
-		
-		
+
+
 		// Instruction NOP
 		case 'n': registerPC_CPU++;
 			  break;
-			  
+
 		// Instruction JUMP
 		// case 'j': registerPC_CPU+= registerIR_CPU.operand1;
 		case 'j': registerPC_CPU+= operand1;
 			  break;
-			  
+
 		// Instruction ZJUMP
 		case 'z': if (registerAccumulator_CPU==0)
 				  // registerPC_CPU+= registerIR_CPU.operand1;
@@ -137,15 +137,15 @@ void Processor_DecodeAndExecuteInstruction() {
 		// Instruction HALT
 		case 'h': registerPSW_CPU=POWEROFF;
 			  break;
-			  
+
 		// Unknown instruction
 		default : registerPC_CPU++;
 			  break;
 	}
 	// Show final part of HARDWARE message with	CPU registers
-	ComputerSystem_DebugMessage(3,HARDWARE,registerPC_CPU,registerAccumulator_CPU,registerPSW_CPU);
+	ComputerSystem_DebugMessage(3,HARDWARE,registerPC_CPU,registerAccumulator_CPU,registerPSW_CPU); // Exercise 1
 }
-	
+
 // Hardware interrup processing
 // Our primitive processor DOES NOT SUPPORT interrupts
 void Processor_ManageInterrupts() {
@@ -173,7 +173,7 @@ void Processor_SetMBR(MEMORYCELL *fromRegister) {
 }
 
 int Processor_Encode(char opCode, int op1, int op2) {
-	int mask=0x7ff; // binary: 0111 1111 1111 
+	int mask=0x7ff; // binary: 0111 1111 1111
 	int sigOp1=op1<0;
 	op1=sigOp1 ? ((-op1) & mask) : (op1 & mask);
 	int sigOp2=op2<0;
@@ -201,4 +201,3 @@ int Processor_DecodeOperand2(MEMORYCELL memCell) {
 	op2=sigOp2?-op2:op2;
 	return op2;
 }
-
