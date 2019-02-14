@@ -29,6 +29,21 @@ JUMP -4       // Go to the write instruction.
 HALT
 
 ```
+  
+Output of ./Simulator | grep w:
+```
+w 100 0 [77 064 000](PC: 232, Accumulator: 8, PSW: 00000080)
+w 100 0 [77 064 000](PC: 234, Accumulator: 9, PSW: 00000080)
+w 100 0 [77 064 000](PC: 234, Accumulator: 10, PSW: 00000080)
+w 100 0 [77 064 000](PC: 234, Accumulator: 11, PSW: 00000080)
+w 100 0 [77 064 000](PC: 234, Accumulator: 12, PSW: 00000080)
+w 100 0 [77 064 000](PC: 234, Accumulator: 13, PSW: 00000080)
+w 100 0 [77 064 000](PC: 234, Accumulator: 14, PSW: 00000080)
+w 100 0 [77 064 000](PC: 234, Accumulator: 15, PSW: 00000080)
+w 100 0 [77 064 000](PC: 234, Accumulator: 16, PSW: 00000080)
+w 100 0 [77 064 000](PC: 234, Accumulator: 17, PSW: 00000080)
+w 100 0 [77 064 000](PC: 234, Accumulator: 18, PSW: 00000080)
+```
 
 ## Exercise 5
 **V0-Example1**
@@ -44,3 +59,19 @@ JUMP -5           // Go to the write instruction.
 HALT
 
 ```
+  
+Output of ./Simulator | grep w:
+```
+w 100 0 [77 064 000](PC: 232, Accumulator: 1024, PSW: 00000080)
+w 100 0 [77 064 000](PC: 232, Accumulator: 512, PSW: 00000080)
+w 100 0 [77 064 000](PC: 232, Accumulator: 256, PSW: 00000080)
+w 100 0 [77 064 000](PC: 232, Accumulator: 128, PSW: 00000080)
+w 100 0 [77 064 000](PC: 232, Accumulator: 64, PSW: 00000080)
+w 100 0 [77 064 000](PC: 232, Accumulator: 32, PSW: 00000080)
+w 100 0 [77 064 000](PC: 232, Accumulator: 16, PSW: 00000080)
+w 100 0 [77 064 000](PC: 232, Accumulator: 8, PSW: 00000080)
+w 100 0 [77 064 000](PC: 232, Accumulator: 4, PSW: 00000080)
+w 100 0 [77 064 000](PC: 232, Accumulator: 2, PSW: 00000080)
+w 100 0 [77 064 000](PC: 232, Accumulator: 1, PSW: 00000080)
+```
+
