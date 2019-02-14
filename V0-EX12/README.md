@@ -4,7 +4,7 @@
 3,(PC: @R%d@@, Accumulator: @R%d@@, PSW: @R%x@@)\n
 ```
 
-**ComputerSystem.c**
+**Processor.c**
 ```C
 // Powers off the CS (the C program ends)
 void Processor_DecodeAndExecuteInstruction() {
