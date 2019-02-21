@@ -6,5 +6,4 @@ SHIFT 1           // Arithmetic shift to divide over the power of 2
 INC 0             // When we reach 1 the result will be 0 and therefore the zero flag 1
 ZJUMP 2           // When zero flag = 1 then jump 2 instructions to the halt
 JUMP -5           // Go to the write instruction.
-HALT
-
+TRAP 3
