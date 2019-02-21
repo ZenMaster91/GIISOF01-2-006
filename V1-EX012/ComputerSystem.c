@@ -26,6 +26,9 @@ void ComputerSystem_PowerOn(int argc, char *argv[]) {
 	// Obtain a list of programs in the command line and debus sections
 	int daemonsBaseIndex = ComputerSystem_ObtainProgramList(argc, argv);
 
+	// Print the program list
+	ComputerSystem_PrintProgramList();
+
 	int na=Asserts_LoadAsserts();
 	if (na==-1)
 		// printf("Asserts file unavailable\n");
@@ -33,9 +36,6 @@ void ComputerSystem_PowerOn(int argc, char *argv[]) {
 	else
 		// printf("%d Asserts Loaded\n",na);
 		ComputerSystem_DebugMessage(85,POWERON,na);
-
-	// Print the program list
-	ComputerSystem_PrintProgramList();
 
 	// Request the OS to do the initial set of tasks. The last one will be
 	// the processor allocation to the process with the highest priority
