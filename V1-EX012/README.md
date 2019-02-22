@@ -32,6 +32,12 @@ void ComputerSystem_PrintProgramList() {
 }
 ```
 
+**messagesSTD.txt**
+```
+101, User program list:\n
+102, \t\t Program [@C%s@@] with arrival time [@C%d@@]\n
+```
+
 ## Exercise 2
 **ComputerSystem.c**
 ```C
