@@ -4,7 +4,7 @@
 void Processor_DecodeAndExecuteInstruction() {
 ...
   // Instruction  MEMADD operand1 memAdress
-	case 'm':
+  case 'm':
     registerMAR_CPU = operand2;
     // Send to the main memory controller the address in which the reading has to take place: use the address bus for this
     Buses_write_AddressBus_From_To(CPU,MMU);
