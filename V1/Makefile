@@ -8,10 +8,10 @@ PROGRAM = 	Simulator
 # Compilation Details
 SHELL = /bin/sh
 CC = cc
-STDCFLAGS = -g -c -Wall -std=gnu90 
+STDCFLAGS = -g -c -Wall -std=gnu90
 INCLUDES =
 LIBRERIAS =
-ACC = /usr/share/ACC/bin/acc
+ACC = ../ACC/bin/acc
 
 ${PROGRAM}: Simulator.o Aspect.o Asserts.o Buses.o Clock.o ComputerSystem.o ComputerSystemBase.o Heap.o MainMemory.o Messages.o MMU.o OperatingSystemAspect.o OperatingSystemBase.o ProcessorAspect.o ProcessorBase.o
 	$(CC) -o ${PROGRAM} Simulator.o Aspect.o Asserts.o Buses.o Clock.o ComputerSystem.o ComputerSystemBase.o Heap.o MainMemory.o Messages.o MMU.o OperatingSystemAspect.o OperatingSystemBase.o ProcessorAspect.o ProcessorBase.o $(LIBRERIAS)

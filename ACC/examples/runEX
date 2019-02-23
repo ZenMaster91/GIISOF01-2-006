@@ -1,0 +1,50 @@
+#!/bin/bash
+
+#it accepts a list of directories containing examples
+#run example under each directory
+#report the final results
+
+if [ $# -eq 0 ]
+then
+	echo "usage: runEX ex01 ex02 ..."
+	exit
+fi
+
+total=0
+succ=0
+fail=0
+space=" "
+while [ $# -gt 0 ]
+do
+     cname=$1
+     cd $1
+     total=`expr $total + 1` 
+     logfilename=log_$1
+     make > ../$logfilename 2>&1
+     res=$?
+     printf "Building Example: $cname ........"
+     if [ $res -eq 0 ]
+     then
+	succ=`expr $succ + 1`
+        succName=$succName$space$cname
+        rm -rf ../$logfilename
+        printf "success\n"
+     else
+	fail=`expr $fail + 1`
+	failName=$failName$space$cname
+        printf "fail\n"
+     fi
+     cd ..
+     shift
+done
+
+
+echo "Example result:"
+echo "total=$total, succeed = $succ , fail = $fail"
+
+if [ $fail -gt 0 ]
+then
+	echo "fail example: $failName"
+	echo "see log file for details"
+fi
+
