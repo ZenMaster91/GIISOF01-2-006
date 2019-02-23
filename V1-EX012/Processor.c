@@ -24,17 +24,17 @@ int registerA_CPU; // General purpose register
 
 int interruptLines_CPU; // Processor interrupt lines
 
-// interrupt vector table: an array of handle interrupt memory addresses routines  
+// interrupt vector table: an array of handle interrupt memory addresses routines
 int interruptVectorTable[INTERRUPTTYPES];
 
 // For PSW show "--------X---FNZS"
-char pswmask []="----------------"; 
+char pswmask []="----------------";
 
 // Initialization of the interrupt vector table
 void Processor_InitializeInterruptVectorTable(int interruptVectorInitialAddress) {
 	int i;
 	for (i=0; i< INTERRUPTTYPES;i++)  // Inicialice all to inicial YRET
-		interruptVectorTable[i]=interruptVectorInitialAddress-1;  
+		interruptVectorTable[i]=interruptVectorInitialAddress-1;
 
 	interruptVectorTable[SYSCALL_BIT]=interruptVectorInitialAddress;  // SYSCALL_BIT=2
 	interruptVectorTable[EXCEPTION_BIT]=interruptVectorInitialAddress+2; // EXCEPTION_BIT=6
@@ -94,46 +94,59 @@ void Processor_DecodeAndExecuteInstruction() {
 
 	// Execute
 	switch (operationCode) {
-	  
+
 		// Instruction ADD
-		case 'a': registerAccumulator_CPU= operand1 + operand2;
+		case 'a':
+			registerAccumulator_CPU= operand1 + operand2;
 			Processor_CheckOverflow(operand1,operand2);
 			registerPC_CPU++;
 			break;
-		
+
+		// Instruction  MEMADD operand1 memAdress
+		case 'm':
+			registerMAR_CPU = operand2;
+			// Send to the main memory controller the address in which the reading has to take place: use the address bus for this
+			Buses_write_AddressBus_From_To(CPU,MMU);
+			// Tell the main memory controller to read
+			MMU_readMemory();
+			registerAccumulator_CPU = operand1 + registerMBR_CPU.cell;
+			Processor_CheckOverflow(operand1, registerMBR_CPU.cell);
+			registerPC_CPU++;
+			break;
+
 		// Instruction SHIFT (SAL and SAR)
-		case 's': 
+		case 's':
 			  operand1<0 ? (registerAccumulator_CPU <<= (-operand1)) : (registerAccumulator_CPU >>= operand1);
 			  registerPC_CPU++;
 			  break;
-		
+
 		// Instruction DIV
 		case 'd':
 			if (operand2 == 0)
-				Processor_RaiseInterrupt(EXCEPTION_BIT); 
+				Processor_RaiseInterrupt(EXCEPTION_BIT);
 			else {
 				registerAccumulator_CPU=operand1 / operand2;
 				registerPC_CPU++;
 			}
 			break;
-			  
+
 		// Instruction TRAP
 		case 't':
 			Processor_RaiseInterrupt(SYSCALL_BIT);
 			registerA_CPU=operand1;
 			registerPC_CPU++;
 			break;
-		
+
 		// Instruction NOP
 		case 'n':
 			registerPC_CPU++;
 			break;
-			  
+
 		// Instruction JUMP
 		case 'j':
 			registerPC_CPU+= operand1;
 			break;
-			  
+
 		// Instruction ZJUMP
 		case 'z':  // Jump if ZERO_BIT on
 			if (Processor_PSW_BitState(ZERO_BIT))
@@ -179,13 +192,13 @@ void Processor_DecodeAndExecuteInstruction() {
 		case 'h':
 			Processor_ActivatePSW_Bit(POWEROFF_BIT);
 			break;
-			  
+
 		// Instruction OS
 		case 'o': // Make a operating system routine in entry point indicated by operand1
 			// Show final part of HARDWARE message with CPU registers
 			// Show message: " (PC: registerPC_CPU, Accumulator: registerAccumulator_CPU, PSW: registerPSW_CPU [Processor_ShowPSW()]\n
 			ComputerSystem_DebugMessage(3, HARDWARE,operationCode,operand1,operand2,registerPC_CPU,registerAccumulator_CPU,registerPSW_CPU,Processor_ShowPSW());
-			// Not all operating system code is executed in simulated processor, but really must do it... 
+			// Not all operating system code is executed in simulated processor, but really must do it...
 			OperatingSystem_InterruptLogic(operand1);
 			registerPC_CPU++;
 			// Update PSW bits (ZERO_BIT, NEGATIVE_BIT, ...)
@@ -198,34 +211,24 @@ void Processor_DecodeAndExecuteInstruction() {
 			registerPSW_CPU=Processor_CopyFromSystemStack(MAINMEMORYSIZE-2);
 			break;
 
-		// Instruction  MEMADD operand1 memAdress
-  		case 'm': registerMAR_CPU = operand2;
-    			// Send to the main memory controller the address in which the reading has to take place: use the address bus for this
-    			Buses_write_AddressBus_From_To(CPU,MMU);
-    			// Tell the main memory controller to read
-    			MMU_readMemory();
-    			registerAccumulator_CPU = operand1 + registerMBR_CPU.cell;
-    			Processor_CheckOverflow(operand1, registerMBR_CPU.cell);
-			registerPC_CPU++;
-			break;
 		// Unknown instruction
-		default : 
+		default :
 			registerPC_CPU++;
 			break;
 	}
-	
+
 	// Update PSW bits (ZERO_BIT, NEGATIVE_BIT, ...)
 	Processor_UpdatePSW();
-	
+
 	// Show final part of HARDWARE message with	CPU registers
 	// Show message: " (PC: registerPC_CPU, Accumulator: registerAccumulator_CPU, PSW: registerPSW_CPU [Processor_ShowPSW()]\n
 	ComputerSystem_DebugMessage(3, HARDWARE, operationCode,operand1,operand2,registerPC_CPU,registerAccumulator_CPU,registerPSW_CPU,Processor_ShowPSW());
 }
-	
-	
+
+
 // Hardware interrupt processing
 void Processor_ManageInterrupts() {
-  
+
 	int i;
 
 		for (i=0;i<INTERRUPTTYPES;i++)
@@ -235,7 +238,7 @@ void Processor_ManageInterrupts() {
 				Processor_ACKInterrupt(i);
 				// Copy PC and PSW registers in the system stack
 				Processor_CopyInSystemStack(MAINMEMORYSIZE-1, registerPC_CPU);
-				Processor_CopyInSystemStack(MAINMEMORYSIZE-2, registerPSW_CPU);	
+				Processor_CopyInSystemStack(MAINMEMORYSIZE-2, registerPSW_CPU);
 				// Activate protected excution mode
 				Processor_ActivatePSW_Bit(EXECUTION_MODE_BIT);
 				// Call the appropriate OS interrupt-handling routine setting PC register

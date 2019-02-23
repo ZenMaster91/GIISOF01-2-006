@@ -26,6 +26,9 @@ void ComputerSystem_PowerOn(int argc, char *argv[]) {
 	// Obtain a list of programs in the command line and debus sections
 	int daemonsBaseIndex = ComputerSystem_ObtainProgramList(argc, argv);
 
+	// Print the program list
+	ComputerSystem_PrintProgramList();
+
 	int na=Asserts_LoadAsserts();
 	if (na==-1)
 		// printf("Asserts file unavailable\n");
@@ -33,33 +36,30 @@ void ComputerSystem_PowerOn(int argc, char *argv[]) {
 	else
 		// printf("%d Asserts Loaded\n",na);
 		ComputerSystem_DebugMessage(85,POWERON,na);
-	
-	// Print the program list
-	ComputerSystem_PrintProgramList();
 
 	// Request the OS to do the initial set of tasks. The last one will be
 	// the processor allocation to the process with the highest priority
 	OperatingSystem_Initialize(daemonsBaseIndex);
-	
-	// Tell the processor to begin its instruction cycle 
+
+	// Tell the processor to begin its instruction cycle
 	Processor_InstructionCycleLoop();
-	
+
 }
 
 // Powers off the CS (the C program ends)
 void ComputerSystem_PowerOff() {
-	// Show message in red colour: "END of the simulation\n" 
-	ComputerSystem_DebugMessage(99,SHUTDOWN); 
+	// Show message in red colour: "END of the simulation\n"
+	ComputerSystem_DebugMessage(99,SHUTDOWN);
 	exit(0);
 }
 
 /////////////////////////////////////////////////////////
 //  New functions below this line  //////////////////////
 void ComputerSystem_PrintProgramList() {
-	ComputerSystem_DebugMessage(101, POWERON);
+	ComputerSystem_DebugMessage(101, INIT);
 	int i;
-	for (i=0; programList[i]!=NULL && i<PROGRAMSMAXNUMBER ; i++) {
-        	ComputerSystem_DebugMessage(102,POWERON, programList[i]->executableName, programList[i]->arrivalTime);
+	for (i=1; programList[i]!=NULL && i<PROGRAMSMAXNUMBER ; i++) {
+        	ComputerSystem_DebugMessage(102,INIT,programList[i]->executableName,programList[i]->arrivalTime);
         }
 
 }

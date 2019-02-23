@@ -1373,8 +1373,21 @@ void Processor_DecodeAndExecuteInstruction() {
  switch (operationCode) {
 
 
-  case 'a': registerAccumulator_CPU= operand1 + operand2;
+  case 'a':
+   registerAccumulator_CPU= operand1 + operand2;
    Processor_CheckOverflow(operand1,operand2);
+   registerPC_CPU++;
+   break;
+
+
+  case 'm':
+   registerMAR_CPU = operand2;
+
+   Buses_write_AddressBus_From_To(CPU,MMU);
+
+   MMU_readMemory();
+   registerAccumulator_CPU = operand1 + registerMBR_CPU.cell;
+   Processor_CheckOverflow(operand1, registerMBR_CPU.cell);
    registerPC_CPU++;
    break;
 
@@ -1475,16 +1488,6 @@ void Processor_DecodeAndExecuteInstruction() {
    registerPSW_CPU=Processor_CopyFromSystemStack(300 -2);
    break;
 
-
-    case 'm': registerMAR_CPU = operand2;
-
-       Buses_write_AddressBus_From_To(CPU,MMU);
-
-       MMU_readMemory();
-       registerAccumulator_CPU = operand1 + registerMBR_CPU.cell;
-       Processor_CheckOverflow(operand1, registerMBR_CPU.cell);
-   registerPC_CPU++;
-   break;
 
   default :
    registerPC_CPU++;

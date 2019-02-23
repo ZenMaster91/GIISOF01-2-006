@@ -1,5 +1,8 @@
-# Prerequisites
+# Prerequisites 
 *.d
+
+# Simulator
+*/Simulator
 
 # Compiled Object files
 *.slo
