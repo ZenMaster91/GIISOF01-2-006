@@ -47,6 +47,7 @@ int Clock_GetTime();
 enum assertList {RMEM_OP=0,RMEM_O1=1,RMEM_O2=2,AMEM_OP=3,AMEM_O1=4,AMEM_O2=5,PC=6,ACC=7,IR_OP=8,IR_O1=9,IR_O2=10,PSW=11,MAR=12,MBR_OP=13,MBR_O1=14,MBR_O2=15,MMU_BS=16,MMU_LM=17,MMU_MAR=18,MMEM_MAR=19,MMBR_OP=20,MMBR_O1=21,MMBR_O2=22,XPID=23}; 
 #line 41 "Asserts.h"
 typedef struct {int time; int value; char element[8]; int address; 
+__ac__type__insert@ASSERT_DATA__ac__type__insert__end@
 }ASSERT_DATA; 
 #line 44 "Asserts.h"
 int Asserts_LoadAsserts(); 
