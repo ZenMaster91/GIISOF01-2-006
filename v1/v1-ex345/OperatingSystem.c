@@ -128,6 +128,9 @@ int OperatingSystem_LongTermScheduler() {
 			case PROGRAMDOESNOTEXIST:
 				ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"it does not exists");
 				break;
+			case PROGRAMNOTVALID:
+    				ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"invalid priority or size");
+				break;
 			default:
 				numberOfSuccessfullyCreatedProcesses++;
 		}
