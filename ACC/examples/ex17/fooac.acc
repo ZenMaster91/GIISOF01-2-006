@@ -1,6 +1,0 @@
-#include <stdio.h>
-
-before() : get(int a) {
-	printf("aspect, before get variable a \n");
-}
-

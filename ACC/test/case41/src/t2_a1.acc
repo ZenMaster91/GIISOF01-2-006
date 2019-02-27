@@ -1,5 +1,0 @@
-
-
-before():cflow(call($ $(...))) {
-	printf("before aspect c1: func = %s, type = %s \n", this->funcName, this->kind);
-}

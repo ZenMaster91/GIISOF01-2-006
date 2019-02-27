@@ -1,5 +1,0 @@
-before(): call(int foo()) {
-	printf("aspect \n");
-}
-
-

@@ -1,9 +1,0 @@
-#include <stdio.h>
-
-void around(): call(void foo(char *)) {
-		
-	printf("in around advice: start\n");
-	proceed();
-	printf("in around advice: end\n");
-}
-

@@ -1,3 +1,0 @@
-A test case created for test infile() and infunc() implementation.
-
-infile() should point to the original source file, instead of the preprocessed file.

@@ -1,6 +1,0 @@
-aspect 1 : 
-in foo, i = 3
-aspect 1 end 
-aspect 2 :
-in foo2, i = 4
-aspect 2 end 

@@ -1,1 +1,0 @@
-bug fix: add file name to the generated wrapper function name to avoid naming conflict when "acc" compiles source file separately.

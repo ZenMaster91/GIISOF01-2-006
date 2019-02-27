@@ -1,2 +1,0 @@
-aspect, before call foo 
-inside foo

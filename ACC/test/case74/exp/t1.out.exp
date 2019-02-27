@@ -1,3 +1,0 @@
-aspect1: before foo
-aspect2: before foo
-in foo, a = 1

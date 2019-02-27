@@ -1,2 +1,0 @@
-inside foo, a = abcde
-aspect: after call foo, param1 = abcde , return value = 99

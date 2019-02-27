@@ -1,3 +1,0 @@
-in foo1
-before advice 
-return value of foo1 = 99 

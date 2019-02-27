@@ -1,3 +1,0 @@
-before(): get(int * a) {
-	printf("aspect, match get(int *a)\n");
-}

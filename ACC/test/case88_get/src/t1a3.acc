@@ -1,9 +1,0 @@
-int around(): get(int a) {
-	int res ;
-	printf("aspect: around get global a\n");
-	printf("call proceed();\n");
-	
-	res = proceed() + 2;
-	return res;
-}
-

@@ -1,3 +1,0 @@
-feature work:
-  expose context inside a cflow().
-

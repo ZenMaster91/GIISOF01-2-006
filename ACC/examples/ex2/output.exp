@@ -1,3 +1,0 @@
-in around advice: start
-inside foo, a = abcde
-in around advice: end

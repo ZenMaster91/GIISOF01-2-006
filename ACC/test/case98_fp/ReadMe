@@ -1,2 +1,0 @@
-bug fix: call a function by function pointer directly, instead of dereferencing it.
-

@@ -1,8 +1,0 @@
-before(): get(int a) {
-	printf("aspect: before get global a\n");
-}
-
-after(): get(int a) {
-	printf("aspect: after get global a\n");
-}
-

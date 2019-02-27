@@ -1,3 +1,0 @@
-before(): set(int * a) {
-	printf("aspect, match set(int *a)\n");
-}
