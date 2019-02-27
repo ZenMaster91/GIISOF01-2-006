@@ -1,50 +1,68 @@
-## Exercise 0
-**Processor.c**
+## Exercise 4-a
+**OperatingSystem.c**
 ```C
-void Processor_DecodeAndExecuteInstruction() {
-...
-  // Instruction  MEMADD operand1 memAdress
-  case 'm':
-    registerMAR_CPU = operand2;
-    // Send to the main memory controller the address in which the reading has to take place: use the address bus for this
-    Buses_write_AddressBus_From_To(CPU,MMU);
-    // Tell the main memory controller to read
-    MMU_readMemory();
-    registerAccumulator_CPU = operand1 + registerMBR_CPU.cell;
-    Processor_CheckOverflow(operand1, registerMBR_CPU.cell);
-    registerPC_CPU++;
-    break;
-}
+int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
+  ...
+  // Obtain a process ID
+  PID=OperatingSystem_ObtainAnEntryInTheProcessTable();
+
+  // If NOFREEENTRY occurs return the NOFREEENTRY.
+  if(PID==NOFREEENTRY){
+    return PID;
+  }
+  ...
 ```
 
-## Exercise 1
-**ComputerSystem.c**
+## Exercise 4-b
+**OperatingSystem.c**
 ```C
-void ComputerSystem_PrintProgramList();
+switch (PID) {
+  case NOFREEENTRY:
+    ComputerSystem_DebugMessage(103,ERROR,programList[i]->executableName);
+    break;
 ...
-
-void ComputerSystem_PrintProgramList() {
-  ComputerSystem_DebugMessage(101, INIT);
-  int i;
-  for (i=1; programList[i]!=NULL && i<PROGRAMSMAXNUMBER ; i++) {
-    ComputerSystem_DebugMessage(102,INIT,programList[i]->executableName,programList[i]->arrivalTime);
-  }
+  default:
+    numberOfSuccessfullyCreatedProcesses++;
 }
 ```
 
 **messagesSTD.txt**
 ```
-101, User program list:\n
-102, \t\t Program [@C%s@@] with arrival time [@C%d@@]\n
+103,@RERROR: There are not free entries in the process table for the program[%s]@@\n
 ```
 
-## Exercise 2
-**ComputerSystem.c**
+## Exercise 5
+**OperatingSystem.c**
 ```C
-void ComputerSystem_PowerOn(int argc, char *argv[]) {
-  ...
-  int daemonsBaseIndex = ComputerSystem_ObtainProgramList(argc, argv);
-  void ComputerSystem_PrintProgramList(); // Added call to the Ex1 impl. func.
-  ...
+// LongTermScheduler
+switch (PID) {
+  case NOFREEENTRY:
+    ComputerSystem_DebugMessage(103,ERROR,programList[i]->executableName);
+    break;
+  case PROGRAMDOESNOTEXIST:
+    ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"it does not exists");
+    break;
+  case PROGRAMNOTVALID:
+    ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"invalid priority or size");
+    break;
+  default:
+    numberOfSuccessfullyCreatedProcesses++;
 }
+
+...
+// CreateProcess function  
+// If the program is not valid
+if(processSize==PROGRAMNOTVALID){
+  return processSize;
+}
+  
+// If the program does not exists
+if(processSize==PROGRAMDOESNOTEXIST){
+  return processSize;
+}
+```
+
+**messagesSTD.txt**
+```
+104, @RERROR: 104,@RERROR: Program [%s] is not valid [--- %s ---]@@\n
 ```
