@@ -131,6 +131,9 @@ int OperatingSystem_LongTermScheduler() {
 			case PROGRAMNOTVALID:
     				ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"invalid priority or size");
 				break;
+			case TOOBIGPROCESS:
+				ComputerSystem_DebugMessage(105,ERROR,programList[i]->executableName);
+				break;
 			default:
 				numberOfSuccessfullyCreatedProcesses++;
 		}
@@ -169,23 +172,33 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 
 	// If the program is not valid
 	if(processSize==PROGRAMNOTVALID){
-		return processSize;
+		return PROGRAMNOTVALID;
 	}
 
 	// If the program does not exists
 	if(processSize==PROGRAMDOESNOTEXIST){
-		return processSize;
+		return PROGRAMDOESNOTEXIST;
 	}
 
 	// Obtain the priority for the process
 	priority=OperatingSystem_ObtainPriority(programFile);
 
+	// If the program is not valid
+        if(priority==PROGRAMNOTVALID){
+                return PROGRAMNOTVALID;
+        }
+
 	// Obtain enough memory space
  	loadingPhysicalAddress=OperatingSystem_ObtainMainMemory(processSize, PID);
+	if(loadingPhysicalAddress == TOOBIGPROCESS) {
+		return TOOBIGPROCESS;
+	}
 
 	// Load program in the allocated memory
-	OperatingSystem_LoadProgram(programFile, loadingPhysicalAddress, processSize);
-
+	// If the process is too big
+	if( OperatingSystem_LoadProgram(programFile, loadingPhysicalAddress, processSize) == TOOBIGPROCESS){
+		return TOOBIGPROCESS;
+	}
 	// PCB initialization
 	OperatingSystem_PCBInitialization(PID, loadingPhysicalAddress, processSize, priority, indexOfExecutableProgram);
 
