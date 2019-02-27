@@ -125,6 +125,9 @@ int OperatingSystem_LongTermScheduler() {
 			case NOFREEENTRY:
 				ComputerSystem_DebugMessage(103,ERROR,programList[i]->executableName);
 				break;
+			case PROGRAMDOESNOTEXIST:
+				ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"it does not exists");
+				break;
 			default:
 				numberOfSuccessfullyCreatedProcesses++;
 		}
@@ -160,6 +163,16 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 
 	// Obtain the memory requirements of the program
 	processSize=OperatingSystem_ObtainProgramSize(&programFile, executableProgram->executableName);
+
+	// If the program is not valid
+	if(processSize==PROGRAMNOTVALID){
+		return processSize;
+	}
+
+	// If the program does not exists
+	if(processSize==PROGRAMDOESNOTEXIST){
+		return processSize;
+	}
 
 	// Obtain the priority for the process
 	priority=OperatingSystem_ObtainPriority(programFile);

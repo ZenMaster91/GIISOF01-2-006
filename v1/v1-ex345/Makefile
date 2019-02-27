@@ -11,7 +11,7 @@ CC = cc
 STDCFLAGS = -g -c -Wall -std=gnu90
 INCLUDES =
 LIBRERIAS =
-ACC = ../../ACC/bin/acc
+ACC = /usr/share/ACC/bin/acc
 
 ${PROGRAM}: Simulator.o Aspect.o Asserts.o Buses.o Clock.o ComputerSystem.o ComputerSystemBase.o Heap.o MainMemory.o Messages.o MMU.o OperatingSystemAspect.o OperatingSystemBase.o ProcessorAspect.o ProcessorBase.o
 	$(CC) -o ${PROGRAM} Simulator.o Aspect.o Asserts.o Buses.o Clock.o ComputerSystem.o ComputerSystemBase.o Heap.o MainMemory.o Messages.o MMU.o OperatingSystemAspect.o OperatingSystemBase.o ProcessorAspect.o ProcessorBase.o $(LIBRERIAS)
