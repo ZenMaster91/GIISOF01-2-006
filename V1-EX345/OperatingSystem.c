@@ -123,7 +123,7 @@ int OperatingSystem_LongTermScheduler() {
 
 		switch (PID) {
 			case NOFREEENTRY:
-				ComputerSystem_DebugMessage(103,ERROR,userProgramsList[i]->executableName);
+				ComputerSystem_DebugMessage(103,ERROR,programList[i]->executableName);
 				break;
 			default:
 				numberOfSuccessfullyCreatedProcesses++;
