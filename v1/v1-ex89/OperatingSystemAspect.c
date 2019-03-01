@@ -2204,13 +2204,19 @@ int i,processPID;
 for(i = 0;i < numberOfReadyToRunProcesses;i++) { { 
 #line 408 "OperatingSystem.c"
 processPID = readyToRunQueue[i]; 
-#line 411 "OperatingSystem.c"
-ComputerSystem_DebugMessage(107, 's', processPID, processTable[processPID].priority); } } 
-# 2210 "OperatingSystemAspect.c"
+#line 410 "OperatingSystem.c"
+if (i == numberOfReadyToRunProcesses - 1){
+{ 
+#line 412 "OperatingSystem.c"
+ComputerSystem_DebugMessage(107, 's', processPID, processTable[processPID].priority, "\n"); } }else{
+{ 
+#line 414 "OperatingSystem.c"
+ComputerSystem_DebugMessage(107, 's', processPID, processTable[processPID].priority, ", "); } }} } 
+# 2216 "OperatingSystemAspect.c"
 
 }
 
-# 2214 "OperatingSystemAspect.c"
+# 2220 "OperatingSystemAspect.c"
 
 }
  

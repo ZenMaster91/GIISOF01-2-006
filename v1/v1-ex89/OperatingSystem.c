@@ -407,8 +407,12 @@ void OperatingSystem_PrintReadyToRunQueue(){
 		// Getting the PID of the process in the rTRQ.
 		processPID = readyToRunQueue[i];
 
-		// Debug message for the computed PID.
-		ComputerSystem_DebugMessage(107,SHORTTERMSCHEDULE,processPID,processTable[processPID].priority);
+		if(i == numberOfReadyToRunProcesses-1) {
+			// Debug message for the computed PID.
+			ComputerSystem_DebugMessage(107,SHORTTERMSCHEDULE,processPID,processTable[processPID].priority,"\n");
+		} else {
+			ComputerSystem_DebugMessage(107,SHORTTERMSCHEDULE,processPID,processTable[processPID].priority,", ");
+		}
 	}
 
 }
