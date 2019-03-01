@@ -1,68 +1,51 @@
-## Exercise 4-a
+## Exercise 8
+**OperatingSystem.h**
+```C
+INITIALPID = 3;
+  ...
+```
+
+## Exercise 9-a
 **OperatingSystem.c**
 ```C
-int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
-  ...
-  // Obtain a process ID
-  PID=OperatingSystem_ObtainAnEntryInTheProcessTable();
+// Exercise 9 function, print the ready-to-run queue
+void OperatingSystem_PrintReadyToRunQueue(){
+  // rTRQ contains 2,3,4,5,1 (PDIs)
+  // not all valid. numberOfReadyToRunProcesses
+  // valid indexes. Priotiries are in the processTable
+  ComputerSystem_DebugMessage(106, SHORTTERMSCHEDULE);
+  int i, processPID;
+  for(i=0; i<numberOfReadyToRunProcesses; i++) {
+    // Getting the PID of the process in the rTRQ.
+    processPID = readyToRunQueue[i];
 
-  // If NOFREEENTRY occurs return the NOFREEENTRY.
-  if(PID==NOFREEENTRY){
-    return PID;
+    if(i == numberOfReadyToRunProcesses-1) {
+      // Debug message for the computed PID.
+      ComputerSystem_DebugMessage(107,SHORTTERMSCHEDULE,processPID,processTable[processPID].priority,"\n");
+    } else {
+      ComputerSystem_DebugMessage(107,SHORTTERMSCHEDULE,processPID,processTable[processPID].priority,", ");
+    }
   }
-  ...
-```
-
-## Exercise 4-b
-**OperatingSystem.c**
-```C
-switch (PID) {
-  case NOFREEENTRY:
-    ComputerSystem_DebugMessage(103,ERROR,programList[i]->executableName);
-    break;
-...
-  default:
-    numberOfSuccessfullyCreatedProcesses++;
 }
 ```
 
 **messagesSTD.txt**
 ```
-103,@RERROR: There are not free entries in the process table for the program[%s]@@\n
+106,Ready-to-run processes queue:\n\t
+107,[@G%d@@,%d]%s
 ```
 
-## Exercise 5
+## Exercise 9-b
 **OperatingSystem.c**
 ```C
-// LongTermScheduler
-switch (PID) {
-  case NOFREEENTRY:
-    ComputerSystem_DebugMessage(103,ERROR,programList[i]->executableName);
-    break;
-  case PROGRAMDOESNOTEXIST:
-    ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"it does not exists");
-    break;
-  case PROGRAMNOTVALID:
-    ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"invalid priority or size");
-    break;
-  default:
-    numberOfSuccessfullyCreatedProcesses++;
+// Move a process to the READY state: it will be inserted, depending on its priority, in
+// a queue of identifiers of READY processes
+void OperatingSystem_MoveToTheREADYState(int PID) {
+
+  if (Heap_add(PID, readyToRunQueue,QUEUE_PRIORITY ,&numberOfReadyToRunProcesses ,PROCESSTABLEMAXSIZE)>=0) {
+    processTable[PID].state=READY;
+    OperatingSystem_PrintReadyToRunQueue();
+    }
 }
 
-...
-// CreateProcess function  
-// If the program is not valid
-if(processSize==PROGRAMNOTVALID){
-  return processSize;
-}
-  
-// If the program does not exists
-if(processSize==PROGRAMDOESNOTEXIST){
-  return processSize;
-}
-```
-
-**messagesSTD.txt**
-```
-104, @RERROR: 104,@RERROR: Program [%s] is not valid [--- %s ---]@@\n
 ```
