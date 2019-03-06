@@ -142,12 +142,12 @@ int OperatingSystem_LongTermScheduler() {
 				break;
 			default:
 				numberOfSuccessfullyCreatedProcesses++;
+
+				if (programList[i]->type==USERPROGRAM)
+					numberOfNotTerminatedUserProcesses++;
+				// Move process to the ready state
+				OperatingSystem_MoveToTheREADYState(PID);
 		}
-		
-		if (programList[i]->type==USERPROGRAM)
-			numberOfNotTerminatedUserProcesses++;
-		// Move process to the ready state
-		OperatingSystem_MoveToTheREADYState(PID);
 	}
 
 	// Return the number of succesfully created processes
@@ -246,7 +246,8 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int 
 	}
 
 	// Printing the new state sentence from ex 10
-	// ComputerSystem_DebugMessage(111,SYSPROC,PID,programList[processPLIndex]->executableName,statesNames[NEW]);
+	ComputerSystem_DebugMessage(111,SYSPROC,PID,programList[processPLIndex]->executableName,statesNames[NEW]);
+	//ComputerSystem_DebugMessage(111,SYSPROC,5,"processNmae","NEW");
 
 }
 
@@ -256,8 +257,9 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int 
 void OperatingSystem_MoveToTheREADYState(int PID) {
 
 	if (Heap_add(PID, readyToRunQueue,QUEUE_PRIORITY ,&numberOfReadyToRunProcesses ,PROCESSTABLEMAXSIZE)>=0) {
+		int lastState = processTable[PID].state;
 		processTable[PID].state=READY;
-		//ComputerSystem_DebugMessage(110,SYSPROC,PID,programList[processTable[PID].programListIndex]->executableName,READY,statesNames[processTable[PID].state]);
+		ComputerSystem_DebugMessage(110,SYSPROC,PID,programList[processTable[PID].programListIndex]->executableName,statesNames[lastState],statesNames[READY]);
 		OperatingSystem_PrintReadyToRunQueue();
 	}
 }
@@ -294,8 +296,9 @@ void OperatingSystem_Dispatch(int PID) {
 	// The process identified by PID becomes the current executing process
 	executingProcessID=PID;
 	// Change the process' state
+	int lastState = processTable[PID].state;
 	processTable[PID].state=EXECUTING;
-	//ComputerSystem_DebugMessage(110,SYSPROC,PID,programList[processTable[PID].programListIndex]->executableName,EXECUTING,statesNames[processTable[PID].state]);
+	ComputerSystem_DebugMessage(110,SYSPROC,PID,programList[processTable[PID].programListIndex]->executableName,statesNames[lastState],statesNames[EXECUTING]);
 	// Modify hardware registers with appropriate values for the process identified by PID
 	OperatingSystem_RestoreContext(PID);
 }
@@ -352,9 +355,10 @@ void OperatingSystem_HandleException() {
 void OperatingSystem_TerminateProcess() {
 
 	int selectedProcess;
+	int lastState = processTable[executingProcessID].state;
 
 	processTable[executingProcessID].state=EXIT;
-	//ComputerSystem_DebugMessage(110,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName,READY,statesNames[processTable[executingProcessID].state]);
+	ComputerSystem_DebugMessage(110,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName,statesNames[lastState],statesNames[EXIT]);
 
 	if (programList[processTable[executingProcessID].programListIndex]->type==USERPROGRAM)
 		// One more user process that has terminated
