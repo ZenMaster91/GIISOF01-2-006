@@ -249,7 +249,7 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int 
 	if (programList[processPLIndex]->type == DAEMONPROGRAM) {
 		processTable[PID].copyOfPCRegister=initialPhysicalAddress;
 		processTable[PID].copyOfPSWRegister= ((unsigned int) 1) << EXECUTION_MODE_BIT;
-		
+
 		// Exercise 11
 		processTable[PID].queueID = DAEMONSQUEUE;
 	}
@@ -301,10 +301,10 @@ int OperatingSystem_ExtractFromReadyToRun() {
 
 	// First select from the user queue
 	selectedProcess=Heap_poll(readyToRunQueue[USERPROCESSQUEUE],QUEUE_PRIORITY ,&numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
-	
+
 	// Try to get a process from the daemons queue
 	if(selectedProcess == -1) {
-		selectedProcess=Heap_poll(readyToRunQueue[DAEMONSQUEUE],QUEUE_PRIORITY ,&numberOfReadyToRunProcesses[DAEMONSQUEUE]);			
+		selectedProcess=Heap_poll(readyToRunQueue[DAEMONSQUEUE],QUEUE_PRIORITY ,&numberOfReadyToRunProcesses[DAEMONSQUEUE]);
 	}
 
 	// Return most priority process or NOPROCESS if empty queue
@@ -400,9 +400,8 @@ void OperatingSystem_TerminateProcess() {
 void OperatingSystem_HandleSystemCall() {
 
 	int systemCallID;
-	int queue=processTable[executingProcessID].queueID;
-	int oldProcess=executingProcessID;
-	int processToRun=readyToRunQueue[queue][0];
+	int currentQueue, currentPriority;
+	int oldProcessID, newProcessID;
 
 	// Register A contains the identifier of the issued system call
 	systemCallID=Processor_GetRegisterA();
@@ -420,18 +419,28 @@ void OperatingSystem_HandleSystemCall() {
 			break;
 
 		case  SYSCALL_YIELD:
+			// If a process with the same priority and placed at the front of the same priority queue appears relinquish the CPU to that process.
 
-			// Check that in the readyToRunQueue exists a process with the same type and priority.
-			if(processTable[processToRun].priority==processTable[executingProcessID].priority) {
-				OperatingSystem_PreemptRunningProcess();	
+			// 1. Get the queue and priority of the executing process.
+			currentQueue = processTable[executingProcessID].queueID;
+			currentPriority = processTable[executingProcessID].priority;
+
+			// 2. Check that the rTRQ contains at least one rTR process and that it has the same priority as the executing one.
+			if(numberOfReadyToRunProcesses[currentQueue] > 0 && processTable[readyToRunQueue[currentQueue][0]].priority == currentPriority) {
+				oldProcessID=executingProcessID; // Store old process PID.
+				newProcessID = readyToRunQueue[currentQueue][0]; // Store new process PID.
+
+				// Stop current process.
+				OperatingSystem_PreemptRunningProcess();
+
+				// Start new process. It is the first opne dispached by the ShortTermScheduler.
 				OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
-				ComputerSystem_DebugMessage(115,SYSPROC,executingProcessID,
-					programList[processTable[executingProcessID].programListIndex]->executableName,
-					executingProcessID,programList[processTable[oldProcess].programListIndex]->executableName);
-				
-				//ComputerSystem_DebugMessage(115,SHORTTERMSCHEDULE,oldProcess,processToRun);
+
+				// Finally print the corresponding debug message.
+				ComputerSystem_DebugMessage(115,SHORTTERMSCHEDULE,executingProcessID,
+					programList[processTable[newProcessID].programListIndex]->executableName,
+					executingProcessID,programList[processTable[oldProcessID].programListIndex]->executableName);
 			}
-			
 			break;
 	}
 }
@@ -456,7 +465,7 @@ void OperatingSystem_PrintReadyToRunQueue(){
 	// valid indexes. Priotiries are in the processTable
 	ComputerSystem_DebugMessage(106, SHORTTERMSCHEDULE);
 	int i, processPID, queue;
-	
+
 	for(queue=0; queue < NUMBEROFQUEUES; queue++) {
 		// Printing USERPROCESSQUEUE processes
 		ComputerSystem_DebugMessage(112, SHORTTERMSCHEDULE, queueNames[queue]);
