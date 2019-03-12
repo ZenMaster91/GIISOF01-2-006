@@ -15,7 +15,7 @@
 
 #define INITIALPID 3
 
-// In this version, every process occupies a 60 positions main memory chunk 
+// In this version, every process occupies a 60 positions main memory chunk
 // so we can use 60 positions for OS code and the system stack
 #define MAINMEMORYSECTIONSIZE (MAINMEMORYSIZE / (PROCESSTABLEMAXSIZE+1))
 
@@ -29,7 +29,7 @@
 enum ProcessQueues { USERPROCESSQUEUE, DAEMONSQUEUE};
 
 // Contains the possible type of programs
-enum ProgramTypes { USERPROGRAM, DAEMONPROGRAM }; 
+enum ProgramTypes { USERPROGRAM, DAEMONPROGRAM };
 
 // Enumerated type containing all the possible process states
 enum ProcessStates { NEW, READY, EXECUTING, BLOCKED, EXIT};
@@ -46,6 +46,7 @@ typedef struct {
 	int priority;
 	int copyOfPCRegister;
 	unsigned int copyOfPSWRegister;
+	int copyOfAccumulator;
 	int programListIndex;
 	int queueID; // EX-11. Selects the id of the queue.
 } PCB;
