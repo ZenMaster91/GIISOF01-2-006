@@ -17,7 +17,7 @@
 111,New process [@G%d - %s@@] moving to the [@G%s@@] state.\n
 
 // Exercise 11
-112,\t%s:
+112,\t\t%s:
 113,\n
 
 // Exercise 12

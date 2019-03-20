@@ -53,6 +53,7 @@ void ComputerSystem_PowerOn(int argc, char *argv[]) {
 // Powers off the CS (the C program ends)
 void ComputerSystem_PowerOff() {
 	// Show message in red colour: "END of the simulation\n"
+	ComputerSystem_ShowTime(SHUTDOWN);
 	ComputerSystem_DebugMessage(99,SHUTDOWN);
 	exit(0);
 }
@@ -60,17 +61,18 @@ void ComputerSystem_PowerOff() {
 /////////////////////////////////////////////////////////
 //  New functions below this line  //////////////////////
 void ComputerSystem_PrintProgramList() {
+	ComputerSystem_ShowTime(INIT);
 	ComputerSystem_DebugMessage(101, INIT);
 	int i;
 	for (i=1; programList[i]!=NULL && i<PROGRAMSMAXNUMBER ; i++) {
-        	ComputerSystem_DebugMessage(102,INIT,programList[i]->executableName,programList[i]->arrivalTime);
-        }
+				//ComputerSystem_ShowTime(INIT);
+				ComputerSystem_DebugMessage(102,INIT,programList[i]->executableName,programList[i]->arrivalTime);
+  }
 
 }
 
 // Show time messages
 void ComputerSystem_ShowTime(char section) {
-        ComputerSystem_DebugMessage(98,section,Processor_PSW_BitState(EXECUTION_MODE_BIT)?"\t":"");
+        ComputerSystem_DebugMessage(98,section,Processor_PSW_BitState(EXECUTION_MODE_BIT)?"":"");
         ComputerSystem_DebugMessage(Processor_PSW_BitState(EXECUTION_MODE_BIT)?5:4,section,Clock_GetTime());
 }
-

@@ -270,6 +270,7 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int 
 	}
 
 	// Printing the new state sentence from ex 10
+	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(111,SYSPROC,PID,programList[processPLIndex]->executableName,statesNames[NEW]);
 	//ComputerSystem_DebugMessage(111,SYSPROC,5,"processNmae","NEW");
 
@@ -283,6 +284,7 @@ void OperatingSystem_MoveToTheREADYState(int PID) {
 	if (Heap_add(PID, readyToRunQueue[processTable[PID].queueID],QUEUE_PRIORITY ,&numberOfReadyToRunProcesses[processTable[PID].queueID] ,PROCESSTABLEMAXSIZE)>=0) {
 		int lastState = processTable[PID].state;
 		processTable[PID].state=READY;
+		OperatingSystem_ShowTime(SYSPROC);
 		ComputerSystem_DebugMessage(110,SYSPROC,PID,programList[processTable[PID].programListIndex]->executableName,statesNames[lastState],statesNames[READY]);
 		OperatingSystem_PrintReadyToRunQueue();
 	}
@@ -328,6 +330,7 @@ void OperatingSystem_Dispatch(int PID) {
 	// Change the process' state
 	int lastState = processTable[PID].state;
 	processTable[PID].state=EXECUTING;
+	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(110,SYSPROC,PID,programList[processTable[PID].programListIndex]->executableName,statesNames[lastState],statesNames[EXECUTING]);
 	// Modify hardware registers with appropriate values for the process identified by PID
 	OperatingSystem_RestoreContext(PID);
@@ -378,6 +381,7 @@ void OperatingSystem_SaveContext(int PID) {
 void OperatingSystem_HandleException() {
 
 	// Show message "Process [executingProcessID] has generated an exception and is terminating\n"
+	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(23,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
 
 	OperatingSystem_TerminateProcess();
@@ -391,6 +395,7 @@ void OperatingSystem_TerminateProcess() {
 	int lastState = processTable[executingProcessID].state;
 
 	processTable[executingProcessID].state=EXIT;
+	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(110,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName,statesNames[lastState],statesNames[EXIT]);
 
 	if (programList[processTable[executingProcessID].programListIndex]->type==USERPROGRAM)
@@ -421,11 +426,13 @@ void OperatingSystem_HandleSystemCall() {
 	switch (systemCallID) {
 		case SYSCALL_PRINTEXECPID:
 			// Show message: "Process [executingProcessID] has the processor assigned\n"
+			OperatingSystem_ShowTime(SYSPROC);
 			ComputerSystem_DebugMessage(24,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
 			break;
 
 		case SYSCALL_END:
 			// Show message: "Process [executingProcessID] has requested to terminate\n"
+			OperatingSystem_ShowTime(SYSPROC);
 			ComputerSystem_DebugMessage(25,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
 			OperatingSystem_TerminateProcess();
 			break;
@@ -449,6 +456,7 @@ void OperatingSystem_HandleSystemCall() {
 				OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
 
 				// Finally print the corresponding debug message.
+				OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
 				ComputerSystem_DebugMessage(115,SHORTTERMSCHEDULE,executingProcessID,
 					programList[processTable[newProcessID].programListIndex]->executableName,
 					executingProcessID,programList[processTable[oldProcessID].programListIndex]->executableName);
@@ -478,6 +486,7 @@ void OperatingSystem_PrintReadyToRunQueue(){
 	// rTRQ contains 2,3,4,5,1 (PDIs)
 	// not all valid. numberOfReadyToRunProcesses
 	// valid indexes. Priotiries are in the processTable
+	OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
 	ComputerSystem_DebugMessage(106, SHORTTERMSCHEDULE);
 	int i, processPID, queue;
 

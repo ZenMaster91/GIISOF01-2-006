@@ -207,6 +207,7 @@ void Processor_DecodeAndExecuteInstruction() {
 			if(Processor_PSW_BitState(EXECUTION_MODE_BIT)) {
 				// Show final part of HARDWARE message with CPU registers
 				// Show message: " (PC: registerPC_CPU, Accumulator: registerAccumulator_CPU, PSW: registerPSW_CPU [Processor_ShowPSW()]\n
+				Processor_ShowTime(HARDWARE);
 				ComputerSystem_DebugMessage(3, HARDWARE,operationCode,operand1,operand2,registerPC_CPU,registerAccumulator_CPU,registerPSW_CPU,Processor_ShowPSW());
 				// Not all operating system code is executed in simulated processor, but really must do it...
 				OperatingSystem_InterruptLogic(operand1);
@@ -291,6 +292,6 @@ char * Processor_ShowPSW(){
 
 // Show time messages
 void Processor_ShowTime(char section) {
-        ComputerSystem_DebugMessage(98,section,Processor_PSW_BitState(EXECUTION_MODE_BIT)?"\t":"");
+        ComputerSystem_DebugMessage(98,section,Processor_PSW_BitState(EXECUTION_MODE_BIT)?"":"");
         ComputerSystem_DebugMessage(Processor_PSW_BitState(EXECUTION_MODE_BIT)?5:4,section,Clock_GetTime());
 }
