@@ -141,252 +141,250 @@ extern  PROGRAMS_DATA *programList[20];
 # 5 "OperatingSystem.h" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 27 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/bits/libc-header-start.h" 1 3 4
-# 33 "/usr/include/bits/libc-header-start.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 33 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
-# 423 "/usr/include/features.h" 3 4
-# 1 "/usr/include/sys/cdefs.h" 1 3 4
-# 428 "/usr/include/sys/cdefs.h" 3 4
-# 1 "/usr/include/bits/wordsize.h" 1 3 4
-# 429 "/usr/include/sys/cdefs.h" 2 3 4
-# 1 "/usr/include/bits/long-double.h" 1 3 4
-# 430 "/usr/include/sys/cdefs.h" 2 3 4
-# 424 "/usr/include/features.h" 2 3 4
-# 447 "/usr/include/features.h" 3 4
-# 1 "/usr/include/gnu/stubs.h" 1 3 4
-# 10 "/usr/include/gnu/stubs.h" 3 4
-# 1 "/usr/include/gnu/stubs-64.h" 1 3 4
-# 11 "/usr/include/gnu/stubs.h" 2 3 4
-# 448 "/usr/include/features.h" 2 3 4
-# 34 "/usr/include/bits/libc-header-start.h" 2 3 4
+# 424 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4
+# 427 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 428 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/long-double.h" 1 3 4
+# 429 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 425 "/usr/include/features.h" 2 3 4
+# 448 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 1 3 4
+# 10 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h" 1 3 4
+# 11 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 2 3 4
+# 449 "/usr/include/features.h" 2 3 4
+# 34 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 2 3 4
 # 28 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h" 1 3 4
-# 216 "/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h" 3 4
-# 216 "/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 216 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 3 4
+# 216 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 3 4
 typedef long unsigned int size_t; 
 # 34 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/bits/types.h" 1 3 4
-# 27 "/usr/include/bits/types.h" 3 4
-# 1 "/usr/include/bits/wordsize.h" 1 3 4
-# 30 "/usr/include/bits/types.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 30 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
 typedef unsigned char __u_char; 
-#line 31 "/usr/include/bits/types.h"
+#line 31 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned short int __u_short; 
-#line 32 "/usr/include/bits/types.h"
+#line 32 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned int __u_int; 
-#line 33 "/usr/include/bits/types.h"
+#line 33 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __u_long; 
-#line 36 "/usr/include/bits/types.h"
+#line 36 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef signed char __int8_t; 
-#line 37 "/usr/include/bits/types.h"
+#line 37 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned char __uint8_t; 
-#line 38 "/usr/include/bits/types.h"
+#line 38 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef signed short int __int16_t; 
-#line 39 "/usr/include/bits/types.h"
+#line 39 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned short int __uint16_t; 
-#line 40 "/usr/include/bits/types.h"
+#line 40 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef signed int __int32_t; 
-#line 41 "/usr/include/bits/types.h"
+#line 41 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned int __uint32_t; 
-#line 43 "/usr/include/bits/types.h"
+#line 43 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef signed long int __int64_t; 
-#line 44 "/usr/include/bits/types.h"
+#line 44 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __uint64_t; 
-#line 52 "/usr/include/bits/types.h"
+#line 52 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __quad_t; 
-#line 53 "/usr/include/bits/types.h"
+#line 53 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __u_quad_t; 
-#line 61 "/usr/include/bits/types.h"
+#line 61 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __intmax_t; 
-#line 62 "/usr/include/bits/types.h"
+#line 62 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __uintmax_t; 
-# 130 "/usr/include/bits/types.h" 3 4
-# 1 "/usr/include/bits/typesizes.h" 1 3 4
-# 133 "/usr/include/bits/types.h" 2 3 4
+# 130 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/typesizes.h" 1 3 4
+# 133 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
 typedef unsigned long int __dev_t; 
-#line 134 "/usr/include/bits/types.h"
+#line 134 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned int __uid_t; 
-#line 135 "/usr/include/bits/types.h"
+#line 135 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned int __gid_t; 
-#line 136 "/usr/include/bits/types.h"
+#line 136 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __ino_t; 
-#line 137 "/usr/include/bits/types.h"
+#line 137 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __ino64_t; 
-#line 138 "/usr/include/bits/types.h"
+#line 138 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned int __mode_t; 
-#line 139 "/usr/include/bits/types.h"
+#line 139 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __nlink_t; 
-#line 140 "/usr/include/bits/types.h"
+#line 140 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __off_t; 
-#line 141 "/usr/include/bits/types.h"
+#line 141 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __off64_t; 
-#line 142 "/usr/include/bits/types.h"
+#line 142 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef int __pid_t; 
-#line 143 "/usr/include/bits/types.h"
+#line 143 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef struct {int __val[2]; 
 }__fsid_t; 
-#line 144 "/usr/include/bits/types.h"
+#line 144 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __clock_t; 
-#line 145 "/usr/include/bits/types.h"
+#line 145 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __rlim_t; 
-#line 146 "/usr/include/bits/types.h"
+#line 146 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __rlim64_t; 
-#line 147 "/usr/include/bits/types.h"
+#line 147 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned int __id_t; 
-#line 148 "/usr/include/bits/types.h"
+#line 148 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __time_t; 
-#line 149 "/usr/include/bits/types.h"
+#line 149 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned int __useconds_t; 
-#line 150 "/usr/include/bits/types.h"
+#line 150 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __suseconds_t; 
-#line 152 "/usr/include/bits/types.h"
+#line 152 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef int __daddr_t; 
-#line 153 "/usr/include/bits/types.h"
+#line 153 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef int __key_t; 
-#line 156 "/usr/include/bits/types.h"
+#line 156 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef int __clockid_t; 
-#line 159 "/usr/include/bits/types.h"
+#line 159 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef void *__timer_t; 
-#line 162 "/usr/include/bits/types.h"
+#line 162 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __blksize_t; 
-#line 167 "/usr/include/bits/types.h"
+#line 167 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __blkcnt_t; 
-#line 168 "/usr/include/bits/types.h"
+#line 168 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __blkcnt64_t; 
-#line 171 "/usr/include/bits/types.h"
+#line 171 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __fsblkcnt_t; 
-#line 172 "/usr/include/bits/types.h"
+#line 172 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __fsblkcnt64_t; 
-#line 175 "/usr/include/bits/types.h"
+#line 175 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __fsfilcnt_t; 
-#line 176 "/usr/include/bits/types.h"
+#line 176 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __fsfilcnt64_t; 
-#line 179 "/usr/include/bits/types.h"
+#line 179 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __fsword_t; 
-#line 181 "/usr/include/bits/types.h"
+#line 181 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __ssize_t; 
-#line 184 "/usr/include/bits/types.h"
+#line 184 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __syscall_slong_t; 
-#line 186 "/usr/include/bits/types.h"
+#line 186 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __syscall_ulong_t; 
-#line 190 "/usr/include/bits/types.h"
+#line 190 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef  __off64_t __loff_t; 
-#line 191 "/usr/include/bits/types.h"
-typedef  __quad_t *__qaddr_t; 
-#line 192 "/usr/include/bits/types.h"
+#line 191 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef char *__caddr_t; 
-#line 195 "/usr/include/bits/types.h"
+#line 194 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __intptr_t; 
-#line 198 "/usr/include/bits/types.h"
+#line 197 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned int __socklen_t; 
-#line 203 "/usr/include/bits/types.h"
+#line 202 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef int __sig_atomic_t; 
 # 36 "/usr/include/stdio.h" 2 3 4
-# 4 "/usr/include/bits/types/__FILE.h" 1 3 4
+# 4 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h" 1 3 4
 struct _IO_FILE ; 
-#line 5 "/usr/include/bits/types/__FILE.h"
+#line 5 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h"
 typedef struct _IO_FILE __FILE; 
 # 37 "/usr/include/stdio.h" 2 3 4
-# 4 "/usr/include/bits/types/FILE.h" 1 3 4
+# 4 "/usr/include/x86_64-linux-gnu/bits/types/FILE.h" 1 3 4
 struct _IO_FILE ; 
-#line 7 "/usr/include/bits/types/FILE.h"
+#line 7 "/usr/include/x86_64-linux-gnu/bits/types/FILE.h"
 typedef struct _IO_FILE FILE; 
 # 38 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/libio.h" 1 3 4
-# 31 "/usr/include/libio.h" 3 4
-# 1 "/usr/include/_G_config.h" 1 3 4
-# 15 "/usr/include/_G_config.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h" 1 3 4
-# 16 "/usr/include/_G_config.h" 2 3 4
-# 1 "/usr/include/bits/types/__mbstate_t.h" 1 3 4
-# 21 "/usr/include/bits/types/__mbstate_t.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libio.h" 1 3 4
+# 35 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 1 3 4
+# 19 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 20 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h" 1 3 4
+# 21 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h" 3 4
 typedef struct {int __count; union {unsigned int __wch; char __wchb[4]; 
 }__value; 
 }__mbstate_t; 
-#line 26 "/usr/include/_G_config.h"
+#line 30 "/usr/include/x86_64-linux-gnu/bits/_G_config.h"
 typedef struct { __off_t __pos;  __mbstate_t __state; 
 }_G_fpos_t; 
-#line 31 "/usr/include/_G_config.h"
+#line 35 "/usr/include/x86_64-linux-gnu/bits/_G_config.h"
 typedef struct { __off64_t __pos;  __mbstate_t __state; 
 }_G_fpos64_t; 
-# 18 "/usr/include/_G_config.h" 2 3 4
-# 32 "/usr/include/libio.h" 2 3 4
-# 49 "/usr/include/libio.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/7/include/stdarg.h" 1 3 4
-# 40 "/usr/lib/gcc/x86_64-redhat-linux/7/include/stdarg.h" 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 2 3 4
+# 36 "/usr/include/x86_64-linux-gnu/bits/libio.h" 2 3 4
+# 53 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h" 1 3 4
+# 40 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h" 3 4
 typedef __builtin_va_list __gnuc_va_list; 
-# 50 "/usr/include/libio.h" 2 3 4
-# 145 "/usr/include/libio.h" 3 4
+# 54 "/usr/include/x86_64-linux-gnu/bits/libio.h" 2 3 4
+# 149 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 struct _IO_jump_t ; 
-#line 145 "/usr/include/libio.h"
+#line 149 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 struct _IO_FILE ; 
-#line 150 "/usr/include/libio.h"
+#line 154 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 typedef void _IO_lock_t; 
-#line 173 "/usr/include/libio.h"
+#line 177 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 struct _IO_marker {struct _IO_marker *_next; struct _IO_FILE *_sbuf; int _pos; 
 }; 
-#line 182 "/usr/include/libio.h"
+#line 186 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 enum __codecvt_result {__codecvt_ok,__codecvt_partial,__codecvt_error,__codecvt_noconv}; 
-# 173 "/usr/include/libio.h" 3 4
-# 241 "/usr/include/libio.h" 3 4
-# 307 "/usr/include/libio.h" 3 4
+# 177 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 245 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 311 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 struct _IO_FILE {int _flags; char *_IO_read_ptr; char *_IO_read_end; char *_IO_read_base; char *_IO_write_base; char *_IO_write_ptr; char *_IO_write_end; char *_IO_buf_base; char *_IO_buf_end; char *_IO_save_base; char *_IO_backup_base; char *_IO_save_end; struct _IO_marker *_markers; struct _IO_FILE *_chain; int _fileno; int _flags2;  __off_t _old_offset; unsigned short _cur_column; signed char _vtable_offset; char _shortbuf[1];  _IO_lock_t *_lock;  __off64_t _offset; void *__pad1; void *__pad2; void *__pad3; void *__pad4;  size_t __pad5; int _mode; char _unused2[15 * sizeof (int ) - 4 * sizeof (void *) - sizeof ( size_t )]; 
 }; 
-#line 310 "/usr/include/libio.h"
+#line 314 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 typedef struct _IO_FILE _IO_FILE; 
-#line 313 "/usr/include/libio.h"
+#line 317 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 struct _IO_FILE_plus ; 
-#line 315 "/usr/include/libio.h"
+#line 319 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern struct _IO_FILE_plus _IO_2_1_stdin_; 
-#line 316 "/usr/include/libio.h"
+#line 320 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern struct _IO_FILE_plus _IO_2_1_stdout_; 
-#line 317 "/usr/include/libio.h"
+#line 321 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern struct _IO_FILE_plus _IO_2_1_stderr_; 
-#line 333 "/usr/include/libio.h"
+#line 337 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 typedef  __ssize_t __io_read_fn(void *__cookie, char *__buf,  size_t __nbytes); 
-#line 342 "/usr/include/libio.h"
+#line 346 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 typedef  __ssize_t __io_write_fn(void *__cookie, const char *__buf,  size_t __n); 
-#line 350 "/usr/include/libio.h"
+#line 354 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 typedef int __io_seek_fn(void *__cookie,  __off64_t *__pos, int __w); 
-#line 353 "/usr/include/libio.h"
+#line 357 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 typedef int __io_close_fn(void *__cookie); 
-# 333 "/usr/include/libio.h" 3 4
-# 385 "/usr/include/libio.h" 3 4
+# 337 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 389 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 extern int __underflow( _IO_FILE *); 
-#line 386 "/usr/include/libio.h"
+#line 390 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int __uflow( _IO_FILE *); 
-#line 387 "/usr/include/libio.h"
+#line 391 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int __overflow( _IO_FILE *, int ); 
-#line 429 "/usr/include/libio.h"
+#line 433 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_getc( _IO_FILE *__fp); 
-#line 430 "/usr/include/libio.h"
+#line 434 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_putc(int __c,  _IO_FILE *__fp); 
-#line 431 "/usr/include/libio.h"
+#line 435 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_feof( _IO_FILE *__fp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 432 "/usr/include/libio.h"
+#line 436 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_ferror( _IO_FILE *__fp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 434 "/usr/include/libio.h"
+#line 438 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_peekc_locked( _IO_FILE *__fp); 
-#line 440 "/usr/include/libio.h"
+#line 444 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern void _IO_flockfile( _IO_FILE *) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 441 "/usr/include/libio.h"
+#line 445 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern void _IO_funlockfile( _IO_FILE *) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 442 "/usr/include/libio.h"
+#line 446 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_ftrylockfile( _IO_FILE *) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 429 "/usr/include/libio.h" 3 4
-# 459 "/usr/include/libio.h" 3 4
+# 433 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 463 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 extern int _IO_vfscanf( _IO_FILE *__restrict , const char *__restrict ,  __gnuc_va_list , int *__restrict ); 
-#line 461 "/usr/include/libio.h"
+#line 465 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_vfprintf( _IO_FILE *__restrict , const char *__restrict ,  __gnuc_va_list ); 
-#line 462 "/usr/include/libio.h"
+#line 466 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern  __ssize_t _IO_padn( _IO_FILE *, int ,  __ssize_t ); 
-#line 463 "/usr/include/libio.h"
+#line 467 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern  size_t _IO_sgetn( _IO_FILE *, void *,  size_t ); 
-#line 465 "/usr/include/libio.h"
+#line 469 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern  __off64_t _IO_seekoff( _IO_FILE *,  __off64_t , int , int ); 
-#line 466 "/usr/include/libio.h"
+#line 470 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern  __off64_t _IO_seekpos( _IO_FILE *,  __off64_t , int ); 
-#line 468 "/usr/include/libio.h"
+#line 472 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern void _IO_free_backup_area( _IO_FILE *) __attribute__  (( __nothrow__ , __leaf__ )) ; 
 #line 46 "/usr/include/stdio.h"
 typedef  __gnuc_va_list va_list; 
@@ -399,7 +397,7 @@ typedef  __ssize_t ssize_t;
 typedef  _G_fpos_t fpos_t; 
 # 71 "/usr/include/stdio.h" 3 4
 # 131 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/bits/stdio_lim.h" 1 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdio_lim.h" 1 3 4
 # 135 "/usr/include/stdio.h" 2 3 4
 extern struct _IO_FILE *stdin; 
 #line 136 "/usr/include/stdio.h"
@@ -576,10 +574,10 @@ extern int feof_unlocked( FILE *__stream) __attribute__  (( __nothrow__ , __leaf
 extern int ferror_unlocked( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
 #line 775 "/usr/include/stdio.h"
 extern void perror(const char *__s); 
-# 1 "/usr/include/bits/sys_errlist.h" 1 3 4
-# 26 "/usr/include/bits/sys_errlist.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h" 1 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h" 3 4
 extern int sys_nerr; 
-#line 27 "/usr/include/bits/sys_errlist.h"
+#line 27 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h"
 extern const char *const sys_errlist[]; 
 #line 786 "/usr/include/stdio.h"
 extern int fileno( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
@@ -650,9 +648,9 @@ int MMU_GetLimit();
 # 6 "Processor.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 26 "/usr/include/string.h" 3 4
-# 1 "/usr/include/bits/libc-header-start.h" 1 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
 # 27 "/usr/include/string.h" 2 3 4
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h" 1 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
 # 34 "/usr/include/string.h" 2 3 4
 # 42 "/usr/include/string.h" 3 4
 # 43 "/usr/include/string.h" 3 4
@@ -684,17 +682,17 @@ extern int strncmp(const char *__s1, const char *__s2,  size_t __n) __attribute_
 extern int strcoll(const char *__s1, const char *__s2) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
 #line 148 "/usr/include/string.h"
 extern  size_t strxfrm(char *__restrict __dest, const char *__restrict __src,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
-# 1 "/usr/include/bits/types/locale_t.h" 1 3 4
-# 22 "/usr/include/bits/types/locale_t.h" 3 4
-# 1 "/usr/include/bits/types/__locale_t.h" 1 3 4
-# 40 "/usr/include/bits/types/__locale_t.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 1 3 4
+# 40 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 3 4
 struct __locale_struct {struct __locale_data *__locales[13]; const unsigned short int *__ctype_b; const int *__ctype_tolower; const int *__ctype_toupper; const char *__names[13]; 
 }; 
-#line 42 "/usr/include/bits/types/__locale_t.h"
+#line 42 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h"
 typedef struct __locale_struct *__locale_t; 
-#line 24 "/usr/include/bits/types/locale_t.h"
+#line 24 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h"
 typedef  __locale_t locale_t; 
-# 23 "/usr/include/bits/types/locale_t.h" 2 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 2 3 4
 # 156 "/usr/include/string.h" 2 3 4
 extern int strcoll_l(const char *__s1, const char *__s2,  locale_t __l) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2, 3 )  )) ; 
 #line 160 "/usr/include/string.h"
@@ -737,7 +735,7 @@ extern int strerror_r(int __errnum, char *__buf,  size_t __buflen) __asm__ ("""_
 extern char *strerror_l(int __errnum,  locale_t __l) __attribute__  (( __nothrow__ , __leaf__ )) ; 
 # 1 "/usr/include/strings.h" 1 3 4
 # 23 "/usr/include/strings.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h" 1 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
 # 35 "/usr/include/strings.h" 2 3 4
 extern int bcmp(const void *__s1, const void *__s2,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
 #line 39 "/usr/include/strings.h"
@@ -751,6 +749,10 @@ extern char *index(const char *__s, int __c) __attribute__  (( __nothrow__ , __l
 extern char *rindex(const char *__s, int __c) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
 #line 104 "/usr/include/strings.h"
 extern int ffs(int __i) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
+#line 110 "/usr/include/strings.h"
+extern int ffsl(long int __l) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
+#line 112 "/usr/include/strings.h"
+ __extension__ extern int ffsll(long long int __ll) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
 #line 117 "/usr/include/strings.h"
 extern int strcasecmp(const char *__s1, const char *__s2) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
 #line 121 "/usr/include/strings.h"
@@ -759,8 +761,7 @@ extern int strncasecmp(const char *__s1, const char *__s2,  size_t __n) __attrib
 extern int strcasecmp_l(const char *__s1, const char *__s2,  locale_t __loc) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2, 3 )  )) ; 
 #line 135 "/usr/include/strings.h"
 extern int strncasecmp_l(const char *__s1, const char *__s2,  size_t __n,  locale_t __loc) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2, 4 )  )) ; 
-# 116 "/usr/include/strings.h" 3 4
-# 435 "/usr/include/string.h" 2 3 4
+#line 435 "/usr/include/string.h"
 extern void explicit_bzero(void *__s,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
 #line 441 "/usr/include/string.h"
 extern char *strsep(char **__restrict __stringp, const char *__restrict __delim) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
@@ -774,6 +775,7 @@ extern char *stpcpy(char *__restrict __dest, const char *__restrict __src) __att
 extern char *__stpncpy(char *__restrict __dest, const char *__restrict __src,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
 #line 461 "/usr/include/string.h"
 extern char *stpncpy(char *__restrict __dest, const char *__restrict __src,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
+# 432 "/usr/include/string.h" 2 3 4
 # 498 "/usr/include/string.h" 3 4
 # 8 "Processor.c" 2
 # 1 "Clock.h" 1
@@ -811,12 +813,12 @@ int interruptVectorTable[10];
 char pswmask[] = "----------------"; 
 #line 36 "Processor.c"
 void Processor_InitializeInterruptVectorTable(int interruptVectorInitialAddress)  
-# 815 "ProcessorAspect.c"
+# 817 "ProcessorAspect.c"
 {
 
 
 
-# 820 "ProcessorAspect.c"
+# 822 "ProcessorAspect.c"
 {
 
 #line 37 "Processor.c"
@@ -831,11 +833,11 @@ interruptVectorTable[SYSCALL_BIT] = interruptVectorInitialAddress;
 interruptVectorTable[EXCEPTION_BIT] = interruptVectorInitialAddress + 2; 
 #line 43 "Processor.c"
 interruptVectorTable[CLOCKINT_BIT] = interruptVectorInitialAddress + 4; 
-# 835 "ProcessorAspect.c"
+# 837 "ProcessorAspect.c"
 
 }
 
-# 839 "ProcessorAspect.c"
+# 841 "ProcessorAspect.c"
 
 }
  
@@ -844,12 +846,12 @@ interruptVectorTable[CLOCKINT_BIT] = interruptVectorInitialAddress + 4;
 
 #line 50 "Processor.c"
 void Processor_InstructionCycleLoop()  
-# 848 "ProcessorAspect.c"
+# 850 "ProcessorAspect.c"
 {
 
 
 
-# 853 "ProcessorAspect.c"
+# 855 "ProcessorAspect.c"
 {
 
 #line 57 "Processor.c"
@@ -860,7 +862,7 @@ Processor_DecodeAndExecuteInstruction(); }
 #line 55 "Processor.c"
 if (interruptLines_CPU && (!Processor_PSW_BitState(INTERRUPT_MASKED_BIT))){
 Processor_ManageInterrupts(); }} } 
-# 864 "ProcessorAspect.c"
+# 866 "ProcessorAspect.c"
 
 }
 
@@ -869,7 +871,7 @@ __utac_acc__Aspect__5();
 
 }
 
-# 873 "ProcessorAspect.c"
+# 875 "ProcessorAspect.c"
 
 }
  
@@ -878,9 +880,9 @@ __utac_acc__Aspect__5();
 
 #line 61 "Processor.c"
 int Processor_FetchInstruction()  
-# 882 "ProcessorAspect.c"
-{
 # 884 "ProcessorAspect.c"
+{
+# 886 "ProcessorAspect.c"
 int retValue_acc;
 
 
@@ -891,7 +893,7 @@ __utac_acc__Aspect__1();
 
 }
 
-# 895 "ProcessorAspect.c"
+# 897 "ProcessorAspect.c"
 {
 
 #line 64 "Processor.c"
@@ -918,26 +920,26 @@ ComputerSystem_DebugMessage(1, 'h', codedInstruction); } }else{
 ComputerSystem_DebugMessage(2, 'h'); 
 #line 83 "Processor.c"
 
-# 922 "ProcessorAspect.c"
-retValue_acc = 0;
 # 924 "ProcessorAspect.c"
+retValue_acc = 0;
+# 926 "ProcessorAspect.c"
 return (int )retValue_acc;
  } }
 #line 85 "Processor.c"
 
-# 929 "ProcessorAspect.c"
-retValue_acc = 1;
 # 931 "ProcessorAspect.c"
+retValue_acc = 1;
+# 933 "ProcessorAspect.c"
 return (int )retValue_acc;
  
-# 934 "ProcessorAspect.c"
+# 936 "ProcessorAspect.c"
 
 }
 
-# 938 "ProcessorAspect.c"
+# 940 "ProcessorAspect.c"
 return (int )retValue_acc;
 
-# 941 "ProcessorAspect.c"
+# 943 "ProcessorAspect.c"
 
 }
  
@@ -949,12 +951,12 @@ return (int )retValue_acc;
 
 #line 90 "Processor.c"
 void Processor_DecodeAndExecuteInstruction()  
-# 953 "ProcessorAspect.c"
+# 955 "ProcessorAspect.c"
 {
 
 
 
-# 958 "ProcessorAspect.c"
+# 960 "ProcessorAspect.c"
 {
 
 #line 91 "Processor.c"
@@ -1127,7 +1129,7 @@ break; } }
 Processor_UpdatePSW(); 
 #line 245 "Processor.c"
 ComputerSystem_DebugMessage(3, 'h', operationCode, operand1, operand2, registerPC_CPU, registerAccumulator_CPU, registerPSW_CPU, Processor_ShowPSW()); 
-# 1131 "ProcessorAspect.c"
+# 1133 "ProcessorAspect.c"
 
 }
 
@@ -1136,18 +1138,18 @@ __utac_acc__Aspect__2();
 
 }
 
-# 1140 "ProcessorAspect.c"
+# 1142 "ProcessorAspect.c"
 
 }
  
 #line 250 "Processor.c"
 void Processor_ManageInterrupts()  
-# 1146 "ProcessorAspect.c"
+# 1148 "ProcessorAspect.c"
 {
 
 
 
-# 1151 "ProcessorAspect.c"
+# 1153 "ProcessorAspect.c"
 {
 
 #line 252 "Processor.c"
@@ -1171,25 +1173,25 @@ Processor_ActivatePSW_Bit(EXECUTION_MODE_BIT);
 registerPC_CPU = interruptVectorTable[i]; 
 #line 268 "Processor.c"
 break; } }} 
-# 1175 "ProcessorAspect.c"
+# 1177 "ProcessorAspect.c"
 
 }
 
-# 1179 "ProcessorAspect.c"
+# 1181 "ProcessorAspect.c"
 
 }
  
 #line 272 "Processor.c"
 char *Processor_ShowPSW()  
-# 1185 "ProcessorAspect.c"
-{
 # 1187 "ProcessorAspect.c"
+{
+# 1189 "ProcessorAspect.c"
 char* retValue_acc;
 
 
 
 
-# 1193 "ProcessorAspect.c"
+# 1195 "ProcessorAspect.c"
 {
 
 #line 273 "Processor.c"
@@ -1218,41 +1220,41 @@ if (Processor_PSW_BitState(INTERRUPT_MASKED_BIT)){
 pswmask[tam - INTERRUPT_MASKED_BIT] = 'M'; }
 #line 288 "Processor.c"
 
-# 1222 "ProcessorAspect.c"
-retValue_acc = pswmask;
 # 1224 "ProcessorAspect.c"
+retValue_acc = pswmask;
+# 1226 "ProcessorAspect.c"
 return (char* )retValue_acc;
  
-# 1227 "ProcessorAspect.c"
+# 1229 "ProcessorAspect.c"
 
 }
 
-# 1231 "ProcessorAspect.c"
+# 1233 "ProcessorAspect.c"
 return (char* )retValue_acc;
 
-# 1234 "ProcessorAspect.c"
+# 1236 "ProcessorAspect.c"
 
 }
  
 #line 296 "Processor.c"
 void Processor_ShowTime(char section)  
-# 1240 "ProcessorAspect.c"
+# 1242 "ProcessorAspect.c"
 {
 
 
 
-# 1245 "ProcessorAspect.c"
+# 1247 "ProcessorAspect.c"
 {
 
 #line 297 "Processor.c"
 ComputerSystem_DebugMessage(98, section, (Processor_PSW_BitState(EXECUTION_MODE_BIT)?"":"")); 
 #line 298 "Processor.c"
 ComputerSystem_DebugMessage((Processor_PSW_BitState(EXECUTION_MODE_BIT)?5:4), section, Clock_GetTime()); 
-# 1252 "ProcessorAspect.c"
+# 1254 "ProcessorAspect.c"
 
 }
 
-# 1256 "ProcessorAspect.c"
+# 1258 "ProcessorAspect.c"
 
 }
  

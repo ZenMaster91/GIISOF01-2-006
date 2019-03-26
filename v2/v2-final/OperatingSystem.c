@@ -584,11 +584,24 @@ void OperatingSystem_HandleClockInterrupt(){
 			mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[DAEMONSQUEUE],numberOfReadyToRunProcesses[DAEMONSQUEUE]);
 		}
 
-		// Then check the most important process in the rTRQ against the executing one.
-		// If the most important one has a lower priority or a lower equal queueID, then swap by preempting and dispatching the STS.
-		// Lower priority means more important.
-		// Equal lower queue ensures userQueue -> only userQueue processes; daemonsQueue -> daemonsQueue and userQueue.
-		if(processTable[mostImportantREADYProcess].priority < executingProcessPriority && processTable[mostImportantREADYProcess].queueID <= executingProcessQueue) {
+		if(processTable[mostImportantREADYProcess].queueID == executingProcessQueue) {
+			// Check the priority.
+			if(processTable[mostImportantREADYProcess].priority < executingProcessPriority) {
+				// Change always.
+				OperatingSystem_PreemptRunningProcess();
+				OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
+
+				// Print required messages.
+				OperatingSystem_PrintStatus();
+
+				OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
+				ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,lastExecutingProcess,programList[processTable[lastExecutingProcess].programListIndex]->executableName,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
+			} else {
+				// Do not change.
+			}
+
+		} else if(processTable[mostImportantREADYProcess].queueID < executingProcessQueue) {
+			// Change always
 			OperatingSystem_PreemptRunningProcess();
 			OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
 
@@ -597,6 +610,8 @@ void OperatingSystem_HandleClockInterrupt(){
 
 			OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
 			ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,lastExecutingProcess,programList[processTable[lastExecutingProcess].programListIndex]->executableName,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
+		} else {
+			// Do not change.
 		}
 	}
 
