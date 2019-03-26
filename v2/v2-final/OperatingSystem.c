@@ -219,9 +219,9 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 	priority=OperatingSystem_ObtainPriority(programFile);
 
 	// If the program is not valid
-        if(priority==PROGRAMNOTVALID){
-                return PROGRAMNOTVALID;
-        }
+  if(priority==PROGRAMNOTVALID){
+  	return PROGRAMNOTVALID;
+  }
 
 	// Obtain enough memory space
  	loadingPhysicalAddress=OperatingSystem_ObtainMainMemory(processSize, PID);
@@ -292,8 +292,8 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int 
 // Move a process to the READY state: it will be inserted, depending on its priority, in
 // a queue of identifiers of READY processes
 void OperatingSystem_MoveToTheREADYState(int PID) {
-
-	if (Heap_add(PID, readyToRunQueue[processTable[PID].queueID],QUEUE_PRIORITY ,&numberOfReadyToRunProcesses[processTable[PID].queueID] ,PROCESSTABLEMAXSIZE)>=0) {
+	int queue = processTable[PID].queueID;
+	if (Heap_add(PID,readyToRunQueue[queue],QUEUE_PRIORITY,&numberOfReadyToRunProcesses[queue],PROCESSTABLEMAXSIZE)==0) {
 		int lastState = processTable[PID].state;
 		processTable[PID].state=READY;
 		OperatingSystem_ShowTime(SYSPROC);
@@ -304,7 +304,7 @@ void OperatingSystem_MoveToTheREADYState(int PID) {
 
 void OperatingSystem_MoveToTheBLOCKEDState(int PID) {
 
-	if (Heap_add(PID, sleepingProcessesQueue, QUEUE_WAKEUP, &numberOfSleepingProcesses, PROCESSTABLEMAXSIZE)>=0) {
+	if (Heap_add(PID, sleepingProcessesQueue, QUEUE_WAKEUP, &numberOfSleepingProcesses, PROCESSTABLEMAXSIZE)==0) {
 
 		// Save in the process' PCB essential values stored in hardware registers and the system stack
 		OperatingSystem_SaveContext(executingProcessID);
@@ -335,11 +335,11 @@ int OperatingSystem_ExtractFromReadyToRun() {
 	int selectedProcess=NOPROCESS;
 
 	// First select from the user queue
-	selectedProcess=Heap_poll(readyToRunQueue[USERPROCESSQUEUE],QUEUE_PRIORITY ,&numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
+	selectedProcess=Heap_poll(readyToRunQueue[USERPROCESSQUEUE],QUEUE_PRIORITY,&numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
 
 	// Try to get a process from the daemons queue
 	if(selectedProcess == -1) {
-		selectedProcess=Heap_poll(readyToRunQueue[DAEMONSQUEUE],QUEUE_PRIORITY ,&numberOfReadyToRunProcesses[DAEMONSQUEUE]);
+		selectedProcess=Heap_poll(readyToRunQueue[DAEMONSQUEUE],QUEUE_PRIORITY,&numberOfReadyToRunProcesses[DAEMONSQUEUE]);
 	}
 
 	// Return most priority process or NOPROCESS if empty queue
@@ -561,35 +561,42 @@ void OperatingSystem_HandleClockInterrupt(){
 	int unBlockedProcesses = 0;
 	for(unBlockedProcesses = 0; unBlockedProcesses < numberOfSleepingProcesses; unBlockedProcesses++) {
 		if(processTable[sleepingProcessesQueue[unBlockedProcesses]].whenToWakeUp == numberOfClockInterrupts) {
-			OperatingSystem_MoveToTheREADYState(Heap_poll(sleepingProcessesQueue,QUEUE_WAKEUP ,&numberOfSleepingProcesses));
+			OperatingSystem_MoveToTheREADYState(Heap_poll(sleepingProcessesQueue,QUEUE_WAKEUP,&numberOfSleepingProcesses));
 		} else {
 			break;
 		}
 	}
 
-	// Check the priority...
-	if(unBlockedProcesses > 0) {
-		// If the executing process has a lower priority than the firts one in the rTRQ then swap them.
-		int currentQueue, currentPriority, lastProcess = executingProcessID;
-		currentQueue = processTable[executingProcessID].queueID;
-		currentPriority = processTable[executingProcessID].priority;
+	// If we unblocked any process we must check if it has more priority than the executing one
+	if(unBlockedProcesses) {
 
-		int selectedProcess=NOPROCESS;
-		// First select from the user queue
-		selectedProcess=Heap_getFirst(readyToRunQueue[USERPROCESSQUEUE],numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
-		// Try to get a process from the daemons queue
-		if(selectedProcess == -1) {
-			selectedProcess=Heap_getFirst(readyToRunQueue[DAEMONSQUEUE],numberOfReadyToRunProcesses[DAEMONSQUEUE]);
+		// Executing process info
+		int executingProcessQueue = processTable[executingProcessID].queueID,
+				executingProcessPriority = processTable[executingProcessID].priority,
+				lastExecutingProcess = executingProcessID;
+
+		// Try to obtain the most important one from the user process queue.
+		int mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[USERPROCESSQUEUE],numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
+
+		// If there is no user process has been waken up must be a daemon.
+		if(mostImportantREADYProcess == -1) {
+			mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[DAEMONSQUEUE],numberOfReadyToRunProcesses[DAEMONSQUEUE]);
 		}
 
-		if(currentPriority < processTable[selectedProcess].priority && currentQueue >= processTable[selectedProcess].queueID) {
+		// Then check the most important process in the rTRQ against the executing one.
+		// If the most important one has a lower priority or a lower equal queueID, then swap by preempting and dispatching the STS.
+		// Lower priority means more important.
+		// Equal lower queue ensures userQueue -> only userQueue processes; daemonsQueue -> daemonsQueue and userQueue.
+		if(processTable[mostImportantREADYProcess].priority < executingProcessPriority && processTable[mostImportantREADYProcess].queueID <= executingProcessQueue) {
 			OperatingSystem_PreemptRunningProcess();
 			OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
-		}
 
-		OperatingSystem_PrintStatus();
-		OperatingSystem_ShowTime(INTERRUPT);
-		ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,lastProcess,programList[processTable[lastProcess].programListIndex]->executableName,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
+			// Print required messages.
+			OperatingSystem_PrintStatus();
+
+			OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
+			ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,lastExecutingProcess,programList[processTable[lastExecutingProcess].programListIndex]->executableName,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
+		}
 	}
 
 	OperatingSystem_ShowTime(INTERRUPT);
