@@ -2569,58 +2569,54 @@ numberOfClockInterrupts++;
 #line 561 "OperatingSystem.c"
 
 #line 561 "OperatingSystem.c"
-int unBlockedProcesses = 0;
-#line 562 "OperatingSystem.c"
-for(unBlockedProcesses = 0;unBlockedProcesses < numberOfSleepingProcesses;unBlockedProcesses++) { { 
-#line 567 "OperatingSystem.c"
-if (processTable[sleepingProcessesQueue[unBlockedProcesses]].whenToWakeUp == numberOfClockInterrupts){
-{ 
-#line 564 "OperatingSystem.c"
-OperatingSystem_MoveToTheREADYState(Heap_poll(sleepingProcessesQueue, 0, (&numberOfSleepingProcesses))); } }else{
-{ 
+int unBLOCKEDProcesses = 0;
+#line 563 "OperatingSystem.c"
+while(Heap_getFirst(sleepingProcessesQueue, numberOfSleepingProcesses) != (-1) && processTable[Heap_getFirst(sleepingProcessesQueue, numberOfSleepingProcesses)].whenToWakeUp == numberOfClockInterrupts) { { 
 #line 566 "OperatingSystem.c"
-break; } }} } 
-#line 571 "OperatingSystem.c"
-if (unBlockedProcesses){
+OperatingSystem_MoveToTheREADYState(Heap_poll(sleepingProcessesQueue, 0, (&numberOfSleepingProcesses))); 
+#line 568 "OperatingSystem.c"
+unBLOCKEDProcesses++; } } 
+#line 572 "OperatingSystem.c"
+if (unBLOCKEDProcesses){
 { 
-#line 576 "OperatingSystem.c"
+#line 577 "OperatingSystem.c"
 
-#line 576 "OperatingSystem.c"
+#line 577 "OperatingSystem.c"
 int executingProcessQueue = processTable[executingProcessID].queueID,executingProcessPriority = processTable[executingProcessID].priority,lastExecutingProcess = executingProcessID;
-#line 579 "OperatingSystem.c"
+#line 580 "OperatingSystem.c"
 
-#line 579 "OperatingSystem.c"
+#line 580 "OperatingSystem.c"
 int mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[USERPROCESSQUEUE], numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
-#line 582 "OperatingSystem.c"
+#line 583 "OperatingSystem.c"
 if (mostImportantREADYProcess == (-1)){
 { 
-#line 583 "OperatingSystem.c"
+#line 584 "OperatingSystem.c"
 mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[DAEMONSQUEUE], numberOfReadyToRunProcesses[DAEMONSQUEUE]); } }
-#line 590 "OperatingSystem.c"
+#line 591 "OperatingSystem.c"
 if (processTable[mostImportantREADYProcess].priority < executingProcessPriority && processTable[mostImportantREADYProcess].queueID <= executingProcessQueue){
 { 
-#line 591 "OperatingSystem.c"
-OperatingSystem_PreemptRunningProcess(); 
 #line 592 "OperatingSystem.c"
+OperatingSystem_PreemptRunningProcess(); 
+#line 593 "OperatingSystem.c"
 OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler()); 
-#line 595 "OperatingSystem.c"
+#line 596 "OperatingSystem.c"
 OperatingSystem_PrintStatus(); 
-#line 597 "OperatingSystem.c"
-OperatingSystem_ShowTime('s'); 
 #line 598 "OperatingSystem.c"
+OperatingSystem_ShowTime('s'); 
+#line 599 "OperatingSystem.c"
 ComputerSystem_DebugMessage(121, 's', lastExecutingProcess, (programList[processTable[lastExecutingProcess].programListIndex]->executableName), executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName)); } }} }
-#line 602 "OperatingSystem.c"
-OperatingSystem_ShowTime('i'); 
 #line 603 "OperatingSystem.c"
-ComputerSystem_DebugMessage(120, 'i', numberOfClockInterrupts); 
+OperatingSystem_ShowTime('i'); 
 #line 604 "OperatingSystem.c"
+ComputerSystem_DebugMessage(120, 'i', numberOfClockInterrupts); 
+#line 605 "OperatingSystem.c"
 return ; 
  
-# 2620 "OperatingSystemAspect.c"
+# 2616 "OperatingSystemAspect.c"
 
 }
 
-# 2624 "OperatingSystemAspect.c"
+# 2620 "OperatingSystemAspect.c"
 
 }
  

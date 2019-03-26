@@ -558,17 +558,18 @@ void OperatingSystem_HandleClockInterrupt(){
 	numberOfClockInterrupts++;
 
 	// Check the sleepingProcessesQueue.
-	int unBlockedProcesses = 0;
-	for(unBlockedProcesses = 0; unBlockedProcesses < numberOfSleepingProcesses; unBlockedProcesses++) {
-		if(processTable[sleepingProcessesQueue[unBlockedProcesses]].whenToWakeUp == numberOfClockInterrupts) {
-			OperatingSystem_MoveToTheREADYState(Heap_poll(sleepingProcessesQueue,QUEUE_WAKEUP,&numberOfSleepingProcesses));
-		} else {
-			break;
-		}
+	int unBLOCKEDProcesses = 0;
+
+	while(Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses) != -1 && processTable[Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses)].whenToWakeUp == numberOfClockInterrupts) {
+
+		// Move to the READY state that process that meets the condition.
+		OperatingSystem_MoveToTheREADYState(Heap_poll(sleepingProcessesQueue,QUEUE_WAKEUP,&numberOfSleepingProcesses));
+		// increase the number of unblockedProcesses.
+		unBLOCKEDProcesses++;
 	}
 
 	// If we unblocked any process we must check if it has more priority than the executing one
-	if(unBlockedProcesses) {
+	if(unBLOCKEDProcesses) {
 
 		// Executing process info
 		int executingProcessQueue = processTable[executingProcessID].queueID,
