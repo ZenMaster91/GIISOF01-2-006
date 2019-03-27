@@ -26,6 +26,10 @@ int OperatingSystem_ExtractFromReadyToRun();
 void OperatingSystem_HandleException();
 void OperatingSystem_HandleSystemCall();
 void OperatingSystem_HandleClockInterrupt();
+int OperatingSystem_UpdateProcessor();
+int OperatingSystem_UpdateProcess();
+int OperatingSystem_GetMostImportantREADYProcessInfo();
+int OperatingSystem_IncreseNumberOfClockInterrupts();
 
 
 // Exercise 9 function prototype
@@ -509,7 +513,7 @@ void OperatingSystem_HandleSystemCall() {
 }
 
 //	Implement interrupt logic calling appropriate interrupt handle
-void OperatingSystem_InterruptLogic(int entryPoint){
+void OperatingSystem_InterruptLogic(int entryPoint) {
 	switch (entryPoint){
 		case SYSCALL_BIT: // SYSCALL_BIT=2
 			OperatingSystem_HandleSystemCall();
@@ -550,74 +554,102 @@ void OperatingSystem_PrintReadyToRunQueue(){
 				ComputerSystem_DebugMessage(107,SHORTTERMSCHEDULE,processPID,processTable[processPID].priority,", ");
 			}
 		}
-
 	}
-
 }
 
 // Clock Interrupt.
-void OperatingSystem_HandleClockInterrupt(){
-	numberOfClockInterrupts++;
+void OperatingSystem_HandleClockInterrupt() {
+	// Increase the number of clock interrupts.
+	int currentNumberOfClockInterrupts = OperatingSystem_IncreseNumberOfClockInterrupts();
 
 	// Check the sleepingProcessesQueue.
 	int unBLOCKEDProcesses = 0;
 
-	while(Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses) != -1 && processTable[Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses)].whenToWakeUp == numberOfClockInterrupts) {
-
+	// While there is more sleeping processes that neet to be waken up...
+	while(Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses) != -1 && processTable[Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses)].whenToWakeUp == currentNumberOfClockInterrupts) {
 		// Move to the READY state that process that meets the condition.
 		OperatingSystem_MoveToTheREADYState(Heap_poll(sleepingProcessesQueue,QUEUE_WAKEUP,&numberOfSleepingProcesses));
 		// increase the number of unblockedProcesses.
 		unBLOCKEDProcesses++;
 	}
 
-	// If we unblocked any process we must check if it has more priority than the executing one
+	// If we unblocked any process we must check if some of them have more priority than the executing one
 	if(unBLOCKEDProcesses) {
-
-		// Executing process info
-		int executingProcessQueue = processTable[executingProcessID].queueID,
-				executingProcessPriority = processTable[executingProcessID].priority,
-				lastExecutingProcess = executingProcessID;
-
-		// Try to obtain the most important one from the user process queue.
-		int mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[USERPROCESSQUEUE],numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
-
-		// If there is no user process has been waken up must be a daemon.
-		if(mostImportantREADYProcess == -1) {
-			mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[DAEMONSQUEUE],numberOfReadyToRunProcesses[DAEMONSQUEUE]);
-		}
-
-		if(processTable[mostImportantREADYProcess].queueID == executingProcessQueue) {
-			// Check the priority.
-			if(processTable[mostImportantREADYProcess].priority < executingProcessPriority) {
-				// Change always.
-				OperatingSystem_PreemptRunningProcess();
-				OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
-
-				// Print required messages.
-				OperatingSystem_PrintStatus();
-
-				OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
-				ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,lastExecutingProcess,programList[processTable[lastExecutingProcess].programListIndex]->executableName,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
-			} else {
-				// Do not change.
-			}
-
-		} else if(processTable[mostImportantREADYProcess].queueID < executingProcessQueue) {
-			// Change always
-			OperatingSystem_PreemptRunningProcess();
-			OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
-
-			// Print required messages.
-			OperatingSystem_PrintStatus();
-
-			OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
-			ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,lastExecutingProcess,programList[processTable[lastExecutingProcess].programListIndex]->executableName,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
-		} else {
-			// Do not change.
-		}
+		OperatingSystem_UpdateProcessor();
 	}
 
+	// Finally print the the corresponding debug message.
 	OperatingSystem_ShowTime(INTERRUPT);
-	ComputerSystem_DebugMessage(120, INTERRUPT, numberOfClockInterrupts);
+	ComputerSystem_DebugMessage(120, INTERRUPT, currentNumberOfClockInterrupts);
 	return;
+}
+
+// -----------------------------------------------------------------------------
+// --------------------------- CUSTOM FUNCTIONS --------------------------------
+// -----------------------------------------------------------------------------
+
+// Increases in one unit the number of clock interrupts and returns the new value
+int OperatingSystem_IncreseNumberOfClockInterrupts() {
+	return ++numberOfClockInterrupts;
+}
+
+// Updates the processor with the most important process in the rTRQ.
+// Returns 0 if no change was made and 1 if any change done.
+int OperatingSystem_UpdateProcessor() {
+
+	// Executing process info
+	int executingProcessQueue = processTable[executingProcessID].queueID,
+			executingProcessPriority = processTable[executingProcessID].priority;
+
+	// Try to obtain the most important one from the user process queue.
+	int mostImportantREADYProcess = OperatingSystem_GetMostImportantREADYProcessInfo();
+
+	if(processTable[mostImportantREADYProcess].queueID == executingProcessQueue) {
+		// Check the priority.
+		if(processTable[mostImportantREADYProcess].priority < executingProcessPriority) {
+			// Change always, update the running process.
+			return OperatingSystem_UpdateProcess();
+		} else {
+			// Do not change.
+			return 0;
+		}
+
+	} else if(processTable[mostImportantREADYProcess].queueID < executingProcessQueue) {
+		// Change always, update the running process.
+		return OperatingSystem_UpdateProcess();
+	} else {
+		// Do not change.
+		return 0;
+	}
+}
+
+// Updates the process that runs on the processor.
+// Return 1 if everything ok.
+int OperatingSystem_UpdateProcess() {
+	int lastExecutingProcess = executingProcessID;
+
+	// Remove the executing process from the processor and load the new most important one.
+	OperatingSystem_PreemptRunningProcess();
+	OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
+
+	// Print required messages.
+	OperatingSystem_PrintStatus();
+	OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
+	ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,lastExecutingProcess,programList[processTable[lastExecutingProcess].programListIndex]->executableName,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
+
+	return 1;
+}
+
+// Gets the most important process in the rTRQ information without removing it from the rTRQ.
+// Return the most important process in the rTRQ PID.
+int OperatingSystem_GetMostImportantREADYProcessInfo() {
+	// Try to obtain the most important one from the user process queue.
+	int mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[USERPROCESSQUEUE],numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
+
+	// If there is no user process has been waken up must be a daemon.
+	if(mostImportantREADYProcess == -1) {
+		mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[DAEMONSQUEUE],numberOfReadyToRunProcesses[DAEMONSQUEUE]);
+	}
+
+	return mostImportantREADYProcess;
 }
