@@ -308,10 +308,12 @@ void OperatingSystem_MoveToTheBLOCKEDState(int PID) {
 
 		// Save in the process' PCB essential values stored in hardware registers and the system stack
 		OperatingSystem_SaveContext(executingProcessID);
-
+		int lastState = processTable[PID].state;
 		processTable[PID].state=BLOCKED;
 		processTable[PID].whenToWakeUp = abs(Processor_GetAccumulator()) + numberOfClockInterrupts + 1;
 		// Call the ShortTermScheduler for the new process.
+		OperatingSystem_ShowTime(SYSPROC);
+		ComputerSystem_DebugMessage(110,SYSPROC,PID,programList[processTable[PID].programListIndex]->executableName,statesNames[lastState],statesNames[BLOCKED]);
 
 	}
 }
