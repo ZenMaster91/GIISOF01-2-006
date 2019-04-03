@@ -92,22 +92,21 @@ extern  PROGRAMS_DATA *programList[30];
 # 1 "/usr/include/stdio.h" 1 3 4
 # 27 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
-# 367 "/usr/include/features.h" 3 4
+# 374 "/usr/include/features.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4
-# 410 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
+# 385 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
-# 411 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
-# 368 "/usr/include/features.h" 2 3 4
-# 391 "/usr/include/features.h" 3 4
+# 386 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 375 "/usr/include/features.h" 2 3 4
+# 398 "/usr/include/features.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 1 3 4
 # 10 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h" 1 3 4
 # 11 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 2 3 4
-# 392 "/usr/include/features.h" 2 3 4
+# 399 "/usr/include/features.h" 2 3 4
 # 28 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 1 3 4
-# 216 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 3 4
-# 216 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.9/include/stddef.h" 1 3 4
+# 212 "/usr/lib/gcc/x86_64-linux-gnu/4.9/include/stddef.h" 3 4
 typedef long unsigned int size_t; 
 # 34 "/usr/include/stdio.h" 2 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/types.h" 1 3 4
@@ -233,7 +232,7 @@ typedef struct _IO_FILE __FILE;
 # 31 "/usr/include/libio.h" 3 4
 # 1 "/usr/include/_G_config.h" 1 3 4
 # 15 "/usr/include/_G_config.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 1 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.9/include/stddef.h" 1 3 4
 # 16 "/usr/include/_G_config.h" 2 3 4
 # 1 "/usr/include/wchar.h" 1 3 4
 # 94 "/usr/include/wchar.h" 3 4
@@ -249,81 +248,82 @@ typedef struct { __off64_t __pos;  __mbstate_t __state;
 # 21 "/usr/include/_G_config.h" 2 3 4
 # 32 "/usr/include/libio.h" 2 3 4
 # 49 "/usr/include/libio.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h" 1 3 4
-# 40 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.9/include/stdarg.h" 1 3 4
+# 40 "/usr/lib/gcc/x86_64-linux-gnu/4.9/include/stdarg.h" 3 4
 typedef __builtin_va_list __gnuc_va_list; 
 # 50 "/usr/include/libio.h" 2 3 4
 # 144 "/usr/include/libio.h" 3 4
 struct _IO_jump_t ; 
 #line 144 "/usr/include/libio.h"
 struct _IO_FILE ; 
-#line 150 "/usr/include/libio.h"
+#line 154 "/usr/include/libio.h"
 typedef void _IO_lock_t; 
-#line 173 "/usr/include/libio.h"
+# 154 "/usr/include/libio.h" 3 4
+# 177 "/usr/include/libio.h" 3 4
 struct _IO_marker {struct _IO_marker *_next; struct _IO_FILE *_sbuf; int _pos; 
 }; 
-#line 182 "/usr/include/libio.h"
+#line 186 "/usr/include/libio.h"
 enum __codecvt_result {__codecvt_ok,__codecvt_partial,__codecvt_error,__codecvt_noconv}; 
-# 173 "/usr/include/libio.h" 3 4
-# 241 "/usr/include/libio.h" 3 4
-# 307 "/usr/include/libio.h" 3 4
+# 245 "/usr/include/libio.h" 3 4
+# 293 "/usr/include/libio.h" 3 4
+# 312 "/usr/include/libio.h" 3 4
 struct _IO_FILE {int _flags; char *_IO_read_ptr; char *_IO_read_end; char *_IO_read_base; char *_IO_write_base; char *_IO_write_ptr; char *_IO_write_end; char *_IO_buf_base; char *_IO_buf_end; char *_IO_save_base; char *_IO_backup_base; char *_IO_save_end; struct _IO_marker *_markers; struct _IO_FILE *_chain; int _fileno; int _flags2;  __off_t _old_offset; unsigned short _cur_column; signed char _vtable_offset; char _shortbuf[1];  _IO_lock_t *_lock;  __off64_t _offset; void *__pad1; void *__pad2; void *__pad3; void *__pad4;  size_t __pad5; int _mode; char _unused2[15 * sizeof (int ) - 4 * sizeof (void *) - sizeof ( size_t )]; 
 }; 
-#line 310 "/usr/include/libio.h"
-typedef struct _IO_FILE _IO_FILE; 
-#line 313 "/usr/include/libio.h"
-struct _IO_FILE_plus ; 
 #line 315 "/usr/include/libio.h"
+typedef struct _IO_FILE _IO_FILE; 
+#line 318 "/usr/include/libio.h"
+struct _IO_FILE_plus ; 
+#line 320 "/usr/include/libio.h"
 extern struct _IO_FILE_plus _IO_2_1_stdin_; 
-#line 316 "/usr/include/libio.h"
+#line 321 "/usr/include/libio.h"
 extern struct _IO_FILE_plus _IO_2_1_stdout_; 
-#line 317 "/usr/include/libio.h"
+#line 322 "/usr/include/libio.h"
 extern struct _IO_FILE_plus _IO_2_1_stderr_; 
-#line 333 "/usr/include/libio.h"
+#line 338 "/usr/include/libio.h"
 typedef  __ssize_t __io_read_fn(void *__cookie, char *__buf,  size_t __nbytes); 
-#line 342 "/usr/include/libio.h"
+#line 347 "/usr/include/libio.h"
 typedef  __ssize_t __io_write_fn(void *__cookie, const char *__buf,  size_t __n); 
-#line 350 "/usr/include/libio.h"
+#line 355 "/usr/include/libio.h"
 typedef int __io_seek_fn(void *__cookie,  __off64_t *__pos, int __w); 
-#line 353 "/usr/include/libio.h"
+#line 358 "/usr/include/libio.h"
 typedef int __io_close_fn(void *__cookie); 
-# 333 "/usr/include/libio.h" 3 4
-# 385 "/usr/include/libio.h" 3 4
+# 338 "/usr/include/libio.h" 3 4
+# 390 "/usr/include/libio.h" 3 4
 extern int __underflow( _IO_FILE *); 
-#line 386 "/usr/include/libio.h"
+#line 391 "/usr/include/libio.h"
 extern int __uflow( _IO_FILE *); 
-#line 387 "/usr/include/libio.h"
+#line 392 "/usr/include/libio.h"
 extern int __overflow( _IO_FILE *, int ); 
-#line 429 "/usr/include/libio.h"
-extern int _IO_getc( _IO_FILE *__fp); 
-#line 430 "/usr/include/libio.h"
-extern int _IO_putc(int __c,  _IO_FILE *__fp); 
-#line 431 "/usr/include/libio.h"
-extern int _IO_feof( _IO_FILE *__fp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 432 "/usr/include/libio.h"
-extern int _IO_ferror( _IO_FILE *__fp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
 #line 434 "/usr/include/libio.h"
+extern int _IO_getc( _IO_FILE *__fp); 
+#line 435 "/usr/include/libio.h"
+extern int _IO_putc(int __c,  _IO_FILE *__fp); 
+#line 436 "/usr/include/libio.h"
+extern int _IO_feof( _IO_FILE *__fp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 437 "/usr/include/libio.h"
+extern int _IO_ferror( _IO_FILE *__fp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 439 "/usr/include/libio.h"
 extern int _IO_peekc_locked( _IO_FILE *__fp); 
-#line 440 "/usr/include/libio.h"
+#line 445 "/usr/include/libio.h"
 extern void _IO_flockfile( _IO_FILE *) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 441 "/usr/include/libio.h"
+#line 446 "/usr/include/libio.h"
 extern void _IO_funlockfile( _IO_FILE *) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 442 "/usr/include/libio.h"
+#line 447 "/usr/include/libio.h"
 extern int _IO_ftrylockfile( _IO_FILE *) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 429 "/usr/include/libio.h" 3 4
-# 460 "/usr/include/libio.h" 3 4
+# 434 "/usr/include/libio.h" 3 4
+# 465 "/usr/include/libio.h" 3 4
 extern int _IO_vfscanf( _IO_FILE *__restrict , const char *__restrict ,  __gnuc_va_list , int *__restrict ); 
-#line 462 "/usr/include/libio.h"
-extern int _IO_vfprintf( _IO_FILE *__restrict , const char *__restrict ,  __gnuc_va_list ); 
-#line 463 "/usr/include/libio.h"
-extern  __ssize_t _IO_padn( _IO_FILE *, int ,  __ssize_t ); 
-#line 464 "/usr/include/libio.h"
-extern  size_t _IO_sgetn( _IO_FILE *, void *,  size_t ); 
-#line 466 "/usr/include/libio.h"
-extern  __off64_t _IO_seekoff( _IO_FILE *,  __off64_t , int , int ); 
 #line 467 "/usr/include/libio.h"
-extern  __off64_t _IO_seekpos( _IO_FILE *,  __off64_t , int ); 
+extern int _IO_vfprintf( _IO_FILE *__restrict , const char *__restrict ,  __gnuc_va_list ); 
+#line 468 "/usr/include/libio.h"
+extern  __ssize_t _IO_padn( _IO_FILE *, int ,  __ssize_t ); 
 #line 469 "/usr/include/libio.h"
+extern  size_t _IO_sgetn( _IO_FILE *, void *,  size_t ); 
+#line 471 "/usr/include/libio.h"
+extern  __off64_t _IO_seekoff( _IO_FILE *,  __off64_t , int , int ); 
+#line 472 "/usr/include/libio.h"
+extern  __off64_t _IO_seekpos( _IO_FILE *,  __off64_t , int ); 
+#line 474 "/usr/include/libio.h"
 extern void _IO_free_backup_area( _IO_FILE *) __attribute__  (( __nothrow__ , __leaf__ )) ; 
 #line 79 "/usr/include/stdio.h"
 typedef  __gnuc_va_list va_list; 
@@ -463,8 +463,9 @@ extern int putw(int __w,  FILE *__stream);
 #line 623 "/usr/include/stdio.h"
 extern char *fgets(char *__restrict __s, int __n,  FILE *__restrict __stream); 
 # 594 "/usr/include/stdio.h" 3 4
-# 640 "/usr/include/stdio.h" 3 4
-# 667 "/usr/include/stdio.h" 3 4
+# 638 "/usr/include/stdio.h" 3 4
+extern char *gets(char *__s) __attribute__  (( __deprecated__ )) ; 
+#line 667 "/usr/include/stdio.h"
 extern  __ssize_t __getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream); 
 #line 670 "/usr/include/stdio.h"
 extern  __ssize_t getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream); 
@@ -480,7 +481,8 @@ extern int ungetc(int __c,  FILE *__stream);
 extern  size_t fread(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
 #line 716 "/usr/include/stdio.h"
 extern  size_t fwrite(const void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __s); 
-#line 738 "/usr/include/stdio.h"
+# 665 "/usr/include/stdio.h" 3 4
+# 738 "/usr/include/stdio.h" 3 4
 extern  size_t fread_unlocked(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
 #line 740 "/usr/include/stdio.h"
 extern  size_t fwrite_unlocked(const void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
@@ -490,16 +492,15 @@ extern int fseek( FILE *__stream, long int __off, int __whence);
 extern long int ftell( FILE *__stream); 
 #line 759 "/usr/include/stdio.h"
 extern void rewind( FILE *__stream); 
-# 737 "/usr/include/stdio.h" 3 4
-# 773 "/usr/include/stdio.h" 3 4
+#line 773 "/usr/include/stdio.h"
 extern int fseeko( FILE *__stream,  __off_t __off, int __whence); 
 #line 778 "/usr/include/stdio.h"
 extern  __off_t ftello( FILE *__stream); 
-#line 798 "/usr/include/stdio.h"
+# 773 "/usr/include/stdio.h" 3 4
+# 798 "/usr/include/stdio.h" 3 4
 extern int fgetpos( FILE *__restrict __stream,  fpos_t *__restrict __pos); 
 #line 803 "/usr/include/stdio.h"
 extern int fsetpos( FILE *__stream, const  fpos_t *__pos); 
-# 792 "/usr/include/stdio.h" 3 4
 # 815 "/usr/include/stdio.h" 3 4
 # 826 "/usr/include/stdio.h" 3 4
 extern void clearerr( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
@@ -525,22 +526,21 @@ extern int fileno( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ;
 #line 863 "/usr/include/stdio.h"
 extern int fileno_unlocked( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
 # 854 "/usr/include/stdio.h" 2 3 4
-# 872 "/usr/include/stdio.h" 3 4
+# 873 "/usr/include/stdio.h" 3 4
 extern  FILE *popen(const char *__command, const char *__modes); 
-#line 878 "/usr/include/stdio.h"
+#line 879 "/usr/include/stdio.h"
 extern int pclose( FILE *__stream); 
-#line 884 "/usr/include/stdio.h"
+#line 885 "/usr/include/stdio.h"
 extern char *ctermid(char *__s) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 912 "/usr/include/stdio.h"
+#line 913 "/usr/include/stdio.h"
 extern void flockfile( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 916 "/usr/include/stdio.h"
+#line 917 "/usr/include/stdio.h"
 extern int ftrylockfile( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 919 "/usr/include/stdio.h"
+#line 920 "/usr/include/stdio.h"
 extern void funlockfile( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 912 "/usr/include/stdio.h" 3 4
-# 942 "/usr/include/stdio.h" 3 4
+# 913 "/usr/include/stdio.h" 3 4
+# 943 "/usr/include/stdio.h" 3 4
 # 6 "OperatingSystem.h" 2
-# 29 "OperatingSystem.h" 
 # 29 "OperatingSystem.h" 
 enum ProcessQueues {USERPROCESSQUEUE,DAEMONSQUEUE}; 
 #line 34 "OperatingSystem.h"
@@ -584,11 +584,15 @@ void OperatingSystem_PrintReadyToRunQueue();
 void OperatingSystem_PrepareTeachersDaemons(); 
 #line 18 "OperatingSystemBase.h"
 int OperatingSystem_IsThereANewProgram(); 
+#line 19 "OperatingSystemBase.h"
+int OperatingSystem_InitializePartitionTable(); 
 #line 20 "OperatingSystemBase.h"
-extern int sleepingProcessesQueue[4]; 
-#line 21 "OperatingSystemBase.h"
-extern int numberOfSleepingProcesses; 
+void OperatingSystem_ShowPartitionTable(char *); 
 #line 23 "OperatingSystemBase.h"
+extern int sleepingProcessesQueue[4]; 
+#line 24 "OperatingSystemBase.h"
+extern int numberOfSleepingProcesses; 
+#line 26 "OperatingSystemBase.h"
 extern int baseDaemonsInProgramList; 
 # 6 "OperatingSystemBase.h" 2
 # 6 "MyAspect.c" 2
