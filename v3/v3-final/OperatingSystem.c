@@ -30,6 +30,7 @@ int OperatingSystem_UpdateProcessor();
 int OperatingSystem_UpdateProcess();
 int OperatingSystem_GetMostImportantREADYProcessInfo();
 int OperatingSystem_IncreseNumberOfClockInterrupts();
+int OperatingSystem_checkIfShutdown();
 
 
 // Exercise 9 function prototype
@@ -444,7 +445,7 @@ void OperatingSystem_TerminateProcess() {
 		// One more user process that has terminated
 		numberOfNotTerminatedUserProcesses--;
 
-	if (OperatingSystem_IsThereANewProgram()==-1) {
+	if (OperatingSystem_checkIfShutdown()) {
 		// Simulation must finish
 		OperatingSystem_ReadyToShutdown();
 	}
@@ -586,7 +587,7 @@ void OperatingSystem_HandleClockInterrupt() {
 	// If we unblocked any process we must check if some of them have more priority than the executing one
 	if(unBLOCKEDProcesses || OperatingSystem_LongTermScheduler()) {
 		OperatingSystem_UpdateProcessor();
-	} else if (OperatingSystem_IsThereANewProgram()==-1) {
+	} else if (OperatingSystem_checkIfShutdown()) {
 		// Simulation must finish
 		OperatingSystem_ReadyToShutdown();
 	}
@@ -669,4 +670,17 @@ int OperatingSystem_GetMostImportantREADYProcessInfo() {
 	}
 
 	return mostImportantREADYProcess;
+}
+
+// Returns 1 if there OS should shut down. 0 otherwise.
+int OperatingSystem_checkIfShutdown() {
+	int arrivalTimeQueue = OperatingSystem_IsThereANewProgram();
+	int sleepingQueue = Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses);
+	int rTRQ = OperatingSystem_GetMostImportantREADYProcessInfo();
+
+	if(arrivalTimeQueue == -1 && sleepingQueue == -1 && rTRQ == -1) {
+		return 1;
+	} else {
+		return 0;
+	}
 }
