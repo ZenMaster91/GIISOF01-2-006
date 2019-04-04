@@ -28,6 +28,7 @@
 #define NUMBEROFQUEUES 2
 enum ProcessQueues { USERPROCESSQUEUE, DAEMONSQUEUE};
 
+// Definition for the conditional compiling of the sleeping queue.
 #define SLEEPINGQUEUE
 
 // Contains the possible type of programs

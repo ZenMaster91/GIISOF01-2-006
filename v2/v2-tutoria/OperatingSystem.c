@@ -562,6 +562,10 @@ void OperatingSystem_HandleClockInterrupt() {
 	// Increase the number of clock interrupts.
 	int currentNumberOfClockInterrupts = OperatingSystem_IncreseNumberOfClockInterrupts();
 
+	// Print the the corresponding debug message.
+	OperatingSystem_ShowTime(INTERRUPT);
+	ComputerSystem_DebugMessage(120, INTERRUPT, currentNumberOfClockInterrupts);
+
 	// Check the sleepingProcessesQueue.
 	int unBLOCKEDProcesses = 0;
 
@@ -578,9 +582,6 @@ void OperatingSystem_HandleClockInterrupt() {
 		OperatingSystem_UpdateProcessor();
 	}
 
-	// Finally print the the corresponding debug message.
-	OperatingSystem_ShowTime(INTERRUPT);
-	ComputerSystem_DebugMessage(120, INTERRUPT, currentNumberOfClockInterrupts);
 	return;
 }
 
@@ -650,7 +651,7 @@ int OperatingSystem_GetMostImportantREADYProcessInfo() {
 	int mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[USERPROCESSQUEUE],numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
 
 	// If there is no user process has been waken up must be a daemon.
-	if(mostImportantREADYProcess == -1) {
+	if(mostImportantREADYProcess == NOPROCESS) {
 		mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[DAEMONSQUEUE],numberOfReadyToRunProcesses[DAEMONSQUEUE]);
 	}
 

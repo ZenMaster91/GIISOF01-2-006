@@ -100,8 +100,8 @@ void OperatingSystem_Initialize(int daemonsIndex) {
 
 	if(numberOfSuccesfullyCreatedProcesses <= 1) {
 		// Incapable of create any process, simulation must finish;
-                OperatingSystem_ReadyToShutdown();
-        }
+    OperatingSystem_ReadyToShutdown();
+  }
 
 	if (strcmp(programList[processTable[sipID].programListIndex]->executableName,"SystemIdleProcess")) {
 		// Show message "ERROR: Missing SIP program!\n"
@@ -187,7 +187,6 @@ int OperatingSystem_LongTermScheduler() {
 	return numberOfSuccessfullyCreatedProcesses;
 }
 
-
 // This function creates a process from an executable program
 int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 
@@ -202,7 +201,7 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 	PID=OperatingSystem_ObtainAnEntryInTheProcessTable();
 
 	// If NOFREEENTRY occurs return the NOFREEENTRY.
-	if(PID==NOFREEENTRY){
+	if(PID==NOFREEENTRY) {
 		return PID;
 	}
 
@@ -210,12 +209,12 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 	processSize=OperatingSystem_ObtainProgramSize(&programFile, executableProgram->executableName);
 
 	// If the program is not valid
-	if(processSize==PROGRAMNOTVALID){
+	if(processSize==PROGRAMNOTVALID) {
 		return PROGRAMNOTVALID;
 	}
 
 	// If the program does not exists
-	if(processSize==PROGRAMDOESNOTEXIST){
+	if(processSize==PROGRAMDOESNOTEXIST) {
 		return PROGRAMDOESNOTEXIST;
 	}
 
@@ -223,7 +222,7 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 	priority=OperatingSystem_ObtainPriority(programFile);
 
 	// If the program is not valid
-  if(priority==PROGRAMNOTVALID){
+  if(priority==PROGRAMNOTVALID) {
   	return PROGRAMNOTVALID;
   }
 
@@ -235,7 +234,7 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 
 	// Load program in the allocated memory
 	// If the process is too big
-	if( OperatingSystem_LoadProgram(programFile, loadingPhysicalAddress, processSize) == TOOBIGPROCESS){
+	if( OperatingSystem_LoadProgram(programFile, loadingPhysicalAddress, processSize) == TOOBIGPROCESS) {
 		return TOOBIGPROCESS;
 	}
 	// PCB initialization
@@ -326,11 +325,8 @@ void OperatingSystem_MoveToTheBLOCKEDState(int PID) {
 // It uses processes priorities to make the decission. Given that the READY queue is ordered
 // depending on processes priority, the STS just selects the process in front of the READY queue
 int OperatingSystem_ShortTermScheduler() {
-
 	int selectedProcess;
-
 	selectedProcess=OperatingSystem_ExtractFromReadyToRun();
-
 	return selectedProcess;
 }
 
@@ -415,6 +411,7 @@ void OperatingSystem_HandleException() {
 	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(23,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
 
+	// Terminate the process and print the system status.
 	OperatingSystem_TerminateProcess();
 	OperatingSystem_PrintStatus();
 }
@@ -423,7 +420,6 @@ void OperatingSystem_HandleException() {
 // All tasks regarding the removal of the process
 void OperatingSystem_TerminateProcess() {
 
-	int selectedProcess;
 	int lastState = processTable[executingProcessID].state;
 
 	processTable[executingProcessID].state=EXIT;
@@ -439,9 +435,8 @@ void OperatingSystem_TerminateProcess() {
 		OperatingSystem_ReadyToShutdown();
 	}
 	// Select the next process to execute (sipID if no more user processes)
-	selectedProcess=OperatingSystem_ShortTermScheduler();
 	// Assign the processor to that process
-	OperatingSystem_Dispatch(selectedProcess);
+	OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
 }
 
 
@@ -503,7 +498,7 @@ void OperatingSystem_HandleSystemCall() {
 			// Move the executing proces to the BLOCKED state.
 			OperatingSystem_MoveToTheBLOCKEDState(executingProcessID);
 
-			// Start new process. It is the first opne dispached by the ShortTermScheduler.
+			// Start new process. It is the first one dispached by the ShortTermScheduler.
 			OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
 
 			// Finally print the system status.
@@ -514,7 +509,7 @@ void OperatingSystem_HandleSystemCall() {
 
 //	Implement interrupt logic calling appropriate interrupt handle
 void OperatingSystem_InterruptLogic(int entryPoint) {
-	switch (entryPoint){
+	switch (entryPoint) {
 		case SYSCALL_BIT: // SYSCALL_BIT=2
 			OperatingSystem_HandleSystemCall();
 			break;
@@ -529,7 +524,7 @@ void OperatingSystem_InterruptLogic(int entryPoint) {
 }
 
 // Exercise 9 function, print the ready-to-run queue
-void OperatingSystem_PrintReadyToRunQueue(){
+void OperatingSystem_PrintReadyToRunQueue() {
 	// rTRQ contains 2,3,4,5,1 (PDIs)
 	// not all valid. numberOfReadyToRunProcesses
 	// valid indexes. Priotiries are in the processTable
@@ -562,11 +557,15 @@ void OperatingSystem_HandleClockInterrupt() {
 	// Increase the number of clock interrupts.
 	int currentNumberOfClockInterrupts = OperatingSystem_IncreseNumberOfClockInterrupts();
 
+	// Finally print the the corresponding debug message.
+	OperatingSystem_ShowTime(INTERRUPT);
+	ComputerSystem_DebugMessage(120, INTERRUPT, currentNumberOfClockInterrupts);
+
 	// Check the sleepingProcessesQueue.
 	int unBLOCKEDProcesses = 0;
 
 	// While there is more sleeping processes that neet to be waken up...
-	while(Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses) != -1 && processTable[Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses)].whenToWakeUp == currentNumberOfClockInterrupts) {
+	while(Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses) != -1 && processTable[Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses)].whenToWakeUp <= currentNumberOfClockInterrupts) {
 		// Move to the READY state that process that meets the condition.
 		OperatingSystem_MoveToTheREADYState(Heap_poll(sleepingProcessesQueue,QUEUE_WAKEUP,&numberOfSleepingProcesses));
 		// increase the number of unblockedProcesses.
@@ -577,11 +576,6 @@ void OperatingSystem_HandleClockInterrupt() {
 	if(unBLOCKEDProcesses) {
 		OperatingSystem_UpdateProcessor();
 	}
-
-	// Finally print the the corresponding debug message.
-	OperatingSystem_ShowTime(INTERRUPT);
-	ComputerSystem_DebugMessage(120, INTERRUPT, currentNumberOfClockInterrupts);
-	return;
 }
 
 // -----------------------------------------------------------------------------

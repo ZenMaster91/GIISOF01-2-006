@@ -547,24 +547,24 @@ extern void funlockfile( FILE *__stream) __attribute__  (( __nothrow__ , __leaf_
 # 29 "OperatingSystem.h" 
 # 29 "OperatingSystem.h" 
 enum ProcessQueues {USERPROCESSQUEUE,DAEMONSQUEUE}; 
-#line 34 "OperatingSystem.h"
+#line 35 "OperatingSystem.h"
 enum ProgramTypes {USERPROGRAM,DAEMONPROGRAM}; 
-#line 37 "OperatingSystem.h"
+#line 38 "OperatingSystem.h"
 enum ProcessStates {NEW,READY,EXECUTING,BLOCKED,EXIT}; 
-#line 40 "OperatingSystem.h"
+#line 41 "OperatingSystem.h"
 enum SystemCallIdentifiers {SYSCALL_END=3,SYSCALL_PRINTEXECPID=5,SYSCALL_YIELD=4,SYSCALL_SLEEP=7}; 
-#line 55 "OperatingSystem.h"
+#line 56 "OperatingSystem.h"
 typedef struct {int busy; int initialPhysicalAddress; int processSize; int state; int priority; int copyOfPCRegister; unsigned int copyOfPSWRegister; int copyOfAccumulator; int programListIndex; int queueID; int whenToWakeUp; 
 }PCB; 
-#line 59 "OperatingSystem.h"
-extern  PCB processTable[4]; 
 #line 60 "OperatingSystem.h"
-extern int OS_address_base; 
+extern  PCB processTable[4]; 
 #line 61 "OperatingSystem.h"
+extern int OS_address_base; 
+#line 62 "OperatingSystem.h"
 extern int sipID; 
-#line 64 "OperatingSystem.h"
-void OperatingSystem_Initialize(); 
 #line 65 "OperatingSystem.h"
+void OperatingSystem_Initialize(); 
+#line 66 "OperatingSystem.h"
 void OperatingSystem_InterruptLogic(int ); 
 #line 9 "OperatingSystemBase.h"
 int OperatingSystem_ObtainAnEntryInTheProcessTable(); 

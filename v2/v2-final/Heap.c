@@ -38,7 +38,7 @@ int Heap_poll(int heap[], int queueType, int *numElem) {
 		Heap_swap_Down(0, heap, queueType, *numElem);
 		(*numElem)--;
 	}
-	return info;		
+	return info;
 }
 
 // Return top value of heap
@@ -46,7 +46,7 @@ int Heap_poll(int heap[], int queueType, int *numElem) {
 // numElem: number of elements actually into the queue
 // return more priority item, but not extract from heap
 int Heap_getFirst(int heap[], int numElem) {
-	if (numElem>0) 
+	if (numElem>0)
 		return heap[0];
 	else
 		return -1;
@@ -57,7 +57,7 @@ void Heap_swap_Up(int p, int heap[], int queueType) {
 	if (p > 0)  { // if not at the top...
 		int padre = abs(p - 1) / 2; // integer operation
 		if (Heap_compare(heap[p],heap[padre],queueType)>0) { // less than father...
-			int aux = heap[padre]; 
+			int aux = heap[padre];
 			heap[padre] = heap[p];
 			heap[p] = aux;
 			Heap_swap_Up(padre, heap, queueType);
@@ -70,13 +70,13 @@ void Heap_swap_Down(int p, int heap[], int queueType, int numElem) {
 	int izq = 2*p+1;
 	int der = 2*p+2;
 	int aux = heap[p];
-	
-	if (der < numElem) //  2 children... 
+
+	if (der < numElem) //  2 children...
 		if ((Heap_compare(heap[izq],heap[der], queueType)>0) && (Heap_compare(heap[p],heap[izq],queueType)<0)){ // Switch with left-child if right-child greater
 			heap[p] = heap[izq];
 			heap[izq] = aux;
 			Heap_swap_Down(izq, heap, queueType, numElem);
-		} else { // right 
+		} else { // right
 			if (Heap_compare(heap[p],heap[der], queueType)<0) { // Switch with right-child
 				heap[p] = heap[der];
 				heap[der] = aux;
@@ -113,7 +113,7 @@ int Heap_compare_assertsTime(int value1, int value2) {
 
 // Auxiliary for generic comparations
 int Heap_compare(int value1, int value2, int queueType) {
-  
+
   switch (queueType) {
 	case QUEUE_WAKEUP:
 	  return Heap_compare_wakeup(value1, value2);
@@ -122,8 +122,6 @@ int Heap_compare(int value1, int value2, int queueType) {
 	case QUEUE_ASSERTS:
 	  return Heap_compare_assertsTime(value1, value2);
 	default:
-	  return 0; // 
+	  return 0; //
   }
 }
-
-
