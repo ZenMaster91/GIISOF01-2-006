@@ -2394,7 +2394,7 @@ if ((programList[processTable[executingProcessID].programListIndex]->type) == US
 #line 454 "OperatingSystem.c"
 numberOfNotTerminatedUserProcesses--; } }
 #line 458 "OperatingSystem.c"
-if (numberOfNotTerminatedUserProcesses <= 0){
+if (numberOfNotTerminatedUserProcesses == 0){
 { 
 #line 460 "OperatingSystem.c"
 OperatingSystem_ReadyToShutdown(); } }
@@ -2661,7 +2661,7 @@ int retValue_acc;
 # 2662 "OperatingSystemAspect.c"
 {
 
-#line 634 "OperatingSystem.c"
+#line 636 "OperatingSystem.c"
 
 # 2667 "OperatingSystemAspect.c"
 retValue_acc = (++numberOfClockInterrupts);
@@ -2679,7 +2679,7 @@ return (int )retValue_acc;
 
 }
  
-#line 639 "OperatingSystem.c"
+#line 641 "OperatingSystem.c"
 int OperatingSystem_UpdateProcessor()  
 # 2685 "OperatingSystemAspect.c"
 {
@@ -2692,21 +2692,21 @@ int retValue_acc;
 # 2693 "OperatingSystemAspect.c"
 {
 
-#line 643 "OperatingSystem.c"
+#line 645 "OperatingSystem.c"
 
-#line 643 "OperatingSystem.c"
+#line 645 "OperatingSystem.c"
 int executingProcessQueue = processTable[executingProcessID].queueID,executingProcessPriority = processTable[executingProcessID].priority;
-#line 646 "OperatingSystem.c"
-
-#line 646 "OperatingSystem.c"
-int mostImportantREADYProcess = OperatingSystem_GetMostImportantREADYProcessInfo();
 #line 648 "OperatingSystem.c"
+
+#line 648 "OperatingSystem.c"
+int mostImportantREADYProcess = OperatingSystem_GetMostImportantREADYProcessInfo();
+#line 650 "OperatingSystem.c"
 if (processTable[mostImportantREADYProcess].queueID == executingProcessQueue){
 { 
-#line 656 "OperatingSystem.c"
+#line 658 "OperatingSystem.c"
 if (processTable[mostImportantREADYProcess].priority < executingProcessPriority){
 { 
-#line 652 "OperatingSystem.c"
+#line 654 "OperatingSystem.c"
 
 # 2712 "OperatingSystemAspect.c"
 retValue_acc = OperatingSystem_UpdateProcess();
@@ -2714,7 +2714,7 @@ retValue_acc = OperatingSystem_UpdateProcess();
 return (int )retValue_acc;
  } }else{
 { 
-#line 655 "OperatingSystem.c"
+#line 657 "OperatingSystem.c"
 
 # 2720 "OperatingSystemAspect.c"
 retValue_acc = 0;
@@ -2723,7 +2723,7 @@ return (int )retValue_acc;
  } }} }else{
 if (processTable[mostImportantREADYProcess].queueID < executingProcessQueue){
 { 
-#line 660 "OperatingSystem.c"
+#line 662 "OperatingSystem.c"
 
 # 2729 "OperatingSystemAspect.c"
 retValue_acc = OperatingSystem_UpdateProcess();
@@ -2731,7 +2731,7 @@ retValue_acc = OperatingSystem_UpdateProcess();
 return (int )retValue_acc;
  } }else{
 { 
-#line 663 "OperatingSystem.c"
+#line 665 "OperatingSystem.c"
 
 # 2737 "OperatingSystemAspect.c"
 retValue_acc = 0;
@@ -2749,7 +2749,7 @@ return (int )retValue_acc;
 
 }
  
-#line 669 "OperatingSystem.c"
+#line 671 "OperatingSystem.c"
 int OperatingSystem_UpdateProcess()  
 # 2755 "OperatingSystemAspect.c"
 {
@@ -2762,21 +2762,21 @@ int retValue_acc;
 # 2763 "OperatingSystemAspect.c"
 {
 
-#line 670 "OperatingSystem.c"
+#line 672 "OperatingSystem.c"
 
-#line 670 "OperatingSystem.c"
+#line 672 "OperatingSystem.c"
 int lastExecutingProcess = executingProcessID;
-#line 673 "OperatingSystem.c"
+#line 675 "OperatingSystem.c"
 OperatingSystem_PreemptRunningProcess(); 
-#line 674 "OperatingSystem.c"
+#line 676 "OperatingSystem.c"
 OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler()); 
-#line 677 "OperatingSystem.c"
-OperatingSystem_PrintStatus(); 
-#line 678 "OperatingSystem.c"
-OperatingSystem_ShowTime('s'); 
 #line 679 "OperatingSystem.c"
-ComputerSystem_DebugMessage(121, 's', lastExecutingProcess, (programList[processTable[lastExecutingProcess].programListIndex]->executableName), executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName)); 
+OperatingSystem_PrintStatus(); 
+#line 680 "OperatingSystem.c"
+OperatingSystem_ShowTime('s'); 
 #line 681 "OperatingSystem.c"
+ComputerSystem_DebugMessage(121, 's', lastExecutingProcess, (programList[processTable[lastExecutingProcess].programListIndex]->executableName), executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName)); 
+#line 683 "OperatingSystem.c"
 
 # 2782 "OperatingSystemAspect.c"
 retValue_acc = 1;
@@ -2794,7 +2794,7 @@ return (int )retValue_acc;
 
 }
  
-#line 686 "OperatingSystem.c"
+#line 688 "OperatingSystem.c"
 int OperatingSystem_GetMostImportantREADYProcessInfo()  
 # 2800 "OperatingSystemAspect.c"
 {
@@ -2807,16 +2807,16 @@ int retValue_acc;
 # 2808 "OperatingSystemAspect.c"
 {
 
-#line 688 "OperatingSystem.c"
+#line 690 "OperatingSystem.c"
 
-#line 688 "OperatingSystem.c"
+#line 690 "OperatingSystem.c"
 int mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[USERPROCESSQUEUE], numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
-#line 691 "OperatingSystem.c"
+#line 693 "OperatingSystem.c"
 if (mostImportantREADYProcess == (-1)){
 { 
-#line 692 "OperatingSystem.c"
+#line 694 "OperatingSystem.c"
 mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[DAEMONSQUEUE], numberOfReadyToRunProcesses[DAEMONSQUEUE]); } }
-#line 695 "OperatingSystem.c"
+#line 697 "OperatingSystem.c"
 
 # 2822 "OperatingSystemAspect.c"
 retValue_acc = mostImportantREADYProcess;
