@@ -56,7 +56,7 @@ void Asserts_CheckAsserts();
 #line 48 "Asserts.h"
 void Asserts_TerminateAssertions(); 
 #line 50 "Asserts.h"
-extern  ASSERT_DATA asserts[500]; 
+extern  ASSERT_DATA *asserts; 
 # 3 "MyAspect.c" 2
 # 1 "OperatingSystemBase.h" 1
 # 1 "ComputerSystem.h" 1
@@ -68,18 +68,26 @@ extern  ASSERT_DATA asserts[500];
 int ComputerSystem_ObtainProgramList(int , char *([])); 
 #line 8 "ComputerSystemBase.h"
 void ComputerSystem_DebugMessage(int , char , ...); 
-#line 11 "ComputerSystemBase.h"
+#line 9 "ComputerSystemBase.h"
+void ComputerSystem_FillInArrivalTimeQueue(); 
+#line 10 "ComputerSystemBase.h"
+void ComputerSystem_PrintArrivalTimeQueue(); 
+#line 14 "ComputerSystemBase.h"
 extern int endSimulationTime; 
+#line 15 "ComputerSystemBase.h"
+extern int numberOfProgramsInArrivalTimeQueue; 
+#line 16 "ComputerSystemBase.h"
+extern int arrivalTimeQueue[30]; 
 #line 8 "ComputerSystem.h"
 void ComputerSystem_PowerOn(int argc, char *argv[]); 
 #line 9 "ComputerSystem.h"
 void ComputerSystem_PowerOff(); 
 # 6 "ComputerSystem.h" 2
-# 37 "ComputerSystem.h" 
+# 39 "ComputerSystem.h" 
 typedef struct ProgramData {char *executableName; unsigned int arrivalTime; unsigned int type; 
 }PROGRAMS_DATA; 
-#line 41 "ComputerSystem.h"
-extern  PROGRAMS_DATA *programList[20]; 
+#line 43 "ComputerSystem.h"
+extern  PROGRAMS_DATA *programList[30]; 
 # 5 "OperatingSystemBase.h" 2
 # 1 "OperatingSystem.h" 1
 # 1 "/usr/include/stdio.h" 1 3 4
@@ -566,6 +574,8 @@ extern int sipID;
 void OperatingSystem_Initialize(); 
 #line 65 "OperatingSystem.h"
 void OperatingSystem_InterruptLogic(int ); 
+#line 66 "OperatingSystem.h"
+int OperatingSystem_GetExecutingProcessID(); 
 #line 9 "OperatingSystemBase.h"
 int OperatingSystem_ObtainAnEntryInTheProcessTable(); 
 #line 10 "OperatingSystemBase.h"
@@ -584,11 +594,13 @@ void OperatingSystem_PrintStatus();
 void OperatingSystem_PrintReadyToRunQueue(); 
 #line 17 "OperatingSystemBase.h"
 void OperatingSystem_PrepareTeachersDaemons(); 
-#line 19 "OperatingSystemBase.h"
-extern int sleepingProcessesQueue[4]; 
+#line 18 "OperatingSystemBase.h"
+int OperatingSystem_IsThereANewProgram(); 
 #line 20 "OperatingSystemBase.h"
+extern int sleepingProcessesQueue[4]; 
+#line 21 "OperatingSystemBase.h"
 extern int numberOfSleepingProcesses; 
-#line 22 "OperatingSystemBase.h"
+#line 23 "OperatingSystemBase.h"
 extern int baseDaemonsInProgramList; 
 # 6 "OperatingSystemBase.h" 2
 # 6 "MyAspect.c" 2

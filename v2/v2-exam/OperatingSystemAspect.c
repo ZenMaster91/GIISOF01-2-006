@@ -2589,7 +2589,7 @@ int currentNumberOfClockInterrupts = OperatingSystem_IncreseNumberOfClockInterru
 #line 566 "OperatingSystem.c"
 int unBLOCKEDProcesses = 0;
 #line 569 "OperatingSystem.c"
-while(Heap_getFirst(sleepingProcessesQueue, numberOfSleepingProcesses) != (-1) && processTable[Heap_getFirst(sleepingProcessesQueue, numberOfSleepingProcesses)].whenToWakeUp == currentNumberOfClockInterrupts) { { 
+while(Heap_getFirst(sleepingProcessesQueue, numberOfSleepingProcesses) != (-1) && processTable[Heap_getFirst(sleepingProcessesQueue, numberOfSleepingProcesses)].whenToWakeUp <= currentNumberOfClockInterrupts) { { 
 #line 571 "OperatingSystem.c"
 OperatingSystem_MoveToTheREADYState(Heap_poll(sleepingProcessesQueue, 0, (&numberOfSleepingProcesses))); 
 #line 573 "OperatingSystem.c"

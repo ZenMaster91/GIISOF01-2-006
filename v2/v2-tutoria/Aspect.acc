@@ -929,6 +929,7 @@ extern int sipID;
 
 void OperatingSystem_Initialize();
 void OperatingSystem_InterruptLogic(int);
+void OperatingSystem_PrintExamMessages();
 # 6 "OperatingSystemBase.h" 2
 
 

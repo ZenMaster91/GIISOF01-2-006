@@ -57,7 +57,7 @@ typedef struct {
  void Asserts_CheckAsserts();
  void Asserts_TerminateAssertions();
 
-extern ASSERT_DATA asserts[500];
+extern ASSERT_DATA * asserts;
 # 3 "MyAspect.c" 2
 # 1 "OperatingSystemBase.h" 1
 
@@ -79,15 +79,20 @@ extern ASSERT_DATA asserts[500];
 
 int ComputerSystem_ObtainProgramList(int , char *[]);
 void ComputerSystem_DebugMessage(int, char , ...);
+void ComputerSystem_FillInArrivalTimeQueue();
+void ComputerSystem_PrintArrivalTimeQueue();
+
 
 
 extern int endSimulationTime;
+extern int numberOfProgramsInArrivalTimeQueue;
+extern int arrivalTimeQueue[30];
 # 6 "ComputerSystem.h" 2
 
 
 void ComputerSystem_PowerOn(int argc, char *argv[]);
 void ComputerSystem_PowerOff();
-# 33 "ComputerSystem.h"
+# 35 "ComputerSystem.h"
 typedef struct ProgramData {
     char *executableName;
     unsigned int arrivalTime;
@@ -96,7 +101,7 @@ typedef struct ProgramData {
 
 
 
-extern PROGRAMS_DATA *programList[20];
+extern PROGRAMS_DATA *programList[30];
 # 5 "OperatingSystemBase.h" 2
 # 1 "OperatingSystem.h" 1
 
@@ -929,6 +934,7 @@ extern int sipID;
 
 void OperatingSystem_Initialize();
 void OperatingSystem_InterruptLogic(int);
+int OperatingSystem_GetExecutingProcessID();
 # 6 "OperatingSystemBase.h" 2
 
 
@@ -942,6 +948,7 @@ void OperatingSystem_ShowTime(char);
 void OperatingSystem_PrintStatus();
 void OperatingSystem_PrintReadyToRunQueue();
 void OperatingSystem_PrepareTeachersDaemons();
+int OperatingSystem_IsThereANewProgram();
 
 extern int sleepingProcessesQueue[4];
 extern int numberOfSleepingProcesses;

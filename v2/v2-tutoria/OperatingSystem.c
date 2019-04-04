@@ -30,7 +30,6 @@ int OperatingSystem_UpdateProcessor();
 int OperatingSystem_UpdateProcess();
 int OperatingSystem_GetMostImportantREADYProcessInfo();
 int OperatingSystem_IncreseNumberOfClockInterrupts();
-int OperatingSystem_checkIfShutdown();
 
 
 // Exercise 9 function prototype
@@ -66,7 +65,8 @@ int readyToRunQueue[NUMBEROFQUEUES][PROCESSTABLEMAXSIZE];
 int numberOfReadyToRunProcesses[NUMBEROFQUEUES]={0,0};
 char * queueNames [NUMBEROFQUEUES]={"USER","DAEMONS"};
 
-char * exceptionNames [4] = {"division by zero", "invalid processor mode", "invalid address", "invalid instruction"};
+// Memory reservation for the counters for the thrown out processes.
+int processesThrownOut [NUMBEROFQUEUES]={0,0};
 
 // The number of clock interrupts occured.
 int numberOfClockInterrupts = 0;
@@ -98,20 +98,15 @@ void OperatingSystem_Initialize(int daemonsIndex) {
 	// Create all system daemon processes
 	OperatingSystem_PrepareDaemons(daemonsIndex);
 
-	// v3-ex0
-	ComputerSystem_FillInArrivalTimeQueue();
-	OperatingSystem_PrintStatus();
-
 	// Create all user processes from the information given in the command line
 	numberOfSuccesfullyCreatedProcesses = OperatingSystem_LongTermScheduler();
 
-	if(numberOfSuccesfullyCreatedProcesses <= 0) {
+	if(numberOfSuccesfullyCreatedProcesses <= 1) {
 		// Incapable of create any process, simulation must finish;
-  	OperatingSystem_ReadyToShutdown();
+    OperatingSystem_ReadyToShutdown();
   }
 
 	if (strcmp(programList[processTable[sipID].programListIndex]->executableName,"SystemIdleProcess")) {
-		// Show message "ERROR: Missing SIP program!\n"
 		OperatingSystem_ShowTime(SHUTDOWN);
 		ComputerSystem_DebugMessage(21,SHUTDOWN);
 		exit(1);
@@ -156,12 +151,7 @@ int OperatingSystem_LongTermScheduler() {
 	int PID, i,
 		numberOfSuccessfullyCreatedProcesses=0;
 
-
-	while(OperatingSystem_IsThereANewProgram() == 1) {
-
-		// Extract the first element from the arrivalTimeQueue.
-		i = Heap_poll(arrivalTimeQueue, QUEUE_ARRIVAL, &numberOfProgramsInArrivalTimeQueue);
-
+	for (i=0; programList[i]!=NULL && i<PROGRAMSMAXNUMBER ; i++) {
 		PID=OperatingSystem_CreateProcess(i);
 
 		switch (PID) {
@@ -175,13 +165,12 @@ int OperatingSystem_LongTermScheduler() {
 				break;
 			case PROGRAMNOTVALID:
 				OperatingSystem_ShowTime(ERROR);
-						ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"invalid priority or size");
+    				ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"invalid priority or size");
 				break;
 			case TOOBIGPROCESS:
 				OperatingSystem_ShowTime(ERROR);
 				ComputerSystem_DebugMessage(105,ERROR,programList[i]->executableName);
 				break;
-
 			default:
 				numberOfSuccessfullyCreatedProcesses++;
 
@@ -425,17 +414,12 @@ void OperatingSystem_SaveContext(int PID) {
 void OperatingSystem_HandleException() {
 
 	// Show message "Process [executingProcessID] has generated an exception and is terminating\n"
-	//OperatingSystem_ShowTime(SYSPROC);
-	//ComputerSystem_DebugMessage(23,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
-
-	// Exercise v4-2
-	OperatingSystem_ShowTime(INTERRUPT);
-	ComputerSystem_DebugMessage(140, INTERRUPT, executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName, exceptionNames[Processor_GetRegisterB()]);
+	OperatingSystem_ShowTime(SYSPROC);
+	ComputerSystem_DebugMessage(23,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
 
 	OperatingSystem_TerminateProcess();
 	OperatingSystem_PrintStatus();
 }
-
 
 // All tasks regarding the removal of the process
 void OperatingSystem_TerminateProcess() {
@@ -451,8 +435,8 @@ void OperatingSystem_TerminateProcess() {
 		// One more user process that has terminated
 		numberOfNotTerminatedUserProcesses--;
 
-	if (OperatingSystem_checkIfShutdown()) {
-		// Simulation must finish
+	if (numberOfNotTerminatedUserProcesses<=0) {
+		// Simulation must finis
 		OperatingSystem_ReadyToShutdown();
 	}
 	// Select the next process to execute (sipID if no more user processes)
@@ -460,7 +444,6 @@ void OperatingSystem_TerminateProcess() {
 	// Assign the processor to that process
 	OperatingSystem_Dispatch(selectedProcess);
 }
-
 
 // System call management routine
 void OperatingSystem_HandleSystemCall() {
@@ -526,16 +509,11 @@ void OperatingSystem_HandleSystemCall() {
 			// Finally print the system status.
 			OperatingSystem_PrintStatus();
 			break;
-
-		default: // That means the system call id is not valid
-			ComputerSystem_DebugMessage(141, INTERRUPT, executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName, systemCallID);
-			OperatingSystem_TerminateProcess();
-			break;
 	}
 }
 
 //	Implement interrupt logic calling appropriate interrupt handle
-void OperatingSystem_InterruptLogic(int entryPoint){
+void OperatingSystem_InterruptLogic(int entryPoint) {
 	switch (entryPoint){
 		case SYSCALL_BIT: // SYSCALL_BIT=2
 			OperatingSystem_HandleSystemCall();
@@ -596,11 +574,8 @@ void OperatingSystem_HandleClockInterrupt() {
 	}
 
 	// If we unblocked any process we must check if some of them have more priority than the executing one
-	if(unBLOCKEDProcesses || OperatingSystem_LongTermScheduler()) {
+	if(unBLOCKEDProcesses) {
 		OperatingSystem_UpdateProcessor();
-	} else if (OperatingSystem_checkIfShutdown()) {
-		// Simulation must finish
-		OperatingSystem_ReadyToShutdown();
 	}
 
 	// Finally print the the corresponding debug message.
@@ -612,11 +587,6 @@ void OperatingSystem_HandleClockInterrupt() {
 // -----------------------------------------------------------------------------
 // --------------------------- CUSTOM FUNCTIONS --------------------------------
 // -----------------------------------------------------------------------------
-
-// Returns the PID of the executing process
-int OperatingSystem_GetExecutingProcessID() {
-	return executingProcessID;
-}
 
 // Increases in one unit the number of clock interrupts and returns the new value
 int OperatingSystem_IncreseNumberOfClockInterrupts() {
@@ -658,11 +628,15 @@ int OperatingSystem_UpdateProcessor() {
 int OperatingSystem_UpdateProcess() {
 	int lastExecutingProcess = executingProcessID;
 
+	// Code to update the counters of the thown out processes.
+	processesThrownOut[processTable[lastExecutingProcess].queueID]++;
+
 	// Remove the executing process from the processor and load the new most important one.
 	OperatingSystem_PreemptRunningProcess();
 	OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
 
 	// Print required messages.
+	OperatingSystem_PrintStatus();
 	OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
 	ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,lastExecutingProcess,programList[processTable[lastExecutingProcess].programListIndex]->executableName,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
 
@@ -683,15 +657,11 @@ int OperatingSystem_GetMostImportantREADYProcessInfo() {
 	return mostImportantREADYProcess;
 }
 
-// Returns 1 if there OS should shut down. 0 otherwise.
-int OperatingSystem_checkIfShutdown() {
-	int arrivalTimeQueue = OperatingSystem_IsThereANewProgram();
-	int sleepingQueue = Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses);
-	int rTRQ = OperatingSystem_GetMostImportantREADYProcessInfo();
-
-	if(arrivalTimeQueue == -1 && sleepingQueue == -1 && rTRQ == -1) {
-		return 1;
-	} else {
-		return 0;
-	}
+// Printing required messages for the exam
+void OperatingSystem_PrintExamMessages() {
+	// Code to print the exam needed messages.
+	OperatingSystem_ShowTime(SHUTDOWN);
+	ComputerSystem_DebugMessage(122,SHUTDOWN, processesThrownOut[USERPROCESSQUEUE]);
+	OperatingSystem_ShowTime(SHUTDOWN);
+	ComputerSystem_DebugMessage(123,SHUTDOWN, processesThrownOut[DAEMONSQUEUE]);
 }

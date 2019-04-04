@@ -577,7 +577,7 @@ void OperatingSystem_HandleClockInterrupt() {
 	int unBLOCKEDProcesses = 0;
 
 	// While there is more sleeping processes that neet to be waken up...
-	while(Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses) != -1 && processTable[Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses)].whenToWakeUp == currentNumberOfClockInterrupts) {
+	while(Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses) != -1 && processTable[Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses)].whenToWakeUp <= currentNumberOfClockInterrupts) {
 		// Move to the READY state that process that meets the condition.
 		OperatingSystem_MoveToTheREADYState(Heap_poll(sleepingProcessesQueue,QUEUE_WAKEUP,&numberOfSleepingProcesses));
 		// increase the number of unblockedProcesses.
