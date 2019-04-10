@@ -103,7 +103,7 @@ void OperatingSystem_Initialize(int daemonsIndex) {
 	// Create all user processes from the information given in the command line
 	numberOfSuccesfullyCreatedProcesses = OperatingSystem_LongTermScheduler();
 
-	if(numberOfSuccesfullyCreatedProcesses <= 0) {
+	if(numberOfSuccesfullyCreatedProcesses <= 1) {
 		// Incapable of create any process, simulation must finish;
   	OperatingSystem_ReadyToShutdown();
   }

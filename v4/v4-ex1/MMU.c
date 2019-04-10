@@ -123,7 +123,7 @@ int MMU_GetLimit () {
 
 
 int isAddressValid(int logicalAdress) {
-	if(0 <= (logicalAdress + registerBase_MMU) &&  (logicalAdress + registerBase_MMU) < registerLimit_MMU) {
+	if(0 <= logicalAdress && logicalAdress < registerLimit_MMU) {
 		// THat means it is a valid address
 		return 1;
 	} else {
