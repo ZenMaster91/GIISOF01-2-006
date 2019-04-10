@@ -36,6 +36,8 @@ int OperatingSystem_UpdateProcess();
 int OperatingSystem_GetMostImportantREADYProcessInfo();
 int OperatingSystem_IncreseNumberOfClockInterrupts();
 int OperatingSystem_checkIfShutdown();
+int OperatingSystem_ReleaseMainMemory(int PID);
+int OperatingSystem_GetBiggestMemoryBlockSize();
 
 // The process table
 PCB processTable[PROCESSTABLEMAXSIZE];
@@ -220,7 +222,7 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 
 	int PID;
 	int processSize;
-	int loadingPhysicalAddress;
+	int mainMemoryBlockIndex, initAddress;
 	int priority;
 	FILE *programFile;
 	PROGRAMS_DATA *executableProgram=programList[indexOfExecutableProgram];
@@ -254,28 +256,41 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
   	return PROGRAMNOTVALID;
   }
 
+	// Before OperatingSystem_ObtainMainMemory.
+	OperatingSystem_ShowPartitionTable("before allocating memory");
+
 	// Obtain enough memory space
- 	loadingPhysicalAddress=OperatingSystem_ObtainMainMemory(processSize, PID);
-	if(loadingPhysicalAddress == TOOBIGPROCESS) {
+ 	mainMemoryBlockIndex=OperatingSystem_ObtainMainMemory(processSize, PID);
+
+	// If the process is to big
+	if(mainMemoryBlockIndex == TOOBIGPROCESS) {
 		return TOOBIGPROCESS;
-	} else if (loadingPhysicalAddress == MEMORYFULL) {
+
+	// If the memory is full
+	} else if (mainMemoryBlockIndex == MEMORYFULL) {
 		OperatingSystem_ShowTime(ERROR);
 		ComputerSystem_DebugMessage(144,ERROR,executableProgram->executableName);
 		return MEMORYFULL;
+
+	// Otherwise set it as occupied and set the PID
 	} else {
 		OperatingSystem_ShowTime(SYSMEM);
-		ComputerSystem_DebugMessage(143,SYSMEM,loadingPhysicalAddress,partitionsTable[loadingPhysicalAddress].initAddress, partitionsTable[loadingPhysicalAddress].size,PID,executableProgram->executableName);
-		partitionsTable[loadingPhysicalAddress].occupied=1;
-		loadingPhysicalAddress = partitionsTable[loadingPhysicalAddress].initAddress;
+		ComputerSystem_DebugMessage(143,SYSMEM,mainMemoryBlockIndex,partitionsTable[mainMemoryBlockIndex].initAddress, partitionsTable[mainMemoryBlockIndex].size,PID,executableProgram->executableName);
+		partitionsTable[mainMemoryBlockIndex].occupied = 1;
+		partitionsTable[mainMemoryBlockIndex].PID = PID;
+		initAddress = partitionsTable[mainMemoryBlockIndex].initAddress;
 	}
+
+	// After OperatingSystem_ObtainMainMemory.
+	OperatingSystem_ShowPartitionTable("after allocating memory");
 
 	// Load program in the allocated memory
 	// If the process is too big
-	if( OperatingSystem_LoadProgram(programFile, loadingPhysicalAddress, processSize) == TOOBIGPROCESS) {
+	if( OperatingSystem_LoadProgram(programFile, initAddress, processSize) == TOOBIGPROCESS) {
 		return TOOBIGPROCESS;
 	}
 	// PCB initialization
-	OperatingSystem_PCBInitialization(PID, loadingPhysicalAddress, processSize, priority, indexOfExecutableProgram);
+	OperatingSystem_PCBInitialization(PID, initAddress, processSize, priority, indexOfExecutableProgram);
 
 	// Show message "Process [PID] created from program [executableName]\n"
 	OperatingSystem_ShowTime(INIT);
@@ -293,20 +308,12 @@ int OperatingSystem_ObtainMainMemory(int processSize, int PID) {
 
 	// BEST FIT ALGORITHM
 	int blockIndex;
-	int bestBlockIndex=NOFREEENTRY, bestBlockSize = INT_MAX;
-	int isMemoryFull=1, isProcessTooBig=1;
+	int bestBlockIndex=MEMORYFULL, bestBlockSize = INT_MAX;
 	for(blockIndex=0; blockIndex < partitionsTableSize; blockIndex++) {
 
-		// Ckeck for full memory
-		if(!partitionsTable[blockIndex].occupied) {
-			// There exists at least one non occupied block.
-			isMemoryFull=0;
-		}
-
 		// Check for to big processes
-		if(partitionsTable[blockIndex].size >= processSize) {
-			// There exists at least one block
-			isProcessTooBig=0;
+		if(processSize > OperatingSystem_GetBiggestMemoryBlockSize()) {
+			return TOOBIGPROCESS;
 		}
 
 		if(!partitionsTable[blockIndex].occupied && partitionsTable[blockIndex].size >= processSize && partitionsTable[blockIndex].size < bestBlockSize) {
@@ -320,17 +327,37 @@ int OperatingSystem_ObtainMainMemory(int processSize, int PID) {
 		}
 	}
 
-	if(isProcessTooBig) {
-			return TOOBIGPROCESS;
-	}
-
-	if(isMemoryFull) {
-		return MEMORYFULL;
-	}
-
 	return bestBlockIndex;
+} // END OperatingSystem_ObtainMainMemory.
+
+int OperatingSystem_GetBiggestMemoryBlockSize() {
+	int blockIndex;
+	int biggestBlockSize=-1;
+	for(blockIndex=0; blockIndex < partitionsTableSize; blockIndex++) {
+		if(partitionsTable[blockIndex].size > biggestBlockSize) {
+			biggestBlockSize = partitionsTable[blockIndex].size;
+		}
+	}
+	return biggestBlockSize;
 }
 
+// Releases the main memory for the given process.
+// returns the index of the partition released,
+int OperatingSystem_ReleaseMainMemory(int PID) {
+
+	int blockIndex;
+	for(blockIndex=0; blockIndex < partitionsTableSize; blockIndex++) {
+
+		// If the pointer block is assigned to the current process...
+		if(partitionsTable[blockIndex].occupied && partitionsTable[blockIndex].PID == PID) {
+
+			// Set the occupied to false and remove the PID data its not necessary.
+			partitionsTable[blockIndex].occupied = 0;
+			return blockIndex;
+		}
+	}
+	return -1;
+}
 
 // Assign initial values to all fields inside the PCB
 void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int processSize, int priority, int processPLIndex) {
@@ -512,6 +539,23 @@ void OperatingSystem_TerminateProcess() {
 	// Print messages.
 	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(110,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName,statesNames[lastState],statesNames[EXIT]);
+
+	// Before OperatingSystem_ReleaseMainMemory.
+	OperatingSystem_ShowPartitionTable("before releasing memory");
+
+	// Release memory associated to the process.
+	int releasedBlockIndex = OperatingSystem_ReleaseMainMemory(executingProcessID);
+
+	// Printing messages of releasing memory.
+	OperatingSystem_ShowTime(SYSMEM);
+	ComputerSystem_DebugMessage(145, SYSMEM, releasedBlockIndex,
+															partitionsTable[releasedBlockIndex].initAddress,
+	 														partitionsTable[releasedBlockIndex].size,
+															executingProcessID,
+															programList[processTable[executingProcessID].programListIndex]->executableName);
+
+	// Before OperatingSystem_ReleaseMainMemory.
+	OperatingSystem_ShowPartitionTable("after releasing memory");
 
 	// If the program to terminate was a user program reduce the number of not terminated user programs.
 	if (programList[processTable[executingProcessID].programListIndex]->type==USERPROGRAM) {
