@@ -28,6 +28,7 @@ void OperatingSystem_HandleException();
 void OperatingSystem_HandleSystemCall();
 void OperatingSystem_HandleClockInterrupt();
 void OperatingSystem_PrintReadyToRunQueue(); // Exercise 9 function prototype
+void OperatingSystem_HandleIOEndInterrupt();
 
 // Custom internal function prototypes.
 int OperatingSystem_GetWhenToWakeUpTime();
@@ -664,6 +665,9 @@ void OperatingSystem_InterruptLogic(int entryPoint) {
 		case CLOCKINT_BIT: // EXCEPTION_BIT=9
 			OperatingSystem_HandleClockInterrupt();
 			break;
+		case IOEND_BIT: // EXCEPTION_BIT=8
+			OperatingSystem_HandleIOEndInterrupt();
+			break;
 	}
 } // END  OperatingSystem_InterruptLogic.
 
@@ -735,6 +739,9 @@ void OperatingSystem_HandleClockInterrupt() {
 		OperatingSystem_ReadyToShutdown();
 	}
 } // END OperatingSystem_HandleClockInterrupt.
+
+// Function to be executed each time a input / output interrupt is raised.
+void OperatingSystem_HandleIOEndInterrupt() {}
 
 // -----------------------------------------------------------------------------
 // --------------------------- CUSTOM FUNCTIONS --------------------------------
