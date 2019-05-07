@@ -256,6 +256,10 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
   	return PROGRAMNOTVALID;
   }
 
+	OperatingSystem_ShowTime(SYSMEM);
+	//ComputerSystem_DebugMessage(142,SYSMEM,PID,programList[processTable[PID].programListIndex]->executableName,processSize);
+	ComputerSystem_DebugMessage(142,SYSMEM,PID,executableProgram->executableName,processSize);
+
 	// Before OperatingSystem_ObtainMainMemory.
 	OperatingSystem_ShowPartitionTable("before allocating memory");
 
@@ -281,6 +285,11 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 		initAddress = partitionsTable[mainMemoryBlockIndex].initAddress;
 	}
 
+	// Printing the new state sentence from ex 10
+	OperatingSystem_ShowTime(SYSPROC);
+	//ComputerSystem_DebugMessage(111,SYSPROC,PID,programList[processTable[PID].programListIndex]->executableName,statesNames[NEW]);
+	ComputerSystem_DebugMessage(111,SYSPROC,PID,executableProgram->executableName,statesNames[NEW]);
+
 	// After OperatingSystem_ObtainMainMemory.
 	OperatingSystem_ShowPartitionTable("after allocating memory");
 
@@ -303,9 +312,6 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 // Main memory is assigned in chunks. All chunks are the same size. A process
 // always obtains the chunk whose position in memory is equal to the processor identifier
 int OperatingSystem_ObtainMainMemory(int processSize, int PID) {
-	OperatingSystem_ShowTime(SYSMEM);
-	ComputerSystem_DebugMessage(142,SYSMEM,PID,programList[processTable[PID].programListIndex]->executableName,processSize);
-
 	// BEST FIT ALGORITHM
 	int blockIndex;
 	int bestBlockIndex=MEMORYFULL, bestBlockSize = INT_MAX;
@@ -383,10 +389,6 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int 
 		// Exercise 11
 		processTable[PID].queueID = USERPROCESSQUEUE;
 	}
-
-	// Printing the new state sentence from ex 10
-	OperatingSystem_ShowTime(SYSPROC);
-	ComputerSystem_DebugMessage(111,SYSPROC,PID,programList[processPLIndex]->executableName,statesNames[NEW]);
 } // END OperatingSystem_PCBInitialization.
 
 

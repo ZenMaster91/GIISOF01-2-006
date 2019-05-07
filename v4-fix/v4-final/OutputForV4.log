@@ -1,0 +1,3000 @@
+63 Messages Loaded
+Using asserts file: asserts
+Maximum number of asserts: 500
+Asserts file unavailable
+[0] User program list:
+	Program [programVerySimpleTest] with arrival time [100]
+	[0] Running Process Information:
+		[--- No running process ---]
+	[0] Ready-to-run processes queue:
+		USER:
+		DAEMONS:
+	[0] SLEEPING Queue:
+		[--- empty queue ---]
+	[0] PID association with program's name:
+	[0] Arrival Time Queue:
+		[SystemIdleProcess, 0, DAEMONS]
+		[daemon2, 11, DAEMONS]
+		[daemon1, 10, DAEMONS]
+		[programVerySimpleTest, 100, USER]
+		[daemon3, 12, DAEMONS]
+	[0] Process [3 - SystemIdleProcess] requests [4] memory positions
+	[0] Main memory state (before allocating memory):
+		[0] [0 -> 4][AVAILABLE]
+		[1] [4 -> 12][AVAILABLE]
+		[2] [16 -> 16][AVAILABLE]
+		[3] [32 -> 96][AVAILABLE]
+		[4] [128 -> 64][AVAILABLE]
+		[5] [192 -> 16][AVAILABLE]
+		[6] [208 -> 32][AVAILABLE]
+	[0] Partition [0: 0 -> 4] has been assigned to process [3 - SystemIdleProcess]
+	[0] New process [3 - SystemIdleProcess] moving to the [NEW] state
+	[0] Main memory state (after allocating memory):
+		[0] [0 -> 4][3 - SystemIdleProcess]
+		[1] [4 -> 12][AVAILABLE]
+		[2] [16 -> 16][AVAILABLE]
+		[3] [32 -> 96][AVAILABLE]
+		[4] [128 -> 64][AVAILABLE]
+		[5] [192 -> 16][AVAILABLE]
+		[6] [208 -> 32][AVAILABLE]
+	[0] Process [3] created from program [SystemIdleProcess]
+	[0] Process [3 - SystemIdleProcess] moving from the [NEW] state to the [READY] state
+	[0] Running Process Information:
+		[--- No running process ---]
+	[0] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [3,100]
+	[0] SLEEPING Queue:
+		[--- empty queue ---]
+	[0] PID association with program's name:
+		PID: 3 -> SystemIdleProcess
+	[0] Arrival Time Queue:
+		[daemon1, 10, DAEMONS]
+		[daemon2, 11, DAEMONS]
+		[daemon3, 12, DAEMONS]
+		[programVerySimpleTest, 100, USER]
+	[0] Process [3 - SystemIdleProcess] moving from the [READY] state to the [EXECUTING] state
+[1] {79 000 000} y 0 0 (PID: 3, PC: 0, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[2] {61 516 205} a 1302 517 (PID: 3, PC: 1, Accumulator: 1819, PSW: 0080 [--------X-------])
+[3] {6E 000 000} n 0 0 (PID: 3, PC: 2, Accumulator: 1819, PSW: 0080 [--------X-------])
+[4] {6A 801 000} j -1 0 (PID: 3, PC: 1, Accumulator: 1819, PSW: 0080 [--------X-------])
+[5] {6E 000 000} n 0 0 (PID: 3, PC: 2, Accumulator: 1819, PSW: 0080 [--------X-------])
+[6] {6F 009 000} o 9 0 (PID: 3, PC: 245, Accumulator: 1819, PSW: 8080 [M-------X-------])
+	[7] Clock interrupt number [1] has occurred
+[8] {79 000 000} y 0 0 (PID: 3, PC: 2, Accumulator: 1819, PSW: 0080 [--------X-------])
+[9] {6A 801 000} j -1 0 (PID: 3, PC: 1, Accumulator: 1819, PSW: 0080 [--------X-------])
+[10] {6E 000 000} n 0 0 (PID: 3, PC: 2, Accumulator: 1819, PSW: 0080 [--------X-------])
+[11] {6F 009 000} o 9 0 (PID: 3, PC: 245, Accumulator: 1819, PSW: 8080 [M-------X-------])
+	[12] Clock interrupt number [2] has occurred
+	[12] Process [0 - daemon1] requests [32] memory positions
+	[12] Main memory state (before allocating memory):
+		[0] [0 -> 4][3 - SystemIdleProcess]
+		[1] [4 -> 12][AVAILABLE]
+		[2] [16 -> 16][AVAILABLE]
+		[3] [32 -> 96][AVAILABLE]
+		[4] [128 -> 64][AVAILABLE]
+		[5] [192 -> 16][AVAILABLE]
+		[6] [208 -> 32][AVAILABLE]
+	[12] Partition [6: 208 -> 32] has been assigned to process [0 - daemon1]
+	[12] New process [0 - daemon1] moving to the [NEW] state
+	[12] Main memory state (after allocating memory):
+		[0] [0 -> 4][3 - SystemIdleProcess]
+		[1] [4 -> 12][AVAILABLE]
+		[2] [16 -> 16][AVAILABLE]
+		[3] [32 -> 96][AVAILABLE]
+		[4] [128 -> 64][AVAILABLE]
+		[5] [192 -> 16][AVAILABLE]
+		[6] [208 -> 32][0 - SystemIdleProcess]
+	[12] Process [0] created from program [daemon1]
+	[12] Process [0 - daemon1] moving from the [NEW] state to the [READY] state
+	[12] Process [1 - daemon2] requests [32] memory positions
+	[12] Main memory state (before allocating memory):
+		[0] [0 -> 4][3 - SystemIdleProcess]
+		[1] [4 -> 12][AVAILABLE]
+		[2] [16 -> 16][AVAILABLE]
+		[3] [32 -> 96][AVAILABLE]
+		[4] [128 -> 64][AVAILABLE]
+		[5] [192 -> 16][AVAILABLE]
+		[6] [208 -> 32][0 - daemon1]
+	[12] Partition [4: 128 -> 64] has been assigned to process [1 - daemon2]
+	[12] New process [1 - daemon2] moving to the [NEW] state
+	[12] Main memory state (after allocating memory):
+		[0] [0 -> 4][3 - SystemIdleProcess]
+		[1] [4 -> 12][AVAILABLE]
+		[2] [16 -> 16][AVAILABLE]
+		[3] [32 -> 96][AVAILABLE]
+		[4] [128 -> 64][1 - SystemIdleProcess]
+		[5] [192 -> 16][AVAILABLE]
+		[6] [208 -> 32][0 - daemon1]
+	[12] Process [1] created from program [daemon2]
+	[12] Process [1 - daemon2] moving from the [NEW] state to the [READY] state
+	[12] Process [2 - daemon3] requests [32] memory positions
+	[12] Main memory state (before allocating memory):
+		[0] [0 -> 4][3 - SystemIdleProcess]
+		[1] [4 -> 12][AVAILABLE]
+		[2] [16 -> 16][AVAILABLE]
+		[3] [32 -> 96][AVAILABLE]
+		[4] [128 -> 64][1 - daemon2]
+		[5] [192 -> 16][AVAILABLE]
+		[6] [208 -> 32][0 - daemon1]
+	[12] Partition [3: 32 -> 96] has been assigned to process [2 - daemon3]
+	[12] New process [2 - daemon3] moving to the [NEW] state
+	[12] Main memory state (after allocating memory):
+		[0] [0 -> 4][3 - SystemIdleProcess]
+		[1] [4 -> 12][AVAILABLE]
+		[2] [16 -> 16][AVAILABLE]
+		[3] [32 -> 96][2 - SystemIdleProcess]
+		[4] [128 -> 64][1 - daemon2]
+		[5] [192 -> 16][AVAILABLE]
+		[6] [208 -> 32][0 - daemon1]
+	[12] Process [2] created from program [daemon3]
+	[12] Process [2 - daemon3] moving from the [NEW] state to the [READY] state
+	[12] Running Process Information:
+		[PID: 3, Priority: 100, WakeUp: 0, Queue: DAEMONS]
+	[12] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [2,2],  [1,5],  [0,5]
+	[12] SLEEPING Queue:
+		[--- empty queue ---]
+	[12] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[12] Arrival Time Queue:
+		[programVerySimpleTest, 100, USER]
+	[12] Process [3 - SystemIdleProcess] moving from the [EXECUTING] state to the [READY] state
+	[12] Process [2 - daemon3] moving from the [READY] state to the [EXECUTING] state
+	[12] Running Process Information:
+		[PID: 2, Priority: 2, WakeUp: 0, Queue: DAEMONS]
+	[12] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [1,5],  [3,100]
+	[12] SLEEPING Queue:
+		[--- empty queue ---]
+	[12] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[12] Arrival Time Queue:
+		[programVerySimpleTest, 100, USER]
+	[12] Process [3 - SystemIdleProcess] is thrown out of the processor by process [2 - daemon3]
+[13] {79 000 000} y 0 0 (PID: 2, PC: 32, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[14] {74 004 000} t 4 0 (PID: 2, PC: 33, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[15] {6F 002 000} o 2 0 (PID: 2, PC: 241, Accumulator: 0, PSW: 8082 [M-------X-----Z-])
+[17] {79 000 000} y 0 0 (PID: 2, PC: 33, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[18] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 0, PSW: 8082 [M-------X-----Z-])
+	[19] Clock interrupt number [3] has occurred
+[20] {79 000 000} y 0 0 (PID: 2, PC: 33, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[21] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 0, PSW: 8082 [M-------X-----Z-])
+	[22] Clock interrupt number [4] has occurred
+[23] {79 000 000} y 0 0 (PID: 2, PC: 33, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[24] {72 020 000} r 32 0 (PID: 2, PC: 34, Accumulator: 1946173440, PSW: 0080 [--------X-------])
+[25] {77 0D1 000} w 209 0 (PID: 2, PC: 35, Accumulator: 1946173440, PSW: 0080 [--------X-------])
+[26] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 1946173440, PSW: 8080 [M-------X-------])
+	[27] Clock interrupt number [5] has occurred
+[28] {79 000 000} y 0 0 (PID: 2, PC: 35, Accumulator: 1946173440, PSW: 0080 [--------X-------])
+[29] {77 081 000} w 129 0 (PID: 2, PC: 36, Accumulator: 1946173440, PSW: 0080 [--------X-------])
+[30] {61 00A 001} a 10 1 (PID: 2, PC: 37, Accumulator: 11, PSW: 0080 [--------X-------])
+[31] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 11, PSW: 8080 [M-------X-------])
+	[32] Clock interrupt number [6] has occurred
+[33] {79 000 000} y 0 0 (PID: 2, PC: 37, Accumulator: 11, PSW: 0080 [--------X-------])
+[34] {74 007 000} t 7 0 (PID: 2, PC: 38, Accumulator: 11, PSW: 0080 [--------X-------])
+[35] {6F 002 000} o 2 0 (PID: 2, PC: 241, Accumulator: 11, PSW: 8080 [M-------X-------])
+	[36] Process [2 - daemon3] moving from the [EXECUTING] state to the [BLOCKED] state
+	[36] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[36] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[36] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[36] SLEEPING Queue:
+		[2, 2, 18]
+	[36] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[36] Arrival Time Queue:
+		[programVerySimpleTest, 100, USER]
+[37] {79 000 000} y 0 0 (PID: 0, PC: 208, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[38] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 0, PSW: 8082 [M-------X-----Z-])
+	[39] Clock interrupt number [7] has occurred
+[40] {79 000 000} y 0 0 (PID: 0, PC: 208, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[41] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 0, PSW: 8082 [M-------X-----Z-])
+	[42] Clock interrupt number [8] has occurred
+[43] {79 000 000} y 0 0 (PID: 0, PC: 208, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[44] {61 00A 000} a 10 0 (PID: 0, PC: 209, Accumulator: 10, PSW: 0080 [--------X-------])
+[45] {74 004 000} t 4 0 (PID: 0, PC: 210, Accumulator: 10, PSW: 0080 [--------X-------])
+[46] {6F 002 000} o 2 0 (PID: 0, PC: 241, Accumulator: 10, PSW: 8080 [M-------X-------])
+	[47] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[47] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[47] Process [1  daemon2] will transfer the control of the processor to process [1  daemon1]
+	[47] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[47] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[47] SLEEPING Queue:
+		[2, 2, 18]
+	[47] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[47] Arrival Time Queue:
+		[programVerySimpleTest, 100, USER]
+[48] {79 000 000} y 0 0 (PID: 1, PC: 128, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[49] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: 0, PSW: 8082 [M-------X-----Z-])
+	[50] Clock interrupt number [9] has occurred
+[51] {79 000 000} y 0 0 (PID: 1, PC: 128, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[52] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: 0, PSW: 8082 [M-------X-----Z-])
+	[53] Clock interrupt number [10] has occurred
+[54] {79 000 000} y 0 0 (PID: 1, PC: 128, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[55] {61 80A 000} a -10 0 (PID: 1, PC: 129, Accumulator: -10, PSW: 0084 [--------X----N--])
+[56] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -10, PSW: 8084 [M-------X----N--])
+	[57] Clock interrupt number [11] has occurred
+[58] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -10, PSW: 0084 [--------X----N--])
+[59] {74 004 000} t 4 0 (PID: 1, PC: 130, Accumulator: -10, PSW: 0084 [--------X----N--])
+[60] {6F 002 000} o 2 0 (PID: 1, PC: 241, Accumulator: -10, PSW: 8084 [M-------X----N--])
+	[61] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[61] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[61] Process [0  daemon1] will transfer the control of the processor to process [0  daemon2]
+	[61] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[61] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[61] SLEEPING Queue:
+		[2, 2, 18]
+	[61] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[61] Arrival Time Queue:
+		[programVerySimpleTest, 100, USER]
+[62] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 10, PSW: 0080 [--------X-------])
+[63] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 10, PSW: 8080 [M-------X-------])
+	[64] Clock interrupt number [12] has occurred
+[65] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 10, PSW: 0080 [--------X-------])
+[66] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 10, PSW: 8080 [M-------X-------])
+	[67] Clock interrupt number [13] has occurred
+[68] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 10, PSW: 0080 [--------X-------])
+[69] {69 801 000} i -1 0 (PID: 0, PC: 211, Accumulator: 9, PSW: 0080 [--------X-------])
+[70] {7A 002 000} z 2 0 (PID: 0, PC: 212, Accumulator: 9, PSW: 0080 [--------X-------])
+[71] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 9, PSW: 8080 [M-------X-------])
+	[72] Clock interrupt number [14] has occurred
+[73] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 9, PSW: 0080 [--------X-------])
+[74] {6A 803 000} j -3 0 (PID: 0, PC: 209, Accumulator: 9, PSW: 0080 [--------X-------])
+[75] {74 004 000} t 4 0 (PID: 0, PC: 210, Accumulator: 9, PSW: 0080 [--------X-------])
+[76] {6F 002 000} o 2 0 (PID: 0, PC: 241, Accumulator: 9, PSW: 8080 [M-------X-------])
+	[77] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[77] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[77] Process [1  daemon2] will transfer the control of the processor to process [1  daemon1]
+	[77] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[77] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[77] SLEEPING Queue:
+		[2, 2, 18]
+	[77] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[77] Arrival Time Queue:
+		[programVerySimpleTest, 100, USER]
+[78] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -10, PSW: 0084 [--------X----N--])
+[79] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -10, PSW: 8084 [M-------X----N--])
+	[80] Clock interrupt number [15] has occurred
+[81] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -10, PSW: 0084 [--------X----N--])
+[82] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -10, PSW: 8084 [M-------X----N--])
+	[83] Clock interrupt number [16] has occurred
+[84] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -10, PSW: 0084 [--------X----N--])
+[85] {69 001 000} i 1 0 (PID: 1, PC: 131, Accumulator: -9, PSW: 0084 [--------X----N--])
+[86] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -9, PSW: 8084 [M-------X----N--])
+	[87] Clock interrupt number [17] has occurred
+[88] {79 000 000} y 0 0 (PID: 1, PC: 131, Accumulator: -9, PSW: 0084 [--------X----N--])
+[89] {7A 002 000} z 2 0 (PID: 1, PC: 132, Accumulator: -9, PSW: 0084 [--------X----N--])
+[90] {6A 803 000} j -3 0 (PID: 1, PC: 129, Accumulator: -9, PSW: 0084 [--------X----N--])
+[91] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -9, PSW: 8084 [M-------X----N--])
+	[92] Clock interrupt number [18] has occurred
+	[92] Process [2 - daemon3] moving from the [BLOCKED] state to the [READY] state
+	[92] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[92] Process [2 - daemon3] moving from the [READY] state to the [EXECUTING] state
+	[92] Running Process Information:
+		[PID: 2, Priority: 2, WakeUp: 18, Queue: DAEMONS]
+	[92] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [1,5],  [3,100]
+	[92] SLEEPING Queue:
+		[--- empty queue ---]
+	[92] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[92] Arrival Time Queue:
+		[programVerySimpleTest, 100, USER]
+	[92] Process [1 - daemon2] is thrown out of the processor by process [2 - daemon3]
+[93] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 11, PSW: 0080 [--------X-------])
+[94] {69 801 000} i -1 0 (PID: 2, PC: 39, Accumulator: 10, PSW: 0080 [--------X-------])
+[95] {7A 002 000} z 2 0 (PID: 2, PC: 40, Accumulator: 10, PSW: 0080 [--------X-------])
+[96] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 10, PSW: 8080 [M-------X-------])
+	[97] Clock interrupt number [19] has occurred
+[98] {79 000 000} y 0 0 (PID: 2, PC: 40, Accumulator: 10, PSW: 0080 [--------X-------])
+[99] {6A 803 000} j -3 0 (PID: 2, PC: 37, Accumulator: 10, PSW: 0080 [--------X-------])
+[100] {74 007 000} t 7 0 (PID: 2, PC: 38, Accumulator: 10, PSW: 0080 [--------X-------])
+[101] {6F 002 000} o 2 0 (PID: 2, PC: 241, Accumulator: 10, PSW: 8080 [M-------X-------])
+	[102] Process [2 - daemon3] moving from the [EXECUTING] state to the [BLOCKED] state
+	[102] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[102] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[102] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[102] SLEEPING Queue:
+		[2, 2, 30]
+	[102] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[102] Arrival Time Queue:
+		[programVerySimpleTest, 100, USER]
+[103] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 9, PSW: 0080 [--------X-------])
+[104] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 9, PSW: 8080 [M-------X-------])
+	[105] Clock interrupt number [20] has occurred
+	[105] ERROR: There are not free entries in the process table for the program [programVerySimpleTest]
+[106] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 9, PSW: 0080 [--------X-------])
+[107] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 9, PSW: 8080 [M-------X-------])
+	[108] Clock interrupt number [21] has occurred
+[109] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 9, PSW: 0080 [--------X-------])
+[110] {69 801 000} i -1 0 (PID: 0, PC: 211, Accumulator: 8, PSW: 0080 [--------X-------])
+[111] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 8, PSW: 8080 [M-------X-------])
+	[112] Clock interrupt number [22] has occurred
+[113] {79 000 000} y 0 0 (PID: 0, PC: 211, Accumulator: 8, PSW: 0080 [--------X-------])
+[114] {7A 002 000} z 2 0 (PID: 0, PC: 212, Accumulator: 8, PSW: 0080 [--------X-------])
+[115] {6A 803 000} j -3 0 (PID: 0, PC: 209, Accumulator: 8, PSW: 0080 [--------X-------])
+[116] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 8, PSW: 8080 [M-------X-------])
+	[117] Clock interrupt number [23] has occurred
+[118] {79 000 000} y 0 0 (PID: 0, PC: 209, Accumulator: 8, PSW: 0080 [--------X-------])
+[119] {74 004 000} t 4 0 (PID: 0, PC: 210, Accumulator: 8, PSW: 0080 [--------X-------])
+[120] {6F 002 000} o 2 0 (PID: 0, PC: 241, Accumulator: 8, PSW: 8080 [M-------X-------])
+	[121] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[121] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[121] Process [1  daemon2] will transfer the control of the processor to process [1  daemon1]
+	[121] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[121] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[121] SLEEPING Queue:
+		[2, 2, 30]
+	[121] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[122] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -9, PSW: 0084 [--------X----N--])
+[123] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -9, PSW: 8084 [M-------X----N--])
+	[124] Clock interrupt number [24] has occurred
+[125] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -9, PSW: 0084 [--------X----N--])
+[126] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -9, PSW: 8084 [M-------X----N--])
+	[127] Clock interrupt number [25] has occurred
+[128] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -9, PSW: 0084 [--------X----N--])
+[129] {74 004 000} t 4 0 (PID: 1, PC: 130, Accumulator: -9, PSW: 0084 [--------X----N--])
+[130] {6F 002 000} o 2 0 (PID: 1, PC: 241, Accumulator: -9, PSW: 8084 [M-------X----N--])
+	[131] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[131] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[131] Process [0  daemon1] will transfer the control of the processor to process [0  daemon2]
+	[131] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[131] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[131] SLEEPING Queue:
+		[2, 2, 30]
+	[131] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[132] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 8, PSW: 0080 [--------X-------])
+[133] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 8, PSW: 8080 [M-------X-------])
+	[134] Clock interrupt number [26] has occurred
+[135] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 8, PSW: 0080 [--------X-------])
+[136] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 8, PSW: 8080 [M-------X-------])
+	[137] Clock interrupt number [27] has occurred
+[138] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 8, PSW: 0080 [--------X-------])
+[139] {69 801 000} i -1 0 (PID: 0, PC: 211, Accumulator: 7, PSW: 0080 [--------X-------])
+[140] {7A 002 000} z 2 0 (PID: 0, PC: 212, Accumulator: 7, PSW: 0080 [--------X-------])
+[141] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 7, PSW: 8080 [M-------X-------])
+	[142] Clock interrupt number [28] has occurred
+[143] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 7, PSW: 0080 [--------X-------])
+[144] {6A 803 000} j -3 0 (PID: 0, PC: 209, Accumulator: 7, PSW: 0080 [--------X-------])
+[145] {74 004 000} t 4 0 (PID: 0, PC: 210, Accumulator: 7, PSW: 0080 [--------X-------])
+[146] {6F 002 000} o 2 0 (PID: 0, PC: 241, Accumulator: 7, PSW: 8080 [M-------X-------])
+	[147] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[147] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[147] Process [1  daemon2] will transfer the control of the processor to process [1  daemon1]
+	[147] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[147] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[147] SLEEPING Queue:
+		[2, 2, 30]
+	[147] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[148] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -9, PSW: 0084 [--------X----N--])
+[149] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -9, PSW: 8084 [M-------X----N--])
+	[150] Clock interrupt number [29] has occurred
+[151] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -9, PSW: 0084 [--------X----N--])
+[152] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -9, PSW: 8084 [M-------X----N--])
+	[153] Clock interrupt number [30] has occurred
+	[153] Process [2 - daemon3] moving from the [BLOCKED] state to the [READY] state
+	[153] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[153] Process [2 - daemon3] moving from the [READY] state to the [EXECUTING] state
+	[153] Running Process Information:
+		[PID: 2, Priority: 2, WakeUp: 30, Queue: DAEMONS]
+	[153] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [1,5],  [3,100]
+	[153] SLEEPING Queue:
+		[--- empty queue ---]
+	[153] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[153] Process [1 - daemon2] is thrown out of the processor by process [2 - daemon3]
+[154] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 10, PSW: 0080 [--------X-------])
+[155] {69 801 000} i -1 0 (PID: 2, PC: 39, Accumulator: 9, PSW: 0080 [--------X-------])
+[156] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 9, PSW: 8080 [M-------X-------])
+	[157] Clock interrupt number [31] has occurred
+[158] {79 000 000} y 0 0 (PID: 2, PC: 39, Accumulator: 9, PSW: 0080 [--------X-------])
+[159] {7A 002 000} z 2 0 (PID: 2, PC: 40, Accumulator: 9, PSW: 0080 [--------X-------])
+[160] {6A 803 000} j -3 0 (PID: 2, PC: 37, Accumulator: 9, PSW: 0080 [--------X-------])
+[161] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 9, PSW: 8080 [M-------X-------])
+	[162] Clock interrupt number [32] has occurred
+[163] {79 000 000} y 0 0 (PID: 2, PC: 37, Accumulator: 9, PSW: 0080 [--------X-------])
+[164] {74 007 000} t 7 0 (PID: 2, PC: 38, Accumulator: 9, PSW: 0080 [--------X-------])
+[165] {6F 002 000} o 2 0 (PID: 2, PC: 241, Accumulator: 9, PSW: 8080 [M-------X-------])
+	[166] Process [2 - daemon3] moving from the [EXECUTING] state to the [BLOCKED] state
+	[166] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[166] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[166] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[166] SLEEPING Queue:
+		[2, 2, 42]
+	[166] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[167] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 7, PSW: 0080 [--------X-------])
+[168] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 7, PSW: 8080 [M-------X-------])
+	[169] Clock interrupt number [33] has occurred
+[170] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 7, PSW: 0080 [--------X-------])
+[171] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 7, PSW: 8080 [M-------X-------])
+	[172] Clock interrupt number [34] has occurred
+[173] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 7, PSW: 0080 [--------X-------])
+[174] {69 801 000} i -1 0 (PID: 0, PC: 211, Accumulator: 6, PSW: 0080 [--------X-------])
+[175] {7A 002 000} z 2 0 (PID: 0, PC: 212, Accumulator: 6, PSW: 0080 [--------X-------])
+[176] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 6, PSW: 8080 [M-------X-------])
+	[177] Clock interrupt number [35] has occurred
+[178] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 6, PSW: 0080 [--------X-------])
+[179] {6A 803 000} j -3 0 (PID: 0, PC: 209, Accumulator: 6, PSW: 0080 [--------X-------])
+[180] {74 004 000} t 4 0 (PID: 0, PC: 210, Accumulator: 6, PSW: 0080 [--------X-------])
+[181] {6F 002 000} o 2 0 (PID: 0, PC: 241, Accumulator: 6, PSW: 8080 [M-------X-------])
+	[182] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[182] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[182] Process [1  daemon2] will transfer the control of the processor to process [1  daemon1]
+	[182] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[182] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[182] SLEEPING Queue:
+		[2, 2, 42]
+	[182] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[183] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -9, PSW: 0084 [--------X----N--])
+[184] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -9, PSW: 8084 [M-------X----N--])
+	[185] Clock interrupt number [36] has occurred
+[186] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -9, PSW: 0084 [--------X----N--])
+[187] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -9, PSW: 8084 [M-------X----N--])
+	[188] Clock interrupt number [37] has occurred
+[189] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -9, PSW: 0084 [--------X----N--])
+[190] {69 001 000} i 1 0 (PID: 1, PC: 131, Accumulator: -8, PSW: 0084 [--------X----N--])
+[191] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -8, PSW: 8084 [M-------X----N--])
+	[192] Clock interrupt number [38] has occurred
+[193] {79 000 000} y 0 0 (PID: 1, PC: 131, Accumulator: -8, PSW: 0084 [--------X----N--])
+[194] {7A 002 000} z 2 0 (PID: 1, PC: 132, Accumulator: -8, PSW: 0084 [--------X----N--])
+[195] {6A 803 000} j -3 0 (PID: 1, PC: 129, Accumulator: -8, PSW: 0084 [--------X----N--])
+[196] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -8, PSW: 8084 [M-------X----N--])
+	[197] Clock interrupt number [39] has occurred
+[198] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -8, PSW: 0084 [--------X----N--])
+[199] {74 004 000} t 4 0 (PID: 1, PC: 130, Accumulator: -8, PSW: 0084 [--------X----N--])
+[200] {6F 002 000} o 2 0 (PID: 1, PC: 241, Accumulator: -8, PSW: 8084 [M-------X----N--])
+	[201] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[201] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[201] Process [0  daemon1] will transfer the control of the processor to process [0  daemon2]
+	[201] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[201] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[201] SLEEPING Queue:
+		[2, 2, 42]
+	[201] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[202] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 6, PSW: 0080 [--------X-------])
+[203] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 6, PSW: 8080 [M-------X-------])
+	[204] Clock interrupt number [40] has occurred
+[205] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 6, PSW: 0080 [--------X-------])
+[206] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 6, PSW: 8080 [M-------X-------])
+	[207] Clock interrupt number [41] has occurred
+[208] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 6, PSW: 0080 [--------X-------])
+[209] {69 801 000} i -1 0 (PID: 0, PC: 211, Accumulator: 5, PSW: 0080 [--------X-------])
+[210] {7A 002 000} z 2 0 (PID: 0, PC: 212, Accumulator: 5, PSW: 0080 [--------X-------])
+[211] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 5, PSW: 8080 [M-------X-------])
+	[212] Clock interrupt number [42] has occurred
+	[212] Process [2 - daemon3] moving from the [BLOCKED] state to the [READY] state
+	[212] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[212] Process [2 - daemon3] moving from the [READY] state to the [EXECUTING] state
+	[212] Running Process Information:
+		[PID: 2, Priority: 2, WakeUp: 42, Queue: DAEMONS]
+	[212] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [0,5],  [3,100]
+	[212] SLEEPING Queue:
+		[--- empty queue ---]
+	[212] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[212] Process [0 - daemon1] is thrown out of the processor by process [2 - daemon3]
+[213] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 9, PSW: 0080 [--------X-------])
+[214] {69 801 000} i -1 0 (PID: 2, PC: 39, Accumulator: 8, PSW: 0080 [--------X-------])
+[215] {7A 002 000} z 2 0 (PID: 2, PC: 40, Accumulator: 8, PSW: 0080 [--------X-------])
+[216] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 8, PSW: 8080 [M-------X-------])
+	[217] Clock interrupt number [43] has occurred
+[218] {79 000 000} y 0 0 (PID: 2, PC: 40, Accumulator: 8, PSW: 0080 [--------X-------])
+[219] {6A 803 000} j -3 0 (PID: 2, PC: 37, Accumulator: 8, PSW: 0080 [--------X-------])
+[220] {74 007 000} t 7 0 (PID: 2, PC: 38, Accumulator: 8, PSW: 0080 [--------X-------])
+[221] {6F 002 000} o 2 0 (PID: 2, PC: 241, Accumulator: 8, PSW: 8080 [M-------X-------])
+	[222] Process [2 - daemon3] moving from the [EXECUTING] state to the [BLOCKED] state
+	[222] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[222] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[222] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[222] SLEEPING Queue:
+		[2, 2, 52]
+	[222] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[223] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -8, PSW: 0084 [--------X----N--])
+[224] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -8, PSW: 8084 [M-------X----N--])
+	[225] Clock interrupt number [44] has occurred
+[226] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -8, PSW: 0084 [--------X----N--])
+[227] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -8, PSW: 8084 [M-------X----N--])
+	[228] Clock interrupt number [45] has occurred
+[229] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -8, PSW: 0084 [--------X----N--])
+[230] {69 001 000} i 1 0 (PID: 1, PC: 131, Accumulator: -7, PSW: 0084 [--------X----N--])
+[231] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -7, PSW: 8084 [M-------X----N--])
+	[232] Clock interrupt number [46] has occurred
+[233] {79 000 000} y 0 0 (PID: 1, PC: 131, Accumulator: -7, PSW: 0084 [--------X----N--])
+[234] {7A 002 000} z 2 0 (PID: 1, PC: 132, Accumulator: -7, PSW: 0084 [--------X----N--])
+[235] {6A 803 000} j -3 0 (PID: 1, PC: 129, Accumulator: -7, PSW: 0084 [--------X----N--])
+[236] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -7, PSW: 8084 [M-------X----N--])
+	[237] Clock interrupt number [47] has occurred
+[238] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -7, PSW: 0084 [--------X----N--])
+[239] {74 004 000} t 4 0 (PID: 1, PC: 130, Accumulator: -7, PSW: 0084 [--------X----N--])
+[240] {6F 002 000} o 2 0 (PID: 1, PC: 241, Accumulator: -7, PSW: 8084 [M-------X----N--])
+	[241] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[241] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[241] Process [0  daemon1] will transfer the control of the processor to process [0  daemon2]
+	[241] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[241] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[241] SLEEPING Queue:
+		[2, 2, 52]
+	[241] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[242] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 5, PSW: 0080 [--------X-------])
+[243] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 5, PSW: 8080 [M-------X-------])
+	[244] Clock interrupt number [48] has occurred
+[245] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 5, PSW: 0080 [--------X-------])
+[246] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 5, PSW: 8080 [M-------X-------])
+	[247] Clock interrupt number [49] has occurred
+[248] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 5, PSW: 0080 [--------X-------])
+[249] {6A 803 000} j -3 0 (PID: 0, PC: 209, Accumulator: 5, PSW: 0080 [--------X-------])
+[250] {74 004 000} t 4 0 (PID: 0, PC: 210, Accumulator: 5, PSW: 0080 [--------X-------])
+[251] {6F 002 000} o 2 0 (PID: 0, PC: 241, Accumulator: 5, PSW: 8080 [M-------X-------])
+	[252] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[252] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[252] Process [1  daemon2] will transfer the control of the processor to process [1  daemon1]
+	[252] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[252] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[252] SLEEPING Queue:
+		[2, 2, 52]
+	[252] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[253] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -7, PSW: 0084 [--------X----N--])
+[254] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -7, PSW: 8084 [M-------X----N--])
+	[255] Clock interrupt number [50] has occurred
+[256] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -7, PSW: 0084 [--------X----N--])
+[257] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -7, PSW: 8084 [M-------X----N--])
+	[258] Clock interrupt number [51] has occurred
+[259] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -7, PSW: 0084 [--------X----N--])
+[260] {69 001 000} i 1 0 (PID: 1, PC: 131, Accumulator: -6, PSW: 0084 [--------X----N--])
+[261] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -6, PSW: 8084 [M-------X----N--])
+	[262] Clock interrupt number [52] has occurred
+	[262] Process [2 - daemon3] moving from the [BLOCKED] state to the [READY] state
+	[262] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[262] Process [2 - daemon3] moving from the [READY] state to the [EXECUTING] state
+	[262] Running Process Information:
+		[PID: 2, Priority: 2, WakeUp: 52, Queue: DAEMONS]
+	[262] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [1,5],  [3,100]
+	[262] SLEEPING Queue:
+		[--- empty queue ---]
+	[262] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[262] Process [1 - daemon2] is thrown out of the processor by process [2 - daemon3]
+[263] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 8, PSW: 0080 [--------X-------])
+[264] {69 801 000} i -1 0 (PID: 2, PC: 39, Accumulator: 7, PSW: 0080 [--------X-------])
+[265] {7A 002 000} z 2 0 (PID: 2, PC: 40, Accumulator: 7, PSW: 0080 [--------X-------])
+[266] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 7, PSW: 8080 [M-------X-------])
+	[267] Clock interrupt number [53] has occurred
+[268] {79 000 000} y 0 0 (PID: 2, PC: 40, Accumulator: 7, PSW: 0080 [--------X-------])
+[269] {6A 803 000} j -3 0 (PID: 2, PC: 37, Accumulator: 7, PSW: 0080 [--------X-------])
+[270] {74 007 000} t 7 0 (PID: 2, PC: 38, Accumulator: 7, PSW: 0080 [--------X-------])
+[271] {6F 002 000} o 2 0 (PID: 2, PC: 241, Accumulator: 7, PSW: 8080 [M-------X-------])
+	[272] Process [2 - daemon3] moving from the [EXECUTING] state to the [BLOCKED] state
+	[272] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[272] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[272] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[272] SLEEPING Queue:
+		[2, 2, 61]
+	[272] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[273] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 5, PSW: 0080 [--------X-------])
+[274] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 5, PSW: 8080 [M-------X-------])
+	[275] Clock interrupt number [54] has occurred
+[276] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 5, PSW: 0080 [--------X-------])
+[277] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 5, PSW: 8080 [M-------X-------])
+	[278] Clock interrupt number [55] has occurred
+[279] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 5, PSW: 0080 [--------X-------])
+[280] {69 801 000} i -1 0 (PID: 0, PC: 211, Accumulator: 4, PSW: 0080 [--------X-------])
+[281] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 4, PSW: 8080 [M-------X-------])
+	[282] Clock interrupt number [56] has occurred
+[283] {79 000 000} y 0 0 (PID: 0, PC: 211, Accumulator: 4, PSW: 0080 [--------X-------])
+[284] {7A 002 000} z 2 0 (PID: 0, PC: 212, Accumulator: 4, PSW: 0080 [--------X-------])
+[285] {6A 803 000} j -3 0 (PID: 0, PC: 209, Accumulator: 4, PSW: 0080 [--------X-------])
+[286] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 4, PSW: 8080 [M-------X-------])
+	[287] Clock interrupt number [57] has occurred
+[288] {79 000 000} y 0 0 (PID: 0, PC: 209, Accumulator: 4, PSW: 0080 [--------X-------])
+[289] {74 004 000} t 4 0 (PID: 0, PC: 210, Accumulator: 4, PSW: 0080 [--------X-------])
+[290] {6F 002 000} o 2 0 (PID: 0, PC: 241, Accumulator: 4, PSW: 8080 [M-------X-------])
+	[291] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[291] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[291] Process [1  daemon2] will transfer the control of the processor to process [1  daemon1]
+	[291] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[291] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[291] SLEEPING Queue:
+		[2, 2, 61]
+	[291] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[292] {79 000 000} y 0 0 (PID: 1, PC: 131, Accumulator: -6, PSW: 0084 [--------X----N--])
+[293] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -6, PSW: 8084 [M-------X----N--])
+	[294] Clock interrupt number [58] has occurred
+[295] {79 000 000} y 0 0 (PID: 1, PC: 131, Accumulator: -6, PSW: 0084 [--------X----N--])
+[296] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -6, PSW: 8084 [M-------X----N--])
+	[297] Clock interrupt number [59] has occurred
+[298] {79 000 000} y 0 0 (PID: 1, PC: 131, Accumulator: -6, PSW: 0084 [--------X----N--])
+[299] {7A 002 000} z 2 0 (PID: 1, PC: 132, Accumulator: -6, PSW: 0084 [--------X----N--])
+[300] {6A 803 000} j -3 0 (PID: 1, PC: 129, Accumulator: -6, PSW: 0084 [--------X----N--])
+[301] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -6, PSW: 8084 [M-------X----N--])
+	[302] Clock interrupt number [60] has occurred
+[303] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -6, PSW: 0084 [--------X----N--])
+[304] {74 004 000} t 4 0 (PID: 1, PC: 130, Accumulator: -6, PSW: 0084 [--------X----N--])
+[305] {6F 002 000} o 2 0 (PID: 1, PC: 241, Accumulator: -6, PSW: 8084 [M-------X----N--])
+	[306] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[306] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[306] Process [0  daemon1] will transfer the control of the processor to process [0  daemon2]
+	[306] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[306] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[306] SLEEPING Queue:
+		[2, 2, 61]
+	[306] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[307] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 4, PSW: 0080 [--------X-------])
+[308] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 4, PSW: 8080 [M-------X-------])
+	[309] Clock interrupt number [61] has occurred
+	[309] Process [2 - daemon3] moving from the [BLOCKED] state to the [READY] state
+	[309] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[309] Process [2 - daemon3] moving from the [READY] state to the [EXECUTING] state
+	[309] Running Process Information:
+		[PID: 2, Priority: 2, WakeUp: 61, Queue: DAEMONS]
+	[309] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [0,5],  [3,100]
+	[309] SLEEPING Queue:
+		[--- empty queue ---]
+	[309] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[309] Process [0 - daemon1] is thrown out of the processor by process [2 - daemon3]
+[310] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 7, PSW: 0080 [--------X-------])
+[311] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 7, PSW: 8080 [M-------X-------])
+	[312] Clock interrupt number [62] has occurred
+[313] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 7, PSW: 0080 [--------X-------])
+[314] {69 801 000} i -1 0 (PID: 2, PC: 39, Accumulator: 6, PSW: 0080 [--------X-------])
+[315] {7A 002 000} z 2 0 (PID: 2, PC: 40, Accumulator: 6, PSW: 0080 [--------X-------])
+[316] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 6, PSW: 8080 [M-------X-------])
+	[317] Clock interrupt number [63] has occurred
+[318] {79 000 000} y 0 0 (PID: 2, PC: 40, Accumulator: 6, PSW: 0080 [--------X-------])
+[319] {6A 803 000} j -3 0 (PID: 2, PC: 37, Accumulator: 6, PSW: 0080 [--------X-------])
+[320] {74 007 000} t 7 0 (PID: 2, PC: 38, Accumulator: 6, PSW: 0080 [--------X-------])
+[321] {6F 002 000} o 2 0 (PID: 2, PC: 241, Accumulator: 6, PSW: 8080 [M-------X-------])
+	[322] Process [2 - daemon3] moving from the [EXECUTING] state to the [BLOCKED] state
+	[322] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[322] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[322] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[322] SLEEPING Queue:
+		[2, 2, 70]
+	[322] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[323] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -6, PSW: 0084 [--------X----N--])
+[324] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -6, PSW: 8084 [M-------X----N--])
+	[325] Clock interrupt number [64] has occurred
+[326] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -6, PSW: 0084 [--------X----N--])
+[327] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -6, PSW: 8084 [M-------X----N--])
+	[328] Clock interrupt number [65] has occurred
+[329] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -6, PSW: 0084 [--------X----N--])
+[330] {69 001 000} i 1 0 (PID: 1, PC: 131, Accumulator: -5, PSW: 0084 [--------X----N--])
+[331] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -5, PSW: 8084 [M-------X----N--])
+	[332] Clock interrupt number [66] has occurred
+[333] {79 000 000} y 0 0 (PID: 1, PC: 131, Accumulator: -5, PSW: 0084 [--------X----N--])
+[334] {7A 002 000} z 2 0 (PID: 1, PC: 132, Accumulator: -5, PSW: 0084 [--------X----N--])
+[335] {6A 803 000} j -3 0 (PID: 1, PC: 129, Accumulator: -5, PSW: 0084 [--------X----N--])
+[336] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -5, PSW: 8084 [M-------X----N--])
+	[337] Clock interrupt number [67] has occurred
+[338] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -5, PSW: 0084 [--------X----N--])
+[339] {74 004 000} t 4 0 (PID: 1, PC: 130, Accumulator: -5, PSW: 0084 [--------X----N--])
+[340] {6F 002 000} o 2 0 (PID: 1, PC: 241, Accumulator: -5, PSW: 8084 [M-------X----N--])
+	[341] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[341] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[341] Process [0  daemon1] will transfer the control of the processor to process [0  daemon2]
+	[341] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[341] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[341] SLEEPING Queue:
+		[2, 2, 70]
+	[341] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[342] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 4, PSW: 0080 [--------X-------])
+[343] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 4, PSW: 8080 [M-------X-------])
+	[344] Clock interrupt number [68] has occurred
+[345] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 4, PSW: 0080 [--------X-------])
+[346] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 4, PSW: 8080 [M-------X-------])
+	[347] Clock interrupt number [69] has occurred
+[348] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 4, PSW: 0080 [--------X-------])
+[349] {69 801 000} i -1 0 (PID: 0, PC: 211, Accumulator: 3, PSW: 0080 [--------X-------])
+[350] {7A 002 000} z 2 0 (PID: 0, PC: 212, Accumulator: 3, PSW: 0080 [--------X-------])
+[351] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[352] Clock interrupt number [70] has occurred
+	[352] Process [2 - daemon3] moving from the [BLOCKED] state to the [READY] state
+	[352] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[352] Process [2 - daemon3] moving from the [READY] state to the [EXECUTING] state
+	[352] Running Process Information:
+		[PID: 2, Priority: 2, WakeUp: 70, Queue: DAEMONS]
+	[352] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [0,5],  [3,100]
+	[352] SLEEPING Queue:
+		[--- empty queue ---]
+	[352] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[352] Process [0 - daemon1] is thrown out of the processor by process [2 - daemon3]
+[353] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 6, PSW: 0080 [--------X-------])
+[354] {69 801 000} i -1 0 (PID: 2, PC: 39, Accumulator: 5, PSW: 0080 [--------X-------])
+[355] {7A 002 000} z 2 0 (PID: 2, PC: 40, Accumulator: 5, PSW: 0080 [--------X-------])
+[356] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 5, PSW: 8080 [M-------X-------])
+	[357] Clock interrupt number [71] has occurred
+[358] {79 000 000} y 0 0 (PID: 2, PC: 40, Accumulator: 5, PSW: 0080 [--------X-------])
+[359] {6A 803 000} j -3 0 (PID: 2, PC: 37, Accumulator: 5, PSW: 0080 [--------X-------])
+[360] {74 007 000} t 7 0 (PID: 2, PC: 38, Accumulator: 5, PSW: 0080 [--------X-------])
+[361] {6F 002 000} o 2 0 (PID: 2, PC: 241, Accumulator: 5, PSW: 8080 [M-------X-------])
+	[362] Process [2 - daemon3] moving from the [EXECUTING] state to the [BLOCKED] state
+	[362] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[362] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[362] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[362] SLEEPING Queue:
+		[2, 2, 77]
+	[362] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[363] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -5, PSW: 0084 [--------X----N--])
+[364] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -5, PSW: 8084 [M-------X----N--])
+	[365] Clock interrupt number [72] has occurred
+[366] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -5, PSW: 0084 [--------X----N--])
+[367] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -5, PSW: 8084 [M-------X----N--])
+	[368] Clock interrupt number [73] has occurred
+[369] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -5, PSW: 0084 [--------X----N--])
+[370] {69 001 000} i 1 0 (PID: 1, PC: 131, Accumulator: -4, PSW: 0084 [--------X----N--])
+[371] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -4, PSW: 8084 [M-------X----N--])
+	[372] Clock interrupt number [74] has occurred
+[373] {79 000 000} y 0 0 (PID: 1, PC: 131, Accumulator: -4, PSW: 0084 [--------X----N--])
+[374] {7A 002 000} z 2 0 (PID: 1, PC: 132, Accumulator: -4, PSW: 0084 [--------X----N--])
+[375] {6A 803 000} j -3 0 (PID: 1, PC: 129, Accumulator: -4, PSW: 0084 [--------X----N--])
+[376] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -4, PSW: 8084 [M-------X----N--])
+	[377] Clock interrupt number [75] has occurred
+[378] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -4, PSW: 0084 [--------X----N--])
+[379] {74 004 000} t 4 0 (PID: 1, PC: 130, Accumulator: -4, PSW: 0084 [--------X----N--])
+[380] {6F 002 000} o 2 0 (PID: 1, PC: 241, Accumulator: -4, PSW: 8084 [M-------X----N--])
+	[381] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[381] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[381] Process [0  daemon1] will transfer the control of the processor to process [0  daemon2]
+	[381] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[381] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[381] SLEEPING Queue:
+		[2, 2, 77]
+	[381] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[382] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 3, PSW: 0080 [--------X-------])
+[383] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[384] Clock interrupt number [76] has occurred
+[385] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 3, PSW: 0080 [--------X-------])
+[386] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[387] Clock interrupt number [77] has occurred
+	[387] Process [2 - daemon3] moving from the [BLOCKED] state to the [READY] state
+	[387] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[387] Process [2 - daemon3] moving from the [READY] state to the [EXECUTING] state
+	[387] Running Process Information:
+		[PID: 2, Priority: 2, WakeUp: 77, Queue: DAEMONS]
+	[387] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [0,5],  [3,100]
+	[387] SLEEPING Queue:
+		[--- empty queue ---]
+	[387] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[387] Process [0 - daemon1] is thrown out of the processor by process [2 - daemon3]
+[388] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 5, PSW: 0080 [--------X-------])
+[389] {69 801 000} i -1 0 (PID: 2, PC: 39, Accumulator: 4, PSW: 0080 [--------X-------])
+[390] {7A 002 000} z 2 0 (PID: 2, PC: 40, Accumulator: 4, PSW: 0080 [--------X-------])
+[391] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 4, PSW: 8080 [M-------X-------])
+	[392] Clock interrupt number [78] has occurred
+[393] {79 000 000} y 0 0 (PID: 2, PC: 40, Accumulator: 4, PSW: 0080 [--------X-------])
+[394] {6A 803 000} j -3 0 (PID: 2, PC: 37, Accumulator: 4, PSW: 0080 [--------X-------])
+[395] {74 007 000} t 7 0 (PID: 2, PC: 38, Accumulator: 4, PSW: 0080 [--------X-------])
+[396] {6F 002 000} o 2 0 (PID: 2, PC: 241, Accumulator: 4, PSW: 8080 [M-------X-------])
+	[397] Process [2 - daemon3] moving from the [EXECUTING] state to the [BLOCKED] state
+	[397] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[397] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[397] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[397] SLEEPING Queue:
+		[2, 2, 83]
+	[397] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[398] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -4, PSW: 0084 [--------X----N--])
+[399] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -4, PSW: 8084 [M-------X----N--])
+	[400] Clock interrupt number [79] has occurred
+[401] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -4, PSW: 0084 [--------X----N--])
+[402] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -4, PSW: 8084 [M-------X----N--])
+	[403] Clock interrupt number [80] has occurred
+[404] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -4, PSW: 0084 [--------X----N--])
+[405] {69 001 000} i 1 0 (PID: 1, PC: 131, Accumulator: -3, PSW: 0084 [--------X----N--])
+[406] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -3, PSW: 8084 [M-------X----N--])
+	[407] Clock interrupt number [81] has occurred
+[408] {79 000 000} y 0 0 (PID: 1, PC: 131, Accumulator: -3, PSW: 0084 [--------X----N--])
+[409] {7A 002 000} z 2 0 (PID: 1, PC: 132, Accumulator: -3, PSW: 0084 [--------X----N--])
+[410] {6A 803 000} j -3 0 (PID: 1, PC: 129, Accumulator: -3, PSW: 0084 [--------X----N--])
+[411] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -3, PSW: 8084 [M-------X----N--])
+	[412] Clock interrupt number [82] has occurred
+[413] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -3, PSW: 0084 [--------X----N--])
+[414] {74 004 000} t 4 0 (PID: 1, PC: 130, Accumulator: -3, PSW: 0084 [--------X----N--])
+[415] {6F 002 000} o 2 0 (PID: 1, PC: 241, Accumulator: -3, PSW: 8084 [M-------X----N--])
+	[416] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[416] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[416] Process [0  daemon1] will transfer the control of the processor to process [0  daemon2]
+	[416] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[416] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[416] SLEEPING Queue:
+		[2, 2, 83]
+	[416] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[417] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 3, PSW: 0080 [--------X-------])
+[418] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[419] Clock interrupt number [83] has occurred
+	[419] Process [2 - daemon3] moving from the [BLOCKED] state to the [READY] state
+	[419] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[419] Process [2 - daemon3] moving from the [READY] state to the [EXECUTING] state
+	[419] Running Process Information:
+		[PID: 2, Priority: 2, WakeUp: 83, Queue: DAEMONS]
+	[419] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [0,5],  [3,100]
+	[419] SLEEPING Queue:
+		[--- empty queue ---]
+	[419] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[419] Process [0 - daemon1] is thrown out of the processor by process [2 - daemon3]
+[420] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 4, PSW: 0080 [--------X-------])
+[421] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 4, PSW: 8080 [M-------X-------])
+	[422] Clock interrupt number [84] has occurred
+[423] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 4, PSW: 0080 [--------X-------])
+[424] {69 801 000} i -1 0 (PID: 2, PC: 39, Accumulator: 3, PSW: 0080 [--------X-------])
+[425] {7A 002 000} z 2 0 (PID: 2, PC: 40, Accumulator: 3, PSW: 0080 [--------X-------])
+[426] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[427] Clock interrupt number [85] has occurred
+[428] {79 000 000} y 0 0 (PID: 2, PC: 40, Accumulator: 3, PSW: 0080 [--------X-------])
+[429] {6A 803 000} j -3 0 (PID: 2, PC: 37, Accumulator: 3, PSW: 0080 [--------X-------])
+[430] {74 007 000} t 7 0 (PID: 2, PC: 38, Accumulator: 3, PSW: 0080 [--------X-------])
+[431] {6F 002 000} o 2 0 (PID: 2, PC: 241, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[432] Process [2 - daemon3] moving from the [EXECUTING] state to the [BLOCKED] state
+	[432] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[432] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[432] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[432] SLEEPING Queue:
+		[2, 2, 89]
+	[432] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[433] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -3, PSW: 0084 [--------X----N--])
+[434] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -3, PSW: 8084 [M-------X----N--])
+	[435] Clock interrupt number [86] has occurred
+[436] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -3, PSW: 0084 [--------X----N--])
+[437] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -3, PSW: 8084 [M-------X----N--])
+	[438] Clock interrupt number [87] has occurred
+[439] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -3, PSW: 0084 [--------X----N--])
+[440] {69 001 000} i 1 0 (PID: 1, PC: 131, Accumulator: -2, PSW: 0084 [--------X----N--])
+[441] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -2, PSW: 8084 [M-------X----N--])
+	[442] Clock interrupt number [88] has occurred
+[443] {79 000 000} y 0 0 (PID: 1, PC: 131, Accumulator: -2, PSW: 0084 [--------X----N--])
+[444] {7A 002 000} z 2 0 (PID: 1, PC: 132, Accumulator: -2, PSW: 0084 [--------X----N--])
+[445] {6A 803 000} j -3 0 (PID: 1, PC: 129, Accumulator: -2, PSW: 0084 [--------X----N--])
+[446] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -2, PSW: 8084 [M-------X----N--])
+	[447] Clock interrupt number [89] has occurred
+	[447] Process [2 - daemon3] moving from the [BLOCKED] state to the [READY] state
+	[447] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[447] Process [2 - daemon3] moving from the [READY] state to the [EXECUTING] state
+	[447] Running Process Information:
+		[PID: 2, Priority: 2, WakeUp: 89, Queue: DAEMONS]
+	[447] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [1,5],  [3,100]
+	[447] SLEEPING Queue:
+		[--- empty queue ---]
+	[447] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[447] Process [1 - daemon2] is thrown out of the processor by process [2 - daemon3]
+[448] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 3, PSW: 0080 [--------X-------])
+[449] {69 801 000} i -1 0 (PID: 2, PC: 39, Accumulator: 2, PSW: 0080 [--------X-------])
+[450] {7A 002 000} z 2 0 (PID: 2, PC: 40, Accumulator: 2, PSW: 0080 [--------X-------])
+[451] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 2, PSW: 8080 [M-------X-------])
+	[452] Clock interrupt number [90] has occurred
+[453] {79 000 000} y 0 0 (PID: 2, PC: 40, Accumulator: 2, PSW: 0080 [--------X-------])
+[454] {6A 803 000} j -3 0 (PID: 2, PC: 37, Accumulator: 2, PSW: 0080 [--------X-------])
+[455] {74 007 000} t 7 0 (PID: 2, PC: 38, Accumulator: 2, PSW: 0080 [--------X-------])
+[456] {6F 002 000} o 2 0 (PID: 2, PC: 241, Accumulator: 2, PSW: 8080 [M-------X-------])
+	[457] Process [2 - daemon3] moving from the [EXECUTING] state to the [BLOCKED] state
+	[457] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[457] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[457] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[457] SLEEPING Queue:
+		[2, 2, 93]
+	[457] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[458] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 3, PSW: 0080 [--------X-------])
+[459] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[460] Clock interrupt number [91] has occurred
+[461] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 3, PSW: 0080 [--------X-------])
+[462] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[463] Clock interrupt number [92] has occurred
+[464] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 3, PSW: 0080 [--------X-------])
+[465] {6A 803 000} j -3 0 (PID: 0, PC: 209, Accumulator: 3, PSW: 0080 [--------X-------])
+[466] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[467] Clock interrupt number [93] has occurred
+	[467] Process [2 - daemon3] moving from the [BLOCKED] state to the [READY] state
+	[467] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[467] Process [2 - daemon3] moving from the [READY] state to the [EXECUTING] state
+	[467] Running Process Information:
+		[PID: 2, Priority: 2, WakeUp: 93, Queue: DAEMONS]
+	[467] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [0,5],  [3,100]
+	[467] SLEEPING Queue:
+		[--- empty queue ---]
+	[467] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[467] Process [0 - daemon1] is thrown out of the processor by process [2 - daemon3]
+[468] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 2, PSW: 0080 [--------X-------])
+[469] {69 801 000} i -1 0 (PID: 2, PC: 39, Accumulator: 1, PSW: 0080 [--------X-------])
+[470] {7A 002 000} z 2 0 (PID: 2, PC: 40, Accumulator: 1, PSW: 0080 [--------X-------])
+[471] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[472] Clock interrupt number [94] has occurred
+[473] {79 000 000} y 0 0 (PID: 2, PC: 40, Accumulator: 1, PSW: 0080 [--------X-------])
+[474] {6A 803 000} j -3 0 (PID: 2, PC: 37, Accumulator: 1, PSW: 0080 [--------X-------])
+[475] {74 007 000} t 7 0 (PID: 2, PC: 38, Accumulator: 1, PSW: 0080 [--------X-------])
+[476] {6F 002 000} o 2 0 (PID: 2, PC: 241, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[477] Process [2 - daemon3] moving from the [EXECUTING] state to the [BLOCKED] state
+	[477] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[477] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[477] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[477] SLEEPING Queue:
+		[2, 2, 96]
+	[477] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[478] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -2, PSW: 0084 [--------X----N--])
+[479] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -2, PSW: 8084 [M-------X----N--])
+	[480] Clock interrupt number [95] has occurred
+[481] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -2, PSW: 0084 [--------X----N--])
+[482] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -2, PSW: 8084 [M-------X----N--])
+	[483] Clock interrupt number [96] has occurred
+	[483] Process [2 - daemon3] moving from the [BLOCKED] state to the [READY] state
+	[483] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[483] Process [2 - daemon3] moving from the [READY] state to the [EXECUTING] state
+	[483] Running Process Information:
+		[PID: 2, Priority: 2, WakeUp: 96, Queue: DAEMONS]
+	[483] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [1,5],  [3,100]
+	[483] SLEEPING Queue:
+		[--- empty queue ---]
+	[483] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+	[483] Process [1 - daemon2] is thrown out of the processor by process [2 - daemon3]
+[484] {79 000 000} y 0 0 (PID: 2, PC: 38, Accumulator: 1, PSW: 0080 [--------X-------])
+[485] {69 801 000} i -1 0 (PID: 2, PC: 39, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[486] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 0, PSW: 8082 [M-------X-----Z-])
+	[487] Clock interrupt number [97] has occurred
+[488] {79 000 000} y 0 0 (PID: 2, PC: 39, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[489] {7A 002 000} z 2 0 (PID: 2, PC: 41, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[490] {69 001 000} i 1 0 (PID: 2, PC: 42, Accumulator: 1, PSW: 0080 [--------X-------])
+[491] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[492] Clock interrupt number [98] has occurred
+[493] {79 000 000} y 0 0 (PID: 2, PC: 42, Accumulator: 1, PSW: 0080 [--------X-------])
+[494] {7A 002 000} z 2 0 (PID: 2, PC: 43, Accumulator: 1, PSW: 0080 [--------X-------])
+[495] {6A 82C 000} j -44 0 (PID: 2, PC: -1, Accumulator: 1, PSW: 0080 [--------X-------])
+[496] {6F 009 000} o 9 0 (PID: 2, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[497] Clock interrupt number [99] has occurred
+[498] {79 000 000} y 0 0 (PID: 2, PC: -1, Accumulator: 1, PSW: 0080 [--------X-------])
+[499] {00 000 000}   0 0 (PID: 2, PC: 0, Accumulator: 1, PSW: 0080 [--------X-------])
+[500] {6F 006 000} o 6 0 (PID: 2, PC: 243, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[501] Process [2 - daemon3] has caused an exception (invalid instruction) and is being terminated
+	[501] Process [2 - daemon3] moving from the [EXECUTING] state to the [EXIT] state
+	[501] Main memory state (before releasing memory):
+		[0] [0 -> 4][3 - SystemIdleProcess]
+		[1] [4 -> 12][AVAILABLE]
+		[2] [16 -> 16][AVAILABLE]
+		[3] [32 -> 96][2 - daemon3]
+		[4] [128 -> 64][1 - daemon2]
+		[5] [192 -> 16][AVAILABLE]
+		[6] [208 -> 32][0 - daemon1]
+	[501] Partition [3: 32-> 96] used by process [2 - daemon3] has been released
+	[501] Main memory state (after releasing memory):
+		[0] [0 -> 4][3 - SystemIdleProcess]
+		[1] [4 -> 12][AVAILABLE]
+		[2] [16 -> 16][AVAILABLE]
+		[3] [32 -> 96][AVAILABLE]
+		[4] [128 -> 64][1 - daemon2]
+		[5] [192 -> 16][AVAILABLE]
+		[6] [208 -> 32][0 - daemon1]
+	[501] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[501] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[501] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[501] SLEEPING Queue:
+		[--- empty queue ---]
+	[501] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[502] {79 000 000} y 0 0 (PID: 0, PC: 209, Accumulator: 3, PSW: 0080 [--------X-------])
+[503] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[504] Clock interrupt number [100] has occurred
+[505] {79 000 000} y 0 0 (PID: 0, PC: 209, Accumulator: 3, PSW: 0080 [--------X-------])
+[506] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[507] Clock interrupt number [101] has occurred
+[508] {79 000 000} y 0 0 (PID: 0, PC: 209, Accumulator: 3, PSW: 0080 [--------X-------])
+[509] {74 004 000} t 4 0 (PID: 0, PC: 210, Accumulator: 3, PSW: 0080 [--------X-------])
+[510] {6F 002 000} o 2 0 (PID: 0, PC: 241, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[511] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[511] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[511] Process [1  daemon2] will transfer the control of the processor to process [1  daemon1]
+	[511] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[511] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[511] SLEEPING Queue:
+		[--- empty queue ---]
+	[511] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[512] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -2, PSW: 0084 [--------X----N--])
+[513] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -2, PSW: 8084 [M-------X----N--])
+	[514] Clock interrupt number [102] has occurred
+[515] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -2, PSW: 0084 [--------X----N--])
+[516] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -2, PSW: 8084 [M-------X----N--])
+	[517] Clock interrupt number [103] has occurred
+[518] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -2, PSW: 0084 [--------X----N--])
+[519] {74 004 000} t 4 0 (PID: 1, PC: 130, Accumulator: -2, PSW: 0084 [--------X----N--])
+[520] {6F 002 000} o 2 0 (PID: 1, PC: 241, Accumulator: -2, PSW: 8084 [M-------X----N--])
+	[521] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[521] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[521] Process [0  daemon1] will transfer the control of the processor to process [0  daemon2]
+	[521] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[521] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[521] SLEEPING Queue:
+		[--- empty queue ---]
+	[521] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[522] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 3, PSW: 0080 [--------X-------])
+[523] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[524] Clock interrupt number [104] has occurred
+[525] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 3, PSW: 0080 [--------X-------])
+[526] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 3, PSW: 8080 [M-------X-------])
+	[527] Clock interrupt number [105] has occurred
+[528] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 3, PSW: 0080 [--------X-------])
+[529] {69 801 000} i -1 0 (PID: 0, PC: 211, Accumulator: 2, PSW: 0080 [--------X-------])
+[530] {7A 002 000} z 2 0 (PID: 0, PC: 212, Accumulator: 2, PSW: 0080 [--------X-------])
+[531] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 2, PSW: 8080 [M-------X-------])
+	[532] Clock interrupt number [106] has occurred
+[533] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 2, PSW: 0080 [--------X-------])
+[534] {6A 803 000} j -3 0 (PID: 0, PC: 209, Accumulator: 2, PSW: 0080 [--------X-------])
+[535] {74 004 000} t 4 0 (PID: 0, PC: 210, Accumulator: 2, PSW: 0080 [--------X-------])
+[536] {6F 002 000} o 2 0 (PID: 0, PC: 241, Accumulator: 2, PSW: 8080 [M-------X-------])
+	[537] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[537] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[537] Process [1  daemon2] will transfer the control of the processor to process [1  daemon1]
+	[537] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[537] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[537] SLEEPING Queue:
+		[--- empty queue ---]
+	[537] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[538] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -2, PSW: 0084 [--------X----N--])
+[539] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -2, PSW: 8084 [M-------X----N--])
+	[540] Clock interrupt number [107] has occurred
+[541] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -2, PSW: 0084 [--------X----N--])
+[542] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -2, PSW: 8084 [M-------X----N--])
+	[543] Clock interrupt number [108] has occurred
+[544] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -2, PSW: 0084 [--------X----N--])
+[545] {69 001 000} i 1 0 (PID: 1, PC: 131, Accumulator: -1, PSW: 0084 [--------X----N--])
+[546] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -1, PSW: 8084 [M-------X----N--])
+	[547] Clock interrupt number [109] has occurred
+[548] {79 000 000} y 0 0 (PID: 1, PC: 131, Accumulator: -1, PSW: 0084 [--------X----N--])
+[549] {7A 002 000} z 2 0 (PID: 1, PC: 132, Accumulator: -1, PSW: 0084 [--------X----N--])
+[550] {6A 803 000} j -3 0 (PID: 1, PC: 129, Accumulator: -1, PSW: 0084 [--------X----N--])
+[551] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -1, PSW: 8084 [M-------X----N--])
+	[552] Clock interrupt number [110] has occurred
+[553] {79 000 000} y 0 0 (PID: 1, PC: 129, Accumulator: -1, PSW: 0084 [--------X----N--])
+[554] {74 004 000} t 4 0 (PID: 1, PC: 130, Accumulator: -1, PSW: 0084 [--------X----N--])
+[555] {6F 002 000} o 2 0 (PID: 1, PC: 241, Accumulator: -1, PSW: 8084 [M-------X----N--])
+	[556] Process [1 - daemon2] moving from the [EXECUTING] state to the [READY] state
+	[556] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[556] Process [0  daemon1] will transfer the control of the processor to process [0  daemon2]
+	[556] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[556] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [1,5],  [3,100]
+	[556] SLEEPING Queue:
+		[--- empty queue ---]
+	[556] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[557] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 2, PSW: 0080 [--------X-------])
+[558] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 2, PSW: 8080 [M-------X-------])
+	[559] Clock interrupt number [111] has occurred
+[560] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 2, PSW: 0080 [--------X-------])
+[561] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 2, PSW: 8080 [M-------X-------])
+	[562] Clock interrupt number [112] has occurred
+[563] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 2, PSW: 0080 [--------X-------])
+[564] {69 801 000} i -1 0 (PID: 0, PC: 211, Accumulator: 1, PSW: 0080 [--------X-------])
+[565] {7A 002 000} z 2 0 (PID: 0, PC: 212, Accumulator: 1, PSW: 0080 [--------X-------])
+[566] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[567] Clock interrupt number [113] has occurred
+[568] {79 000 000} y 0 0 (PID: 0, PC: 212, Accumulator: 1, PSW: 0080 [--------X-------])
+[569] {6A 803 000} j -3 0 (PID: 0, PC: 209, Accumulator: 1, PSW: 0080 [--------X-------])
+[570] {74 004 000} t 4 0 (PID: 0, PC: 210, Accumulator: 1, PSW: 0080 [--------X-------])
+[571] {6F 002 000} o 2 0 (PID: 0, PC: 241, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[572] Process [0 - daemon1] moving from the [EXECUTING] state to the [READY] state
+	[572] Process [1 - daemon2] moving from the [READY] state to the [EXECUTING] state
+	[572] Process [1  daemon2] will transfer the control of the processor to process [1  daemon1]
+	[572] Running Process Information:
+		[PID: 1, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[572] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [0,5],  [3,100]
+	[572] SLEEPING Queue:
+		[--- empty queue ---]
+	[572] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[573] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -1, PSW: 0084 [--------X----N--])
+[574] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -1, PSW: 8084 [M-------X----N--])
+	[575] Clock interrupt number [114] has occurred
+[576] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -1, PSW: 0084 [--------X----N--])
+[577] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: -1, PSW: 8084 [M-------X----N--])
+	[578] Clock interrupt number [115] has occurred
+[579] {79 000 000} y 0 0 (PID: 1, PC: 130, Accumulator: -1, PSW: 0084 [--------X----N--])
+[580] {69 001 000} i 1 0 (PID: 1, PC: 131, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[581] {6F 009 000} o 9 0 (PID: 1, PC: 245, Accumulator: 0, PSW: 8082 [M-------X-----Z-])
+	[582] Clock interrupt number [116] has occurred
+[583] {79 000 000} y 0 0 (PID: 1, PC: 131, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[584] {7A 002 000} z 2 0 (PID: 1, PC: 133, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[585] {74 017 000} t 23 0 (PID: 1, PC: 134, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[586] {6F 002 000} o 2 0 (PID: 1, PC: 241, Accumulator: 0, PSW: 8082 [M-------X-----Z-])
+	[587] Process [1 - daemon2] has made an invalid system call (23) and is being terminated
+	[587] Process [1 - daemon2] moving from the [EXECUTING] state to the [EXIT] state
+	[587] Main memory state (before releasing memory):
+		[0] [0 -> 4][3 - SystemIdleProcess]
+		[1] [4 -> 12][AVAILABLE]
+		[2] [16 -> 16][AVAILABLE]
+		[3] [32 -> 96][AVAILABLE]
+		[4] [128 -> 64][1 - daemon2]
+		[5] [192 -> 16][AVAILABLE]
+		[6] [208 -> 32][0 - daemon1]
+	[587] Partition [4: 128-> 64] used by process [1 - daemon2] has been released
+	[587] Main memory state (after releasing memory):
+		[0] [0 -> 4][3 - SystemIdleProcess]
+		[1] [4 -> 12][AVAILABLE]
+		[2] [16 -> 16][AVAILABLE]
+		[3] [32 -> 96][AVAILABLE]
+		[4] [128 -> 64][AVAILABLE]
+		[5] [192 -> 16][AVAILABLE]
+		[6] [208 -> 32][0 - daemon1]
+	[587] Process [0 - daemon1] moving from the [READY] state to the [EXECUTING] state
+	[587] Running Process Information:
+		[PID: 0, Priority: 5, WakeUp: 0, Queue: DAEMONS]
+	[587] Ready-to-run processes queue:
+		USER:
+		DAEMONS: [3,100]
+	[587] SLEEPING Queue:
+		[--- empty queue ---]
+	[587] PID association with program's name:
+		PID: 0 -> daemon1
+		PID: 1 -> daemon2
+		PID: 2 -> daemon3
+		PID: 3 -> SystemIdleProcess
+[588] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 1, PSW: 0080 [--------X-------])
+[589] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[590] Clock interrupt number [117] has occurred
+[591] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 1, PSW: 0080 [--------X-------])
+[592] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[593] Clock interrupt number [118] has occurred
+[594] {79 000 000} y 0 0 (PID: 0, PC: 210, Accumulator: 1, PSW: 0080 [--------X-------])
+[595] {69 801 000} i -1 0 (PID: 0, PC: 211, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[596] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 0, PSW: 8082 [M-------X-----Z-])
+	[597] Clock interrupt number [119] has occurred
+[598] {79 000 000} y 0 0 (PID: 0, PC: 211, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[599] {7A 002 000} z 2 0 (PID: 0, PC: 213, Accumulator: 0, PSW: 0082 [--------X-----Z-])
+[600] {69 001 000} i 1 0 (PID: 0, PC: 214, Accumulator: 1, PSW: 0080 [--------X-------])
+[601] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[602] Clock interrupt number [120] has occurred
+[603] {79 000 000} y 0 0 (PID: 0, PC: 214, Accumulator: 1, PSW: 0080 [--------X-------])
+[604] {7A 002 000} z 2 0 (PID: 0, PC: 215, Accumulator: 1, PSW: 0080 [--------X-------])
+[605] {6A 055 000} j 85 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+[606] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[607] Clock interrupt number [121] has occurred
+[608] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[611] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[612] Clock interrupt number [122] has occurred
+[613] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[616] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[617] Clock interrupt number [123] has occurred
+[618] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[621] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[622] Clock interrupt number [124] has occurred
+[623] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[626] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[627] Clock interrupt number [125] has occurred
+[628] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[631] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[632] Clock interrupt number [126] has occurred
+[633] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[636] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[637] Clock interrupt number [127] has occurred
+[638] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[641] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[642] Clock interrupt number [128] has occurred
+[643] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[646] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[647] Clock interrupt number [129] has occurred
+[648] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[651] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[652] Clock interrupt number [130] has occurred
+[653] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[656] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[657] Clock interrupt number [131] has occurred
+[658] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[661] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[662] Clock interrupt number [132] has occurred
+[663] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[666] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[667] Clock interrupt number [133] has occurred
+[668] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[671] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[672] Clock interrupt number [134] has occurred
+[673] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[676] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[677] Clock interrupt number [135] has occurred
+[678] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[681] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[682] Clock interrupt number [136] has occurred
+[683] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[686] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[687] Clock interrupt number [137] has occurred
+[688] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[691] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[692] Clock interrupt number [138] has occurred
+[693] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[696] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[697] Clock interrupt number [139] has occurred
+[698] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[701] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[702] Clock interrupt number [140] has occurred
+[703] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[706] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[707] Clock interrupt number [141] has occurred
+[708] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[711] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[712] Clock interrupt number [142] has occurred
+[713] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[716] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[717] Clock interrupt number [143] has occurred
+[718] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[721] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[722] Clock interrupt number [144] has occurred
+[723] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[726] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[727] Clock interrupt number [145] has occurred
+[728] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[731] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[732] Clock interrupt number [146] has occurred
+[733] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[736] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[737] Clock interrupt number [147] has occurred
+[738] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[741] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[742] Clock interrupt number [148] has occurred
+[743] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[746] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[747] Clock interrupt number [149] has occurred
+[748] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[751] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[752] Clock interrupt number [150] has occurred
+[753] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[756] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[757] Clock interrupt number [151] has occurred
+[758] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[761] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[762] Clock interrupt number [152] has occurred
+[763] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[766] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[767] Clock interrupt number [153] has occurred
+[768] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[771] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[772] Clock interrupt number [154] has occurred
+[773] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[776] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[777] Clock interrupt number [155] has occurred
+[778] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[781] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[782] Clock interrupt number [156] has occurred
+[783] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[786] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[787] Clock interrupt number [157] has occurred
+[788] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[791] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[792] Clock interrupt number [158] has occurred
+[793] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[796] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[797] Clock interrupt number [159] has occurred
+[798] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[801] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[802] Clock interrupt number [160] has occurred
+[803] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[806] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[807] Clock interrupt number [161] has occurred
+[808] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[811] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[812] Clock interrupt number [162] has occurred
+[813] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[816] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[817] Clock interrupt number [163] has occurred
+[818] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[821] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[822] Clock interrupt number [164] has occurred
+[823] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[826] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[827] Clock interrupt number [165] has occurred
+[828] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[831] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[832] Clock interrupt number [166] has occurred
+[833] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[836] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[837] Clock interrupt number [167] has occurred
+[838] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[841] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[842] Clock interrupt number [168] has occurred
+[843] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[846] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[847] Clock interrupt number [169] has occurred
+[848] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[851] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[852] Clock interrupt number [170] has occurred
+[853] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[856] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[857] Clock interrupt number [171] has occurred
+[858] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[861] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[862] Clock interrupt number [172] has occurred
+[863] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[866] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[867] Clock interrupt number [173] has occurred
+[868] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[871] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[872] Clock interrupt number [174] has occurred
+[873] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[876] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[877] Clock interrupt number [175] has occurred
+[878] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[881] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[882] Clock interrupt number [176] has occurred
+[883] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[886] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[887] Clock interrupt number [177] has occurred
+[888] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[891] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[892] Clock interrupt number [178] has occurred
+[893] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[896] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[897] Clock interrupt number [179] has occurred
+[898] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[901] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[902] Clock interrupt number [180] has occurred
+[903] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[906] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[907] Clock interrupt number [181] has occurred
+[908] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[911] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[912] Clock interrupt number [182] has occurred
+[913] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[916] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[917] Clock interrupt number [183] has occurred
+[918] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[921] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[922] Clock interrupt number [184] has occurred
+[923] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[926] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[927] Clock interrupt number [185] has occurred
+[928] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[931] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[932] Clock interrupt number [186] has occurred
+[933] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[936] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[937] Clock interrupt number [187] has occurred
+[938] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[941] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[942] Clock interrupt number [188] has occurred
+[943] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[946] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[947] Clock interrupt number [189] has occurred
+[948] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[951] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[952] Clock interrupt number [190] has occurred
+[953] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[956] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[957] Clock interrupt number [191] has occurred
+[958] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[961] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[962] Clock interrupt number [192] has occurred
+[963] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[966] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[967] Clock interrupt number [193] has occurred
+[968] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[971] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[972] Clock interrupt number [194] has occurred
+[973] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[976] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[977] Clock interrupt number [195] has occurred
+[978] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[981] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[982] Clock interrupt number [196] has occurred
+[983] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[986] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[987] Clock interrupt number [197] has occurred
+[988] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[991] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[992] Clock interrupt number [198] has occurred
+[993] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[996] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[997] Clock interrupt number [199] has occurred
+[998] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1001] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1002] Clock interrupt number [200] has occurred
+[1003] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1006] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1007] Clock interrupt number [201] has occurred
+[1008] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1011] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1012] Clock interrupt number [202] has occurred
+[1013] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1016] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1017] Clock interrupt number [203] has occurred
+[1018] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1021] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1022] Clock interrupt number [204] has occurred
+[1023] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1026] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1027] Clock interrupt number [205] has occurred
+[1028] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1031] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1032] Clock interrupt number [206] has occurred
+[1033] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1036] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1037] Clock interrupt number [207] has occurred
+[1038] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1041] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1042] Clock interrupt number [208] has occurred
+[1043] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1046] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1047] Clock interrupt number [209] has occurred
+[1048] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1051] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1052] Clock interrupt number [210] has occurred
+[1053] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1056] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1057] Clock interrupt number [211] has occurred
+[1058] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1061] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1062] Clock interrupt number [212] has occurred
+[1063] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1066] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1067] Clock interrupt number [213] has occurred
+[1068] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1071] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1072] Clock interrupt number [214] has occurred
+[1073] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1076] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1077] Clock interrupt number [215] has occurred
+[1078] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1081] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1082] Clock interrupt number [216] has occurred
+[1083] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1086] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1087] Clock interrupt number [217] has occurred
+[1088] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1091] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1092] Clock interrupt number [218] has occurred
+[1093] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1096] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1097] Clock interrupt number [219] has occurred
+[1098] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1101] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1102] Clock interrupt number [220] has occurred
+[1103] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1106] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1107] Clock interrupt number [221] has occurred
+[1108] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1111] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1112] Clock interrupt number [222] has occurred
+[1113] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1116] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1117] Clock interrupt number [223] has occurred
+[1118] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1121] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1122] Clock interrupt number [224] has occurred
+[1123] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1126] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1127] Clock interrupt number [225] has occurred
+[1128] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1131] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1132] Clock interrupt number [226] has occurred
+[1133] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1136] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1137] Clock interrupt number [227] has occurred
+[1138] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1141] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1142] Clock interrupt number [228] has occurred
+[1143] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1146] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1147] Clock interrupt number [229] has occurred
+[1148] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1151] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1152] Clock interrupt number [230] has occurred
+[1153] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1156] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1157] Clock interrupt number [231] has occurred
+[1158] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1161] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1162] Clock interrupt number [232] has occurred
+[1163] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1166] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1167] Clock interrupt number [233] has occurred
+[1168] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1171] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1172] Clock interrupt number [234] has occurred
+[1173] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1176] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1177] Clock interrupt number [235] has occurred
+[1178] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1181] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1182] Clock interrupt number [236] has occurred
+[1183] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1186] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1187] Clock interrupt number [237] has occurred
+[1188] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1191] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1192] Clock interrupt number [238] has occurred
+[1193] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1196] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1197] Clock interrupt number [239] has occurred
+[1198] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1201] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1202] Clock interrupt number [240] has occurred
+[1203] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1206] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1207] Clock interrupt number [241] has occurred
+[1208] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1211] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1212] Clock interrupt number [242] has occurred
+[1213] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1216] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1217] Clock interrupt number [243] has occurred
+[1218] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1221] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1222] Clock interrupt number [244] has occurred
+[1223] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1226] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1227] Clock interrupt number [245] has occurred
+[1228] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1231] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1232] Clock interrupt number [246] has occurred
+[1233] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1236] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1237] Clock interrupt number [247] has occurred
+[1238] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1241] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1242] Clock interrupt number [248] has occurred
+[1243] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1246] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1247] Clock interrupt number [249] has occurred
+[1248] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1251] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1252] Clock interrupt number [250] has occurred
+[1253] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1256] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1257] Clock interrupt number [251] has occurred
+[1258] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1261] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1262] Clock interrupt number [252] has occurred
+[1263] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1266] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1267] Clock interrupt number [253] has occurred
+[1268] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1271] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1272] Clock interrupt number [254] has occurred
+[1273] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1276] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1277] Clock interrupt number [255] has occurred
+[1278] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1281] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1282] Clock interrupt number [256] has occurred
+[1283] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1286] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1287] Clock interrupt number [257] has occurred
+[1288] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1291] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1292] Clock interrupt number [258] has occurred
+[1293] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1296] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1297] Clock interrupt number [259] has occurred
+[1298] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1301] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1302] Clock interrupt number [260] has occurred
+[1303] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1306] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1307] Clock interrupt number [261] has occurred
+[1308] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1311] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1312] Clock interrupt number [262] has occurred
+[1313] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1316] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1317] Clock interrupt number [263] has occurred
+[1318] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1321] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1322] Clock interrupt number [264] has occurred
+[1323] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1326] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1327] Clock interrupt number [265] has occurred
+[1328] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1331] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1332] Clock interrupt number [266] has occurred
+[1333] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1336] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1337] Clock interrupt number [267] has occurred
+[1338] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1341] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1342] Clock interrupt number [268] has occurred
+[1343] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1346] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1347] Clock interrupt number [269] has occurred
+[1348] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1351] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1352] Clock interrupt number [270] has occurred
+[1353] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1356] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1357] Clock interrupt number [271] has occurred
+[1358] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1361] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1362] Clock interrupt number [272] has occurred
+[1363] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1366] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1367] Clock interrupt number [273] has occurred
+[1368] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1371] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1372] Clock interrupt number [274] has occurred
+[1373] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1376] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1377] Clock interrupt number [275] has occurred
+[1378] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1381] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1382] Clock interrupt number [276] has occurred
+[1383] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1386] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1387] Clock interrupt number [277] has occurred
+[1388] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1391] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1392] Clock interrupt number [278] has occurred
+[1393] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1396] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1397] Clock interrupt number [279] has occurred
+[1398] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1401] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1402] Clock interrupt number [280] has occurred
+[1403] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1406] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1407] Clock interrupt number [281] has occurred
+[1408] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1411] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1412] Clock interrupt number [282] has occurred
+[1413] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1416] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1417] Clock interrupt number [283] has occurred
+[1418] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1421] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1422] Clock interrupt number [284] has occurred
+[1423] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1426] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1427] Clock interrupt number [285] has occurred
+[1428] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1431] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1432] Clock interrupt number [286] has occurred
+[1433] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1436] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1437] Clock interrupt number [287] has occurred
+[1438] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1441] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1442] Clock interrupt number [288] has occurred
+[1443] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1446] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1447] Clock interrupt number [289] has occurred
+[1448] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1451] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1452] Clock interrupt number [290] has occurred
+[1453] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1456] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1457] Clock interrupt number [291] has occurred
+[1458] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1461] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1462] Clock interrupt number [292] has occurred
+[1463] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1466] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1467] Clock interrupt number [293] has occurred
+[1468] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1471] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1472] Clock interrupt number [294] has occurred
+[1473] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1476] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1477] Clock interrupt number [295] has occurred
+[1478] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1481] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1482] Clock interrupt number [296] has occurred
+[1483] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1486] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1487] Clock interrupt number [297] has occurred
+[1488] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1491] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1492] Clock interrupt number [298] has occurred
+[1493] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1496] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1497] Clock interrupt number [299] has occurred
+[1498] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1501] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1502] Clock interrupt number [300] has occurred
+[1503] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1506] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1507] Clock interrupt number [301] has occurred
+[1508] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1511] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1512] Clock interrupt number [302] has occurred
+[1513] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1516] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1517] Clock interrupt number [303] has occurred
+[1518] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1521] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1522] Clock interrupt number [304] has occurred
+[1523] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1526] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1527] Clock interrupt number [305] has occurred
+[1528] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1531] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1532] Clock interrupt number [306] has occurred
+[1533] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1536] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1537] Clock interrupt number [307] has occurred
+[1538] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1541] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1542] Clock interrupt number [308] has occurred
+[1543] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1546] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1547] Clock interrupt number [309] has occurred
+[1548] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1551] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1552] Clock interrupt number [310] has occurred
+[1553] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1556] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1557] Clock interrupt number [311] has occurred
+[1558] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1561] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1562] Clock interrupt number [312] has occurred
+[1563] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1566] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1567] Clock interrupt number [313] has occurred
+[1568] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1571] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1572] Clock interrupt number [314] has occurred
+[1573] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1576] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1577] Clock interrupt number [315] has occurred
+[1578] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1581] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1582] Clock interrupt number [316] has occurred
+[1583] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1586] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1587] Clock interrupt number [317] has occurred
+[1588] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1591] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1592] Clock interrupt number [318] has occurred
+[1593] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1596] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1597] Clock interrupt number [319] has occurred
+[1598] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1601] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1602] Clock interrupt number [320] has occurred
+[1603] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1606] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1607] Clock interrupt number [321] has occurred
+[1608] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1611] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1612] Clock interrupt number [322] has occurred
+[1613] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1616] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1617] Clock interrupt number [323] has occurred
+[1618] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1621] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1622] Clock interrupt number [324] has occurred
+[1623] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1626] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1627] Clock interrupt number [325] has occurred
+[1628] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1631] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1632] Clock interrupt number [326] has occurred
+[1633] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1636] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1637] Clock interrupt number [327] has occurred
+[1638] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1641] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1642] Clock interrupt number [328] has occurred
+[1643] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1646] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1647] Clock interrupt number [329] has occurred
+[1648] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1651] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1652] Clock interrupt number [330] has occurred
+[1653] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1656] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1657] Clock interrupt number [331] has occurred
+[1658] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1661] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1662] Clock interrupt number [332] has occurred
+[1663] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1666] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1667] Clock interrupt number [333] has occurred
+[1668] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1671] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1672] Clock interrupt number [334] has occurred
+[1673] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1676] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1677] Clock interrupt number [335] has occurred
+[1678] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1681] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1682] Clock interrupt number [336] has occurred
+[1683] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1686] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1687] Clock interrupt number [337] has occurred
+[1688] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1691] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1692] Clock interrupt number [338] has occurred
+[1693] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1696] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1697] Clock interrupt number [339] has occurred
+[1698] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1701] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1702] Clock interrupt number [340] has occurred
+[1703] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1706] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1707] Clock interrupt number [341] has occurred
+[1708] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1711] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1712] Clock interrupt number [342] has occurred
+[1713] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1716] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1717] Clock interrupt number [343] has occurred
+[1718] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1721] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1722] Clock interrupt number [344] has occurred
+[1723] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1726] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1727] Clock interrupt number [345] has occurred
+[1728] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1731] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1732] Clock interrupt number [346] has occurred
+[1733] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1736] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1737] Clock interrupt number [347] has occurred
+[1738] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1741] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1742] Clock interrupt number [348] has occurred
+[1743] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1746] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1747] Clock interrupt number [349] has occurred
+[1748] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1751] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1752] Clock interrupt number [350] has occurred
+[1753] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1756] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1757] Clock interrupt number [351] has occurred
+[1758] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1761] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1762] Clock interrupt number [352] has occurred
+[1763] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1766] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1767] Clock interrupt number [353] has occurred
+[1768] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1771] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1772] Clock interrupt number [354] has occurred
+[1773] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1776] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1777] Clock interrupt number [355] has occurred
+[1778] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1781] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1782] Clock interrupt number [356] has occurred
+[1783] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1786] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1787] Clock interrupt number [357] has occurred
+[1788] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1791] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1792] Clock interrupt number [358] has occurred
+[1793] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1796] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1797] Clock interrupt number [359] has occurred
+[1798] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1801] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1802] Clock interrupt number [360] has occurred
+[1803] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1806] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1807] Clock interrupt number [361] has occurred
+[1808] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1811] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1812] Clock interrupt number [362] has occurred
+[1813] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1816] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1817] Clock interrupt number [363] has occurred
+[1818] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1821] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1822] Clock interrupt number [364] has occurred
+[1823] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1826] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1827] Clock interrupt number [365] has occurred
+[1828] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1831] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1832] Clock interrupt number [366] has occurred
+[1833] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1836] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1837] Clock interrupt number [367] has occurred
+[1838] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1841] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1842] Clock interrupt number [368] has occurred
+[1843] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1846] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1847] Clock interrupt number [369] has occurred
+[1848] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1851] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1852] Clock interrupt number [370] has occurred
+[1853] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1856] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1857] Clock interrupt number [371] has occurred
+[1858] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1861] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1862] Clock interrupt number [372] has occurred
+[1863] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1866] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1867] Clock interrupt number [373] has occurred
+[1868] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1871] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1872] Clock interrupt number [374] has occurred
+[1873] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1876] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1877] Clock interrupt number [375] has occurred
+[1878] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1881] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1882] Clock interrupt number [376] has occurred
+[1883] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1886] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1887] Clock interrupt number [377] has occurred
+[1888] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1891] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1892] Clock interrupt number [378] has occurred
+[1893] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1896] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1897] Clock interrupt number [379] has occurred
+[1898] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1901] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1902] Clock interrupt number [380] has occurred
+[1903] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1906] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1907] Clock interrupt number [381] has occurred
+[1908] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1911] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1912] Clock interrupt number [382] has occurred
+[1913] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1916] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1917] Clock interrupt number [383] has occurred
+[1918] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1921] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1922] Clock interrupt number [384] has occurred
+[1923] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1926] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1927] Clock interrupt number [385] has occurred
+[1928] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1931] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1932] Clock interrupt number [386] has occurred
+[1933] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1936] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1937] Clock interrupt number [387] has occurred
+[1938] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1941] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1942] Clock interrupt number [388] has occurred
+[1943] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1946] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1947] Clock interrupt number [389] has occurred
+[1948] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1951] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1952] Clock interrupt number [390] has occurred
+[1953] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1956] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1957] Clock interrupt number [391] has occurred
+[1958] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1961] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1962] Clock interrupt number [392] has occurred
+[1963] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1966] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1967] Clock interrupt number [393] has occurred
+[1968] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1971] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1972] Clock interrupt number [394] has occurred
+[1973] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1976] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1977] Clock interrupt number [395] has occurred
+[1978] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1981] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1982] Clock interrupt number [396] has occurred
+[1983] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1986] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1987] Clock interrupt number [397] has occurred
+[1988] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1991] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1992] Clock interrupt number [398] has occurred
+[1993] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[1996] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[1997] Clock interrupt number [399] has occurred
+[1998] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2001] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2002] Clock interrupt number [400] has occurred
+[2003] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2006] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2007] Clock interrupt number [401] has occurred
+[2008] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2011] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2012] Clock interrupt number [402] has occurred
+[2013] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2016] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2017] Clock interrupt number [403] has occurred
+[2018] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2021] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2022] Clock interrupt number [404] has occurred
+[2023] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2026] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2027] Clock interrupt number [405] has occurred
+[2028] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2031] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2032] Clock interrupt number [406] has occurred
+[2033] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2036] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2037] Clock interrupt number [407] has occurred
+[2038] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2041] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2042] Clock interrupt number [408] has occurred
+[2043] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2046] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2047] Clock interrupt number [409] has occurred
+[2048] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2051] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2052] Clock interrupt number [410] has occurred
+[2053] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2056] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2057] Clock interrupt number [411] has occurred
+[2058] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2061] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2062] Clock interrupt number [412] has occurred
+[2063] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2066] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2067] Clock interrupt number [413] has occurred
+[2068] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2071] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2072] Clock interrupt number [414] has occurred
+[2073] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2076] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2077] Clock interrupt number [415] has occurred
+[2078] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2081] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2082] Clock interrupt number [416] has occurred
+[2083] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2086] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2087] Clock interrupt number [417] has occurred
+[2088] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2091] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2092] Clock interrupt number [418] has occurred
+[2093] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2096] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2097] Clock interrupt number [419] has occurred
+[2098] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2101] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2102] Clock interrupt number [420] has occurred
+[2103] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2106] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2107] Clock interrupt number [421] has occurred
+[2108] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2111] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2112] Clock interrupt number [422] has occurred
+[2113] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2116] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2117] Clock interrupt number [423] has occurred
+[2118] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2121] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2122] Clock interrupt number [424] has occurred
+[2123] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2126] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2127] Clock interrupt number [425] has occurred
+[2128] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2131] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2132] Clock interrupt number [426] has occurred
+[2133] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2136] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2137] Clock interrupt number [427] has occurred
+[2138] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2141] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2142] Clock interrupt number [428] has occurred
+[2143] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2146] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2147] Clock interrupt number [429] has occurred
+[2148] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2151] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2152] Clock interrupt number [430] has occurred
+[2153] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2156] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2157] Clock interrupt number [431] has occurred
+[2158] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2161] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2162] Clock interrupt number [432] has occurred
+[2163] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2166] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2167] Clock interrupt number [433] has occurred
+[2168] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2171] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2172] Clock interrupt number [434] has occurred
+[2173] {79 000 000} y 0 0 (PID: 0, PC: 300, Accumulator: 1, PSW: 0080 [--------X-------])
+_ _ _
+_ _ _
+[2176] {6F 009 000} o 9 0 (PID: 0, PC: 245, Accumulator: 1, PSW: 8080 [M-------X-------])
+	[2177] Clock interrupt number [435] has occurred

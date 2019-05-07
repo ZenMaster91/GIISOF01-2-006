@@ -5,12 +5,12 @@
 //
 
 101,User program list:\n
-102,\t Program [@C%s@@] with arrival time [@C%d@@]\n
+102,\tProgram [@C%s@@] with arrival time [@C%d@@]\n
 103,@RERROR: There are not free entries in the process table for the program [%s]@@\n
 104,@RERROR: Program [%s] is not valid [--- %s ---]@@\n
 105,@RERROR: Program [%s] is too big@@\n
 106,Ready-to-run processes queue:\n
-107,[@G%d@@,%d]%s
+107, [@G%d@@,%d]%s
 
 // Exercise 10
 110,Process [@G%d - %s@@] moving from the [@G%s@@] state to the [@G%s@@] state\n
@@ -39,10 +39,10 @@
 141,Process [@G%d - %s@@] has made an invalid system call (@R%d@@) and is being terminated\n
 
 //v4-ex6
-142,PROCESS [@G%d - %s@@] requests [@G%d@@] memory positions\n
+142,Process [@G%d - %s@@] requests [@G%d@@] memory positions\n
 
 //v4-ex6
-143,Partition [@G%d: %d-> %d@@] has been assigned to process [@G%d - %s@@]\n
+143,Partition [@G%d: %d -> %d@@] has been assigned to process [@G%d - %s@@]\n
 
 //v4-ex6
 144,@RERROR: a process could not be created from program [%s] because an appropriate partition is not available@@\n
