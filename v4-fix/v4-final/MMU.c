@@ -25,11 +25,12 @@ int MMU_readMemory() {
 			return MMU_SUCCESS;
 		}
 		else {
+			Processor_RaiseException(INVALIDADDRESS);
 			return MMU_FAIL;
 		}
 	}
-	else // Non-Protected mode
-		if (registerMAR_MMU<registerLimit_MMU && registerMAR_MMU>=0) {
+	else { // Non-Protected mode
+		if ( 0 <= registerMAR_MMU && registerMAR_MMU < registerLimit_MMU ) {
 			// Physical address = logical address + base register
 			registerMAR_MMU+=registerBase_MMU;
 			// Send to the main memory HW the physical address to write in
@@ -42,7 +43,7 @@ int MMU_readMemory() {
 			Processor_RaiseException(INVALIDADDRESS);
 			return MMU_FAIL;
 		}
-
+	}
 }
 
 // Logical address is in registerMAR_MMU. If correct, physical address is produced

@@ -10,7 +10,7 @@
 104,@RERROR: Program [%s] is not valid [--- %s ---]@@\n
 105,@RERROR: Program [%s] is too big@@\n
 106,Ready-to-run processes queue:\n
-107, [@G%d@@,%d]%s
+107,[@G%d@@,%d]%s
 
 // Exercise 10
 110,Process [@G%d - %s@@] moving from the [@G%s@@] state to the [@G%s@@] state\n
@@ -21,7 +21,7 @@
 113,\n
 
 // Exercise 12
-115,Process [@G%d  %s@@] will transfer the control of the processor to process [@G%d  %s@@]\n
+115,Process [@G%d - %s@@] will transfer the control of the processor to process [@G%d - %s@@]\n
 
 // v2-ex4
 120,@CClock interrupt number [%d] has occurred\n@@
@@ -48,4 +48,4 @@
 144,@RERROR: a process could not be created from program [%s] because an appropriate partition is not available@@\n
 
 //v4-ex7
-145,Partition [@G%d: %d-> %d@@] used by process [@G%d - %s@@] has been released\n
+145,Partition [@G%d: %d -> %d@@] used by process [@G%d - %s@@] has been released\n

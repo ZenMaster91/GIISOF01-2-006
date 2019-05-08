@@ -46,7 +46,7 @@ PCB processTable[PROCESSTABLEMAXSIZE];
 int OS_address_base = PROCESSTABLEMAXSIZE * MAINMEMORYSECTIONSIZE;
 
 // Identifier of the current executing process
-int executingProcessID=NOPROCESS;
+int executingProcessID = NOPROCESS;
 
 // Identifier of the System Idle Process
 int sipID;
@@ -55,18 +55,18 @@ int sipID;
 int baseDaemonsInProgramList;
 
 // Variable containing the number of not terminated user processes
-int numberOfNotTerminatedUserProcesses=0;
+int numberOfNotTerminatedUserProcesses = 0;
 
 // States names.
-char * statesNames[5]={"NEW","READY","EXECUTING","BLOCKED","EXIT"};
+char * statesNames[5] = {"NEW","READY","EXECUTING","BLOCKED","EXIT"};
 
 // Exception names.
-char * exceptionNames [4]={"division by zero","invalid processor mode","invalid address","invalid instruction"};
+char * exceptionNames [4] = {"division by zero","invalid processor mode","invalid address","invalid instruction"};
 
 // Exercise 11
 int readyToRunQueue[NUMBEROFQUEUES][PROCESSTABLEMAXSIZE];
-int numberOfReadyToRunProcesses[NUMBEROFQUEUES]={0,0};
-char * queueNames [NUMBEROFQUEUES]={"USER","DAEMONS"};
+int numberOfReadyToRunProcesses[NUMBEROFQUEUES] = {0,0};
+char * queueNames [NUMBEROFQUEUES] = {"USER","DAEMONS"};
 
 // The number of clock interrupts occured.
 int numberOfClockInterrupts = 0;
@@ -74,9 +74,9 @@ int numberOfClockInterrupts = 0;
 // In OperatingSystem.c Exercise 5-b of V2
 // Heap with blocked processes sorted by when to wakeup
 int sleepingProcessesQueue[PROCESSTABLEMAXSIZE];
-int numberOfSleepingProcesses=0;
+int numberOfSleepingProcesses = 0;
 
-int partitionsTableSize=0;
+int partitionsTableSize = 0;
 
 // Initial set of tasks of the OS
 void OperatingSystem_Initialize(int daemonsIndex) {
@@ -257,7 +257,7 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
   }
 
 	OperatingSystem_ShowTime(SYSMEM);
-	//ComputerSystem_DebugMessage(142,SYSMEM,PID,programList[processTable[PID].programListIndex]->executableName,processSize);
+	// Process [@G%d - %s@@] requests [@G%d@@] memory positions\n
 	ComputerSystem_DebugMessage(142,SYSMEM,PID,executableProgram->executableName,processSize);
 
 	// Before OperatingSystem_ObtainMainMemory.
@@ -276,7 +276,7 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 		ComputerSystem_DebugMessage(144,ERROR,executableProgram->executableName);
 		return MEMORYFULL;
 
-	// Otherwise set it as occupied and set the PID
+	// Otherwise set the block as occupied and set the PID.
 	} else {
 		OperatingSystem_ShowTime(SYSMEM);
 		ComputerSystem_DebugMessage(143,SYSMEM,mainMemoryBlockIndex,partitionsTable[mainMemoryBlockIndex].initAddress, partitionsTable[mainMemoryBlockIndex].size,PID,executableProgram->executableName);
@@ -287,11 +287,8 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 
 	// Printing the new state sentence from ex 10
 	OperatingSystem_ShowTime(SYSPROC);
-	//ComputerSystem_DebugMessage(111,SYSPROC,PID,programList[processTable[PID].programListIndex]->executableName,statesNames[NEW]);
+	// New process [@G%d - %s@@] moving to the [@G%s@@] state\n
 	ComputerSystem_DebugMessage(111,SYSPROC,PID,executableProgram->executableName,statesNames[NEW]);
-
-	// After OperatingSystem_ObtainMainMemory.
-	OperatingSystem_ShowPartitionTable("after allocating memory");
 
 	// Load program in the allocated memory
 	// If the process is too big
@@ -300,6 +297,9 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 	}
 	// PCB initialization
 	OperatingSystem_PCBInitialization(PID, initAddress, processSize, priority, indexOfExecutableProgram);
+
+	// After OperatingSystem_ObtainMainMemory.
+	OperatingSystem_ShowPartitionTable("after allocating memory");
 
 	// Show message "Process [PID] created from program [executableName]\n"
 	OperatingSystem_ShowTime(INIT);
@@ -314,7 +314,7 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 int OperatingSystem_ObtainMainMemory(int processSize, int PID) {
 	// BEST FIT ALGORITHM
 	int blockIndex;
-	int bestBlockIndex=MEMORYFULL, bestBlockSize = INT_MAX;
+	int bestBlockIndex = MEMORYFULL, bestBlockSize = INT_MAX;
 	for(blockIndex=0; blockIndex < partitionsTableSize; blockIndex++) {
 
 		// Check for to big processes
@@ -614,20 +614,20 @@ void OperatingSystem_HandleSystemCall() {
 
 			// 2. Check that the rTRQ contains at least one rTR process and that it has the same priority as the executing one.
 			if(numberOfReadyToRunProcesses[currentQueue] > 0 && processTable[readyToRunQueue[currentQueue][0]].priority == currentPriority) {
-				oldProcessID=executingProcessID; // Store old process PID.
+				oldProcessID = executingProcessID; // Store old process PID.
 				newProcessID = readyToRunQueue[currentQueue][0]; // Store new process PID.
+
+				// Finally print the corresponding debug message.
+				OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
+				ComputerSystem_DebugMessage(115,SHORTTERMSCHEDULE,oldProcessID,
+					programList[processTable[oldProcessID].programListIndex]->executableName,
+					newProcessID,programList[processTable[newProcessID].programListIndex]->executableName);
 
 				// Stop current process.
 				OperatingSystem_PreemptRunningProcess();
 
 				// Start new process. It is the first opne dispached by the ShortTermScheduler.
 				OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
-
-				// Finally print the corresponding debug message.
-				OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
-				ComputerSystem_DebugMessage(115,SHORTTERMSCHEDULE,executingProcessID,
-					programList[processTable[newProcessID].programListIndex]->executableName,
-					executingProcessID,programList[processTable[oldProcessID].programListIndex]->executableName);
 
 				OperatingSystem_PrintStatus();
 			}
@@ -797,15 +797,17 @@ int OperatingSystem_UpdateProcessor() {
 // Return 1 if everything ok.
 int OperatingSystem_UpdateProcess() {
 	int lastExecutingProcess = executingProcessID;
+	int newExecutingProcess = OperatingSystem_ShortTermScheduler();
+
+	OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
+	ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,lastExecutingProcess,programList[processTable[lastExecutingProcess].programListIndex]->executableName,newExecutingProcess,programList[processTable[newExecutingProcess].programListIndex]->executableName);
 
 	// Remove the executing process from the processor and load the new most important one.
 	OperatingSystem_PreemptRunningProcess();
-	OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
+	OperatingSystem_Dispatch(newExecutingProcess);
 
 	// Print required messages.
 	OperatingSystem_PrintStatus();
-	OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
-	ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,lastExecutingProcess,programList[processTable[lastExecutingProcess].programListIndex]->executableName,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
 
 	return 1;
 }
