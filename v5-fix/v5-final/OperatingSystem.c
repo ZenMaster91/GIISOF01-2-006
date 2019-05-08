@@ -12,6 +12,10 @@
 #include "QueueFIFO.h"
 #include "Device.h"
 
+// -----------------------------------------------------------------------------
+// ------------------------- FUNCTION DEFINITIONS ------------------------------
+// -----------------------------------------------------------------------------
+
 // Functions prototypes
 void OperatingSystem_PrepareDaemons();
 void OperatingSystem_PCBInitialization(int, int, int, int, int);
@@ -29,21 +33,23 @@ int OperatingSystem_ExtractFromReadyToRun();
 void OperatingSystem_HandleException();
 void OperatingSystem_HandleSystemCall();
 void OperatingSystem_HandleClockInterrupt();
-void OperatingSystem_PrintReadyToRunQueue(); // Exercise 9 function prototype
+void OperatingSystem_PrintReadyToRunQueue();
 void OperatingSystem_HandleIOEndInterrupt();
 void OperatingSystem_IOScheduler();
 void OperatingSystem_DeviceControlerStartIOOperation();
 int OperatingSystem_DeviceControlerEndIOOperation();
-
-// Custom internal function prototypes.
 int OperatingSystem_GetWhenToWakeUpTime();
-int OperatingSystem_UpdateProcessor();
-int OperatingSystem_UpdateProcess();
+int OperatingSystem_UpdateExecutingProcessor();
+int OperatingSystem_UpdateExecutingProcess();
 int OperatingSystem_GetMostImportantREADYProcessInfo();
 int OperatingSystem_IncreseNumberOfClockInterrupts();
-int OperatingSystem_checkIfShutdown();
+int OperatingSystem_CheckIfShutdown();
 int OperatingSystem_ReleaseMainMemory(int PID);
 int OperatingSystem_GetBiggestMemoryBlockSize();
+
+// -----------------------------------------------------------------------------
+// ------------------------- VARIABLE DEFINITIONS ------------------------------
+// -----------------------------------------------------------------------------
 
 // The process table
 PCB processTable[PROCESSTABLEMAXSIZE];
@@ -87,6 +93,10 @@ int partitionsTableSize = 0;
 // IORB FIFO queue.
 int IOWaitingProcessesQueue[PROCESSTABLEMAXSIZE];
 int numberOfIOWaitingProcesses=0;
+
+// -----------------------------------------------------------------------------
+// ----------------------------- OS MANAGEMENT ---------------------------------
+// -----------------------------------------------------------------------------
 
 // Initial set of tasks of the OS
 void OperatingSystem_Initialize(int daemonsIndex) {
@@ -147,6 +157,291 @@ void OperatingSystem_Initialize(int daemonsIndex) {
 	Processor_SetPC(OS_address_base);
 } // END OperatingSystem_Initialize.
 
+// Exercise 9 function, print the ready-to-run queue
+void OperatingSystem_PrintReadyToRunQueue() {
+
+	// rTRQ contains 2,3,4,5,1 (PDIs)
+	// not all valid. numberOfReadyToRunProcesses
+	// valid indexes. Priotiries are in the processTable
+	OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
+	ComputerSystem_DebugMessage(106, SHORTTERMSCHEDULE);
+	int i, processPID, queue;
+
+	// for each queue.
+	for(queue=0; queue < NUMBEROFQUEUES; queue++) {
+
+		// Printing USERPROCESSQUEUE processes
+		ComputerSystem_DebugMessage(112, SHORTTERMSCHEDULE, queueNames[queue]);
+
+		// If the queue to print is the first one, add a line break.
+		if(numberOfReadyToRunProcesses[queue] == 0) {
+			ComputerSystem_DebugMessage(113,SHORTTERMSCHEDULE); // Message "\n"
+		}
+
+		// Then for each process in the corresponding queue.
+		for(i = 0; i < numberOfReadyToRunProcesses[queue]; i++) {
+			// Getting the PID of the process in the rTRQ.
+			processPID = readyToRunQueue[queue][i];
+
+			// If the identifier is the last, add a new line, else a ",".
+			if(i == numberOfReadyToRunProcesses[queue]-1) {
+				// Debug message for the computed PID.
+				ComputerSystem_DebugMessage(107,SHORTTERMSCHEDULE,processPID,processTable[processPID].priority,"\n");
+			} else {
+				ComputerSystem_DebugMessage(107,SHORTTERMSCHEDULE,processPID,processTable[processPID].priority,", ");
+			} // END if.
+		} // END for.
+	} // END for.
+} // END OperatingSystem_PrintReadyToRunQueue.
+
+// Increases in one unit the number of clock interrupts and returns the new value
+int OperatingSystem_IncreseNumberOfClockInterrupts() {
+
+	// Increase and return by means of the ++variable operator.
+	return ++numberOfClockInterrupts;
+}
+
+// Returns 1 if there OS should shut down. 0 otherwise.
+int OperatingSystem_CheckIfShutdown() {
+	int arrivalTimeQueue = OperatingSystem_IsThereANewProgram();
+	int sleepingQueue = Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses);
+	int rTRQ = OperatingSystem_GetMostImportantREADYProcessInfo();
+
+	if(arrivalTimeQueue == -1 && sleepingQueue == -1 && rTRQ == -1 && numberOfIOWaitingProcesses == 0) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// --------------------------- MEMORY MANAGEMENT -------------------------------
+// -----------------------------------------------------------------------------
+
+// Main memory is assigned in chunks. All chunks are the same size. A process
+// always obtains the chunk whose position in memory is equal to the processor identifier
+int OperatingSystem_ObtainMainMemory(int processSize, int PID) {
+	// BEST FIT ALGORITHM
+	int blockIndex;
+	int bestBlockIndex = MEMORYFULL, bestBlockSize = INT_MAX;
+	for(blockIndex=0; blockIndex < partitionsTableSize; blockIndex++) {
+
+		// Check for too big processes
+		if(processSize > OperatingSystem_GetBiggestMemoryBlockSize()) {
+			return TOOBIGPROCESS;
+		}
+
+		if(!partitionsTable[blockIndex].occupied && partitionsTable[blockIndex].size >= processSize && partitionsTable[blockIndex].size < bestBlockSize) {
+			bestBlockIndex = blockIndex;
+			bestBlockSize = partitionsTable[blockIndex].size;
+
+			// Small optimization, if it founds a block that has the same size as the process there wont be a better one so stops.
+			if(processSize == partitionsTable[blockIndex].size) {
+				break;
+			}
+		}
+	}
+
+	return bestBlockIndex;
+} // END OperatingSystem_ObtainMainMemory.
+
+// Gets the size of the biggest block in the partitios table.
+int OperatingSystem_GetBiggestMemoryBlockSize() {
+	int blockIndex;
+	int biggestBlockSize=-1;
+	for(blockIndex=0; blockIndex < partitionsTableSize; blockIndex++) {
+		if(partitionsTable[blockIndex].size > biggestBlockSize) {
+			biggestBlockSize = partitionsTable[blockIndex].size;
+		}
+	}
+	return biggestBlockSize;
+}
+
+// Releases the main memory for the given process.
+// returns the index of the partition released,
+int OperatingSystem_ReleaseMainMemory(int PID) {
+
+	int blockIndex;
+	for(blockIndex=0; blockIndex < partitionsTableSize; blockIndex++) {
+
+		// If the pointer block is assigned to the current process...
+		if(partitionsTable[blockIndex].occupied && partitionsTable[blockIndex].PID == PID) {
+
+			// Set the occupied to false and remove the PID data its not necessary.
+			partitionsTable[blockIndex].occupied = 0;
+			return blockIndex;
+		}
+	}
+	return -1;
+}
+
+// -----------------------------------------------------------------------------
+// ------------------------- PROCESSOR MANAGEMENT ------------------------------
+// -----------------------------------------------------------------------------
+
+// Returns the PID of the executing process
+int OperatingSystem_GetExecutingProcessID() {
+	return executingProcessID;
+}
+
+// Function that assigns the processor to a process
+void OperatingSystem_Dispatch(int PID) {
+
+	// The process identified by PID becomes the current executing process
+	executingProcessID=PID;
+
+	// Save the last state of the process we're dispatching.
+	int lastState = processTable[PID].state;
+
+	// Change the state of the process to EXECUTING.
+	processTable[PID].state=EXECUTING;
+
+	// Print messages.
+	OperatingSystem_ShowTime(SYSPROC);
+	ComputerSystem_DebugMessage(110,SYSPROC,PID,programList[processTable[PID].programListIndex]->executableName,statesNames[lastState],statesNames[EXECUTING]);
+
+	// Modify hardware registers with appropriate values for the process identified by PID
+	OperatingSystem_RestoreContext(PID);
+} // END OperatingSystem_Dispatch.
+
+// Function invoked when the executing process leaves the CPU
+void OperatingSystem_PreemptRunningProcess() {
+
+	// Save in the process' PCB essential values stored in hardware registers and the system stack
+	OperatingSystem_SaveContext(executingProcessID);
+	// Change the process' state
+	OperatingSystem_MoveToTheREADYState(executingProcessID);
+	// The processor is not assigned until the OS selects another process
+	executingProcessID=NOPROCESS;
+} // END OperatingSystem_PreemptRunningProcess.
+
+// Save in the process' PCB essential values stored in hardware registers and the system stack
+void OperatingSystem_SaveContext(int PID) {
+
+	// Load PC saved for interrupt manager
+	processTable[PID].copyOfPCRegister=Processor_CopyFromSystemStack(MAINMEMORYSIZE-1);
+
+	// Load PSW saved for interrupt manager
+	processTable[PID].copyOfPSWRegister=Processor_CopyFromSystemStack(MAINMEMORYSIZE-2);
+
+	// Load the value of the accumulator on the PCB.
+	processTable[PID].copyOfAccumulator=Processor_GetAccumulator();
+} // OperatingSystem_SaveContext
+
+// Modify hardware registers with appropriate values for the process identified by PID
+void OperatingSystem_RestoreContext(int PID) {
+
+	// New values for the CPU registers are obtained from the PCB
+	Processor_CopyInSystemStack(MAINMEMORYSIZE-1,processTable[PID].copyOfPCRegister);
+	Processor_CopyInSystemStack(MAINMEMORYSIZE-2,processTable[PID].copyOfPSWRegister);
+	Processor_SetAccumulator(processTable[PID].copyOfAccumulator);
+
+	// Same thing for the MMU registers
+	MMU_SetBase(processTable[PID].initialPhysicalAddress);
+	MMU_SetLimit(processTable[PID].processSize);
+} // END OperatingSystem_RestoreContext.
+
+// Updates the processor with the most important process in the rTRQ.
+// Returns 0 if no change was made and 1 if any change done.
+int OperatingSystem_UpdateExecutingProcessor() {
+
+	// Save information about the executing process.
+	int executingProcessQueue = processTable[executingProcessID].queueID,
+			executingProcessPriority = processTable[executingProcessID].priority;
+
+	// Try to obtain the most important one from the user process queue.
+	int mostImportantREADYProcess = OperatingSystem_GetMostImportantREADYProcessInfo();
+
+	if(processTable[mostImportantREADYProcess].queueID == executingProcessQueue) {
+		// Check the priority.
+		if(processTable[mostImportantREADYProcess].priority < executingProcessPriority) {
+			// Change always, update the running process.
+			return OperatingSystem_UpdateExecutingProcess();
+		} else {
+			// Do not change.
+			return 0;
+		} // END if-else.
+
+	} else if(processTable[mostImportantREADYProcess].queueID < executingProcessQueue) {
+		// Change always, update the running process.
+		return OperatingSystem_UpdateExecutingProcess();
+	} else {
+		// Do not change.
+		return 0;
+	} // END if-else.
+} // END OperatingSystem_UpdateExecutingProcessor.
+
+// Updates the process that runs on the processor.
+// Return 1 if everything ok.
+int OperatingSystem_UpdateExecutingProcess() {
+	int lastExecutingProcess = executingProcessID;
+	int newExecutingProcess = OperatingSystem_ShortTermScheduler();
+
+	OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
+	ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,lastExecutingProcess,programList[processTable[lastExecutingProcess].programListIndex]->executableName,newExecutingProcess,programList[processTable[newExecutingProcess].programListIndex]->executableName);
+
+	// Remove the executing process from the processor and load the new most important one.
+	OperatingSystem_PreemptRunningProcess();
+	OperatingSystem_Dispatch(newExecutingProcess);
+
+	// Print required messages.
+	OperatingSystem_PrintStatus();
+
+	return 1;
+}
+
+// -----------------------------------------------------------------------------
+// ---------------------------- I/O MANAGEMENT ---------------------------------
+// -----------------------------------------------------------------------------
+
+// Device independent Handler.
+// This handler has to add a new IORB to the queue of the device and to notify the device dependent
+// handler of this fact.
+void OperatingSystem_IOScheduler() {
+
+	// We add the IORB to the queue with the currst PID.
+	if(QueueFIFO_add(executingProcessID, IOWaitingProcessesQueue, &numberOfIOWaitingProcesses, PROCESSTABLEMAXSIZE) == 0) {
+		// Save in the process' PCB essential values stored in hardware registers and the system stack.
+		OperatingSystem_SaveContext(executingProcessID);
+
+		// Save the state of the process to block.
+		int lastState = processTable[executingProcessID].state;
+
+		// Change the state of the process to BLOCKED.
+		processTable[executingProcessID].state=BLOCKED;
+
+		// Print messages.
+		OperatingSystem_ShowTime(SYSPROC);
+		ComputerSystem_DebugMessage(110,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName,statesNames[lastState],statesNames[BLOCKED]);
+	}
+
+	// Devide dependent handler notification.
+	OperatingSystem_DeviceControlerStartIOOperation();
+}
+
+// Devide dependent handler.
+void OperatingSystem_DeviceControlerStartIOOperation() {
+	int requestingProcessPID = QueueFIFO_getFirst(IOWaitingProcessesQueue, PROCESSTABLEMAXSIZE);
+	if(Device_GetStatus() == FREE) {
+		if(requestingProcessPID != NOPROCESS) {
+			Device_StartIO(requestingProcessPID);
+		}
+	}
+}
+
+// Device dependent handler.
+int OperatingSystem_DeviceControlerEndIOOperation() {
+	int finishedProcessPID = QueueFIFO_poll(IOWaitingProcessesQueue, &numberOfIOWaitingProcesses);
+	if(numberOfIOWaitingProcesses > 0) {
+		OperatingSystem_DeviceControlerStartIOOperation();
+	}
+	return finishedProcessPID;
+}
+
+// -----------------------------------------------------------------------------
+// -------------------------- PROCESS MANAGEMENT -------------------------------
+// -----------------------------------------------------------------------------
+
 // Daemon processes are system processes, that is, they work together with the OS.
 // The System Idle Process uses the CPU whenever a user process is able to use it
 void OperatingSystem_PrepareDaemons(int programListDaemonsBase) {
@@ -164,68 +459,6 @@ void OperatingSystem_PrepareDaemons(int programListDaemonsBase) {
 	// index for aditionals daemons program in programList
 	baseDaemonsInProgramList=programListDaemonsBase;
 } // END OperatingSystem_PrepareDaemons.
-
-
-// The LTS is responsible of the admission of new processes in the system.
-// Initially, it creates a process from each program specified in the
-// command lineand daemons programs
-int OperatingSystem_LongTermScheduler() {
-
-	int PID, i,
-		numberOfSuccessfullyCreatedProcesses=0;
-
-	while(OperatingSystem_IsThereANewProgram() == 1) {
-
-		// Extract the first element from the arrivalTimeQueue.
-		i = Heap_poll(arrivalTimeQueue, QUEUE_ARRIVAL, &numberOfProgramsInArrivalTimeQueue);
-
-		// Obtain the PID
-		PID=OperatingSystem_CreateProcess(i);
-
-		// For each progrem check possible errors.
-		switch (PID) {
-
-			case NOFREEENTRY:
-				OperatingSystem_ShowTime(ERROR);
-				ComputerSystem_DebugMessage(103,ERROR,programList[i]->executableName);
-				break;
-
-			case PROGRAMDOESNOTEXIST:
-				OperatingSystem_ShowTime(ERROR);
-				ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"it does not exists");
-				break;
-
-			case PROGRAMNOTVALID:
-				OperatingSystem_ShowTime(ERROR);
-    				ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"invalid priority or size");
-				break;
-
-			case TOOBIGPROCESS:
-				OperatingSystem_ShowTime(ERROR);
-				ComputerSystem_DebugMessage(105,ERROR,programList[i]->executableName);
-				break;
-
-			default:
-				numberOfSuccessfullyCreatedProcesses++;
-
-				// If it is a user program then we need to increae the number of not terminated user programs.
-				if (programList[i]->type==USERPROGRAM) {
-					numberOfNotTerminatedUserProcesses++;
-				}
-
-				// Move process to the ready state
-				OperatingSystem_MoveToTheREADYState(PID);
-		} // END switch
-	} // END for
-
-	// If there are any succesfully created processes then print the status.
-	if(numberOfSuccessfullyCreatedProcesses) {
-		OperatingSystem_PrintStatus();
-	}
-
-	// Return the number of succesfully created processes
-	return numberOfSuccessfullyCreatedProcesses;
-} // END OperatingSystem_LongTermScheduler.
 
 // This function creates a process from an executable program
 int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
@@ -318,63 +551,6 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 	return PID;
 } // END OperatingSystem_CreateProcess.
 
-
-// Main memory is assigned in chunks. All chunks are the same size. A process
-// always obtains the chunk whose position in memory is equal to the processor identifier
-int OperatingSystem_ObtainMainMemory(int processSize, int PID) {
-	// BEST FIT ALGORITHM
-	int blockIndex;
-	int bestBlockIndex = MEMORYFULL, bestBlockSize = INT_MAX;
-	for(blockIndex=0; blockIndex < partitionsTableSize; blockIndex++) {
-
-		// Check for to big processes
-		if(processSize > OperatingSystem_GetBiggestMemoryBlockSize()) {
-			return TOOBIGPROCESS;
-		}
-
-		if(!partitionsTable[blockIndex].occupied && partitionsTable[blockIndex].size >= processSize && partitionsTable[blockIndex].size < bestBlockSize) {
-			bestBlockIndex = blockIndex;
-			bestBlockSize = partitionsTable[blockIndex].size;
-
-			// Small optimization, if it founds a block that has the same size as the process there wont be a better one so stops.
-			if(processSize == partitionsTable[blockIndex].size) {
-				break;
-			}
-		}
-	}
-
-	return bestBlockIndex;
-} // END OperatingSystem_ObtainMainMemory.
-
-int OperatingSystem_GetBiggestMemoryBlockSize() {
-	int blockIndex;
-	int biggestBlockSize=-1;
-	for(blockIndex=0; blockIndex < partitionsTableSize; blockIndex++) {
-		if(partitionsTable[blockIndex].size > biggestBlockSize) {
-			biggestBlockSize = partitionsTable[blockIndex].size;
-		}
-	}
-	return biggestBlockSize;
-}
-
-// Releases the main memory for the given process.
-// returns the index of the partition released,
-int OperatingSystem_ReleaseMainMemory(int PID) {
-
-	int blockIndex;
-	for(blockIndex=0; blockIndex < partitionsTableSize; blockIndex++) {
-
-		// If the pointer block is assigned to the current process...
-		if(partitionsTable[blockIndex].occupied && partitionsTable[blockIndex].PID == PID) {
-
-			// Set the occupied to false and remove the PID data its not necessary.
-			partitionsTable[blockIndex].occupied = 0;
-			return blockIndex;
-		}
-	}
-	return -1;
-}
-
 // Assign initial values to all fields inside the PCB
 void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int processSize, int priority, int processPLIndex) {
 
@@ -401,6 +577,116 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int 
 	}
 } // END OperatingSystem_PCBInitialization.
 
+// Gets the most important process in the rTRQ information without removing it from the rTRQ.
+// Return the most important process in the rTRQ PID.
+int OperatingSystem_GetMostImportantREADYProcessInfo() {
+	// Try to obtain the most important one from the user process queue.
+	int mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[USERPROCESSQUEUE],numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
+
+	// If there is no user process has been waken up must be a daemon.
+	if(mostImportantREADYProcess == -1) {
+		mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[DAEMONSQUEUE],numberOfReadyToRunProcesses[DAEMONSQUEUE]);
+	}
+
+	return mostImportantREADYProcess;
+}
+
+// Computes the value of when a process must wake up taking in to account the
+// given formula.
+// returns an integer with the corresponding value.
+int OperatingSystem_GetWhenToWakeUpTime() {
+
+	// Computed as the absolute value of the accumulator + the current number of clock interrupts + 1.
+	return abs(Processor_GetAccumulator()) + numberOfClockInterrupts + 1;
+}
+
+// Return PID of more priority process in the READY queue
+int OperatingSystem_ExtractFromReadyToRun() {
+
+	// Initially we set the selected process as NOPROCESS.
+	int selectedProcess=NOPROCESS;
+
+	// First select from the user queue
+	selectedProcess=Heap_poll(readyToRunQueue[USERPROCESSQUEUE],QUEUE_PRIORITY,&numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
+
+	// Try to get a process from the daemons queue if no process found on the user process queue.
+	if(selectedProcess == NOPROCESS) {
+		selectedProcess=Heap_poll(readyToRunQueue[DAEMONSQUEUE],QUEUE_PRIORITY,&numberOfReadyToRunProcesses[DAEMONSQUEUE]);
+	}
+
+	// Return most priority process or NOPROCESS if empty queues.
+	return selectedProcess;
+} // END OperatingSystem_ExtractFromReadyToRun.
+
+// The LTS is responsible of the admission of new processes in the system.
+// Initially, it creates a process from each program specified in the
+// command lineand daemons programs
+int OperatingSystem_LongTermScheduler() {
+
+	int PID, i,
+		numberOfSuccessfullyCreatedProcesses=0;
+
+	while(OperatingSystem_IsThereANewProgram() == 1) {
+
+		// Extract the first element from the arrivalTimeQueue.
+		i = Heap_poll(arrivalTimeQueue, QUEUE_ARRIVAL, &numberOfProgramsInArrivalTimeQueue);
+
+		// Obtain the PID
+		PID=OperatingSystem_CreateProcess(i);
+
+		// For each progrem check possible errors.
+		switch (PID) {
+
+			case NOFREEENTRY:
+				OperatingSystem_ShowTime(ERROR);
+				ComputerSystem_DebugMessage(103,ERROR,programList[i]->executableName);
+				break;
+
+			case PROGRAMDOESNOTEXIST:
+				OperatingSystem_ShowTime(ERROR);
+				ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"it does not exists");
+				break;
+
+			case PROGRAMNOTVALID:
+				OperatingSystem_ShowTime(ERROR);
+    				ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"invalid priority or size");
+				break;
+
+			case TOOBIGPROCESS:
+				OperatingSystem_ShowTime(ERROR);
+				ComputerSystem_DebugMessage(105,ERROR,programList[i]->executableName);
+				break;
+
+			default:
+				numberOfSuccessfullyCreatedProcesses++;
+
+				// If it is a user program then we need to increae the number of not terminated user programs.
+				if (programList[i]->type==USERPROGRAM) {
+					numberOfNotTerminatedUserProcesses++;
+				}
+
+				// Move process to the ready state
+				OperatingSystem_MoveToTheREADYState(PID);
+		} // END switch
+	} // END for
+
+	// If there are any succesfully created processes then print the status.
+	if(numberOfSuccessfullyCreatedProcesses) {
+		OperatingSystem_PrintStatus();
+	}
+
+	// Return the number of succesfully created processes
+	return numberOfSuccessfullyCreatedProcesses;
+} // END OperatingSystem_LongTermScheduler.
+
+// The STS is responsible of deciding which process to execute when specific events occur.
+// It uses processes priorities to make the decission. Given that the READY queue is ordered
+// depending on processes priority, the STS just selects the process in front of the READY queue
+int OperatingSystem_ShortTermScheduler() {
+	int selectedProcess;
+	selectedProcess=OperatingSystem_ExtractFromReadyToRun();
+	return selectedProcess;
+}
 
 // Move a process to the READY state: it will be inserted, depending on its priority, in
 // a queue of identifiers of READY processes
@@ -440,105 +726,6 @@ void OperatingSystem_MoveToTheBLOCKEDState(int PID) {
 	} // END if
 } // END OperatingSystem_MoveToTheBLOCKEDState
 
-// The STS is responsible of deciding which process to execute when specific events occur.
-// It uses processes priorities to make the decission. Given that the READY queue is ordered
-// depending on processes priority, the STS just selects the process in front of the READY queue
-int OperatingSystem_ShortTermScheduler() {
-	int selectedProcess;
-	selectedProcess=OperatingSystem_ExtractFromReadyToRun();
-	return selectedProcess;
-}
-
-// Return PID of more priority process in the READY queue
-int OperatingSystem_ExtractFromReadyToRun() {
-
-	// Initially we set the selected process as NOPROCESS.
-	int selectedProcess=NOPROCESS;
-
-	// First select from the user queue
-	selectedProcess=Heap_poll(readyToRunQueue[USERPROCESSQUEUE],QUEUE_PRIORITY,&numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
-
-	// Try to get a process from the daemons queue if no process found on the user process queue.
-	if(selectedProcess == NOPROCESS) {
-		selectedProcess=Heap_poll(readyToRunQueue[DAEMONSQUEUE],QUEUE_PRIORITY,&numberOfReadyToRunProcesses[DAEMONSQUEUE]);
-	}
-
-	// Return most priority process or NOPROCESS if empty queues.
-	return selectedProcess;
-} // END OperatingSystem_ExtractFromReadyToRun.
-
-// Function that assigns the processor to a process
-void OperatingSystem_Dispatch(int PID) {
-
-	// The process identified by PID becomes the current executing process
-	executingProcessID=PID;
-
-	// Save the last state of the process we're dispatching.
-	int lastState = processTable[PID].state;
-
-	// Change the state of the process to EXECUTING.
-	processTable[PID].state=EXECUTING;
-
-	// Print messages.
-	OperatingSystem_ShowTime(SYSPROC);
-	ComputerSystem_DebugMessage(110,SYSPROC,PID,programList[processTable[PID].programListIndex]->executableName,statesNames[lastState],statesNames[EXECUTING]);
-
-	// Modify hardware registers with appropriate values for the process identified by PID
-	OperatingSystem_RestoreContext(PID);
-} // END OperatingSystem_Dispatch.
-
-// Modify hardware registers with appropriate values for the process identified by PID
-void OperatingSystem_RestoreContext(int PID) {
-
-	// New values for the CPU registers are obtained from the PCB
-	Processor_CopyInSystemStack(MAINMEMORYSIZE-1,processTable[PID].copyOfPCRegister);
-	Processor_CopyInSystemStack(MAINMEMORYSIZE-2,processTable[PID].copyOfPSWRegister);
-	Processor_SetAccumulator(processTable[PID].copyOfAccumulator);
-
-	// Same thing for the MMU registers
-	MMU_SetBase(processTable[PID].initialPhysicalAddress);
-	MMU_SetLimit(processTable[PID].processSize);
-} // END OperatingSystem_RestoreContext.
-
-
-// Function invoked when the executing process leaves the CPU
-void OperatingSystem_PreemptRunningProcess() {
-
-	// Save in the process' PCB essential values stored in hardware registers and the system stack
-	OperatingSystem_SaveContext(executingProcessID);
-	// Change the process' state
-	OperatingSystem_MoveToTheREADYState(executingProcessID);
-	// The processor is not assigned until the OS selects another process
-	executingProcessID=NOPROCESS;
-} // END OperatingSystem_PreemptRunningProcess.
-
-
-// Save in the process' PCB essential values stored in hardware registers and the system stack
-void OperatingSystem_SaveContext(int PID) {
-
-	// Load PC saved for interrupt manager
-	processTable[PID].copyOfPCRegister=Processor_CopyFromSystemStack(MAINMEMORYSIZE-1);
-
-	// Load PSW saved for interrupt manager
-	processTable[PID].copyOfPSWRegister=Processor_CopyFromSystemStack(MAINMEMORYSIZE-2);
-
-	// Load the value of the accumulator on the PCB.
-	processTable[PID].copyOfAccumulator=Processor_GetAccumulator();
-} // OperatingSystem_SaveContext
-
-
-// Exception management routine
-void OperatingSystem_HandleException() {
-
-	// Exercise v4-2
-	OperatingSystem_ShowTime(INTERRUPT);
-	ComputerSystem_DebugMessage(140, INTERRUPT, executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName, exceptionNames[Processor_GetRegisterB()]);
-
-	// Terminate the process and print the system status.
-	OperatingSystem_TerminateProcess();
-	OperatingSystem_PrintStatus();
-} // END OperatingSystem_SaveContext.
-
 // All tasks regarding the removal of the process
 void OperatingSystem_TerminateProcess() {
 
@@ -576,7 +763,7 @@ void OperatingSystem_TerminateProcess() {
 	}
 
 	// If the conditions to shut down are meet then...
-	if (OperatingSystem_checkIfShutdown()) {
+	if (OperatingSystem_CheckIfShutdown()) {
 		// Simulation must finish
 		OperatingSystem_ReadyToShutdown();
 	}
@@ -586,6 +773,27 @@ void OperatingSystem_TerminateProcess() {
 	OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
 } // END OperatingSystem_TerminateProcess.
 
+// -----------------------------------------------------------------------------
+// -------------------- EXCEPTION/INTERRUPT MANAGEMENT -------------------------
+// -----------------------------------------------------------------------------
+
+//	Implement interrupt logic calling appropriate interrupt handle
+void OperatingSystem_InterruptLogic(int entryPoint) {
+	switch (entryPoint) {
+		case SYSCALL_BIT: // SYSCALL_BIT=2
+			OperatingSystem_HandleSystemCall();
+			break;
+		case EXCEPTION_BIT: // EXCEPTION_BIT=6
+			OperatingSystem_HandleException();
+			break;
+		case CLOCKINT_BIT: // EXCEPTION_BIT=9
+			OperatingSystem_HandleClockInterrupt();
+			break;
+		case IOEND_BIT: // EXCEPTION_BIT=8
+			OperatingSystem_HandleIOEndInterrupt();
+			break;
+	}
+} // END  OperatingSystem_InterruptLogic.
 
 // System call management routine
 void OperatingSystem_HandleSystemCall() {
@@ -677,61 +885,17 @@ void OperatingSystem_HandleSystemCall() {
 	} // END switch.
 } // END OperatingSystem_HandleSystemCall.
 
-//	Implement interrupt logic calling appropriate interrupt handle
-void OperatingSystem_InterruptLogic(int entryPoint) {
-	switch (entryPoint) {
-		case SYSCALL_BIT: // SYSCALL_BIT=2
-			OperatingSystem_HandleSystemCall();
-			break;
-		case EXCEPTION_BIT: // EXCEPTION_BIT=6
-			OperatingSystem_HandleException();
-			break;
-		case CLOCKINT_BIT: // EXCEPTION_BIT=9
-			OperatingSystem_HandleClockInterrupt();
-			break;
-		case IOEND_BIT: // EXCEPTION_BIT=8
-			OperatingSystem_HandleIOEndInterrupt();
-			break;
+// Exception management routine
+void OperatingSystem_HandleException() {
 
-	}
-} // END  OperatingSystem_InterruptLogic.
+	// Exercise v4-2
+	OperatingSystem_ShowTime(INTERRUPT);
+	ComputerSystem_DebugMessage(140, INTERRUPT, executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName, exceptionNames[Processor_GetRegisterB()]);
 
-// Exercise 9 function, print the ready-to-run queue
-void OperatingSystem_PrintReadyToRunQueue() {
-
-	// rTRQ contains 2,3,4,5,1 (PDIs)
-	// not all valid. numberOfReadyToRunProcesses
-	// valid indexes. Priotiries are in the processTable
-	OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
-	ComputerSystem_DebugMessage(106, SHORTTERMSCHEDULE);
-	int i, processPID, queue;
-
-	// for each queue.
-	for(queue=0; queue < NUMBEROFQUEUES; queue++) {
-
-		// Printing USERPROCESSQUEUE processes
-		ComputerSystem_DebugMessage(112, SHORTTERMSCHEDULE, queueNames[queue]);
-
-		// If the queue to print is the first one, add a line break.
-		if(numberOfReadyToRunProcesses[queue] == 0) {
-			ComputerSystem_DebugMessage(113,SHORTTERMSCHEDULE); // Message "\n"
-		}
-
-		// Then for each process in the corresponding queue.
-		for(i = 0; i < numberOfReadyToRunProcesses[queue]; i++) {
-			// Getting the PID of the process in the rTRQ.
-			processPID = readyToRunQueue[queue][i];
-
-			// If the identifier is the last, add a new line, else a ",".
-			if(i == numberOfReadyToRunProcesses[queue]-1) {
-				// Debug message for the computed PID.
-				ComputerSystem_DebugMessage(107,SHORTTERMSCHEDULE,processPID,processTable[processPID].priority,"\n");
-			} else {
-				ComputerSystem_DebugMessage(107,SHORTTERMSCHEDULE,processPID,processTable[processPID].priority,", ");
-			} // END if.
-		} // END for.
-	} // END for.
-} // END OperatingSystem_PrintReadyToRunQueue.
+	// Terminate the process and print the system status.
+	OperatingSystem_TerminateProcess();
+	OperatingSystem_PrintStatus();
+} // END OperatingSystem_SaveContext.
 
 // Function to be executed each time a clock interrupt is raised.
 // Time between interrupts defined at Clock.h INTERVALBETWEENINTERRUPS. Initial value 5.
@@ -758,8 +922,8 @@ void OperatingSystem_HandleClockInterrupt() {
 
 	// If we unblocked any process we must check if some of them have more priority than the executing one
 	if(unBLOCKEDProcesses || OperatingSystem_LongTermScheduler()) {
-		OperatingSystem_UpdateProcessor();
-	} else if (OperatingSystem_checkIfShutdown()) {
+		OperatingSystem_UpdateExecutingProcessor();
+	} else if (OperatingSystem_CheckIfShutdown()) {
 		// Simulation must finish
 		OperatingSystem_ReadyToShutdown();
 	}
@@ -778,151 +942,6 @@ void OperatingSystem_HandleIOEndInterrupt() {
 		OperatingSystem_PrintStatus();
 
 		// As we unblock a process we must check if the executing process must be updated.
-		OperatingSystem_UpdateProcessor();
-	}
-}
-
-// Device Independent Handler.
-// This handler has to add a new IORB to the queue of the device and to notify the device dependent
-// handler of this fact.
-void OperatingSystem_IOScheduler() {
-
-	// We add the IORB to the queue with the currst PID.
-	if(QueueFIFO_add(executingProcessID, IOWaitingProcessesQueue, &numberOfIOWaitingProcesses, PROCESSTABLEMAXSIZE) == 0) {
-		// Save in the process' PCB essential values stored in hardware registers and the system stack.
-		OperatingSystem_SaveContext(executingProcessID);
-
-		// Save the state of the process to block.
-		int lastState = processTable[executingProcessID].state;
-
-		// Change the state of the process to BLOCKED.
-		processTable[executingProcessID].state=BLOCKED;
-
-		// Print messages.
-		OperatingSystem_ShowTime(SYSPROC);
-		ComputerSystem_DebugMessage(110,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName,statesNames[lastState],statesNames[BLOCKED]);
-	}
-
-	// Devide dependent handler notification.
-	OperatingSystem_DeviceControlerStartIOOperation();
-}
-
-// Devide dependent handler.
-void OperatingSystem_DeviceControlerStartIOOperation() {
-	int requestingProcessPID = QueueFIFO_getFirst(IOWaitingProcessesQueue, PROCESSTABLEMAXSIZE);
-	if(Device_GetStatus() == FREE) {
-		if(requestingProcessPID != NOPROCESS) {
-			Device_StartIO(requestingProcessPID);
-		}
-	}
-}
-
-// Device dependent handler.
-int OperatingSystem_DeviceControlerEndIOOperation() {
-	int finishedProcessPID = QueueFIFO_poll(IOWaitingProcessesQueue, &numberOfIOWaitingProcesses);
-	if(numberOfIOWaitingProcesses > 0) {
-		OperatingSystem_DeviceControlerStartIOOperation();
-	}
-	return finishedProcessPID;
-}
-
-// -----------------------------------------------------------------------------
-// --------------------------- CUSTOM FUNCTIONS --------------------------------
-// -----------------------------------------------------------------------------
-
-// Returns the PID of the executing process
-int OperatingSystem_GetExecutingProcessID() {
-	return executingProcessID;
-}
-
-// Computes the value of when a process must wake up taking in to account the
-// given formula.
-// returns an integer with the corresponding value.
-int OperatingSystem_GetWhenToWakeUpTime() {
-
-	// Computed as the absolute value of the accumulator + the current number of clock interrupts + 1.
-	return abs(Processor_GetAccumulator()) + numberOfClockInterrupts + 1;
-}
-
-// Increases in one unit the number of clock interrupts and returns the new value
-int OperatingSystem_IncreseNumberOfClockInterrupts() {
-
-	// Increase and return by means of the ++variable operator.
-	return ++numberOfClockInterrupts;
-}
-
-// Updates the processor with the most important process in the rTRQ.
-// Returns 0 if no change was made and 1 if any change done.
-int OperatingSystem_UpdateProcessor() {
-
-	// Save information about the executing process.
-	int executingProcessQueue = processTable[executingProcessID].queueID,
-			executingProcessPriority = processTable[executingProcessID].priority;
-
-	// Try to obtain the most important one from the user process queue.
-	int mostImportantREADYProcess = OperatingSystem_GetMostImportantREADYProcessInfo();
-
-	if(processTable[mostImportantREADYProcess].queueID == executingProcessQueue) {
-		// Check the priority.
-		if(processTable[mostImportantREADYProcess].priority < executingProcessPriority) {
-			// Change always, update the running process.
-			return OperatingSystem_UpdateProcess();
-		} else {
-			// Do not change.
-			return 0;
-		} // END if-else.
-
-	} else if(processTable[mostImportantREADYProcess].queueID < executingProcessQueue) {
-		// Change always, update the running process.
-		return OperatingSystem_UpdateProcess();
-	} else {
-		// Do not change.
-		return 0;
-	} // END if-else.
-} // END OperatingSystem_UpdateProcessor.
-
-// Updates the process that runs on the processor.
-// Return 1 if everything ok.
-int OperatingSystem_UpdateProcess() {
-	int lastExecutingProcess = executingProcessID;
-	int newExecutingProcess = OperatingSystem_ShortTermScheduler();
-
-	OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
-	ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,lastExecutingProcess,programList[processTable[lastExecutingProcess].programListIndex]->executableName,newExecutingProcess,programList[processTable[newExecutingProcess].programListIndex]->executableName);
-
-	// Remove the executing process from the processor and load the new most important one.
-	OperatingSystem_PreemptRunningProcess();
-	OperatingSystem_Dispatch(newExecutingProcess);
-
-	// Print required messages.
-	OperatingSystem_PrintStatus();
-
-	return 1;
-}
-
-// Gets the most important process in the rTRQ information without removing it from the rTRQ.
-// Return the most important process in the rTRQ PID.
-int OperatingSystem_GetMostImportantREADYProcessInfo() {
-	// Try to obtain the most important one from the user process queue.
-	int mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[USERPROCESSQUEUE],numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
-
-	// If there is no user process has been waken up must be a daemon.
-	if(mostImportantREADYProcess == -1) {
-		mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[DAEMONSQUEUE],numberOfReadyToRunProcesses[DAEMONSQUEUE]);
-	}
-
-	return mostImportantREADYProcess;
-}
-
-// Returns 1 if there OS should shut down. 0 otherwise.
-int OperatingSystem_checkIfShutdown() {
-	int arrivalTimeQueue = OperatingSystem_IsThereANewProgram();
-	int sleepingQueue = Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses);
-	int rTRQ = OperatingSystem_GetMostImportantREADYProcessInfo();
-
-	if(arrivalTimeQueue == -1 && sleepingQueue == -1 && rTRQ == -1 && numberOfIOWaitingProcesses == 0) {
-		return 1;
-	} else {
-		return 0;
+		OperatingSystem_UpdateExecutingProcessor();
 	}
 }

@@ -48,7 +48,7 @@ void ComputerSystem_PowerOn(int argc, char *argv[]) {
 	ComputerSystem_PrintProgramList();
 
 	// Device initialization
-	Device_Initialize("OutputDevice-2019", 30);
+	Device_Initialize("OutputDevice-2019", 7);
 
 	// Request the OS to do the initial set of tasks. The last one will be
 	// the processor allocation to the process with the highest priority

@@ -30,8 +30,9 @@ struct JoinPoint {
 # 1 "OperatingSystem.c" 
 # 1 "<built-in>" 
 # 1 "<command-line>" 
+# 31 "<command-line>" 
 # 1 "/usr/include/stdc-predef.h" 1 3 4
-# 1 "<command-line>" 2
+# 32 "<command-line>" 2
 # 1 "OperatingSystem.c" 
 # 1 "OperatingSystem.h" 1
 # 1 "ComputerSystem.h" 1
@@ -66,23 +67,28 @@ extern  PROGRAMS_DATA *programList[30];
 # 5 "OperatingSystem.h" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 27 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 33 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 3 4
 # 1 "/usr/include/features.h" 1 3 4
-# 367 "/usr/include/features.h" 3 4
+# 424 "/usr/include/features.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4
-# 410 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
+# 427 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
-# 411 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
-# 368 "/usr/include/features.h" 2 3 4
-# 391 "/usr/include/features.h" 3 4
+# 428 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/long-double.h" 1 3 4
+# 429 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 425 "/usr/include/features.h" 2 3 4
+# 448 "/usr/include/features.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 1 3 4
 # 10 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h" 1 3 4
 # 11 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 2 3 4
-# 392 "/usr/include/features.h" 2 3 4
+# 449 "/usr/include/features.h" 2 3 4
+# 34 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 2 3 4
 # 28 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 1 3 4
-# 216 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 3 4
-# 216 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 216 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 3 4
+# 216 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 3 4
 typedef long unsigned int size_t; 
 # 34 "/usr/include/stdio.h" 2 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/types.h" 1 3 4
@@ -116,404 +122,408 @@ typedef unsigned long int __uint64_t;
 typedef long int __quad_t; 
 #line 53 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned long int __u_quad_t; 
-# 121 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
+#line 61 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef long int __intmax_t; 
+#line 62 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned long int __uintmax_t; 
+# 130 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/typesizes.h" 1 3 4
-# 124 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
+# 133 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
 typedef unsigned long int __dev_t; 
-#line 125 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned int __uid_t; 
-#line 126 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned int __gid_t; 
-#line 127 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned long int __ino_t; 
-#line 128 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned long int __ino64_t; 
-#line 129 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned int __mode_t; 
-#line 130 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned long int __nlink_t; 
-#line 131 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef long int __off_t; 
-#line 132 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef long int __off64_t; 
-#line 133 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef int __pid_t; 
 #line 134 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned int __uid_t; 
+#line 135 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned int __gid_t; 
+#line 136 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned long int __ino_t; 
+#line 137 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned long int __ino64_t; 
+#line 138 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned int __mode_t; 
+#line 139 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned long int __nlink_t; 
+#line 140 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef long int __off_t; 
+#line 141 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef long int __off64_t; 
+#line 142 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef int __pid_t; 
+#line 143 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef struct {int __val[2]; 
 }__fsid_t; 
-#line 135 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef long int __clock_t; 
-#line 136 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned long int __rlim_t; 
-#line 137 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned long int __rlim64_t; 
-#line 138 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned int __id_t; 
-#line 139 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef long int __time_t; 
-#line 140 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned int __useconds_t; 
-#line 141 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef long int __suseconds_t; 
-#line 143 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef int __daddr_t; 
 #line 144 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef int __key_t; 
+typedef long int __clock_t; 
+#line 145 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned long int __rlim_t; 
+#line 146 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned long int __rlim64_t; 
 #line 147 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef int __clockid_t; 
+typedef unsigned int __id_t; 
+#line 148 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef long int __time_t; 
+#line 149 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned int __useconds_t; 
 #line 150 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef void *__timer_t; 
+typedef long int __suseconds_t; 
+#line 152 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef int __daddr_t; 
 #line 153 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef long int __blksize_t; 
-#line 158 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef long int __blkcnt_t; 
+typedef int __key_t; 
+#line 156 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef int __clockid_t; 
 #line 159 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef long int __blkcnt64_t; 
+typedef void *__timer_t; 
 #line 162 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned long int __fsblkcnt_t; 
-#line 163 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned long int __fsblkcnt64_t; 
-#line 166 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned long int __fsfilcnt_t; 
+typedef long int __blksize_t; 
 #line 167 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned long int __fsfilcnt64_t; 
-#line 170 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef long int __fsword_t; 
+typedef long int __blkcnt_t; 
+#line 168 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef long int __blkcnt64_t; 
+#line 171 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned long int __fsblkcnt_t; 
 #line 172 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef long int __ssize_t; 
+typedef unsigned long int __fsblkcnt64_t; 
 #line 175 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef long int __syscall_slong_t; 
-#line 177 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef unsigned long int __syscall_ulong_t; 
+typedef unsigned long int __fsfilcnt_t; 
+#line 176 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned long int __fsfilcnt64_t; 
+#line 179 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef long int __fsword_t; 
 #line 181 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef  __off64_t __loff_t; 
-#line 182 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef  __quad_t *__qaddr_t; 
-#line 183 "/usr/include/x86_64-linux-gnu/bits/types.h"
-typedef char *__caddr_t; 
+typedef long int __ssize_t; 
+#line 184 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef long int __syscall_slong_t; 
 #line 186 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef unsigned long int __syscall_ulong_t; 
+#line 190 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef  __off64_t __loff_t; 
+#line 191 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef char *__caddr_t; 
+#line 194 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef long int __intptr_t; 
-#line 189 "/usr/include/x86_64-linux-gnu/bits/types.h"
+#line 197 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned int __socklen_t; 
+#line 202 "/usr/include/x86_64-linux-gnu/bits/types.h"
+typedef int __sig_atomic_t; 
 # 36 "/usr/include/stdio.h" 2 3 4
-# 44 "/usr/include/stdio.h" 3 4
+# 4 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h" 1 3 4
 struct _IO_FILE ; 
-#line 48 "/usr/include/stdio.h"
-typedef struct _IO_FILE FILE; 
-#line 64 "/usr/include/stdio.h"
+#line 5 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h"
 typedef struct _IO_FILE __FILE; 
-# 64 "/usr/include/stdio.h" 3 4
-# 74 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/libio.h" 1 3 4
-# 31 "/usr/include/libio.h" 3 4
-# 1 "/usr/include/_G_config.h" 1 3 4
-# 15 "/usr/include/_G_config.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 1 3 4
-# 16 "/usr/include/_G_config.h" 2 3 4
-# 1 "/usr/include/wchar.h" 1 3 4
-# 94 "/usr/include/wchar.h" 3 4
+# 37 "/usr/include/stdio.h" 2 3 4
+# 4 "/usr/include/x86_64-linux-gnu/bits/types/FILE.h" 1 3 4
+struct _IO_FILE ; 
+#line 7 "/usr/include/x86_64-linux-gnu/bits/types/FILE.h"
+typedef struct _IO_FILE FILE; 
+# 38 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libio.h" 1 3 4
+# 35 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 1 3 4
+# 19 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 20 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h" 1 3 4
+# 21 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h" 3 4
 typedef struct {int __count; union {unsigned int __wch; char __wchb[4]; 
 }__value; 
 }__mbstate_t; 
-#line 25 "/usr/include/_G_config.h"
+#line 30 "/usr/include/x86_64-linux-gnu/bits/_G_config.h"
 typedef struct { __off_t __pos;  __mbstate_t __state; 
 }_G_fpos_t; 
-#line 30 "/usr/include/_G_config.h"
+#line 35 "/usr/include/x86_64-linux-gnu/bits/_G_config.h"
 typedef struct { __off64_t __pos;  __mbstate_t __state; 
 }_G_fpos64_t; 
-# 21 "/usr/include/_G_config.h" 2 3 4
-# 32 "/usr/include/libio.h" 2 3 4
-# 49 "/usr/include/libio.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h" 1 3 4
-# 40 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h" 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 2 3 4
+# 36 "/usr/include/x86_64-linux-gnu/bits/libio.h" 2 3 4
+# 53 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h" 1 3 4
+# 40 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h" 3 4
 typedef __builtin_va_list __gnuc_va_list; 
-# 50 "/usr/include/libio.h" 2 3 4
-# 144 "/usr/include/libio.h" 3 4
+# 54 "/usr/include/x86_64-linux-gnu/bits/libio.h" 2 3 4
+# 149 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 struct _IO_jump_t ; 
-#line 144 "/usr/include/libio.h"
+#line 149 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 struct _IO_FILE ; 
-#line 150 "/usr/include/libio.h"
+#line 154 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 typedef void _IO_lock_t; 
-#line 173 "/usr/include/libio.h"
+#line 177 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 struct _IO_marker {struct _IO_marker *_next; struct _IO_FILE *_sbuf; int _pos; 
 }; 
-#line 182 "/usr/include/libio.h"
+#line 186 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 enum __codecvt_result {__codecvt_ok,__codecvt_partial,__codecvt_error,__codecvt_noconv}; 
-# 173 "/usr/include/libio.h" 3 4
-# 241 "/usr/include/libio.h" 3 4
-# 307 "/usr/include/libio.h" 3 4
+# 177 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 245 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 311 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 struct _IO_FILE {int _flags; char *_IO_read_ptr; char *_IO_read_end; char *_IO_read_base; char *_IO_write_base; char *_IO_write_ptr; char *_IO_write_end; char *_IO_buf_base; char *_IO_buf_end; char *_IO_save_base; char *_IO_backup_base; char *_IO_save_end; struct _IO_marker *_markers; struct _IO_FILE *_chain; int _fileno; int _flags2;  __off_t _old_offset; unsigned short _cur_column; signed char _vtable_offset; char _shortbuf[1];  _IO_lock_t *_lock;  __off64_t _offset; void *__pad1; void *__pad2; void *__pad3; void *__pad4;  size_t __pad5; int _mode; char _unused2[15 * sizeof (int ) - 4 * sizeof (void *) - sizeof ( size_t )]; 
 }; 
-#line 310 "/usr/include/libio.h"
+#line 314 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 typedef struct _IO_FILE _IO_FILE; 
-#line 313 "/usr/include/libio.h"
+#line 317 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 struct _IO_FILE_plus ; 
-#line 315 "/usr/include/libio.h"
+#line 319 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern struct _IO_FILE_plus _IO_2_1_stdin_; 
-#line 316 "/usr/include/libio.h"
+#line 320 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern struct _IO_FILE_plus _IO_2_1_stdout_; 
-#line 317 "/usr/include/libio.h"
+#line 321 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern struct _IO_FILE_plus _IO_2_1_stderr_; 
-#line 333 "/usr/include/libio.h"
+#line 337 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 typedef  __ssize_t __io_read_fn(void *__cookie, char *__buf,  size_t __nbytes); 
-#line 342 "/usr/include/libio.h"
+#line 346 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 typedef  __ssize_t __io_write_fn(void *__cookie, const char *__buf,  size_t __n); 
-#line 350 "/usr/include/libio.h"
+#line 354 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 typedef int __io_seek_fn(void *__cookie,  __off64_t *__pos, int __w); 
-#line 353 "/usr/include/libio.h"
+#line 357 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 typedef int __io_close_fn(void *__cookie); 
-# 333 "/usr/include/libio.h" 3 4
-# 385 "/usr/include/libio.h" 3 4
+# 337 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 389 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 extern int __underflow( _IO_FILE *); 
-#line 386 "/usr/include/libio.h"
+#line 390 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int __uflow( _IO_FILE *); 
-#line 387 "/usr/include/libio.h"
+#line 391 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int __overflow( _IO_FILE *, int ); 
-#line 429 "/usr/include/libio.h"
+#line 433 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_getc( _IO_FILE *__fp); 
-#line 430 "/usr/include/libio.h"
+#line 434 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_putc(int __c,  _IO_FILE *__fp); 
-#line 431 "/usr/include/libio.h"
+#line 435 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_feof( _IO_FILE *__fp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 432 "/usr/include/libio.h"
+#line 436 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_ferror( _IO_FILE *__fp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 434 "/usr/include/libio.h"
+#line 438 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_peekc_locked( _IO_FILE *__fp); 
-#line 440 "/usr/include/libio.h"
+#line 444 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern void _IO_flockfile( _IO_FILE *) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 441 "/usr/include/libio.h"
+#line 445 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern void _IO_funlockfile( _IO_FILE *) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 442 "/usr/include/libio.h"
+#line 446 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_ftrylockfile( _IO_FILE *) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 429 "/usr/include/libio.h" 3 4
-# 460 "/usr/include/libio.h" 3 4
+# 433 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 463 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 extern int _IO_vfscanf( _IO_FILE *__restrict , const char *__restrict ,  __gnuc_va_list , int *__restrict ); 
-#line 462 "/usr/include/libio.h"
+#line 465 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern int _IO_vfprintf( _IO_FILE *__restrict , const char *__restrict ,  __gnuc_va_list ); 
-#line 463 "/usr/include/libio.h"
+#line 466 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern  __ssize_t _IO_padn( _IO_FILE *, int ,  __ssize_t ); 
-#line 464 "/usr/include/libio.h"
+#line 467 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern  size_t _IO_sgetn( _IO_FILE *, void *,  size_t ); 
-#line 466 "/usr/include/libio.h"
+#line 469 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern  __off64_t _IO_seekoff( _IO_FILE *,  __off64_t , int , int ); 
-#line 467 "/usr/include/libio.h"
+#line 470 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern  __off64_t _IO_seekpos( _IO_FILE *,  __off64_t , int ); 
-#line 469 "/usr/include/libio.h"
+#line 472 "/usr/include/x86_64-linux-gnu/bits/libio.h"
 extern void _IO_free_backup_area( _IO_FILE *) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 79 "/usr/include/stdio.h"
+#line 46 "/usr/include/stdio.h"
 typedef  __gnuc_va_list va_list; 
-# 75 "/usr/include/stdio.h" 2 3 4
-# 90 "/usr/include/stdio.h" 3 4
+# 42 "/usr/include/stdio.h" 2 3 4
+# 57 "/usr/include/stdio.h" 3 4
 typedef  __off_t off_t; 
-#line 102 "/usr/include/stdio.h"
+#line 71 "/usr/include/stdio.h"
 typedef  __ssize_t ssize_t; 
-#line 110 "/usr/include/stdio.h"
+#line 78 "/usr/include/stdio.h"
 typedef  _G_fpos_t fpos_t; 
-# 102 "/usr/include/stdio.h" 3 4
-# 164 "/usr/include/stdio.h" 3 4
+# 71 "/usr/include/stdio.h" 3 4
+# 131 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/stdio_lim.h" 1 3 4
-# 168 "/usr/include/stdio.h" 2 3 4
+# 135 "/usr/include/stdio.h" 2 3 4
 extern struct _IO_FILE *stdin; 
-#line 169 "/usr/include/stdio.h"
+#line 136 "/usr/include/stdio.h"
 extern struct _IO_FILE *stdout; 
-#line 170 "/usr/include/stdio.h"
+#line 137 "/usr/include/stdio.h"
 extern struct _IO_FILE *stderr; 
-#line 178 "/usr/include/stdio.h"
+#line 144 "/usr/include/stdio.h"
 extern int remove(const char *__filename) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 180 "/usr/include/stdio.h"
+#line 146 "/usr/include/stdio.h"
 extern int rename(const char *__old, const char *__new) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 186 "/usr/include/stdio.h"
+#line 151 "/usr/include/stdio.h"
 extern int renameat(int __oldfd, const char *__old, int __newfd, const char *__new) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 195 "/usr/include/stdio.h"
+#line 159 "/usr/include/stdio.h"
 extern  FILE *tmpfile(void ); 
-#line 209 "/usr/include/stdio.h"
+#line 173 "/usr/include/stdio.h"
 extern char *tmpnam(char *__s) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 215 "/usr/include/stdio.h"
+#line 178 "/usr/include/stdio.h"
 extern char *tmpnam_r(char *__s) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 209 "/usr/include/stdio.h" 3 4
-# 228 "/usr/include/stdio.h" 3 4
+# 173 "/usr/include/stdio.h" 3 4
+# 191 "/usr/include/stdio.h" 3 4
 extern char *tempnam(const char *__dir, const char *__pfx) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __malloc__ )) ; 
-#line 237 "/usr/include/stdio.h"
+#line 199 "/usr/include/stdio.h"
 extern int fclose( FILE *__stream); 
-#line 242 "/usr/include/stdio.h"
+#line 204 "/usr/include/stdio.h"
 extern int fflush( FILE *__stream); 
-#line 252 "/usr/include/stdio.h"
+#line 213 "/usr/include/stdio.h"
 extern int fflush_unlocked( FILE *__stream); 
-# 252 "/usr/include/stdio.h" 3 4
-# 273 "/usr/include/stdio.h" 3 4
+# 213 "/usr/include/stdio.h" 3 4
+# 233 "/usr/include/stdio.h" 3 4
 extern  FILE *fopen(const char *__restrict __filename, const char *__restrict __modes); 
-#line 280 "/usr/include/stdio.h"
+#line 240 "/usr/include/stdio.h"
 extern  FILE *freopen(const char *__restrict __filename, const char *__restrict __modes,  FILE *__restrict __stream); 
-# 295 "/usr/include/stdio.h" 3 4
-# 306 "/usr/include/stdio.h" 3 4
+#line 265 "/usr/include/stdio.h"
 extern  FILE *fdopen(int __fd, const char *__modes) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 320 "/usr/include/stdio.h"
+# 265 "/usr/include/stdio.h" 3 4
+# 279 "/usr/include/stdio.h" 3 4
 extern  FILE *fmemopen(void *__s,  size_t __len, const char *__modes) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 325 "/usr/include/stdio.h"
+#line 284 "/usr/include/stdio.h"
 extern  FILE *open_memstream(char **__bufloc,  size_t *__sizeloc) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 332 "/usr/include/stdio.h"
+#line 290 "/usr/include/stdio.h"
 extern void setbuf( FILE *__restrict __stream, char *__restrict __buf) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 337 "/usr/include/stdio.h"
+#line 295 "/usr/include/stdio.h"
 extern int setvbuf( FILE *__restrict __stream, char *__restrict __buf, int __modes,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 344 "/usr/include/stdio.h"
+#line 301 "/usr/include/stdio.h"
 extern void setbuffer( FILE *__restrict __stream, char *__restrict __buf,  size_t __size) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 347 "/usr/include/stdio.h"
+#line 304 "/usr/include/stdio.h"
 extern void setlinebuf( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 357 "/usr/include/stdio.h"
+#line 313 "/usr/include/stdio.h"
 extern int fprintf( FILE *__restrict __stream, const char *__restrict __format, ...); 
-#line 362 "/usr/include/stdio.h"
+#line 318 "/usr/include/stdio.h"
 extern int printf(const char *__restrict __format, ...); 
-#line 365 "/usr/include/stdio.h"
+#line 321 "/usr/include/stdio.h"
 extern int sprintf(char *__restrict __s, const char *__restrict __format, ...) __attribute__  (( __nothrow__ )) ; 
-#line 372 "/usr/include/stdio.h"
+#line 328 "/usr/include/stdio.h"
 extern int vfprintf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg); 
-#line 377 "/usr/include/stdio.h"
+#line 333 "/usr/include/stdio.h"
 extern int vprintf(const char *__restrict __format,  __gnuc_va_list __arg); 
-#line 380 "/usr/include/stdio.h"
+#line 336 "/usr/include/stdio.h"
 extern int vsprintf(char *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __nothrow__ )) ; 
-#line 388 "/usr/include/stdio.h"
+#line 342 "/usr/include/stdio.h"
 extern int snprintf(char *__restrict __s,  size_t __maxlen, const char *__restrict __format, ...) __attribute__  (( __nothrow__ ))  __attribute__  (( __format__ ( __printf__, 3, 4 )  )) ; 
-#line 392 "/usr/include/stdio.h"
+#line 346 "/usr/include/stdio.h"
 extern int vsnprintf(char *__restrict __s,  size_t __maxlen, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __nothrow__ ))  __attribute__  (( __format__ ( __printf__, 3, 0 )  )) ; 
-# 319 "/usr/include/stdio.h" 3 4
-# 414 "/usr/include/stdio.h" 3 4
+#line 367 "/usr/include/stdio.h"
 extern int vdprintf(int __fd, const char *__restrict __fmt,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __printf__, 2, 0 )  )) ; 
-#line 416 "/usr/include/stdio.h"
+#line 369 "/usr/include/stdio.h"
 extern int dprintf(int __fd, const char *__restrict __fmt, ...) __attribute__  (( __format__ ( __printf__, 2, 3 )  )) ; 
-#line 426 "/usr/include/stdio.h"
+#line 378 "/usr/include/stdio.h"
 extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...); 
-#line 431 "/usr/include/stdio.h"
+#line 383 "/usr/include/stdio.h"
 extern int scanf(const char *__restrict __format, ...); 
-#line 434 "/usr/include/stdio.h"
+#line 386 "/usr/include/stdio.h"
 extern int sscanf(const char *__restrict __s, const char *__restrict __format, ...) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 445 "/usr/include/stdio.h"
+# 365 "/usr/include/stdio.h" 3 4
+# 397 "/usr/include/stdio.h" 3 4
 extern int fscanf( FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("""__isoc99_fscanf"); 
-#line 447 "/usr/include/stdio.h"
+#line 399 "/usr/include/stdio.h"
 extern int scanf(const char *__restrict __format, ...) __asm__ ("""__isoc99_scanf"); 
-#line 450 "/usr/include/stdio.h"
+#line 402 "/usr/include/stdio.h"
 extern int sscanf(const char *__restrict __s, const char *__restrict __format, ...) __asm__ ("""__isoc99_sscanf") __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 443 "/usr/include/stdio.h" 3 4
-# 473 "/usr/include/stdio.h" 3 4
+#line 422 "/usr/include/stdio.h"
 extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
-#line 480 "/usr/include/stdio.h"
+#line 429 "/usr/include/stdio.h"
 extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __format__ ( __scanf__, 1, 0 )  )) ; 
-#line 485 "/usr/include/stdio.h"
+#line 434 "/usr/include/stdio.h"
 extern int vsscanf(const char *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
-#line 498 "/usr/include/stdio.h"
+# 420 "/usr/include/stdio.h" 3 4
+# 447 "/usr/include/stdio.h" 3 4
 extern int vfscanf( FILE *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vfscanf") __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
-#line 501 "/usr/include/stdio.h"
+#line 450 "/usr/include/stdio.h"
 extern int vscanf(const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vscanf") __attribute__  (( __format__ ( __scanf__, 1, 0 )  )) ; 
-#line 506 "/usr/include/stdio.h"
+#line 455 "/usr/include/stdio.h"
 extern int vsscanf(const char *__restrict __s, const char *__restrict __format,  __gnuc_va_list __arg) __asm__ ("""__isoc99_vsscanf") __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __format__ ( __scanf__, 2, 0 )  )) ; 
-# 494 "/usr/include/stdio.h" 3 4
-# 531 "/usr/include/stdio.h" 3 4
+#line 477 "/usr/include/stdio.h"
 extern int fgetc( FILE *__stream); 
-#line 532 "/usr/include/stdio.h"
+#line 478 "/usr/include/stdio.h"
 extern int getc( FILE *__stream); 
-#line 538 "/usr/include/stdio.h"
+#line 484 "/usr/include/stdio.h"
 extern int getchar(void ); 
-#line 550 "/usr/include/stdio.h"
+# 477 "/usr/include/stdio.h" 3 4
+# 495 "/usr/include/stdio.h" 3 4
 extern int getc_unlocked( FILE *__stream); 
-#line 551 "/usr/include/stdio.h"
+#line 496 "/usr/include/stdio.h"
 extern int getchar_unlocked(void ); 
-# 550 "/usr/include/stdio.h" 3 4
-# 561 "/usr/include/stdio.h" 3 4
+#line 506 "/usr/include/stdio.h"
 extern int fgetc_unlocked( FILE *__stream); 
-#line 573 "/usr/include/stdio.h"
+# 506 "/usr/include/stdio.h" 3 4
+# 517 "/usr/include/stdio.h" 3 4
 extern int fputc(int __c,  FILE *__stream); 
-#line 574 "/usr/include/stdio.h"
+#line 518 "/usr/include/stdio.h"
 extern int putc(int __c,  FILE *__stream); 
-#line 580 "/usr/include/stdio.h"
+#line 524 "/usr/include/stdio.h"
 extern int putchar(int __c); 
-#line 594 "/usr/include/stdio.h"
+#line 537 "/usr/include/stdio.h"
 extern int fputc_unlocked(int __c,  FILE *__stream); 
-#line 602 "/usr/include/stdio.h"
+#line 545 "/usr/include/stdio.h"
 extern int putc_unlocked(int __c,  FILE *__stream); 
-#line 603 "/usr/include/stdio.h"
+#line 546 "/usr/include/stdio.h"
 extern int putchar_unlocked(int __c); 
-#line 610 "/usr/include/stdio.h"
+#line 553 "/usr/include/stdio.h"
 extern int getw( FILE *__stream); 
-#line 613 "/usr/include/stdio.h"
+#line 556 "/usr/include/stdio.h"
 extern int putw(int __w,  FILE *__stream); 
-#line 623 "/usr/include/stdio.h"
+#line 565 "/usr/include/stdio.h"
 extern char *fgets(char *__restrict __s, int __n,  FILE *__restrict __stream); 
-# 594 "/usr/include/stdio.h" 3 4
-# 640 "/usr/include/stdio.h" 3 4
-# 667 "/usr/include/stdio.h" 3 4
+# 537 "/usr/include/stdio.h" 3 4
+# 605 "/usr/include/stdio.h" 3 4
 extern  __ssize_t __getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream); 
-#line 670 "/usr/include/stdio.h"
+#line 608 "/usr/include/stdio.h"
 extern  __ssize_t getdelim(char **__restrict __lineptr,  size_t *__restrict __n, int __delimiter,  FILE *__restrict __stream); 
-#line 680 "/usr/include/stdio.h"
+#line 618 "/usr/include/stdio.h"
 extern  __ssize_t getline(char **__restrict __lineptr,  size_t *__restrict __n,  FILE *__restrict __stream); 
-#line 689 "/usr/include/stdio.h"
+#line 626 "/usr/include/stdio.h"
 extern int fputs(const char *__restrict __s,  FILE *__restrict __stream); 
-#line 695 "/usr/include/stdio.h"
+#line 632 "/usr/include/stdio.h"
 extern int puts(const char *__s); 
-#line 702 "/usr/include/stdio.h"
+#line 639 "/usr/include/stdio.h"
 extern int ungetc(int __c,  FILE *__stream); 
-#line 710 "/usr/include/stdio.h"
+#line 647 "/usr/include/stdio.h"
 extern  size_t fread(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
-#line 716 "/usr/include/stdio.h"
+#line 653 "/usr/include/stdio.h"
 extern  size_t fwrite(const void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __s); 
-#line 738 "/usr/include/stdio.h"
+#line 674 "/usr/include/stdio.h"
 extern  size_t fread_unlocked(void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
-#line 740 "/usr/include/stdio.h"
+#line 676 "/usr/include/stdio.h"
 extern  size_t fwrite_unlocked(const void *__restrict __ptr,  size_t __size,  size_t __n,  FILE *__restrict __stream); 
-#line 749 "/usr/include/stdio.h"
+#line 684 "/usr/include/stdio.h"
 extern int fseek( FILE *__stream, long int __off, int __whence); 
-#line 754 "/usr/include/stdio.h"
+#line 689 "/usr/include/stdio.h"
 extern long int ftell( FILE *__stream); 
-#line 759 "/usr/include/stdio.h"
+#line 694 "/usr/include/stdio.h"
 extern void rewind( FILE *__stream); 
-# 737 "/usr/include/stdio.h" 3 4
-# 773 "/usr/include/stdio.h" 3 4
+# 673 "/usr/include/stdio.h" 3 4
+# 707 "/usr/include/stdio.h" 3 4
 extern int fseeko( FILE *__stream,  __off_t __off, int __whence); 
-#line 778 "/usr/include/stdio.h"
+#line 712 "/usr/include/stdio.h"
 extern  __off_t ftello( FILE *__stream); 
-#line 798 "/usr/include/stdio.h"
+#line 731 "/usr/include/stdio.h"
 extern int fgetpos( FILE *__restrict __stream,  fpos_t *__restrict __pos); 
-#line 803 "/usr/include/stdio.h"
+#line 736 "/usr/include/stdio.h"
 extern int fsetpos( FILE *__stream, const  fpos_t *__pos); 
-# 792 "/usr/include/stdio.h" 3 4
-# 815 "/usr/include/stdio.h" 3 4
-# 826 "/usr/include/stdio.h" 3 4
+# 731 "/usr/include/stdio.h" 3 4
+# 757 "/usr/include/stdio.h" 3 4
 extern void clearerr( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 828 "/usr/include/stdio.h"
+#line 759 "/usr/include/stdio.h"
 extern int feof( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 830 "/usr/include/stdio.h"
+#line 761 "/usr/include/stdio.h"
 extern int ferror( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 835 "/usr/include/stdio.h"
+#line 765 "/usr/include/stdio.h"
 extern void clearerr_unlocked( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 836 "/usr/include/stdio.h"
+#line 766 "/usr/include/stdio.h"
 extern int feof_unlocked( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 837 "/usr/include/stdio.h"
+#line 767 "/usr/include/stdio.h"
 extern int ferror_unlocked( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 846 "/usr/include/stdio.h"
+#line 775 "/usr/include/stdio.h"
 extern void perror(const char *__s); 
 # 1 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h" 1 3 4
 # 26 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h" 3 4
 extern int sys_nerr; 
 #line 27 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h"
 extern const char *const sys_errlist[]; 
-#line 858 "/usr/include/stdio.h"
+#line 786 "/usr/include/stdio.h"
 extern int fileno( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 863 "/usr/include/stdio.h"
+#line 791 "/usr/include/stdio.h"
 extern int fileno_unlocked( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 854 "/usr/include/stdio.h" 2 3 4
-# 872 "/usr/include/stdio.h" 3 4
+# 782 "/usr/include/stdio.h" 2 3 4
+# 800 "/usr/include/stdio.h" 3 4
 extern  FILE *popen(const char *__command, const char *__modes); 
-#line 878 "/usr/include/stdio.h"
+#line 806 "/usr/include/stdio.h"
 extern int pclose( FILE *__stream); 
-#line 884 "/usr/include/stdio.h"
+#line 812 "/usr/include/stdio.h"
 extern char *ctermid(char *__s) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 912 "/usr/include/stdio.h"
+#line 840 "/usr/include/stdio.h"
 extern void flockfile( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 916 "/usr/include/stdio.h"
+#line 844 "/usr/include/stdio.h"
 extern int ftrylockfile( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 919 "/usr/include/stdio.h"
+#line 847 "/usr/include/stdio.h"
 extern void funlockfile( FILE *__stream) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 912 "/usr/include/stdio.h" 3 4
-# 942 "/usr/include/stdio.h" 3 4
+# 840 "/usr/include/stdio.h" 3 4
+# 868 "/usr/include/stdio.h" 3 4
 # 6 "OperatingSystem.h" 2
 # 33 "OperatingSystem.h" 
 # 33 "OperatingSystem.h" 
@@ -701,119 +711,136 @@ int Heap_getFirst(int ([]), int );
 # 25 "Heap.h" 
 # 7 "OperatingSystem.c" 2
 # 1 "/usr/include/string.h" 1 3 4
-# 27 "/usr/include/string.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 1 3 4
-# 33 "/usr/include/string.h" 2 3 4
+# 26 "/usr/include/string.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/string.h" 2 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 34 "/usr/include/string.h" 2 3 4
+# 42 "/usr/include/string.h" 3 4
 # 43 "/usr/include/string.h" 3 4
 extern void *memcpy(void *__restrict __dest, const void *__restrict __src,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
 #line 47 "/usr/include/string.h"
 extern void *memmove(void *__dest, const void *__src,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 56 "/usr/include/string.h"
+#line 55 "/usr/include/string.h"
 extern void *memccpy(void *__restrict __dest, const void *__restrict __src, int __c,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 62 "/usr/include/string.h"
+#line 60 "/usr/include/string.h"
 extern void *memset(void *__s, int __c,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 66 "/usr/include/string.h"
+#line 64 "/usr/include/string.h"
 extern int memcmp(const void *__s1, const void *__s2,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 93 "/usr/include/string.h"
+#line 91 "/usr/include/string.h"
 extern void *memchr(const void *__s, int __c,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-# 92 "/usr/include/string.h" 3 4
-# 126 "/usr/include/string.h" 3 4
+# 90 "/usr/include/string.h" 3 4
+# 122 "/usr/include/string.h" 3 4
 extern char *strcpy(char *__restrict __dest, const char *__restrict __src) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 130 "/usr/include/string.h"
+#line 126 "/usr/include/string.h"
 extern char *strncpy(char *__restrict __dest, const char *__restrict __src,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 134 "/usr/include/string.h"
+#line 130 "/usr/include/string.h"
 extern char *strcat(char *__restrict __dest, const char *__restrict __src) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 137 "/usr/include/string.h"
+#line 133 "/usr/include/string.h"
 extern char *strncat(char *__restrict __dest, const char *__restrict __src,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 141 "/usr/include/string.h"
+#line 137 "/usr/include/string.h"
 extern int strcmp(const char *__s1, const char *__s2) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 144 "/usr/include/string.h"
+#line 140 "/usr/include/string.h"
 extern int strncmp(const char *__s1, const char *__s2,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 148 "/usr/include/string.h"
+#line 144 "/usr/include/string.h"
 extern int strcoll(const char *__s1, const char *__s2) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 152 "/usr/include/string.h"
+#line 148 "/usr/include/string.h"
 extern  size_t strxfrm(char *__restrict __dest, const char *__restrict __src,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
-# 1 "/usr/include/xlocale.h" 1 3 4
-# 39 "/usr/include/xlocale.h" 3 4
-typedef struct __locale_struct {struct __locale_data *__locales[13]; const unsigned short int *__ctype_b; const int *__ctype_tolower; const int *__ctype_toupper; const char *__names[13]; 
-}*__locale_t; 
-#line 42 "/usr/include/xlocale.h"
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 1 3 4
+# 40 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 3 4
+struct __locale_struct {struct __locale_data *__locales[13]; const unsigned short int *__ctype_b; const int *__ctype_tolower; const int *__ctype_toupper; const char *__names[13]; 
+}; 
+#line 42 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h"
+typedef struct __locale_struct *__locale_t; 
+#line 24 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h"
 typedef  __locale_t locale_t; 
-#line 163 "/usr/include/string.h"
-extern int strcoll_l(const char *__s1, const char *__s2,  __locale_t __l) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2, 3 )  )) ; 
-#line 166 "/usr/include/string.h"
-extern  size_t strxfrm_l(char *__dest, const char *__src,  size_t __n,  __locale_t __l) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2, 4 )  )) ; 
-#line 172 "/usr/include/string.h"
+# 23 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 2 3 4
+# 156 "/usr/include/string.h" 2 3 4
+extern int strcoll_l(const char *__s1, const char *__s2,  locale_t __l) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2, 3 )  )) ; 
+#line 160 "/usr/include/string.h"
+extern  size_t strxfrm_l(char *__dest, const char *__src,  size_t __n,  locale_t __l) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2, 4 )  )) ; 
+#line 167 "/usr/include/string.h"
 extern char *strdup(const char *__s) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __malloc__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 180 "/usr/include/string.h"
+#line 175 "/usr/include/string.h"
 extern char *strndup(const char *__string,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __malloc__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-# 160 "/usr/include/string.h" 2 3 4
-# 206 "/usr/include/string.h" 3 4
-# 232 "/usr/include/string.h" 3 4
+#line 226 "/usr/include/string.h"
 extern char *strchr(const char *__s, int __c) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 259 "/usr/include/string.h"
+# 225 "/usr/include/string.h" 3 4
+# 253 "/usr/include/string.h" 3 4
 extern char *strrchr(const char *__s, int __c) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-# 258 "/usr/include/string.h" 3 4
-# 281 "/usr/include/string.h" 3 4
+#line 273 "/usr/include/string.h"
 extern  size_t strcspn(const char *__s, const char *__reject) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 285 "/usr/include/string.h"
+#line 277 "/usr/include/string.h"
 extern  size_t strspn(const char *__s, const char *__accept) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 311 "/usr/include/string.h"
+# 272 "/usr/include/string.h" 3 4
+# 303 "/usr/include/string.h" 3 4
 extern char *strpbrk(const char *__s, const char *__accept) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-# 310 "/usr/include/string.h" 3 4
-# 338 "/usr/include/string.h" 3 4
+#line 330 "/usr/include/string.h"
 extern char *strstr(const char *__haystack, const char *__needle) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 344 "/usr/include/string.h"
+#line 336 "/usr/include/string.h"
 extern char *strtok(char *__restrict __s, const char *__restrict __delim) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
-#line 352 "/usr/include/string.h"
+#line 343 "/usr/include/string.h"
 extern char *__strtok_r(char *__restrict __s, const char *__restrict __delim, char **__restrict __save_ptr) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2, 3 )  )) ; 
-#line 356 "/usr/include/string.h"
+#line 347 "/usr/include/string.h"
 extern char *strtok_r(char *__restrict __s, const char *__restrict __delim, char **__restrict __save_ptr) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2, 3 )  )) ; 
-#line 395 "/usr/include/string.h"
+# 329 "/usr/include/string.h" 3 4
+# 385 "/usr/include/string.h" 3 4
 extern  size_t strlen(const char *__s) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 402 "/usr/include/string.h"
+#line 391 "/usr/include/string.h"
 extern  size_t strnlen(const char *__string,  size_t __maxlen) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 408 "/usr/include/string.h"
+#line 396 "/usr/include/string.h"
 extern char *strerror(int __errnum) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 392 "/usr/include/string.h" 3 4
-# 424 "/usr/include/string.h" 3 4
+#line 411 "/usr/include/string.h"
 extern int strerror_r(int __errnum, char *__buf,  size_t __buflen) __asm__ ("""__xpg_strerror_r") __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
-#line 440 "/usr/include/string.h"
-extern char *strerror_l(int __errnum,  __locale_t __l) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 446 "/usr/include/string.h"
-extern void __bzero(void *__s,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 451 "/usr/include/string.h"
-extern void bcopy(const void *__src, void *__dest,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 454 "/usr/include/string.h"
-extern void bzero(void *__s,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 458 "/usr/include/string.h"
+# 409 "/usr/include/string.h" 3 4
+# 427 "/usr/include/string.h" 3 4
+extern char *strerror_l(int __errnum,  locale_t __l) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+# 1 "/usr/include/strings.h" 1 3 4
+# 23 "/usr/include/strings.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 35 "/usr/include/strings.h" 2 3 4
 extern int bcmp(const void *__s1, const void *__s2,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-# 440 "/usr/include/string.h" 3 4
-# 485 "/usr/include/string.h" 3 4
+#line 39 "/usr/include/strings.h"
+extern void bcopy(const void *__src, void *__dest,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
+#line 42 "/usr/include/strings.h"
+extern void bzero(void *__s,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+#line 69 "/usr/include/strings.h"
 extern char *index(const char *__s, int __c) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 513 "/usr/include/string.h"
+# 68 "/usr/include/strings.h" 3 4
+# 97 "/usr/include/strings.h" 3 4
 extern char *rindex(const char *__s, int __c) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 518 "/usr/include/string.h"
+#line 104 "/usr/include/strings.h"
 extern int ffs(int __i) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
-# 512 "/usr/include/string.h" 3 4
-# 530 "/usr/include/string.h" 3 4
+#line 110 "/usr/include/strings.h"
+extern int ffsl(long int __l) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
+#line 112 "/usr/include/strings.h"
+ __extension__ extern int ffsll(long long int __ll) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
+#line 117 "/usr/include/strings.h"
 extern int strcasecmp(const char *__s1, const char *__s2) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 534 "/usr/include/string.h"
+#line 121 "/usr/include/strings.h"
 extern int strncasecmp(const char *__s1, const char *__s2,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 554 "/usr/include/string.h"
+#line 129 "/usr/include/strings.h"
+extern int strcasecmp_l(const char *__s1, const char *__s2,  locale_t __loc) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2, 3 )  )) ; 
+#line 135 "/usr/include/strings.h"
+extern int strncasecmp_l(const char *__s1, const char *__s2,  size_t __n,  locale_t __loc) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1, 2, 4 )  )) ; 
+#line 435 "/usr/include/string.h"
+extern void explicit_bzero(void *__s,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+#line 441 "/usr/include/string.h"
 extern char *strsep(char **__restrict __stringp, const char *__restrict __delim) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 559 "/usr/include/string.h"
+#line 446 "/usr/include/string.h"
 extern char *strsignal(int __sig) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 563 "/usr/include/string.h"
+#line 450 "/usr/include/string.h"
 extern char *__stpcpy(char *__restrict __dest, const char *__restrict __src) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 565 "/usr/include/string.h"
+#line 452 "/usr/include/string.h"
 extern char *stpcpy(char *__restrict __dest, const char *__restrict __src) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 571 "/usr/include/string.h"
+#line 458 "/usr/include/string.h"
 extern char *__stpncpy(char *__restrict __dest, const char *__restrict __src,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 574 "/usr/include/string.h"
+#line 461 "/usr/include/string.h"
 extern char *stpncpy(char *__restrict __dest, const char *__restrict __src,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-# 552 "/usr/include/string.h" 3 4
-# 658 "/usr/include/string.h" 3 4
+# 432 "/usr/include/string.h" 2 3 4
+# 498 "/usr/include/string.h" 3 4
 # 8 "OperatingSystem.c" 2
 # 1 "/usr/include/ctype.h" 1 3 4
 # 28 "/usr/include/ctype.h" 3 4
@@ -831,68 +858,163 @@ extern char *stpncpy(char *__restrict __dest, const char *__restrict __src,  siz
 # 36 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 2 3 4
 # 46 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 3 4
 static __inline unsigned int __bswap_32(unsigned int __bsx)  
-# 835 "OperatingSystemAspect.c"
+# 862 "OperatingSystemAspect.c"
 {
-# 837 "OperatingSystemAspect.c"
+# 864 "OperatingSystemAspect.c"
 unsigned int retValue_acc;
 
 
 
 
-# 843 "OperatingSystemAspect.c"
+# 870 "OperatingSystemAspect.c"
 {
 
 #line 47 "/usr/include/x86_64-linux-gnu/bits/byteswap.h"
 
-# 848 "OperatingSystemAspect.c"
+# 875 "OperatingSystemAspect.c"
 retValue_acc = __builtin_bswap32(__bsx);
-# 850 "OperatingSystemAspect.c"
+# 877 "OperatingSystemAspect.c"
 return (unsigned int )retValue_acc;
  
-# 853 "OperatingSystemAspect.c"
+# 880 "OperatingSystemAspect.c"
 
 }
 
-# 857 "OperatingSystemAspect.c"
+# 884 "OperatingSystemAspect.c"
 return (unsigned int )retValue_acc;
 
-# 860 "OperatingSystemAspect.c"
+# 887 "OperatingSystemAspect.c"
 
 }
  
 #line 109 "/usr/include/x86_64-linux-gnu/bits/byteswap.h"
 static __inline  __uint64_t __bswap_64( __uint64_t __bsx)  
-# 866 "OperatingSystemAspect.c"
+# 893 "OperatingSystemAspect.c"
 {
-# 868 "OperatingSystemAspect.c"
+# 895 "OperatingSystemAspect.c"
 __uint64_t retValue_acc;
 
 
 
 
-# 874 "OperatingSystemAspect.c"
+# 901 "OperatingSystemAspect.c"
 {
 
 #line 110 "/usr/include/x86_64-linux-gnu/bits/byteswap.h"
 
-# 879 "OperatingSystemAspect.c"
+# 906 "OperatingSystemAspect.c"
 retValue_acc = __builtin_bswap64(__bsx);
-# 881 "OperatingSystemAspect.c"
+# 908 "OperatingSystemAspect.c"
 return (__uint64_t )retValue_acc;
  
-# 884 "OperatingSystemAspect.c"
+# 911 "OperatingSystemAspect.c"
 
 }
 
-# 888 "OperatingSystemAspect.c"
+# 915 "OperatingSystemAspect.c"
 return (__uint64_t )retValue_acc;
 
-# 891 "OperatingSystemAspect.c"
+# 918 "OperatingSystemAspect.c"
 
 }
  
 # 108 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 3 4
 # 61 "/usr/include/endian.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/uintn-identity.h" 1 3 4
+# 33 "/usr/include/x86_64-linux-gnu/bits/uintn-identity.h" 3 4
+static __inline  __uint16_t __uint16_identity( __uint16_t __x)  
+# 927 "OperatingSystemAspect.c"
+{
+# 929 "OperatingSystemAspect.c"
+__uint16_t retValue_acc;
+
+
+
+
+# 935 "OperatingSystemAspect.c"
+{
+
+#line 34 "/usr/include/x86_64-linux-gnu/bits/uintn-identity.h"
+
+# 940 "OperatingSystemAspect.c"
+retValue_acc = __x;
+# 942 "OperatingSystemAspect.c"
+return (__uint16_t )retValue_acc;
+ 
+# 945 "OperatingSystemAspect.c"
+
+}
+
+# 949 "OperatingSystemAspect.c"
+return (__uint16_t )retValue_acc;
+
+# 952 "OperatingSystemAspect.c"
+
+}
+ 
+#line 38 "/usr/include/x86_64-linux-gnu/bits/uintn-identity.h"
+static __inline  __uint32_t __uint32_identity( __uint32_t __x)  
+# 958 "OperatingSystemAspect.c"
+{
+# 960 "OperatingSystemAspect.c"
+__uint32_t retValue_acc;
+
+
+
+
+# 966 "OperatingSystemAspect.c"
+{
+
+#line 39 "/usr/include/x86_64-linux-gnu/bits/uintn-identity.h"
+
+# 971 "OperatingSystemAspect.c"
+retValue_acc = __x;
+# 973 "OperatingSystemAspect.c"
+return (__uint32_t )retValue_acc;
+ 
+# 976 "OperatingSystemAspect.c"
+
+}
+
+# 980 "OperatingSystemAspect.c"
+return (__uint32_t )retValue_acc;
+
+# 983 "OperatingSystemAspect.c"
+
+}
+ 
+#line 43 "/usr/include/x86_64-linux-gnu/bits/uintn-identity.h"
+static __inline  __uint64_t __uint64_identity( __uint64_t __x)  
+# 989 "OperatingSystemAspect.c"
+{
+# 991 "OperatingSystemAspect.c"
+__uint64_t retValue_acc;
+
+
+
+
+# 997 "OperatingSystemAspect.c"
+{
+
+#line 44 "/usr/include/x86_64-linux-gnu/bits/uintn-identity.h"
+
+# 1002 "OperatingSystemAspect.c"
+retValue_acc = __x;
+# 1004 "OperatingSystemAspect.c"
+return (__uint64_t )retValue_acc;
+ 
+# 1007 "OperatingSystemAspect.c"
+
+}
+
+# 1011 "OperatingSystemAspect.c"
+return (__uint64_t )retValue_acc;
+
+# 1014 "OperatingSystemAspect.c"
+
+}
+ 
+# 62 "/usr/include/endian.h" 2 3 4
 # 60 "/usr/include/ctype.h" 2 3 4
 enum {_ISupper=(((0) < 8?((1 << (0)) << 8):((1 << (0)) >> 8))),_ISlower=(((1) < 8?((1 << (1)) << 8):((1 << (1)) >> 8))),_ISalpha=(((2) < 8?((1 << (2)) << 8):((1 << (2)) >> 8))),_ISdigit=(((3) < 8?((1 << (3)) << 8):((1 << (3)) >> 8))),_ISxdigit=(((4) < 8?((1 << (4)) << 8):((1 << (4)) >> 8))),_ISspace=(((5) < 8?((1 << (5)) << 8):((1 << (5)) >> 8))),_ISprint=(((6) < 8?((1 << (6)) << 8):((1 << (6)) >> 8))),_ISgraph=(((7) < 8?((1 << (7)) << 8):((1 << (7)) >> 8))),_ISblank=(((8) < 8?((1 << (8)) << 8):((1 << (8)) >> 8))),_IScntrl=(((9) < 8?((1 << (9)) << 8):((1 << (9)) >> 8))),_ISpunct=(((10) < 8?((1 << (10)) << 8):((1 << (10)) >> 8))),_ISalnum=(((11) < 8?((1 << (11)) << 8):((1 << (11)) >> 8)))}; 
 #line 80 "/usr/include/ctype.h"
@@ -902,140 +1024,142 @@ extern const  __int32_t **__ctype_tolower_loc(void ) __attribute__  (( __nothrow
 #line 84 "/usr/include/ctype.h"
 extern const  __int32_t **__ctype_toupper_loc(void ) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
 # 79 "/usr/include/ctype.h" 3 4
-# 110 "/usr/include/ctype.h" 3 4
+# 108 "/usr/include/ctype.h" 3 4
 extern int isalnum(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 111 "/usr/include/ctype.h"
+#line 109 "/usr/include/ctype.h"
 extern int isalpha(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 112 "/usr/include/ctype.h"
+#line 110 "/usr/include/ctype.h"
 extern int iscntrl(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 113 "/usr/include/ctype.h"
+#line 111 "/usr/include/ctype.h"
 extern int isdigit(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 114 "/usr/include/ctype.h"
+#line 112 "/usr/include/ctype.h"
 extern int islower(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 115 "/usr/include/ctype.h"
+#line 113 "/usr/include/ctype.h"
 extern int isgraph(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 116 "/usr/include/ctype.h"
+#line 114 "/usr/include/ctype.h"
 extern int isprint(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 117 "/usr/include/ctype.h"
+#line 115 "/usr/include/ctype.h"
 extern int ispunct(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 118 "/usr/include/ctype.h"
+#line 116 "/usr/include/ctype.h"
 extern int isspace(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 119 "/usr/include/ctype.h"
+#line 117 "/usr/include/ctype.h"
 extern int isupper(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 120 "/usr/include/ctype.h"
+#line 118 "/usr/include/ctype.h"
 extern int isxdigit(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 124 "/usr/include/ctype.h"
+#line 122 "/usr/include/ctype.h"
 extern int tolower(int __c) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 127 "/usr/include/ctype.h"
+#line 125 "/usr/include/ctype.h"
 extern int toupper(int __c) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 136 "/usr/include/ctype.h"
+#line 130 "/usr/include/ctype.h"
 extern int isblank(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 150 "/usr/include/ctype.h"
+#line 142 "/usr/include/ctype.h"
 extern int isascii(int __c) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 154 "/usr/include/ctype.h"
+#line 146 "/usr/include/ctype.h"
 extern int toascii(int __c) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 158 "/usr/include/ctype.h"
+#line 150 "/usr/include/ctype.h"
 extern int _toupper(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 159 "/usr/include/ctype.h"
+#line 151 "/usr/include/ctype.h"
 extern int _tolower(int ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 150 "/usr/include/ctype.h" 3 4
-# 271 "/usr/include/ctype.h" 3 4
-extern int isalnum_l(int ,  __locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+# 142 "/usr/include/ctype.h" 3 4
+# 251 "/usr/include/ctype.h" 3 4
+extern int isalnum_l(int ,  locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 252 "/usr/include/ctype.h"
+extern int isalpha_l(int ,  locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 253 "/usr/include/ctype.h"
+extern int iscntrl_l(int ,  locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 254 "/usr/include/ctype.h"
+extern int isdigit_l(int ,  locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 255 "/usr/include/ctype.h"
+extern int islower_l(int ,  locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 256 "/usr/include/ctype.h"
+extern int isgraph_l(int ,  locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 257 "/usr/include/ctype.h"
+extern int isprint_l(int ,  locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 258 "/usr/include/ctype.h"
+extern int ispunct_l(int ,  locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 259 "/usr/include/ctype.h"
+extern int isspace_l(int ,  locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 260 "/usr/include/ctype.h"
+extern int isupper_l(int ,  locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 261 "/usr/include/ctype.h"
+extern int isxdigit_l(int ,  locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 263 "/usr/include/ctype.h"
+extern int isblank_l(int ,  locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 267 "/usr/include/ctype.h"
+extern int __tolower_l(int __c,  locale_t __l) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 268 "/usr/include/ctype.h"
+extern int tolower_l(int __c,  locale_t __l) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+#line 271 "/usr/include/ctype.h"
+extern int __toupper_l(int __c,  locale_t __l) __attribute__  (( __nothrow__ , __leaf__ )) ; 
 #line 272 "/usr/include/ctype.h"
-extern int isalpha_l(int ,  __locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 273 "/usr/include/ctype.h"
-extern int iscntrl_l(int ,  __locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 274 "/usr/include/ctype.h"
-extern int isdigit_l(int ,  __locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 275 "/usr/include/ctype.h"
-extern int islower_l(int ,  __locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 276 "/usr/include/ctype.h"
-extern int isgraph_l(int ,  __locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 277 "/usr/include/ctype.h"
-extern int isprint_l(int ,  __locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 278 "/usr/include/ctype.h"
-extern int ispunct_l(int ,  __locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 279 "/usr/include/ctype.h"
-extern int isspace_l(int ,  __locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 280 "/usr/include/ctype.h"
-extern int isupper_l(int ,  __locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 281 "/usr/include/ctype.h"
-extern int isxdigit_l(int ,  __locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 283 "/usr/include/ctype.h"
-extern int isblank_l(int ,  __locale_t ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 287 "/usr/include/ctype.h"
-extern int __tolower_l(int __c,  __locale_t __l) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 288 "/usr/include/ctype.h"
-extern int tolower_l(int __c,  __locale_t __l) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 291 "/usr/include/ctype.h"
-extern int __toupper_l(int __c,  __locale_t __l) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 292 "/usr/include/ctype.h"
-extern int toupper_l(int __c,  __locale_t __l) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 347 "/usr/include/ctype.h" 3 4
+extern int toupper_l(int __c,  locale_t __l) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+# 327 "/usr/include/ctype.h" 3 4
 # 9 "OperatingSystem.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
-# 32 "/usr/include/stdlib.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 1 3 4
-# 328 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 3 4
+# 25 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 26 "/usr/include/stdlib.h" 2 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 328 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 3 4
 typedef int wchar_t; 
-# 33 "/usr/include/stdlib.h" 2 3 4
+# 32 "/usr/include/stdlib.h" 2 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/waitflags.h" 1 3 4
-# 55 "/usr/include/x86_64-linux-gnu/bits/waitflags.h" 3 4
+# 57 "/usr/include/x86_64-linux-gnu/bits/waitflags.h" 3 4
 typedef enum {P_ALL,P_PID,P_PGID}idtype_t; 
-# 42 "/usr/include/stdlib.h" 2 3 4
+# 40 "/usr/include/stdlib.h" 2 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/waitstatus.h" 1 3 4
-# 97 "/usr/include/x86_64-linux-gnu/bits/waitstatus.h" 3 4
-union wait {int w_status; struct {unsigned int __w_termsig:7; unsigned int __w_coredump:1; unsigned int __w_retcode:8; unsigned int :16; 
-}__wait_terminated; struct {unsigned int __w_stopval:8; unsigned int __w_stopsig:8; unsigned int :16; 
-}__wait_stopped; 
-}; 
-# 43 "/usr/include/stdlib.h" 2 3 4
-# 71 "/usr/include/stdlib.h" 3 4
-typedef union {union wait *__uptr; int *__iptr; 
-}__WAIT_STATUS __attribute__  (( __transparent_union__ )) ; 
-#line 101 "/usr/include/stdlib.h"
+# 41 "/usr/include/stdlib.h" 2 3 4
+# 55 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/floatn.h" 1 3 4
+# 120 "/usr/include/x86_64-linux-gnu/bits/floatn.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/long-double.h" 1 3 4
+# 25 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 2 3 4
+# 121 "/usr/include/x86_64-linux-gnu/bits/floatn.h" 2 3 4
+# 62 "/usr/include/stdlib.h" 2 3 4
 typedef struct {int quot; int rem; 
 }div_t; 
-#line 109 "/usr/include/stdlib.h"
+#line 70 "/usr/include/stdlib.h"
 typedef struct {long int quot; long int rem; 
 }ldiv_t; 
-#line 121 "/usr/include/stdlib.h"
+#line 80 "/usr/include/stdlib.h"
  __extension__ typedef struct {long long int quot; long long int rem; 
 }lldiv_t; 
-# 95 "/usr/include/stdlib.h" 3 4
-# 139 "/usr/include/stdlib.h" 3 4
+#line 97 "/usr/include/stdlib.h"
 extern  size_t __ctype_get_mb_cur_max(void ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 145 "/usr/include/stdlib.h"
+#line 102 "/usr/include/stdlib.h"
 extern double atof(const char *__nptr) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 148 "/usr/include/stdlib.h"
+#line 105 "/usr/include/stdlib.h"
 extern int atoi(const char *__nptr) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 151 "/usr/include/stdlib.h"
+#line 108 "/usr/include/stdlib.h"
 extern long int atol(const char *__nptr) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 158 "/usr/include/stdlib.h"
+#line 113 "/usr/include/stdlib.h"
  __extension__ extern long long int atoll(const char *__nptr) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 166 "/usr/include/stdlib.h"
+#line 119 "/usr/include/stdlib.h"
 extern double strtod(const char *__restrict __nptr, char **__restrict __endptr) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 173 "/usr/include/stdlib.h"
+#line 124 "/usr/include/stdlib.h"
 extern float strtof(const char *__restrict __nptr, char **__restrict __endptr) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 177 "/usr/include/stdlib.h"
+#line 128 "/usr/include/stdlib.h"
 extern long double strtold(const char *__restrict __nptr, char **__restrict __endptr) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 185 "/usr/include/stdlib.h"
+# 97 "/usr/include/stdlib.h" 3 4
+# 178 "/usr/include/stdlib.h" 3 4
 extern long int strtol(const char *__restrict __nptr, char **__restrict __endptr, int __base) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 189 "/usr/include/stdlib.h"
+#line 182 "/usr/include/stdlib.h"
 extern unsigned long int strtoul(const char *__restrict __nptr, char **__restrict __endptr, int __base) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 197 "/usr/include/stdlib.h"
+#line 189 "/usr/include/stdlib.h"
  __extension__ extern long long int strtoq(const char *__restrict __nptr, char **__restrict __endptr, int __base) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 202 "/usr/include/stdlib.h"
+#line 194 "/usr/include/stdlib.h"
  __extension__ extern unsigned long long int strtouq(const char *__restrict __nptr, char **__restrict __endptr, int __base) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 211 "/usr/include/stdlib.h"
+#line 202 "/usr/include/stdlib.h"
  __extension__ extern long long int strtoll(const char *__restrict __nptr, char **__restrict __endptr, int __base) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 216 "/usr/include/stdlib.h"
+#line 207 "/usr/include/stdlib.h"
  __extension__ extern unsigned long long int strtoull(const char *__restrict __nptr, char **__restrict __endptr, int __base) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 305 "/usr/include/stdlib.h"
+#line 385 "/usr/include/stdlib.h"
 extern char *l64a(long int __n) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 309 "/usr/include/stdlib.h"
+#line 389 "/usr/include/stdlib.h"
 extern long int a64l(const char *__s) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __pure__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-# 305 "/usr/include/stdlib.h" 3 4
+# 385 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/sys/types.h" 1 3 4
 # 33 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
 typedef  __u_char u_char; 
@@ -1077,47 +1201,47 @@ typedef  __caddr_t caddr_t;
 #line 122 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef  __key_t key_t; 
 # 115 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
-# 132 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
-# 1 "/usr/include/time.h" 1 3 4
-# 59 "/usr/include/time.h" 3 4
+# 7 "/usr/include/x86_64-linux-gnu/bits/types/clock_t.h" 1 3 4
 typedef  __clock_t clock_t; 
-#line 75 "/usr/include/time.h"
-typedef  __time_t time_t; 
-# 73 "/usr/include/time.h" 3 4
-# 91 "/usr/include/time.h" 3 4
+# 128 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+# 7 "/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h" 1 3 4
 typedef  __clockid_t clockid_t; 
-#line 103 "/usr/include/time.h"
+# 130 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+# 7 "/usr/include/x86_64-linux-gnu/bits/types/time_t.h" 1 3 4
+typedef  __time_t time_t; 
+# 131 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+# 7 "/usr/include/x86_64-linux-gnu/bits/types/timer_t.h" 1 3 4
 typedef  __timer_t timer_t; 
-# 103 "/usr/include/time.h" 3 4
-# 133 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
-# 146 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 1 3 4
-# 150 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+# 132 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+# 145 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 149 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 typedef unsigned long int ulong; 
-#line 151 "/usr/include/x86_64-linux-gnu/sys/types.h"
+#line 150 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef unsigned short int ushort; 
-#line 152 "/usr/include/x86_64-linux-gnu/sys/types.h"
+#line 151 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef unsigned int uint; 
-#line 194 "/usr/include/x86_64-linux-gnu/sys/types.h"
-typedef int int8_t __attribute__  (( __mode__ ( __QI__ )  )) ; 
-#line 195 "/usr/include/x86_64-linux-gnu/sys/types.h"
-typedef int int16_t __attribute__  (( __mode__ ( __HI__ )  )) ; 
-#line 196 "/usr/include/x86_64-linux-gnu/sys/types.h"
-typedef int int32_t __attribute__  (( __mode__ ( __SI__ )  )) ; 
-#line 197 "/usr/include/x86_64-linux-gnu/sys/types.h"
-typedef int int64_t __attribute__  (( __mode__ ( __DI__ )  )) ; 
-#line 200 "/usr/include/x86_64-linux-gnu/sys/types.h"
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h" 3 4
+typedef  __int8_t int8_t; 
+#line 25 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h"
+typedef  __int16_t int16_t; 
+#line 26 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h"
+typedef  __int32_t int32_t; 
+#line 27 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h"
+typedef  __int64_t int64_t; 
+# 157 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+# 178 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
 typedef unsigned int u_int8_t __attribute__  (( __mode__ ( __QI__ )  )) ; 
-#line 201 "/usr/include/x86_64-linux-gnu/sys/types.h"
+#line 179 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef unsigned int u_int16_t __attribute__  (( __mode__ ( __HI__ )  )) ; 
-#line 202 "/usr/include/x86_64-linux-gnu/sys/types.h"
+#line 180 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef unsigned int u_int32_t __attribute__  (( __mode__ ( __SI__ )  )) ; 
-#line 203 "/usr/include/x86_64-linux-gnu/sys/types.h"
+#line 181 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef unsigned int u_int64_t __attribute__  (( __mode__ ( __DI__ )  )) ; 
-#line 205 "/usr/include/x86_64-linux-gnu/sys/types.h"
+#line 183 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef int register_t __attribute__  (( __mode__ ( __word__ )  )) ; 
-# 194 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
-# 219 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
+# 197 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/sys/select.h" 1 3 4
 # 30 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/select.h" 1 3 4
@@ -1125,395 +1249,416 @@ typedef int register_t __attribute__  (( __mode__ ( __word__ )  )) ;
 # 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
 # 23 "/usr/include/x86_64-linux-gnu/bits/select.h" 2 3 4
 # 31 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
-# 1 "/usr/include/x86_64-linux-gnu/bits/sigset.h" 1 3 4
-# 22 "/usr/include/x86_64-linux-gnu/bits/sigset.h" 3 4
-typedef int __sig_atomic_t; 
-#line 30 "/usr/include/x86_64-linux-gnu/bits/sigset.h"
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h" 1 3 4
+# 8 "/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h" 1 3 4
 typedef struct {unsigned long int __val[(1024 / (8 * sizeof (unsigned long int )))]; 
 }__sigset_t; 
-#line 37 "/usr/include/x86_64-linux-gnu/sys/select.h"
+#line 7 "/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h"
 typedef  __sigset_t sigset_t; 
+# 5 "/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h" 2 3 4
 # 34 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
-# 1 "/usr/include/time.h" 1 3 4
-# 124 "/usr/include/time.h" 3 4
-struct timespec { __time_t tv_sec;  __syscall_slong_t tv_nsec; 
-}; 
-# 44 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
-# 1 "/usr/include/x86_64-linux-gnu/bits/time.h" 1 3 4
-# 34 "/usr/include/x86_64-linux-gnu/bits/time.h" 3 4
+# 12 "/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h" 1 3 4
 struct timeval { __time_t tv_sec;  __suseconds_t tv_usec; 
 }; 
-#line 48 "/usr/include/x86_64-linux-gnu/sys/select.h"
+# 38 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
+# 12 "/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h" 1 3 4
+struct timespec { __time_t tv_sec;  __syscall_slong_t tv_nsec; 
+}; 
+#line 43 "/usr/include/x86_64-linux-gnu/sys/select.h"
 typedef  __suseconds_t suseconds_t; 
-#line 54 "/usr/include/x86_64-linux-gnu/sys/select.h"
+#line 49 "/usr/include/x86_64-linux-gnu/sys/select.h"
 typedef long int __fd_mask; 
-# 46 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
-# 75 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+# 40 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
+# 70 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
 typedef struct { __fd_mask __fds_bits[1024 / (8 * ((int )sizeof ( __fd_mask )))]; 
 }fd_set; 
-#line 82 "/usr/include/x86_64-linux-gnu/sys/select.h"
+#line 77 "/usr/include/x86_64-linux-gnu/sys/select.h"
 typedef  __fd_mask fd_mask; 
-# 96 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
-# 109 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+# 91 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+# 104 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
 extern int select(int __nfds,  fd_set *__restrict __readfds,  fd_set *__restrict __writefds,  fd_set *__restrict __exceptfds, struct timeval *__restrict __timeout); 
-#line 122 "/usr/include/x86_64-linux-gnu/sys/select.h"
+#line 117 "/usr/include/x86_64-linux-gnu/sys/select.h"
 extern int pselect(int __nfds,  fd_set *__restrict __readfds,  fd_set *__restrict __writefds,  fd_set *__restrict __exceptfds, const struct timespec *__restrict __timeout, const  __sigset_t *__restrict __sigmask); 
-# 118 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
-# 131 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
-# 220 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+# 113 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+# 126 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+# 198 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 # 1 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 1 3 4
-# 28 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
- __extension__ extern unsigned int gnu_dev_major(unsigned long long int __dev) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
-#line 31 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
- __extension__ extern unsigned int gnu_dev_minor(unsigned long long int __dev) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
-#line 35 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
- __extension__ extern unsigned long long int gnu_dev_makedev(unsigned int __major, unsigned int __minor) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
-# 58 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
-# 228 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+# 41 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/sysmacros.h" 1 3 4
+# 42 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 2 3 4
+# 73 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
+extern unsigned int gnu_dev_major( __dev_t __dev) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
+#line 74 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+extern unsigned int gnu_dev_minor( __dev_t __dev) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
+#line 75 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h"
+extern  __dev_t gnu_dev_makedev(unsigned int __major, unsigned int __minor) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
+# 85 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
+# 212 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 typedef  __blksize_t blksize_t; 
-#line 235 "/usr/include/x86_64-linux-gnu/sys/types.h"
+#line 219 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef  __blkcnt_t blkcnt_t; 
-#line 239 "/usr/include/x86_64-linux-gnu/sys/types.h"
+#line 223 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef  __fsblkcnt_t fsblkcnt_t; 
-#line 243 "/usr/include/x86_64-linux-gnu/sys/types.h"
+#line 227 "/usr/include/x86_64-linux-gnu/sys/types.h"
 typedef  __fsfilcnt_t fsfilcnt_t; 
-# 270 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
+# 254 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 1 3 4
-# 21 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
+# 23 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 1 3 4
+# 77 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 1 3 4
+# 21 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
-# 22 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 2 3 4
-# 60 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
-typedef unsigned long int pthread_t; 
-#line 67 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
-union pthread_attr_t {char __size[56]; long int __align; 
+# 22 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 2 3 4
+# 65 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 3 4
+# 99 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 3 4
+struct __pthread_rwlock_arch_t {unsigned int __readers; unsigned int __writers; unsigned int __wrphase_futex; unsigned int __writers_futex; unsigned int __pad3; unsigned int __pad4; int __cur_writer; int __shared; signed char __rwelision; unsigned char __pad1[7]; unsigned long int __pad2; unsigned int __flags; 
 }; 
-#line 69 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
-typedef union pthread_attr_t pthread_attr_t; 
-#line 79 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+#line 86 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h"
 typedef struct __pthread_internal_list {struct __pthread_internal_list *__prev; struct __pthread_internal_list *__next; 
 }__pthread_list_t; 
-# 90 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
-# 128 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
-typedef union {struct __pthread_mutex_s {int __lock; unsigned int __count; int __owner; unsigned int __nusers; int __kind; short __spins; short __elision;  __pthread_list_t __list; 
-}__data; char __size[40]; long int __align; 
-}pthread_mutex_t; 
-#line 134 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+# 78 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 2 3 4
+# 118 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 3 4
+# 146 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 3 4
+struct __pthread_mutex_s {int __lock; unsigned int __count; int __owner; unsigned int __nusers; int __kind; short __spins; short __elision;  __pthread_list_t __list; 
+}; 
+#line 176 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h"
+struct __pthread_cond_s { __extension__ union { __extension__ unsigned long long int __wseq; struct {unsigned int __low; unsigned int __high; 
+}__wseq32; 
+};  __extension__ union { __extension__ unsigned long long int __g1_start; struct {unsigned int __low; unsigned int __high; 
+}__g1_start32; 
+}; unsigned int __g_refs[2]; unsigned int __g_size[2]; unsigned int __g1_orig_size; unsigned int __wrefs; unsigned int __g_signals[2]; 
+}; 
+#line 27 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+typedef unsigned long int pthread_t; 
+#line 36 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
 typedef union {char __size[4]; int __align; 
 }pthread_mutexattr_t; 
-#line 154 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
-typedef union {struct {int __lock; unsigned int __futex;  __extension__ unsigned long long int __total_seq;  __extension__ unsigned long long int __wakeup_seq;  __extension__ unsigned long long int __woken_seq; void *__mutex; unsigned int __nwaiters; unsigned int __broadcast_seq; 
-}__data; char __size[48];  __extension__ long long int __align; 
-}pthread_cond_t; 
-#line 160 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+#line 45 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
 typedef union {char __size[4]; int __align; 
 }pthread_condattr_t; 
-#line 164 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+#line 49 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
 typedef unsigned int pthread_key_t; 
-#line 168 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+#line 53 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
 typedef int pthread_once_t; 
-#line 222 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
-typedef union {struct {int __lock; unsigned int __nr_readers; unsigned int __readers_wakeup; unsigned int __writer_wakeup; unsigned int __nr_readers_queued; unsigned int __nr_writers_queued; int __writer; int __shared; signed char __rwelision; unsigned char __pad1[7]; unsigned long int __pad2; unsigned int __flags; 
-}__data; char __size[56]; long int __align; 
+#line 60 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+union pthread_attr_t {char __size[56]; long int __align; 
+}; 
+#line 62 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+typedef union pthread_attr_t pthread_attr_t; 
+#line 72 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+typedef union {struct __pthread_mutex_s __data; char __size[40]; long int __align; 
+}pthread_mutex_t; 
+#line 80 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+typedef union {struct __pthread_cond_s __data; char __size[48];  __extension__ long long int __align; 
+}pthread_cond_t; 
+#line 91 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+typedef union {struct __pthread_rwlock_arch_t __data; char __size[56]; long int __align; 
 }pthread_rwlock_t; 
-#line 228 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+#line 97 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
 typedef union {char __size[8]; long int __align; 
 }pthread_rwlockattr_t; 
-#line 234 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+#line 103 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
 typedef volatile int pthread_spinlock_t; 
-#line 243 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+#line 112 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
 typedef union {char __size[32]; long int __align; 
 }pthread_barrier_t; 
-#line 249 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
+#line 118 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h"
 typedef union {char __size[4]; int __align; 
 }pthread_barrierattr_t; 
-# 220 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
-# 271 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
-# 321 "/usr/include/stdlib.h" 2 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 2 3 4
+# 255 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+# 401 "/usr/include/stdlib.h" 2 3 4
 extern long int random(void ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 324 "/usr/include/stdlib.h"
+#line 404 "/usr/include/stdlib.h"
 extern void srandom(unsigned int __seed) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 331 "/usr/include/stdlib.h"
+#line 411 "/usr/include/stdlib.h"
 extern char *initstate(unsigned int __seed, char *__statebuf,  size_t __statelen) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
-#line 335 "/usr/include/stdlib.h"
+#line 415 "/usr/include/stdlib.h"
 extern char *setstate(char *__statebuf) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 352 "/usr/include/stdlib.h"
+#line 432 "/usr/include/stdlib.h"
 struct random_data { int32_t *fptr;  int32_t *rptr;  int32_t *state; int rand_type; int rand_deg; int rand_sep;  int32_t *end_ptr; 
 }; 
-#line 355 "/usr/include/stdlib.h"
+#line 435 "/usr/include/stdlib.h"
 extern int random_r(struct random_data *__restrict __buf,  int32_t *__restrict __result) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 358 "/usr/include/stdlib.h"
+#line 438 "/usr/include/stdlib.h"
 extern int srandom_r(unsigned int __seed, struct random_data *__buf) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
-#line 363 "/usr/include/stdlib.h"
+#line 443 "/usr/include/stdlib.h"
 extern int initstate_r(unsigned int __seed, char *__restrict __statebuf,  size_t __statelen, struct random_data *__restrict __buf) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2, 4 )  )) ; 
-#line 367 "/usr/include/stdlib.h"
+#line 447 "/usr/include/stdlib.h"
 extern int setstate_r(char *__restrict __statebuf, struct random_data *__restrict __buf) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 374 "/usr/include/stdlib.h"
+#line 453 "/usr/include/stdlib.h"
 extern int rand(void ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 376 "/usr/include/stdlib.h"
+#line 455 "/usr/include/stdlib.h"
 extern void srand(unsigned int __seed) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 381 "/usr/include/stdlib.h"
+#line 459 "/usr/include/stdlib.h"
 extern int rand_r(unsigned int *__seed) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 389 "/usr/include/stdlib.h"
+#line 467 "/usr/include/stdlib.h"
 extern double drand48(void ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 390 "/usr/include/stdlib.h"
+#line 468 "/usr/include/stdlib.h"
 extern double erand48(unsigned short int __xsubi[3]) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 393 "/usr/include/stdlib.h"
+#line 471 "/usr/include/stdlib.h"
 extern long int lrand48(void ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 395 "/usr/include/stdlib.h"
+#line 473 "/usr/include/stdlib.h"
 extern long int nrand48(unsigned short int __xsubi[3]) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 398 "/usr/include/stdlib.h"
+#line 476 "/usr/include/stdlib.h"
 extern long int mrand48(void ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 400 "/usr/include/stdlib.h"
+#line 478 "/usr/include/stdlib.h"
 extern long int jrand48(unsigned short int __xsubi[3]) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 403 "/usr/include/stdlib.h"
+#line 481 "/usr/include/stdlib.h"
 extern void srand48(long int __seedval) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 405 "/usr/include/stdlib.h"
+#line 483 "/usr/include/stdlib.h"
 extern unsigned short int *seed48(unsigned short int __seed16v[3]) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 406 "/usr/include/stdlib.h"
+#line 484 "/usr/include/stdlib.h"
 extern void lcong48(unsigned short int __param[7]) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 420 "/usr/include/stdlib.h"
+#line 498 "/usr/include/stdlib.h"
 struct drand48_data {unsigned short int __x[3]; unsigned short int __old_x[3]; unsigned short int __c; unsigned short int __init;  __extension__ unsigned long long int __a; 
 }; 
-#line 424 "/usr/include/stdlib.h"
+#line 502 "/usr/include/stdlib.h"
 extern int drand48_r(struct drand48_data *__restrict __buffer, double *__restrict __result) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 427 "/usr/include/stdlib.h"
+#line 505 "/usr/include/stdlib.h"
 extern int erand48_r(unsigned short int __xsubi[3], struct drand48_data *__restrict __buffer, double *__restrict __result) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 432 "/usr/include/stdlib.h"
+#line 510 "/usr/include/stdlib.h"
 extern int lrand48_r(struct drand48_data *__restrict __buffer, long int *__restrict __result) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 436 "/usr/include/stdlib.h"
+#line 514 "/usr/include/stdlib.h"
 extern int nrand48_r(unsigned short int __xsubi[3], struct drand48_data *__restrict __buffer, long int *__restrict __result) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 441 "/usr/include/stdlib.h"
+#line 519 "/usr/include/stdlib.h"
 extern int mrand48_r(struct drand48_data *__restrict __buffer, long int *__restrict __result) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 445 "/usr/include/stdlib.h"
+#line 523 "/usr/include/stdlib.h"
 extern int jrand48_r(unsigned short int __xsubi[3], struct drand48_data *__restrict __buffer, long int *__restrict __result) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 449 "/usr/include/stdlib.h"
+#line 527 "/usr/include/stdlib.h"
 extern int srand48_r(long int __seedval, struct drand48_data *__buffer) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
-#line 452 "/usr/include/stdlib.h"
+#line 530 "/usr/include/stdlib.h"
 extern int seed48_r(unsigned short int __seed16v[3], struct drand48_data *__buffer) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 456 "/usr/include/stdlib.h"
+#line 534 "/usr/include/stdlib.h"
 extern int lcong48_r(unsigned short int __param[7], struct drand48_data *__buffer) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2 )  )) ; 
-#line 466 "/usr/include/stdlib.h"
+#line 539 "/usr/include/stdlib.h"
 extern void *malloc( size_t __size) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __malloc__ )) ; 
-#line 469 "/usr/include/stdlib.h"
+#line 542 "/usr/include/stdlib.h"
 extern void *calloc( size_t __nmemb,  size_t __size) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __malloc__ )) ; 
-#line 481 "/usr/include/stdlib.h"
+#line 550 "/usr/include/stdlib.h"
 extern void *realloc(void *__ptr,  size_t __size) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __warn_unused_result__ )) ; 
-#line 483 "/usr/include/stdlib.h"
+#line 563 "/usr/include/stdlib.h"
 extern void free(void *__ptr) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 488 "/usr/include/stdlib.h"
-extern void cfree(void *__ptr) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+# 563 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/alloca.h" 1 3 4
 # 24 "/usr/include/alloca.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 1 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
 # 32 "/usr/include/alloca.h" 2 3 4
 extern void *alloca( size_t __size) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 498 "/usr/include/stdlib.h"
+#line 572 "/usr/include/stdlib.h"
 extern void *valloc( size_t __size) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __malloc__ )) ; 
-#line 504 "/usr/include/stdlib.h"
+#line 578 "/usr/include/stdlib.h"
 extern int posix_memalign(void **__memptr,  size_t __alignment,  size_t __size) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 510 "/usr/include/stdlib.h"
+#line 584 "/usr/include/stdlib.h"
 extern void *aligned_alloc( size_t __alignment,  size_t __size) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __malloc__ ))  __attribute__  (( __alloc_size__ ( 2 )  )) ; 
-#line 515 "/usr/include/stdlib.h"
-extern void abort(void ) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __noreturn__ )) ; 
-#line 519 "/usr/include/stdlib.h"
-extern int atexit(void (*__func)(void )) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 527 "/usr/include/stdlib.h"
-extern int at_quick_exit(void (*__func)(void )) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 536 "/usr/include/stdlib.h"
-extern int on_exit(void (*__func)(int __status, void *__arg), void *__arg) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 543 "/usr/include/stdlib.h"
-extern void exit(int __status) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __noreturn__ )) ; 
-#line 549 "/usr/include/stdlib.h"
-extern void quick_exit(int __status) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __noreturn__ )) ; 
-#line 557 "/usr/include/stdlib.h"
-extern void _Exit(int __status) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __noreturn__ )) ; 
-#line 564 "/usr/include/stdlib.h"
-extern char *getenv(const char *__name) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-# 493 "/usr/include/stdlib.h" 2 3 4
-# 578 "/usr/include/stdlib.h" 3 4
-extern int putenv(char *__string) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 585 "/usr/include/stdlib.h"
-extern int setenv(const char *__name, const char *__value, int __replace) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
 #line 588 "/usr/include/stdlib.h"
+extern void abort(void ) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __noreturn__ )) ; 
+#line 592 "/usr/include/stdlib.h"
+extern int atexit(void (*__func)(void )) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+#line 600 "/usr/include/stdlib.h"
+extern int at_quick_exit(void (*__func)(void )) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+#line 608 "/usr/include/stdlib.h"
+extern int on_exit(void (*__func)(int __status, void *__arg), void *__arg) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+#line 614 "/usr/include/stdlib.h"
+extern void exit(int __status) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __noreturn__ )) ; 
+#line 620 "/usr/include/stdlib.h"
+extern void quick_exit(int __status) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __noreturn__ )) ; 
+#line 626 "/usr/include/stdlib.h"
+extern void _Exit(int __status) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __noreturn__ )) ; 
+#line 631 "/usr/include/stdlib.h"
+extern char *getenv(const char *__name) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+# 567 "/usr/include/stdlib.h" 2 3 4
+# 644 "/usr/include/stdlib.h" 3 4
+extern int putenv(char *__string) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
+#line 651 "/usr/include/stdlib.h"
+extern int setenv(const char *__name, const char *__value, int __replace) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 2 )  )) ; 
+#line 654 "/usr/include/stdlib.h"
 extern int unsetenv(const char *__name) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 595 "/usr/include/stdlib.h"
+#line 661 "/usr/include/stdlib.h"
 extern int clearenv(void ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 606 "/usr/include/stdlib.h"
+#line 672 "/usr/include/stdlib.h"
 extern char *mktemp(char *__template) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-# 606 "/usr/include/stdlib.h" 3 4
-# 619 "/usr/include/stdlib.h" 3 4
+# 672 "/usr/include/stdlib.h" 3 4
+# 685 "/usr/include/stdlib.h" 3 4
 extern int mkstemp(char *__template) __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 641 "/usr/include/stdlib.h"
+#line 707 "/usr/include/stdlib.h"
 extern int mkstemps(char *__template, int __suffixlen) __attribute__  (( __nonnull__ ( 1 )  )) ; 
-# 641 "/usr/include/stdlib.h" 3 4
-# 662 "/usr/include/stdlib.h" 3 4
+# 707 "/usr/include/stdlib.h" 3 4
+# 728 "/usr/include/stdlib.h" 3 4
 extern char *mkdtemp(char *__template) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-#line 716 "/usr/include/stdlib.h"
+#line 781 "/usr/include/stdlib.h"
 extern int system(const char *__command); 
-# 711 "/usr/include/stdlib.h" 3 4
-# 734 "/usr/include/stdlib.h" 3 4
+# 781 "/usr/include/stdlib.h" 3 4
+# 798 "/usr/include/stdlib.h" 3 4
 extern char *realpath(const char *__restrict __name, char *__restrict __resolved) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 741 "/usr/include/stdlib.h"
+#line 805 "/usr/include/stdlib.h"
 typedef int (*__compar_fn_t)(const void *, const void *); 
-#line 756 "/usr/include/stdlib.h"
+#line 819 "/usr/include/stdlib.h"
 extern void *bsearch(const void *__key, const void *__base,  size_t __nmemb,  size_t __size,  __compar_fn_t __compar) __attribute__  (( __nonnull__ ( 1, 2, 5 )  )) ; 
-#line 765 "/usr/include/stdlib.h"
+#line 828 "/usr/include/stdlib.h"
 extern void qsort(void *__base,  size_t __nmemb,  size_t __size,  __compar_fn_t __compar) __attribute__  (( __nonnull__ ( 1, 4 )  )) ; 
-# 751 "/usr/include/stdlib.h" 3 4
-# 774 "/usr/include/stdlib.h" 3 4
+# 817 "/usr/include/stdlib.h" 3 4
+# 837 "/usr/include/stdlib.h" 3 4
 extern int abs(int __x) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
-#line 775 "/usr/include/stdlib.h"
+#line 838 "/usr/include/stdlib.h"
 extern long int labs(long int __x) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
-#line 780 "/usr/include/stdlib.h"
+#line 842 "/usr/include/stdlib.h"
  __extension__ extern long long int llabs(long long int __x) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
-#line 789 "/usr/include/stdlib.h"
+#line 850 "/usr/include/stdlib.h"
 extern  div_t div(int __numer, int __denom) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
-#line 791 "/usr/include/stdlib.h"
+#line 852 "/usr/include/stdlib.h"
 extern  ldiv_t ldiv(long int __numer, long int __denom) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
-#line 798 "/usr/include/stdlib.h"
+#line 857 "/usr/include/stdlib.h"
  __extension__ extern  lldiv_t lldiv(long long int __numer, long long int __denom) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
-#line 812 "/usr/include/stdlib.h"
+#line 870 "/usr/include/stdlib.h"
 extern char *ecvt(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  )) ; 
-#line 818 "/usr/include/stdlib.h"
+#line 876 "/usr/include/stdlib.h"
 extern char *fcvt(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  )) ; 
-#line 824 "/usr/include/stdlib.h"
+#line 882 "/usr/include/stdlib.h"
 extern char *gcvt(double __value, int __ndigit, char *__buf) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 3 )  )) ; 
-#line 831 "/usr/include/stdlib.h"
+#line 889 "/usr/include/stdlib.h"
 extern char *qecvt(long double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  )) ; 
-#line 834 "/usr/include/stdlib.h"
+#line 892 "/usr/include/stdlib.h"
 extern char *qfcvt(long double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 3, 4 )  )) ; 
-#line 836 "/usr/include/stdlib.h"
+#line 894 "/usr/include/stdlib.h"
 extern char *qgcvt(long double __value, int __ndigit, char *__buf) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 3 )  )) ; 
-#line 843 "/usr/include/stdlib.h"
+#line 901 "/usr/include/stdlib.h"
 extern int ecvt_r(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign, char *__restrict __buf,  size_t __len) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 3, 4, 5 )  )) ; 
-#line 846 "/usr/include/stdlib.h"
+#line 904 "/usr/include/stdlib.h"
 extern int fcvt_r(double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign, char *__restrict __buf,  size_t __len) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 3, 4, 5 )  )) ; 
-#line 851 "/usr/include/stdlib.h"
+#line 909 "/usr/include/stdlib.h"
 extern int qecvt_r(long double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign, char *__restrict __buf,  size_t __len) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 3, 4, 5 )  )) ; 
-#line 855 "/usr/include/stdlib.h"
+#line 913 "/usr/include/stdlib.h"
 extern int qfcvt_r(long double __value, int __ndigit, int *__restrict __decpt, int *__restrict __sign, char *__restrict __buf,  size_t __len) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 3, 4, 5 )  )) ; 
-#line 862 "/usr/include/stdlib.h"
+#line 919 "/usr/include/stdlib.h"
 extern int mblen(const char *__s,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 866 "/usr/include/stdlib.h"
+#line 923 "/usr/include/stdlib.h"
 extern int mbtowc( wchar_t *__restrict __pwc, const char *__restrict __s,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 869 "/usr/include/stdlib.h"
+#line 926 "/usr/include/stdlib.h"
 extern int wctomb(char *__s,  wchar_t __wchar) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 874 "/usr/include/stdlib.h"
+#line 931 "/usr/include/stdlib.h"
 extern  size_t mbstowcs( wchar_t *__restrict __pwcs, const char *__restrict __s,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 878 "/usr/include/stdlib.h"
+#line 935 "/usr/include/stdlib.h"
 extern  size_t wcstombs(char *__restrict __s, const  wchar_t *__restrict __pwcs,  size_t __n) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 887 "/usr/include/stdlib.h"
+#line 943 "/usr/include/stdlib.h"
 extern int rpmatch(const char *__response) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-# 811 "/usr/include/stdlib.h" 3 4
-# 901 "/usr/include/stdlib.h" 3 4
+# 869 "/usr/include/stdlib.h" 3 4
+# 957 "/usr/include/stdlib.h" 3 4
 extern int getsubopt(char **__restrict __optionp, char *const *__restrict __tokens, char **__restrict __valuep) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1, 2, 3 )  )) ; 
-#line 951 "/usr/include/stdlib.h"
+#line 1007 "/usr/include/stdlib.h"
 extern int getloadavg(double __loadavg[], int __nelem) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-# 950 "/usr/include/stdlib.h" 3 4
+# 1006 "/usr/include/stdlib.h" 3 4
+# 1016 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/stdlib-float.h" 1 3 4
-# 955 "/usr/include/stdlib.h" 2 3 4
-# 967 "/usr/include/stdlib.h" 3 4
+# 1017 "/usr/include/stdlib.h" 2 3 4
+# 1026 "/usr/include/stdlib.h" 3 4
 # 10 "OperatingSystem.c" 2
 # 1 "/usr/include/time.h" 1 3 4
 # 29 "/usr/include/time.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h" 1 3 4
-# 38 "/usr/include/time.h" 2 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 30 "/usr/include/time.h" 2 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/time.h" 1 3 4
-# 42 "/usr/include/time.h" 2 3 4
-# 152 "/usr/include/time.h" 3 4
+# 34 "/usr/include/time.h" 2 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h" 1 3 4
 struct tm {int tm_sec; int tm_min; int tm_hour; int tm_mday; int tm_mon; int tm_year; int tm_wday; int tm_yday; int tm_isdst; long int tm_gmtoff; const char *tm_zone; 
 }; 
-#line 165 "/usr/include/time.h"
+# 40 "/usr/include/time.h" 2 3 4
+# 48 "/usr/include/time.h" 3 4
+# 12 "/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h" 1 3 4
 struct itimerspec {struct timespec it_interval; struct timespec it_value; 
 }; 
-#line 168 "/usr/include/time.h"
+#line 49 "/usr/include/time.h"
 struct sigevent ; 
-#line 189 "/usr/include/time.h"
+# 49 "/usr/include/time.h" 2 3 4
+# 72 "/usr/include/time.h" 3 4
 extern  clock_t clock(void ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 192 "/usr/include/time.h"
+#line 75 "/usr/include/time.h"
 extern  time_t time( time_t *__timer) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 196 "/usr/include/time.h"
+#line 79 "/usr/include/time.h"
 extern double difftime( time_t __time1,  time_t __time0) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
-#line 199 "/usr/include/time.h"
+#line 82 "/usr/include/time.h"
 extern  time_t mktime(struct tm *__tp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 207 "/usr/include/time.h"
+#line 90 "/usr/include/time.h"
 extern  size_t strftime(char *__restrict __s,  size_t __maxsize, const char *__restrict __format, const struct tm *__restrict __tp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 186 "/usr/include/time.h" 3 4
-# 226 "/usr/include/time.h" 3 4
-extern  size_t strftime_l(char *__restrict __s,  size_t __maxsize, const char *__restrict __format, const struct tm *__restrict __tp,  __locale_t __loc) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 239 "/usr/include/time.h"
+#line 107 "/usr/include/time.h"
+extern  size_t strftime_l(char *__restrict __s,  size_t __maxsize, const char *__restrict __format, const struct tm *__restrict __tp,  locale_t __loc) __attribute__  (( __nothrow__ , __leaf__ )) ; 
+# 104 "/usr/include/time.h" 3 4
+# 119 "/usr/include/time.h" 3 4
 extern struct tm *gmtime(const  time_t *__timer) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 243 "/usr/include/time.h"
+#line 123 "/usr/include/time.h"
 extern struct tm *localtime(const  time_t *__timer) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 250 "/usr/include/time.h"
+#line 129 "/usr/include/time.h"
 extern struct tm *gmtime_r(const  time_t *__restrict __timer, struct tm *__restrict __tp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 255 "/usr/include/time.h"
+#line 134 "/usr/include/time.h"
 extern struct tm *localtime_r(const  time_t *__restrict __timer, struct tm *__restrict __tp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 261 "/usr/include/time.h"
+#line 139 "/usr/include/time.h"
 extern char *asctime(const struct tm *__tp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 264 "/usr/include/time.h"
+#line 142 "/usr/include/time.h"
 extern char *ctime(const  time_t *__timer) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 273 "/usr/include/time.h"
+#line 150 "/usr/include/time.h"
 extern char *asctime_r(const struct tm *__restrict __tp, char *__restrict __buf) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 277 "/usr/include/time.h"
+#line 154 "/usr/include/time.h"
 extern char *ctime_r(const  time_t *__restrict __timer, char *__restrict __buf) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 282 "/usr/include/time.h"
+#line 159 "/usr/include/time.h"
 extern char *__tzname[2]; 
-#line 283 "/usr/include/time.h"
+#line 160 "/usr/include/time.h"
 extern int __daylight; 
-#line 284 "/usr/include/time.h"
+#line 161 "/usr/include/time.h"
 extern long int __timezone; 
-#line 289 "/usr/include/time.h"
+#line 166 "/usr/include/time.h"
 extern char *tzname[2]; 
-#line 293 "/usr/include/time.h"
+#line 170 "/usr/include/time.h"
 extern void tzset(void ) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 297 "/usr/include/time.h"
+#line 174 "/usr/include/time.h"
 extern int daylight; 
-#line 298 "/usr/include/time.h"
+#line 175 "/usr/include/time.h"
 extern long int timezone; 
-#line 304 "/usr/include/time.h"
+#line 181 "/usr/include/time.h"
 extern int stime(const  time_t *__when) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-# 236 "/usr/include/time.h" 3 4
-# 319 "/usr/include/time.h" 3 4
+#line 196 "/usr/include/time.h"
 extern  time_t timegm(struct tm *__tp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 322 "/usr/include/time.h"
+#line 199 "/usr/include/time.h"
 extern  time_t timelocal(struct tm *__tp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 325 "/usr/include/time.h"
+#line 202 "/usr/include/time.h"
 extern int dysize(int __year) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __const__ )) ; 
-#line 335 "/usr/include/time.h"
+# 196 "/usr/include/time.h" 3 4
+# 212 "/usr/include/time.h" 3 4
 extern int nanosleep(const struct timespec *__requested_time, struct timespec *__remaining); 
-#line 339 "/usr/include/time.h"
+#line 216 "/usr/include/time.h"
 extern int clock_getres( clockid_t __clock_id, struct timespec *__res) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 342 "/usr/include/time.h"
+#line 219 "/usr/include/time.h"
 extern int clock_gettime( clockid_t __clock_id, struct timespec *__tp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 346 "/usr/include/time.h"
+#line 223 "/usr/include/time.h"
 extern int clock_settime( clockid_t __clock_id, const struct timespec *__tp) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 355 "/usr/include/time.h"
+#line 232 "/usr/include/time.h"
 extern int clock_nanosleep( clockid_t __clock_id, int __flags, const struct timespec *__req, struct timespec *__rem); 
-#line 358 "/usr/include/time.h"
+#line 235 "/usr/include/time.h"
 extern int clock_getcpuclockid( pid_t __pid,  clockid_t *__clock_id) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 365 "/usr/include/time.h"
+#line 242 "/usr/include/time.h"
 extern int timer_create( clockid_t __clock_id, struct sigevent *__restrict __evp,  timer_t *__restrict __timerid) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 368 "/usr/include/time.h"
+#line 245 "/usr/include/time.h"
 extern int timer_delete( timer_t __timerid) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 373 "/usr/include/time.h"
+#line 250 "/usr/include/time.h"
 extern int timer_settime( timer_t __timerid, int __flags, const struct itimerspec *__restrict __value, struct itimerspec *__restrict __ovalue) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 377 "/usr/include/time.h"
+#line 254 "/usr/include/time.h"
 extern int timer_gettime( timer_t __timerid, struct itimerspec *__value) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 380 "/usr/include/time.h"
+#line 257 "/usr/include/time.h"
 extern int timer_getoverrun( timer_t __timerid) __attribute__  (( __nothrow__ , __leaf__ )) ; 
-#line 387 "/usr/include/time.h"
+#line 264 "/usr/include/time.h"
 extern int timespec_get(struct timespec *__ts, int __base) __attribute__  (( __nothrow__ , __leaf__ ))  __attribute__  (( __nonnull__ ( 1 )  )) ; 
-# 334 "/usr/include/time.h" 3 4
-# 430 "/usr/include/time.h" 3 4
+# 307 "/usr/include/time.h" 3 4
 # 11 "OperatingSystem.c" 2
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h" 1 3 4
-# 34 "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/syslimits.h" 1 3 4
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h" 1 3 4
-# 168 "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h" 1 3 4
+# 34 "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h" 1 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h" 1 3 4
+# 194 "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h" 3 4
 # 1 "/usr/include/limits.h" 1 3 4
-# 143 "/usr/include/limits.h" 3 4
+# 26 "/usr/include/limits.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/limits.h" 2 3 4
+# 183 "/usr/include/limits.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/posix1_lim.h" 1 3 4
 # 160 "/usr/include/x86_64-linux-gnu/bits/posix1_lim.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/local_lim.h" 1 3 4
@@ -1521,12 +1666,12 @@ extern int timespec_get(struct timespec *__ts, int __base) __attribute__  (( __n
 # 1 "/usr/include/linux/limits.h" 1 3 4
 # 39 "/usr/include/x86_64-linux-gnu/bits/local_lim.h" 2 3 4
 # 161 "/usr/include/x86_64-linux-gnu/bits/posix1_lim.h" 2 3 4
-# 144 "/usr/include/limits.h" 2 3 4
+# 184 "/usr/include/limits.h" 2 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/posix2_lim.h" 1 3 4
-# 148 "/usr/include/limits.h" 2 3 4
-# 169 "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h" 2 3 4
-# 8 "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/syslimits.h" 2 3 4
-# 35 "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h" 2 3 4
+# 188 "/usr/include/limits.h" 2 3 4
+# 195 "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h" 2 3 4
+# 8 "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h" 2 3 4
+# 35 "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h" 2 3 4
 # 12 "OperatingSystem.c" 2
 # 1 "QueueFIFO.h" 1
 # 11 "QueueFIFO.h" 
@@ -1552,192 +1697,846 @@ void Device_StartIO(int );
 int Device_GetStatus(); 
 #line 16 "Device.h"
 void Device_Initialize(char *, int ); 
-#line 16 "OperatingSystem.c"
-void OperatingSystem_PrepareDaemons(); 
-#line 17 "OperatingSystem.c"
-void OperatingSystem_PCBInitialization(int , int , int , int , int ); 
-#line 18 "OperatingSystem.c"
-void OperatingSystem_MoveToTheREADYState(int ); 
-#line 19 "OperatingSystem.c"
-void OperatingSystem_Dispatch(int ); 
 #line 20 "OperatingSystem.c"
-void OperatingSystem_RestoreContext(int ); 
+void OperatingSystem_PrepareDaemons(); 
 #line 21 "OperatingSystem.c"
-void OperatingSystem_SaveContext(int ); 
+void OperatingSystem_PCBInitialization(int , int , int , int , int ); 
 #line 22 "OperatingSystem.c"
-void OperatingSystem_TerminateProcess(); 
+void OperatingSystem_MoveToTheREADYState(int ); 
 #line 23 "OperatingSystem.c"
-int OperatingSystem_LongTermScheduler(); 
+void OperatingSystem_Dispatch(int ); 
 #line 24 "OperatingSystem.c"
-void OperatingSystem_PreemptRunningProcess(); 
+void OperatingSystem_RestoreContext(int ); 
 #line 25 "OperatingSystem.c"
-int OperatingSystem_CreateProcess(int ); 
+void OperatingSystem_SaveContext(int ); 
 #line 26 "OperatingSystem.c"
-int OperatingSystem_ObtainMainMemory(int , int ); 
+void OperatingSystem_TerminateProcess(); 
 #line 27 "OperatingSystem.c"
-int OperatingSystem_ShortTermScheduler(); 
+int OperatingSystem_LongTermScheduler(); 
 #line 28 "OperatingSystem.c"
-int OperatingSystem_ExtractFromReadyToRun(); 
+void OperatingSystem_PreemptRunningProcess(); 
 #line 29 "OperatingSystem.c"
-void OperatingSystem_HandleException(); 
+int OperatingSystem_CreateProcess(int ); 
 #line 30 "OperatingSystem.c"
-void OperatingSystem_HandleSystemCall(); 
+int OperatingSystem_ObtainMainMemory(int , int ); 
 #line 31 "OperatingSystem.c"
-void OperatingSystem_HandleClockInterrupt(); 
+int OperatingSystem_ShortTermScheduler(); 
 #line 32 "OperatingSystem.c"
-void OperatingSystem_PrintReadyToRunQueue(); 
+int OperatingSystem_ExtractFromReadyToRun(); 
 #line 33 "OperatingSystem.c"
-void OperatingSystem_HandleIOEndInterrupt(); 
+void OperatingSystem_HandleException(); 
 #line 34 "OperatingSystem.c"
-void OperatingSystem_IOScheduler(); 
+void OperatingSystem_HandleSystemCall(); 
 #line 35 "OperatingSystem.c"
-void OperatingSystem_DeviceControlerStartIOOperation(); 
+void OperatingSystem_HandleClockInterrupt(); 
 #line 36 "OperatingSystem.c"
-int OperatingSystem_DeviceControlerEndIOOperation(); 
+void OperatingSystem_PrintReadyToRunQueue(); 
+#line 37 "OperatingSystem.c"
+void OperatingSystem_HandleIOEndInterrupt(); 
+#line 38 "OperatingSystem.c"
+void OperatingSystem_IOScheduler(); 
 #line 39 "OperatingSystem.c"
-int OperatingSystem_GetWhenToWakeUpTime(); 
+void OperatingSystem_DeviceControlerStartIOOperation(); 
 #line 40 "OperatingSystem.c"
-int OperatingSystem_UpdateProcessor(); 
+int OperatingSystem_DeviceControlerEndIOOperation(); 
 #line 41 "OperatingSystem.c"
-int OperatingSystem_UpdateProcess(); 
+int OperatingSystem_GetWhenToWakeUpTime(); 
 #line 42 "OperatingSystem.c"
-int OperatingSystem_GetMostImportantREADYProcessInfo(); 
+int OperatingSystem_UpdateExecutingProcessor(); 
 #line 43 "OperatingSystem.c"
-int OperatingSystem_IncreseNumberOfClockInterrupts(); 
+int OperatingSystem_UpdateExecutingProcess(); 
 #line 44 "OperatingSystem.c"
-int OperatingSystem_checkIfShutdown(); 
+int OperatingSystem_GetMostImportantREADYProcessInfo(); 
 #line 45 "OperatingSystem.c"
-int OperatingSystem_ReleaseMainMemory(int PID); 
+int OperatingSystem_IncreseNumberOfClockInterrupts(); 
 #line 46 "OperatingSystem.c"
+int OperatingSystem_CheckIfShutdown(); 
+#line 47 "OperatingSystem.c"
+int OperatingSystem_ReleaseMainMemory(int PID); 
+#line 48 "OperatingSystem.c"
 int OperatingSystem_GetBiggestMemoryBlockSize(); 
-#line 49 "OperatingSystem.c"
- PCB processTable[4]; 
-#line 52 "OperatingSystem.c"
-int OS_address_base = 4 * (300 / (4 + 1)); 
 #line 55 "OperatingSystem.c"
-int executingProcessID = (-1); 
+ PCB processTable[4]; 
 #line 58 "OperatingSystem.c"
-int sipID; 
+int OS_address_base = 4 * (300 / (4 + 1)); 
 #line 61 "OperatingSystem.c"
-int baseDaemonsInProgramList; 
+int executingProcessID = (-1); 
 #line 64 "OperatingSystem.c"
-int numberOfNotTerminatedUserProcesses = 0; 
+int sipID; 
 #line 67 "OperatingSystem.c"
-char *statesNames[5] = {"NEW","READY","EXECUTING","BLOCKED","EXIT"}; 
+int baseDaemonsInProgramList; 
 #line 70 "OperatingSystem.c"
-char *exceptionNames[4] = {"division by zero","invalid processor mode","invalid address","invalid instruction"}; 
+int numberOfNotTerminatedUserProcesses = 0; 
 #line 73 "OperatingSystem.c"
+char *statesNames[5] = {"NEW","READY","EXECUTING","BLOCKED","EXIT"}; 
+#line 76 "OperatingSystem.c"
+char *exceptionNames[4] = {"division by zero","invalid processor mode","invalid address","invalid instruction"}; 
+#line 79 "OperatingSystem.c"
 int readyToRunQueue[2][4]; 
-#line 74 "OperatingSystem.c"
+#line 80 "OperatingSystem.c"
 int numberOfReadyToRunProcesses[2] = {0,0}; 
-#line 75 "OperatingSystem.c"
+#line 81 "OperatingSystem.c"
 char *queueNames[2] = {"USER","DAEMONS"}; 
-#line 78 "OperatingSystem.c"
+#line 84 "OperatingSystem.c"
 int numberOfClockInterrupts = 0; 
-#line 82 "OperatingSystem.c"
-int sleepingProcessesQueue[4]; 
-#line 83 "OperatingSystem.c"
-int numberOfSleepingProcesses = 0; 
-#line 85 "OperatingSystem.c"
-int partitionsTableSize = 0; 
 #line 88 "OperatingSystem.c"
-int IOWaitingProcessesQueue[4]; 
+int sleepingProcessesQueue[4]; 
 #line 89 "OperatingSystem.c"
+int numberOfSleepingProcesses = 0; 
+#line 91 "OperatingSystem.c"
+int partitionsTableSize = 0; 
+#line 94 "OperatingSystem.c"
+int IOWaitingProcessesQueue[4]; 
+#line 95 "OperatingSystem.c"
 int numberOfIOWaitingProcesses = 0; 
-#line 92 "OperatingSystem.c"
+#line 102 "OperatingSystem.c"
 void OperatingSystem_Initialize(int daemonsIndex)  
-# 1650 "OperatingSystemAspect.c"
+# 1795 "OperatingSystemAspect.c"
 {
 
 
 
-# 1655 "OperatingSystemAspect.c"
+# 1800 "OperatingSystemAspect.c"
 {
 
-#line 94 "OperatingSystem.c"
-
-#line 94 "OperatingSystem.c"
-int i,selectedProcess,numberOfSuccesfullyCreatedProcesses;
-#line 95 "OperatingSystem.c"
-
-#line 95 "OperatingSystem.c"
- FILE *programFile;
-#line 98 "OperatingSystem.c"
-
-#line 98 "OperatingSystem.c"
-int processSize = OperatingSystem_ObtainProgramSize((&programFile), "OperatingSystemCode");
-#line 101 "OperatingSystem.c"
-OperatingSystem_LoadProgram(programFile, OS_address_base, processSize); 
 #line 104 "OperatingSystem.c"
-for(i = 0;i < 4;i++) { { 
+
+#line 104 "OperatingSystem.c"
+int i,selectedProcess,numberOfSuccesfullyCreatedProcesses;
 #line 105 "OperatingSystem.c"
-processTable[i].busy = 0; } } 
-#line 109 "OperatingSystem.c"
-Processor_InitializeInterruptVectorTable(OS_address_base + 1); 
-#line 112 "OperatingSystem.c"
-partitionsTableSize = OperatingSystem_InitializePartitionTable(); 
+
+#line 105 "OperatingSystem.c"
+ FILE *programFile;
+#line 108 "OperatingSystem.c"
+
+#line 108 "OperatingSystem.c"
+int processSize = OperatingSystem_ObtainProgramSize((&programFile), "OperatingSystemCode");
+#line 111 "OperatingSystem.c"
+OperatingSystem_LoadProgram(programFile, OS_address_base, processSize); 
+#line 114 "OperatingSystem.c"
+for(i = 0;i < 4;i++) { { 
 #line 115 "OperatingSystem.c"
-OperatingSystem_PrepareDaemons(daemonsIndex); 
+processTable[i].busy = 0; } } 
 #line 119 "OperatingSystem.c"
-ComputerSystem_FillInArrivalTimeQueue(); 
+Processor_InitializeInterruptVectorTable(OS_address_base + 1); 
 #line 122 "OperatingSystem.c"
-OperatingSystem_PrintStatus(); 
+partitionsTableSize = OperatingSystem_InitializePartitionTable(); 
 #line 125 "OperatingSystem.c"
+OperatingSystem_PrepareDaemons(daemonsIndex); 
+#line 129 "OperatingSystem.c"
+ComputerSystem_FillInArrivalTimeQueue(); 
+#line 132 "OperatingSystem.c"
+OperatingSystem_PrintStatus(); 
+#line 135 "OperatingSystem.c"
 numberOfSuccesfullyCreatedProcesses = OperatingSystem_LongTermScheduler(); 
-#line 127 "OperatingSystem.c"
+#line 137 "OperatingSystem.c"
 if (numberOfSuccesfullyCreatedProcesses <= 1 && OperatingSystem_IsThereANewProgram() == (-1)){
 { 
-#line 129 "OperatingSystem.c"
+#line 139 "OperatingSystem.c"
 OperatingSystem_ReadyToShutdown(); } }
-#line 132 "OperatingSystem.c"
+#line 142 "OperatingSystem.c"
 if (strcmp((programList[processTable[sipID].programListIndex]->executableName), "SystemIdleProcess")){
 { 
-#line 134 "OperatingSystem.c"
-OperatingSystem_ShowTime('d'); 
-#line 135 "OperatingSystem.c"
-ComputerSystem_DebugMessage(21, 'd'); 
-#line 136 "OperatingSystem.c"
-exit(1); } }
-#line 141 "OperatingSystem.c"
-selectedProcess = OperatingSystem_ShortTermScheduler(); 
 #line 144 "OperatingSystem.c"
+OperatingSystem_ShowTime('d'); 
+#line 145 "OperatingSystem.c"
+ComputerSystem_DebugMessage(21, 'd'); 
+#line 146 "OperatingSystem.c"
+exit(1); } }
+#line 151 "OperatingSystem.c"
+selectedProcess = OperatingSystem_ShortTermScheduler(); 
+#line 154 "OperatingSystem.c"
 OperatingSystem_Dispatch(selectedProcess); 
-#line 147 "OperatingSystem.c"
+#line 157 "OperatingSystem.c"
 Processor_SetPC(OS_address_base); 
-# 1708 "OperatingSystemAspect.c"
+# 1853 "OperatingSystemAspect.c"
 
 }
 
-# 1712 "OperatingSystemAspect.c"
+# 1857 "OperatingSystemAspect.c"
+
+}
+ 
+#line 161 "OperatingSystem.c"
+void OperatingSystem_PrintReadyToRunQueue()  
+# 1863 "OperatingSystemAspect.c"
+{
+
+
+
+# 1868 "OperatingSystemAspect.c"
+{
+
+#line 166 "OperatingSystem.c"
+OperatingSystem_ShowTime('s'); 
+#line 167 "OperatingSystem.c"
+ComputerSystem_DebugMessage(106, 's'); 
+#line 168 "OperatingSystem.c"
+
+#line 168 "OperatingSystem.c"
+int i,processPID,queue;
+#line 171 "OperatingSystem.c"
+for(queue = 0;queue < 2;queue++) { { 
+#line 174 "OperatingSystem.c"
+ComputerSystem_DebugMessage(112, 's', queueNames[queue]); 
+#line 177 "OperatingSystem.c"
+if (numberOfReadyToRunProcesses[queue] == 0){
+{ 
+#line 178 "OperatingSystem.c"
+ComputerSystem_DebugMessage(113, 's'); } }
+#line 182 "OperatingSystem.c"
+for(i = 0;i < numberOfReadyToRunProcesses[queue];i++) { { 
+#line 184 "OperatingSystem.c"
+processPID = readyToRunQueue[queue][i]; 
+#line 187 "OperatingSystem.c"
+if (i == numberOfReadyToRunProcesses[queue] - 1){
+{ 
+#line 189 "OperatingSystem.c"
+ComputerSystem_DebugMessage(107, 's', processPID, processTable[processPID].priority, "\n"); } }else{
+{ 
+#line 191 "OperatingSystem.c"
+ComputerSystem_DebugMessage(107, 's', processPID, processTable[processPID].priority, ", "); } }} } } } 
+# 1900 "OperatingSystemAspect.c"
+
+}
+
+# 1904 "OperatingSystemAspect.c"
+
+}
+ 
+#line 198 "OperatingSystem.c"
+int OperatingSystem_IncreseNumberOfClockInterrupts()  
+# 1910 "OperatingSystemAspect.c"
+{
+# 1912 "OperatingSystemAspect.c"
+int retValue_acc;
+
+
+
+
+# 1918 "OperatingSystemAspect.c"
+{
+
+#line 201 "OperatingSystem.c"
+
+# 1923 "OperatingSystemAspect.c"
+retValue_acc = (++numberOfClockInterrupts);
+# 1925 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ 
+# 1928 "OperatingSystemAspect.c"
+
+}
+
+# 1932 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+
+# 1935 "OperatingSystemAspect.c"
+
+}
+ 
+#line 205 "OperatingSystem.c"
+int OperatingSystem_CheckIfShutdown()  
+# 1941 "OperatingSystemAspect.c"
+{
+# 1943 "OperatingSystemAspect.c"
+int retValue_acc;
+
+
+
+
+# 1949 "OperatingSystemAspect.c"
+{
+
+#line 206 "OperatingSystem.c"
+
+#line 206 "OperatingSystem.c"
+int arrivalTimeQueue = OperatingSystem_IsThereANewProgram();
+#line 207 "OperatingSystem.c"
+
+#line 207 "OperatingSystem.c"
+int sleepingQueue = Heap_getFirst(sleepingProcessesQueue, numberOfSleepingProcesses);
+#line 208 "OperatingSystem.c"
+
+#line 208 "OperatingSystem.c"
+int rTRQ = OperatingSystem_GetMostImportantREADYProcessInfo();
+#line 210 "OperatingSystem.c"
+if (arrivalTimeQueue == (-1) && sleepingQueue == (-1) && rTRQ == (-1) && numberOfIOWaitingProcesses == 0){
+{ 
+#line 211 "OperatingSystem.c"
+
+# 1969 "OperatingSystemAspect.c"
+retValue_acc = 1;
+# 1971 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ } }else{
+{ 
+#line 213 "OperatingSystem.c"
+
+# 1977 "OperatingSystemAspect.c"
+retValue_acc = 0;
+# 1979 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ } }
+# 1982 "OperatingSystemAspect.c"
+
+}
+
+# 1986 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+
+# 1989 "OperatingSystemAspect.c"
+
+}
+ 
+#line 223 "OperatingSystem.c"
+int OperatingSystem_ObtainMainMemory(int processSize, int PID)  
+# 1995 "OperatingSystemAspect.c"
+{
+# 1997 "OperatingSystemAspect.c"
+int retValue_acc;
+
+
+
+
+# 2003 "OperatingSystemAspect.c"
+{
+
+#line 225 "OperatingSystem.c"
+
+#line 225 "OperatingSystem.c"
+int blockIndex;
+#line 226 "OperatingSystem.c"
+
+#line 226 "OperatingSystem.c"
+int bestBlockIndex = (-5),bestBlockSize = 0x7fffffff;
+#line 227 "OperatingSystem.c"
+for(blockIndex = 0;blockIndex < partitionsTableSize;blockIndex++) { { 
+#line 234 "OperatingSystem.c"
+if (processSize > OperatingSystem_GetBiggestMemoryBlockSize()){
+{ 
+#line 231 "OperatingSystem.c"
+
+# 2021 "OperatingSystemAspect.c"
+retValue_acc = (-4);
+# 2023 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ } }
+#line 234 "OperatingSystem.c"
+if ((!partitionsTable[blockIndex].occupied) && partitionsTable[blockIndex].size >= processSize && partitionsTable[blockIndex].size < bestBlockSize){
+{ 
+#line 235 "OperatingSystem.c"
+bestBlockIndex = blockIndex; 
+#line 236 "OperatingSystem.c"
+bestBlockSize = partitionsTable[blockIndex].size; 
+#line 239 "OperatingSystem.c"
+if (processSize == partitionsTable[blockIndex].size){
+{ 
+#line 240 "OperatingSystem.c"
+break; } }} }} } 
+#line 245 "OperatingSystem.c"
+
+# 2040 "OperatingSystemAspect.c"
+retValue_acc = bestBlockIndex;
+# 2042 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ 
+# 2045 "OperatingSystemAspect.c"
+
+}
+
+# 2049 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+
+# 2052 "OperatingSystemAspect.c"
+
+}
+ 
+#line 249 "OperatingSystem.c"
+int OperatingSystem_GetBiggestMemoryBlockSize()  
+# 2058 "OperatingSystemAspect.c"
+{
+# 2060 "OperatingSystemAspect.c"
+int retValue_acc;
+
+
+
+
+# 2066 "OperatingSystemAspect.c"
+{
+
+#line 250 "OperatingSystem.c"
+
+#line 250 "OperatingSystem.c"
+int blockIndex;
+#line 251 "OperatingSystem.c"
+
+#line 251 "OperatingSystem.c"
+int biggestBlockSize = (-1);
+#line 252 "OperatingSystem.c"
+for(blockIndex = 0;blockIndex < partitionsTableSize;blockIndex++) { { 
+#line 256 "OperatingSystem.c"
+if (partitionsTable[blockIndex].size > biggestBlockSize){
+{ 
+#line 254 "OperatingSystem.c"
+biggestBlockSize = partitionsTable[blockIndex].size; } }} } 
+#line 257 "OperatingSystem.c"
+
+# 2086 "OperatingSystemAspect.c"
+retValue_acc = biggestBlockSize;
+# 2088 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ 
+# 2091 "OperatingSystemAspect.c"
+
+}
+
+# 2095 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+
+# 2098 "OperatingSystemAspect.c"
+
+}
+ 
+#line 262 "OperatingSystem.c"
+int OperatingSystem_ReleaseMainMemory(int PID)  
+# 2104 "OperatingSystemAspect.c"
+{
+# 2106 "OperatingSystemAspect.c"
+int retValue_acc;
+
+
+
+
+# 2112 "OperatingSystemAspect.c"
+{
+
+#line 264 "OperatingSystem.c"
+
+#line 264 "OperatingSystem.c"
+int blockIndex;
+#line 265 "OperatingSystem.c"
+for(blockIndex = 0;blockIndex < partitionsTableSize;blockIndex++) { { 
+#line 274 "OperatingSystem.c"
+if (partitionsTable[blockIndex].occupied && partitionsTable[blockIndex].PID == PID){
+{ 
+#line 271 "OperatingSystem.c"
+partitionsTable[blockIndex].occupied = 0; 
+#line 272 "OperatingSystem.c"
+
+# 2128 "OperatingSystemAspect.c"
+retValue_acc = blockIndex;
+# 2130 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ } }} } 
+#line 275 "OperatingSystem.c"
+
+# 2135 "OperatingSystemAspect.c"
+retValue_acc = (-1);
+# 2137 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ 
+# 2140 "OperatingSystemAspect.c"
+
+}
+
+# 2144 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+
+# 2147 "OperatingSystemAspect.c"
+
+}
+ 
+#line 283 "OperatingSystem.c"
+int OperatingSystem_GetExecutingProcessID()  
+# 2153 "OperatingSystemAspect.c"
+{
+# 2155 "OperatingSystemAspect.c"
+int retValue_acc;
+
+
+
+
+# 2161 "OperatingSystemAspect.c"
+{
+
+#line 284 "OperatingSystem.c"
+
+# 2166 "OperatingSystemAspect.c"
+retValue_acc = executingProcessID;
+# 2168 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ 
+# 2171 "OperatingSystemAspect.c"
+
+}
+
+# 2175 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+
+# 2178 "OperatingSystemAspect.c"
+
+}
+ 
+#line 288 "OperatingSystem.c"
+void OperatingSystem_Dispatch(int PID)  
+# 2184 "OperatingSystemAspect.c"
+{
+
+
+
+# 2189 "OperatingSystemAspect.c"
+{
+
+#line 291 "OperatingSystem.c"
+executingProcessID = PID; 
+#line 294 "OperatingSystem.c"
+
+#line 294 "OperatingSystem.c"
+int lastState = processTable[PID].state;
+#line 297 "OperatingSystem.c"
+processTable[PID].state = EXECUTING; 
+#line 300 "OperatingSystem.c"
+OperatingSystem_ShowTime('p'); 
+#line 301 "OperatingSystem.c"
+ComputerSystem_DebugMessage(110, 'p', PID, (programList[processTable[PID].programListIndex]->executableName), statesNames[lastState], statesNames[EXECUTING]); 
+#line 304 "OperatingSystem.c"
+OperatingSystem_RestoreContext(PID); 
+# 2206 "OperatingSystemAspect.c"
+
+}
+
+# 2210 "OperatingSystemAspect.c"
+
+}
+ 
+#line 308 "OperatingSystem.c"
+void OperatingSystem_PreemptRunningProcess()  
+# 2216 "OperatingSystemAspect.c"
+{
+
+
+
+# 2221 "OperatingSystemAspect.c"
+{
+
+#line 311 "OperatingSystem.c"
+OperatingSystem_SaveContext(executingProcessID); 
+#line 313 "OperatingSystem.c"
+OperatingSystem_MoveToTheREADYState(executingProcessID); 
+#line 315 "OperatingSystem.c"
+executingProcessID = (-1); 
+# 2230 "OperatingSystemAspect.c"
+
+}
+
+# 2234 "OperatingSystemAspect.c"
+
+}
+ 
+#line 319 "OperatingSystem.c"
+void OperatingSystem_SaveContext(int PID)  
+# 2240 "OperatingSystemAspect.c"
+{
+
+
+
+# 2245 "OperatingSystemAspect.c"
+{
+
+#line 322 "OperatingSystem.c"
+processTable[PID].copyOfPCRegister = Processor_CopyFromSystemStack(300 - 1); 
+#line 325 "OperatingSystem.c"
+processTable[PID].copyOfPSWRegister = Processor_CopyFromSystemStack(300 - 2); 
+#line 328 "OperatingSystem.c"
+processTable[PID].copyOfAccumulator = Processor_GetAccumulator(); 
+# 2254 "OperatingSystemAspect.c"
+
+}
+
+# 2258 "OperatingSystemAspect.c"
+
+}
+ 
+#line 332 "OperatingSystem.c"
+void OperatingSystem_RestoreContext(int PID)  
+# 2264 "OperatingSystemAspect.c"
+{
+
+
+
+# 2269 "OperatingSystemAspect.c"
+{
+
+#line 335 "OperatingSystem.c"
+Processor_CopyInSystemStack(300 - 1, processTable[PID].copyOfPCRegister); 
+#line 336 "OperatingSystem.c"
+Processor_CopyInSystemStack(300 - 2, processTable[PID].copyOfPSWRegister); 
+#line 337 "OperatingSystem.c"
+Processor_SetAccumulator(processTable[PID].copyOfAccumulator); 
+#line 340 "OperatingSystem.c"
+MMU_SetBase(processTable[PID].initialPhysicalAddress); 
+#line 341 "OperatingSystem.c"
+MMU_SetLimit(processTable[PID].processSize); 
+# 2282 "OperatingSystemAspect.c"
+
+}
+
+# 2286 "OperatingSystemAspect.c"
+
+}
+ 
+#line 346 "OperatingSystem.c"
+int OperatingSystem_UpdateExecutingProcessor()  
+# 2292 "OperatingSystemAspect.c"
+{
+# 2294 "OperatingSystemAspect.c"
+int retValue_acc;
+
+
+
+
+# 2300 "OperatingSystemAspect.c"
+{
+
+#line 350 "OperatingSystem.c"
+
+#line 350 "OperatingSystem.c"
+int executingProcessQueue = processTable[executingProcessID].queueID,executingProcessPriority = processTable[executingProcessID].priority;
+#line 353 "OperatingSystem.c"
+
+#line 353 "OperatingSystem.c"
+int mostImportantREADYProcess = OperatingSystem_GetMostImportantREADYProcessInfo();
+#line 355 "OperatingSystem.c"
+if (processTable[mostImportantREADYProcess].queueID == executingProcessQueue){
+{ 
+#line 363 "OperatingSystem.c"
+if (processTable[mostImportantREADYProcess].priority < executingProcessPriority){
+{ 
+#line 359 "OperatingSystem.c"
+
+# 2319 "OperatingSystemAspect.c"
+retValue_acc = OperatingSystem_UpdateExecutingProcess();
+# 2321 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ } }else{
+{ 
+#line 362 "OperatingSystem.c"
+
+# 2327 "OperatingSystemAspect.c"
+retValue_acc = 0;
+# 2329 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ } }} }else{
+if (processTable[mostImportantREADYProcess].queueID < executingProcessQueue){
+{ 
+#line 367 "OperatingSystem.c"
+
+# 2336 "OperatingSystemAspect.c"
+retValue_acc = OperatingSystem_UpdateExecutingProcess();
+# 2338 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ } }else{
+{ 
+#line 370 "OperatingSystem.c"
+
+# 2344 "OperatingSystemAspect.c"
+retValue_acc = 0;
+# 2346 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ } }}
+# 2349 "OperatingSystemAspect.c"
+
+}
+
+# 2353 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+
+# 2356 "OperatingSystemAspect.c"
+
+}
+ 
+#line 376 "OperatingSystem.c"
+int OperatingSystem_UpdateExecutingProcess()  
+# 2362 "OperatingSystemAspect.c"
+{
+# 2364 "OperatingSystemAspect.c"
+int retValue_acc;
+
+
+
+
+# 2370 "OperatingSystemAspect.c"
+{
+
+#line 377 "OperatingSystem.c"
+
+#line 377 "OperatingSystem.c"
+int lastExecutingProcess = executingProcessID;
+#line 378 "OperatingSystem.c"
+
+#line 378 "OperatingSystem.c"
+int newExecutingProcess = OperatingSystem_ShortTermScheduler();
+#line 380 "OperatingSystem.c"
+OperatingSystem_ShowTime('s'); 
+#line 381 "OperatingSystem.c"
+ComputerSystem_DebugMessage(121, 's', lastExecutingProcess, (programList[processTable[lastExecutingProcess].programListIndex]->executableName), newExecutingProcess, (programList[processTable[newExecutingProcess].programListIndex]->executableName)); 
+#line 384 "OperatingSystem.c"
+OperatingSystem_PreemptRunningProcess(); 
+#line 385 "OperatingSystem.c"
+OperatingSystem_Dispatch(newExecutingProcess); 
+#line 388 "OperatingSystem.c"
+OperatingSystem_PrintStatus(); 
+#line 390 "OperatingSystem.c"
+
+# 2393 "OperatingSystemAspect.c"
+retValue_acc = 1;
+# 2395 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ 
+# 2398 "OperatingSystemAspect.c"
+
+}
+
+# 2402 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+
+# 2405 "OperatingSystemAspect.c"
+
+}
+ 
+# 14 "OperatingSystem.c" 2
+# 400 "OperatingSystem.c" 
+void OperatingSystem_IOScheduler()  
+# 2412 "OperatingSystemAspect.c"
+{
+
+
+
+# 2417 "OperatingSystemAspect.c"
+{
+
+#line 419 "OperatingSystem.c"
+if (QueueFIFO_add(executingProcessID, IOWaitingProcessesQueue, (&numberOfIOWaitingProcesses), 4) == 0){
+{ 
+#line 405 "OperatingSystem.c"
+OperatingSystem_SaveContext(executingProcessID); 
+#line 408 "OperatingSystem.c"
+
+#line 408 "OperatingSystem.c"
+int lastState = processTable[executingProcessID].state;
+#line 411 "OperatingSystem.c"
+processTable[executingProcessID].state = BLOCKED; 
+#line 414 "OperatingSystem.c"
+OperatingSystem_ShowTime('p'); 
+#line 415 "OperatingSystem.c"
+ComputerSystem_DebugMessage(110, 'p', executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName), statesNames[lastState], statesNames[BLOCKED]); } }
+#line 419 "OperatingSystem.c"
+OperatingSystem_DeviceControlerStartIOOperation(); 
+# 2437 "OperatingSystemAspect.c"
+
+}
+
+# 2441 "OperatingSystemAspect.c"
+
+}
+ 
+#line 423 "OperatingSystem.c"
+void OperatingSystem_DeviceControlerStartIOOperation()  
+# 2447 "OperatingSystemAspect.c"
+{
+
+
+
+# 2452 "OperatingSystemAspect.c"
+{
+
+#line 424 "OperatingSystem.c"
+
+#line 424 "OperatingSystem.c"
+int requestingProcessPID = QueueFIFO_getFirst(IOWaitingProcessesQueue, 4);
+#line 425 "OperatingSystem.c"
+if (Device_GetStatus() == FREE){
+{ 
+#line 429 "OperatingSystem.c"
+if (requestingProcessPID != (-1)){
+{ 
+#line 427 "OperatingSystem.c"
+Device_StartIO(requestingProcessPID); } }} }
+# 2467 "OperatingSystemAspect.c"
+
+}
+
+# 2471 "OperatingSystemAspect.c"
+
+}
+ 
+#line 433 "OperatingSystem.c"
+int OperatingSystem_DeviceControlerEndIOOperation()  
+# 2477 "OperatingSystemAspect.c"
+{
+# 2479 "OperatingSystemAspect.c"
+int retValue_acc;
+
+
+
+
+# 2485 "OperatingSystemAspect.c"
+{
+
+#line 434 "OperatingSystem.c"
+
+#line 434 "OperatingSystem.c"
+int finishedProcessPID = QueueFIFO_poll(IOWaitingProcessesQueue, (&numberOfIOWaitingProcesses));
+#line 435 "OperatingSystem.c"
+if (numberOfIOWaitingProcesses > 0){
+{ 
+#line 436 "OperatingSystem.c"
+OperatingSystem_DeviceControlerStartIOOperation(); } }
+#line 438 "OperatingSystem.c"
+
+# 2499 "OperatingSystemAspect.c"
+retValue_acc = finishedProcessPID;
+# 2501 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ 
+# 2504 "OperatingSystemAspect.c"
+
+}
+
+# 2508 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+
+# 2511 "OperatingSystemAspect.c"
 
 }
  
   void __utac_acc__Aspect__4 (void);
 
 
-#line 152 "OperatingSystem.c"
+#line 447 "OperatingSystem.c"
 void OperatingSystem_PrepareDaemons(int programListDaemonsBase)  
-# 1721 "OperatingSystemAspect.c"
+# 2520 "OperatingSystemAspect.c"
 {
 
 
 
-# 1726 "OperatingSystemAspect.c"
+# 2525 "OperatingSystemAspect.c"
 {
 
-#line 155 "OperatingSystem.c"
+#line 450 "OperatingSystem.c"
 programList[0] = (( PROGRAMS_DATA *)malloc(sizeof ( PROGRAMS_DATA ))); 
-#line 157 "OperatingSystem.c"
+#line 452 "OperatingSystem.c"
 (programList[0]->executableName) = "SystemIdleProcess"; 
-#line 158 "OperatingSystem.c"
+#line 453 "OperatingSystem.c"
 (programList[0]->arrivalTime) = 0; 
-#line 159 "OperatingSystem.c"
+#line 454 "OperatingSystem.c"
 (programList[0]->type) = DAEMONPROGRAM; 
-#line 161 "OperatingSystem.c"
+#line 456 "OperatingSystem.c"
 sipID = 3 % 4; 
-#line 165 "OperatingSystem.c"
+#line 460 "OperatingSystem.c"
 baseDaemonsInProgramList = programListDaemonsBase; 
-# 1741 "OperatingSystemAspect.c"
+# 2540 "OperatingSystemAspect.c"
 
 }
 
@@ -1746,904 +2545,580 @@ __utac_acc__Aspect__4();
 
 }
 
-# 1750 "OperatingSystemAspect.c"
+# 2549 "OperatingSystemAspect.c"
 
 }
  
-#line 172 "OperatingSystem.c"
-int OperatingSystem_LongTermScheduler()  
-# 1756 "OperatingSystemAspect.c"
-{
-# 1758 "OperatingSystemAspect.c"
-int retValue_acc;
-
-
-
-
-# 1764 "OperatingSystemAspect.c"
-{
-
-#line 175 "OperatingSystem.c"
-
-#line 175 "OperatingSystem.c"
-int PID,i,numberOfSuccessfullyCreatedProcesses = 0;
-#line 177 "OperatingSystem.c"
-while(OperatingSystem_IsThereANewProgram() == 1) { { 
-#line 180 "OperatingSystem.c"
-i = Heap_poll(arrivalTimeQueue, 2, (&numberOfProgramsInArrivalTimeQueue)); 
-#line 183 "OperatingSystem.c"
-PID = OperatingSystem_CreateProcess(i); 
-#line 186 "OperatingSystem.c"
-switch(PID){ { 
-#line 189 "OperatingSystem.c"
-case (-3): OperatingSystem_ShowTime('e'); 
-#line 190 "OperatingSystem.c"
-ComputerSystem_DebugMessage(103, 'e', (programList[i]->executableName)); 
-#line 191 "OperatingSystem.c"
-break; 
-#line 193 "OperatingSystem.c"
-case (-1): OperatingSystem_ShowTime('e'); 
-#line 195 "OperatingSystem.c"
-ComputerSystem_DebugMessage(104, 'e', (programList[i]->executableName), "it does not exists"); 
-#line 196 "OperatingSystem.c"
-break; 
-#line 198 "OperatingSystem.c"
-case (-2): OperatingSystem_ShowTime('e'); 
-#line 200 "OperatingSystem.c"
-ComputerSystem_DebugMessage(104, 'e', (programList[i]->executableName), "invalid priority or size"); 
-#line 201 "OperatingSystem.c"
-break; 
-#line 203 "OperatingSystem.c"
-case (-4): OperatingSystem_ShowTime('e'); 
-#line 205 "OperatingSystem.c"
-ComputerSystem_DebugMessage(105, 'e', (programList[i]->executableName)); 
-#line 206 "OperatingSystem.c"
-break; 
-#line 208 "OperatingSystem.c"
-default: numberOfSuccessfullyCreatedProcesses++; 
-#line 212 "OperatingSystem.c"
-if ((programList[i]->type) == USERPROGRAM){
-{ 
-#line 213 "OperatingSystem.c"
-numberOfNotTerminatedUserProcesses++; } }
-#line 217 "OperatingSystem.c"
-OperatingSystem_MoveToTheREADYState(PID); } } } } 
-#line 222 "OperatingSystem.c"
-if (numberOfSuccessfullyCreatedProcesses){
-{ 
-#line 223 "OperatingSystem.c"
-OperatingSystem_PrintStatus(); } }
-#line 227 "OperatingSystem.c"
-
-# 1819 "OperatingSystemAspect.c"
-retValue_acc = numberOfSuccessfullyCreatedProcesses;
-# 1821 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- 
-# 1824 "OperatingSystemAspect.c"
-
-}
-
-# 1828 "OperatingSystemAspect.c"
-return (int )retValue_acc;
-
-# 1831 "OperatingSystemAspect.c"
-
-}
- 
-#line 231 "OperatingSystem.c"
+#line 464 "OperatingSystem.c"
 int OperatingSystem_CreateProcess(int indexOfExecutableProgram)  
-# 1837 "OperatingSystemAspect.c"
+# 2555 "OperatingSystemAspect.c"
 {
-# 1839 "OperatingSystemAspect.c"
+# 2557 "OperatingSystemAspect.c"
 int retValue_acc;
 
 
 
 
-# 1845 "OperatingSystemAspect.c"
+# 2563 "OperatingSystemAspect.c"
 {
 
-#line 233 "OperatingSystem.c"
+#line 466 "OperatingSystem.c"
 
-#line 233 "OperatingSystem.c"
+#line 466 "OperatingSystem.c"
 int PID;
-#line 234 "OperatingSystem.c"
+#line 467 "OperatingSystem.c"
 
-#line 234 "OperatingSystem.c"
+#line 467 "OperatingSystem.c"
 int processSize;
-#line 235 "OperatingSystem.c"
+#line 468 "OperatingSystem.c"
 
-#line 235 "OperatingSystem.c"
+#line 468 "OperatingSystem.c"
 int mainMemoryBlockIndex,initAddress;
-#line 236 "OperatingSystem.c"
+#line 469 "OperatingSystem.c"
 
-#line 236 "OperatingSystem.c"
+#line 469 "OperatingSystem.c"
 int priority;
-#line 237 "OperatingSystem.c"
+#line 470 "OperatingSystem.c"
 
-#line 237 "OperatingSystem.c"
+#line 470 "OperatingSystem.c"
  FILE *programFile;
-#line 238 "OperatingSystem.c"
+#line 471 "OperatingSystem.c"
 
-#line 238 "OperatingSystem.c"
+#line 471 "OperatingSystem.c"
  PROGRAMS_DATA *executableProgram = programList[indexOfExecutableProgram];
-#line 241 "OperatingSystem.c"
+#line 474 "OperatingSystem.c"
 PID = OperatingSystem_ObtainAnEntryInTheProcessTable(); 
-#line 244 "OperatingSystem.c"
+#line 477 "OperatingSystem.c"
 if (PID == (-3)){
 { 
-#line 245 "OperatingSystem.c"
+#line 478 "OperatingSystem.c"
 
-# 1879 "OperatingSystemAspect.c"
+# 2597 "OperatingSystemAspect.c"
 retValue_acc = PID;
-# 1881 "OperatingSystemAspect.c"
+# 2599 "OperatingSystemAspect.c"
 return (int )retValue_acc;
  } }
-#line 249 "OperatingSystem.c"
+#line 482 "OperatingSystem.c"
 processSize = OperatingSystem_ObtainProgramSize((&programFile), (executableProgram->executableName)); 
-#line 252 "OperatingSystem.c"
+#line 485 "OperatingSystem.c"
 if (processSize == (-2)){
 { 
-#line 253 "OperatingSystem.c"
+#line 486 "OperatingSystem.c"
 
-# 1891 "OperatingSystemAspect.c"
+# 2609 "OperatingSystemAspect.c"
 retValue_acc = (-2);
-# 1893 "OperatingSystemAspect.c"
+# 2611 "OperatingSystemAspect.c"
 return (int )retValue_acc;
  } }
-#line 257 "OperatingSystem.c"
+#line 490 "OperatingSystem.c"
 if (processSize == (-1)){
 { 
-#line 258 "OperatingSystem.c"
+#line 491 "OperatingSystem.c"
 
-# 1901 "OperatingSystemAspect.c"
+# 2619 "OperatingSystemAspect.c"
 retValue_acc = (-1);
-# 1903 "OperatingSystemAspect.c"
+# 2621 "OperatingSystemAspect.c"
 return (int )retValue_acc;
  } }
-#line 262 "OperatingSystem.c"
+#line 495 "OperatingSystem.c"
 priority = OperatingSystem_ObtainPriority(programFile); 
-#line 265 "OperatingSystem.c"
+#line 498 "OperatingSystem.c"
 if (priority == (-2)){
 { 
-#line 266 "OperatingSystem.c"
+#line 499 "OperatingSystem.c"
 
-# 1913 "OperatingSystemAspect.c"
+# 2631 "OperatingSystemAspect.c"
 retValue_acc = (-2);
-# 1915 "OperatingSystemAspect.c"
+# 2633 "OperatingSystemAspect.c"
 return (int )retValue_acc;
  } }
-#line 269 "OperatingSystem.c"
+#line 502 "OperatingSystem.c"
 OperatingSystem_ShowTime('m'); 
-#line 271 "OperatingSystem.c"
+#line 504 "OperatingSystem.c"
 ComputerSystem_DebugMessage(142, 'm', PID, (executableProgram->executableName), processSize); 
-#line 274 "OperatingSystem.c"
+#line 507 "OperatingSystem.c"
 OperatingSystem_ShowPartitionTable("before allocating memory"); 
-#line 277 "OperatingSystem.c"
+#line 510 "OperatingSystem.c"
 mainMemoryBlockIndex = OperatingSystem_ObtainMainMemory(processSize, PID); 
-#line 280 "OperatingSystem.c"
+#line 513 "OperatingSystem.c"
 if (mainMemoryBlockIndex == (-4)){
 { 
-#line 281 "OperatingSystem.c"
+#line 514 "OperatingSystem.c"
 
-# 1931 "OperatingSystemAspect.c"
+# 2649 "OperatingSystemAspect.c"
 retValue_acc = (-4);
-# 1933 "OperatingSystemAspect.c"
+# 2651 "OperatingSystemAspect.c"
 return (int )retValue_acc;
  } }else{
 if (mainMemoryBlockIndex == (-5)){
 { 
-#line 285 "OperatingSystem.c"
+#line 518 "OperatingSystem.c"
 OperatingSystem_ShowTime('e'); 
-#line 286 "OperatingSystem.c"
+#line 519 "OperatingSystem.c"
 ComputerSystem_DebugMessage(144, 'e', (executableProgram->executableName)); 
-#line 287 "OperatingSystem.c"
+#line 520 "OperatingSystem.c"
 
-# 1944 "OperatingSystemAspect.c"
+# 2662 "OperatingSystemAspect.c"
 retValue_acc = (-5);
-# 1946 "OperatingSystemAspect.c"
+# 2664 "OperatingSystemAspect.c"
 return (int )retValue_acc;
  } }else{
 { 
-#line 291 "OperatingSystem.c"
+#line 524 "OperatingSystem.c"
 OperatingSystem_ShowTime('m'); 
-#line 292 "OperatingSystem.c"
+#line 525 "OperatingSystem.c"
 ComputerSystem_DebugMessage(143, 'm', mainMemoryBlockIndex, partitionsTable[mainMemoryBlockIndex].initAddress, partitionsTable[mainMemoryBlockIndex].size, PID, (executableProgram->executableName)); 
-#line 293 "OperatingSystem.c"
+#line 526 "OperatingSystem.c"
 partitionsTable[mainMemoryBlockIndex].occupied = 1; 
-#line 294 "OperatingSystem.c"
+#line 527 "OperatingSystem.c"
 partitionsTable[mainMemoryBlockIndex].PID = PID; 
-#line 295 "OperatingSystem.c"
+#line 528 "OperatingSystem.c"
 initAddress = partitionsTable[mainMemoryBlockIndex].initAddress; } }}
-#line 299 "OperatingSystem.c"
+#line 532 "OperatingSystem.c"
 OperatingSystem_ShowTime('p'); 
-#line 301 "OperatingSystem.c"
+#line 534 "OperatingSystem.c"
 ComputerSystem_DebugMessage(111, 'p', PID, (executableProgram->executableName), statesNames[NEW]); 
-#line 305 "OperatingSystem.c"
+#line 538 "OperatingSystem.c"
 if (OperatingSystem_LoadProgram(programFile, initAddress, processSize) == (-4)){
 { 
-#line 306 "OperatingSystem.c"
+#line 539 "OperatingSystem.c"
 
-# 1969 "OperatingSystemAspect.c"
+# 2687 "OperatingSystemAspect.c"
 retValue_acc = (-4);
-# 1971 "OperatingSystemAspect.c"
+# 2689 "OperatingSystemAspect.c"
 return (int )retValue_acc;
  } }
-#line 309 "OperatingSystem.c"
+#line 542 "OperatingSystem.c"
 OperatingSystem_PCBInitialization(PID, initAddress, processSize, priority, indexOfExecutableProgram); 
-#line 312 "OperatingSystem.c"
+#line 545 "OperatingSystem.c"
 OperatingSystem_ShowPartitionTable("after allocating memory"); 
-#line 315 "OperatingSystem.c"
+#line 548 "OperatingSystem.c"
 OperatingSystem_ShowTime('t'); 
-#line 316 "OperatingSystem.c"
+#line 549 "OperatingSystem.c"
 ComputerSystem_DebugMessage(22, 't', PID, (executableProgram->executableName)); 
-#line 318 "OperatingSystem.c"
+#line 551 "OperatingSystem.c"
 
-# 1984 "OperatingSystemAspect.c"
+# 2702 "OperatingSystemAspect.c"
 retValue_acc = PID;
-# 1986 "OperatingSystemAspect.c"
+# 2704 "OperatingSystemAspect.c"
 return (int )retValue_acc;
  
-# 1989 "OperatingSystemAspect.c"
+# 2707 "OperatingSystemAspect.c"
 
 }
 
-# 1993 "OperatingSystemAspect.c"
+# 2711 "OperatingSystemAspect.c"
 return (int )retValue_acc;
 
-# 1996 "OperatingSystemAspect.c"
+# 2714 "OperatingSystemAspect.c"
 
 }
  
-#line 324 "OperatingSystem.c"
-int OperatingSystem_ObtainMainMemory(int processSize, int PID)  
-# 2002 "OperatingSystemAspect.c"
-{
-# 2004 "OperatingSystemAspect.c"
-int retValue_acc;
-
-
-
-
-# 2010 "OperatingSystemAspect.c"
-{
-
-#line 326 "OperatingSystem.c"
-
-#line 326 "OperatingSystem.c"
-int blockIndex;
-#line 327 "OperatingSystem.c"
-
-#line 327 "OperatingSystem.c"
-int bestBlockIndex = (-5),bestBlockSize = 0x7fffffff;
-#line 328 "OperatingSystem.c"
-for(blockIndex = 0;blockIndex < partitionsTableSize;blockIndex++) { { 
-#line 335 "OperatingSystem.c"
-if (processSize > OperatingSystem_GetBiggestMemoryBlockSize()){
-{ 
-#line 332 "OperatingSystem.c"
-
-# 2028 "OperatingSystemAspect.c"
-retValue_acc = (-4);
-# 2030 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- } }
-#line 335 "OperatingSystem.c"
-if ((!partitionsTable[blockIndex].occupied) && partitionsTable[blockIndex].size >= processSize && partitionsTable[blockIndex].size < bestBlockSize){
-{ 
-#line 336 "OperatingSystem.c"
-bestBlockIndex = blockIndex; 
-#line 337 "OperatingSystem.c"
-bestBlockSize = partitionsTable[blockIndex].size; 
-#line 340 "OperatingSystem.c"
-if (processSize == partitionsTable[blockIndex].size){
-{ 
-#line 341 "OperatingSystem.c"
-break; } }} }} } 
-#line 346 "OperatingSystem.c"
-
-# 2047 "OperatingSystemAspect.c"
-retValue_acc = bestBlockIndex;
-# 2049 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- 
-# 2052 "OperatingSystemAspect.c"
-
-}
-
-# 2056 "OperatingSystemAspect.c"
-return (int )retValue_acc;
-
-# 2059 "OperatingSystemAspect.c"
-
-}
- 
-#line 349 "OperatingSystem.c"
-int OperatingSystem_GetBiggestMemoryBlockSize()  
-# 2065 "OperatingSystemAspect.c"
-{
-# 2067 "OperatingSystemAspect.c"
-int retValue_acc;
-
-
-
-
-# 2073 "OperatingSystemAspect.c"
-{
-
-#line 350 "OperatingSystem.c"
-
-#line 350 "OperatingSystem.c"
-int blockIndex;
-#line 351 "OperatingSystem.c"
-
-#line 351 "OperatingSystem.c"
-int biggestBlockSize = (-1);
-#line 352 "OperatingSystem.c"
-for(blockIndex = 0;blockIndex < partitionsTableSize;blockIndex++) { { 
-#line 356 "OperatingSystem.c"
-if (partitionsTable[blockIndex].size > biggestBlockSize){
-{ 
-#line 354 "OperatingSystem.c"
-biggestBlockSize = partitionsTable[blockIndex].size; } }} } 
-#line 357 "OperatingSystem.c"
-
-# 2093 "OperatingSystemAspect.c"
-retValue_acc = biggestBlockSize;
-# 2095 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- 
-# 2098 "OperatingSystemAspect.c"
-
-}
-
-# 2102 "OperatingSystemAspect.c"
-return (int )retValue_acc;
-
-# 2105 "OperatingSystemAspect.c"
-
-}
- 
-#line 362 "OperatingSystem.c"
-int OperatingSystem_ReleaseMainMemory(int PID)  
-# 2111 "OperatingSystemAspect.c"
-{
-# 2113 "OperatingSystemAspect.c"
-int retValue_acc;
-
-
-
-
-# 2119 "OperatingSystemAspect.c"
-{
-
-#line 364 "OperatingSystem.c"
-
-#line 364 "OperatingSystem.c"
-int blockIndex;
-#line 365 "OperatingSystem.c"
-for(blockIndex = 0;blockIndex < partitionsTableSize;blockIndex++) { { 
-#line 374 "OperatingSystem.c"
-if (partitionsTable[blockIndex].occupied && partitionsTable[blockIndex].PID == PID){
-{ 
-#line 371 "OperatingSystem.c"
-partitionsTable[blockIndex].occupied = 0; 
-#line 372 "OperatingSystem.c"
-
-# 2135 "OperatingSystemAspect.c"
-retValue_acc = blockIndex;
-# 2137 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- } }} } 
-#line 375 "OperatingSystem.c"
-
-# 2142 "OperatingSystemAspect.c"
-retValue_acc = (-1);
-# 2144 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- 
-# 2147 "OperatingSystemAspect.c"
-
-}
-
-# 2151 "OperatingSystemAspect.c"
-return (int )retValue_acc;
-
-# 2154 "OperatingSystemAspect.c"
-
-}
- 
-#line 379 "OperatingSystem.c"
+#line 555 "OperatingSystem.c"
 void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int processSize, int priority, int processPLIndex)  
-# 2160 "OperatingSystemAspect.c"
+# 2720 "OperatingSystemAspect.c"
 {
 
 
 
-# 2165 "OperatingSystemAspect.c"
+# 2725 "OperatingSystemAspect.c"
 {
 
-#line 381 "OperatingSystem.c"
+#line 557 "OperatingSystem.c"
 processTable[PID].busy = 1; 
-#line 382 "OperatingSystem.c"
+#line 558 "OperatingSystem.c"
 processTable[PID].initialPhysicalAddress = initialPhysicalAddress; 
-#line 383 "OperatingSystem.c"
+#line 559 "OperatingSystem.c"
 processTable[PID].processSize = processSize; 
-#line 384 "OperatingSystem.c"
+#line 560 "OperatingSystem.c"
 processTable[PID].state = NEW; 
-#line 385 "OperatingSystem.c"
+#line 561 "OperatingSystem.c"
 processTable[PID].priority = priority; 
-#line 386 "OperatingSystem.c"
+#line 562 "OperatingSystem.c"
 processTable[PID].programListIndex = processPLIndex; 
-#line 389 "OperatingSystem.c"
+#line 565 "OperatingSystem.c"
 if ((programList[processPLIndex]->type) == DAEMONPROGRAM){
 { 
-#line 390 "OperatingSystem.c"
+#line 566 "OperatingSystem.c"
 processTable[PID].copyOfPCRegister = initialPhysicalAddress; 
-#line 391 "OperatingSystem.c"
+#line 567 "OperatingSystem.c"
 processTable[PID].copyOfPSWRegister = (((unsigned int )1)) << EXECUTION_MODE_BIT; 
-#line 394 "OperatingSystem.c"
+#line 570 "OperatingSystem.c"
 processTable[PID].queueID = DAEMONSQUEUE; } }else{
 { 
-#line 396 "OperatingSystem.c"
+#line 572 "OperatingSystem.c"
 processTable[PID].copyOfPCRegister = 0; 
-#line 397 "OperatingSystem.c"
+#line 573 "OperatingSystem.c"
 processTable[PID].copyOfPSWRegister = 0; 
-#line 400 "OperatingSystem.c"
+#line 576 "OperatingSystem.c"
 processTable[PID].queueID = USERPROCESSQUEUE; } }
-# 2196 "OperatingSystemAspect.c"
+# 2756 "OperatingSystemAspect.c"
 
 }
 
-# 2200 "OperatingSystemAspect.c"
-
-}
- 
-#line 407 "OperatingSystem.c"
-void OperatingSystem_MoveToTheREADYState(int PID)  
-# 2206 "OperatingSystemAspect.c"
-{
-
-
-
-# 2211 "OperatingSystemAspect.c"
-{
-
-#line 409 "OperatingSystem.c"
-
-#line 409 "OperatingSystem.c"
-int queue = processTable[PID].queueID;
-#line 411 "OperatingSystem.c"
-if (Heap_add(PID, readyToRunQueue[queue], 1, (&numberOfReadyToRunProcesses[queue]), 4) == 0){
-{ 
-#line 412 "OperatingSystem.c"
-
-#line 412 "OperatingSystem.c"
-int lastState = processTable[PID].state;
-#line 413 "OperatingSystem.c"
-processTable[PID].state = READY; 
-#line 414 "OperatingSystem.c"
-OperatingSystem_ShowTime('p'); 
-#line 415 "OperatingSystem.c"
-ComputerSystem_DebugMessage(110, 'p', PID, (programList[processTable[PID].programListIndex]->executableName), statesNames[lastState], statesNames[READY]); } }
-# 2231 "OperatingSystemAspect.c"
-
-}
-
-# 2235 "OperatingSystemAspect.c"
+# 2760 "OperatingSystemAspect.c"
 
 }
  
-#line 421 "OperatingSystem.c"
-void OperatingSystem_MoveToTheBLOCKEDState(int PID)  
-# 2241 "OperatingSystemAspect.c"
+#line 582 "OperatingSystem.c"
+int OperatingSystem_GetMostImportantREADYProcessInfo()  
+# 2766 "OperatingSystemAspect.c"
 {
-
-
-
-# 2246 "OperatingSystemAspect.c"
-{
-
-#line 441 "OperatingSystem.c"
-if (Heap_add(PID, sleepingProcessesQueue, 0, (&numberOfSleepingProcesses), 4) == 0){
-{ 
-#line 426 "OperatingSystem.c"
-OperatingSystem_SaveContext(executingProcessID); 
-#line 429 "OperatingSystem.c"
-
-#line 429 "OperatingSystem.c"
-int lastState = processTable[PID].state;
-#line 432 "OperatingSystem.c"
-processTable[PID].state = BLOCKED; 
-#line 435 "OperatingSystem.c"
-processTable[PID].whenToWakeUp = OperatingSystem_GetWhenToWakeUpTime(); 
-#line 438 "OperatingSystem.c"
-OperatingSystem_ShowTime('p'); 
-#line 439 "OperatingSystem.c"
-ComputerSystem_DebugMessage(110, 'p', PID, (programList[processTable[PID].programListIndex]->executableName), statesNames[lastState], statesNames[BLOCKED]); } }
-# 2266 "OperatingSystemAspect.c"
-
-}
-
-# 2270 "OperatingSystemAspect.c"
-
-}
- 
-#line 446 "OperatingSystem.c"
-int OperatingSystem_ShortTermScheduler()  
-# 2276 "OperatingSystemAspect.c"
-{
-# 2278 "OperatingSystemAspect.c"
+# 2768 "OperatingSystemAspect.c"
 int retValue_acc;
 
 
 
 
-# 2284 "OperatingSystemAspect.c"
+# 2774 "OperatingSystemAspect.c"
 {
 
-#line 447 "OperatingSystem.c"
+#line 584 "OperatingSystem.c"
 
-#line 447 "OperatingSystem.c"
-int selectedProcess;
-#line 448 "OperatingSystem.c"
-selectedProcess = OperatingSystem_ExtractFromReadyToRun(); 
-#line 449 "OperatingSystem.c"
+#line 584 "OperatingSystem.c"
+int mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[USERPROCESSQUEUE], numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
+#line 587 "OperatingSystem.c"
+if (mostImportantREADYProcess == (-1)){
+{ 
+#line 588 "OperatingSystem.c"
+mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[DAEMONSQUEUE], numberOfReadyToRunProcesses[DAEMONSQUEUE]); } }
+#line 591 "OperatingSystem.c"
 
-# 2295 "OperatingSystemAspect.c"
-retValue_acc = selectedProcess;
-# 2297 "OperatingSystemAspect.c"
+# 2788 "OperatingSystemAspect.c"
+retValue_acc = mostImportantREADYProcess;
+# 2790 "OperatingSystemAspect.c"
 return (int )retValue_acc;
  
-# 2300 "OperatingSystemAspect.c"
+# 2793 "OperatingSystemAspect.c"
 
 }
 
-# 2304 "OperatingSystemAspect.c"
+# 2797 "OperatingSystemAspect.c"
 return (int )retValue_acc;
 
-# 2307 "OperatingSystemAspect.c"
+# 2800 "OperatingSystemAspect.c"
 
 }
  
-#line 453 "OperatingSystem.c"
+#line 597 "OperatingSystem.c"
+int OperatingSystem_GetWhenToWakeUpTime()  
+# 2806 "OperatingSystemAspect.c"
+{
+# 2808 "OperatingSystemAspect.c"
+int retValue_acc;
+
+
+
+
+# 2814 "OperatingSystemAspect.c"
+{
+
+#line 600 "OperatingSystem.c"
+
+# 2819 "OperatingSystemAspect.c"
+retValue_acc = abs(Processor_GetAccumulator()) + numberOfClockInterrupts + 1;
+# 2821 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ 
+# 2824 "OperatingSystemAspect.c"
+
+}
+
+# 2828 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+
+# 2831 "OperatingSystemAspect.c"
+
+}
+ 
+#line 604 "OperatingSystem.c"
 int OperatingSystem_ExtractFromReadyToRun()  
-# 2313 "OperatingSystemAspect.c"
+# 2837 "OperatingSystemAspect.c"
 {
-# 2315 "OperatingSystemAspect.c"
+# 2839 "OperatingSystemAspect.c"
 int retValue_acc;
 
 
 
 
-# 2321 "OperatingSystemAspect.c"
+# 2845 "OperatingSystemAspect.c"
 {
 
-#line 456 "OperatingSystem.c"
+#line 607 "OperatingSystem.c"
 
-#line 456 "OperatingSystem.c"
+#line 607 "OperatingSystem.c"
 int selectedProcess = (-1);
-#line 459 "OperatingSystem.c"
+#line 610 "OperatingSystem.c"
 selectedProcess = Heap_poll(readyToRunQueue[USERPROCESSQUEUE], 1, (&numberOfReadyToRunProcesses[USERPROCESSQUEUE])); 
-#line 462 "OperatingSystem.c"
+#line 613 "OperatingSystem.c"
 if (selectedProcess == (-1)){
 { 
-#line 463 "OperatingSystem.c"
+#line 614 "OperatingSystem.c"
 selectedProcess = Heap_poll(readyToRunQueue[DAEMONSQUEUE], 1, (&numberOfReadyToRunProcesses[DAEMONSQUEUE])); } }
-#line 467 "OperatingSystem.c"
+#line 618 "OperatingSystem.c"
 
-# 2337 "OperatingSystemAspect.c"
+# 2861 "OperatingSystemAspect.c"
 retValue_acc = selectedProcess;
-# 2339 "OperatingSystemAspect.c"
+# 2863 "OperatingSystemAspect.c"
 return (int )retValue_acc;
  
-# 2342 "OperatingSystemAspect.c"
+# 2866 "OperatingSystemAspect.c"
 
 }
 
-# 2346 "OperatingSystemAspect.c"
+# 2870 "OperatingSystemAspect.c"
 return (int )retValue_acc;
 
-# 2349 "OperatingSystemAspect.c"
+# 2873 "OperatingSystemAspect.c"
 
 }
  
-#line 471 "OperatingSystem.c"
-void OperatingSystem_Dispatch(int PID)  
-# 2355 "OperatingSystemAspect.c"
+#line 624 "OperatingSystem.c"
+int OperatingSystem_LongTermScheduler()  
+# 2879 "OperatingSystemAspect.c"
+{
+# 2881 "OperatingSystemAspect.c"
+int retValue_acc;
+
+
+
+
+# 2887 "OperatingSystemAspect.c"
+{
+
+#line 627 "OperatingSystem.c"
+
+#line 627 "OperatingSystem.c"
+int PID,i,numberOfSuccessfullyCreatedProcesses = 0;
+#line 629 "OperatingSystem.c"
+while(OperatingSystem_IsThereANewProgram() == 1) { { 
+#line 632 "OperatingSystem.c"
+i = Heap_poll(arrivalTimeQueue, 2, (&numberOfProgramsInArrivalTimeQueue)); 
+#line 635 "OperatingSystem.c"
+PID = OperatingSystem_CreateProcess(i); 
+#line 638 "OperatingSystem.c"
+switch(PID){ { 
+#line 641 "OperatingSystem.c"
+case (-3): OperatingSystem_ShowTime('e'); 
+#line 642 "OperatingSystem.c"
+ComputerSystem_DebugMessage(103, 'e', (programList[i]->executableName)); 
+#line 643 "OperatingSystem.c"
+break; 
+#line 645 "OperatingSystem.c"
+case (-1): OperatingSystem_ShowTime('e'); 
+#line 647 "OperatingSystem.c"
+ComputerSystem_DebugMessage(104, 'e', (programList[i]->executableName), "it does not exists"); 
+#line 648 "OperatingSystem.c"
+break; 
+#line 650 "OperatingSystem.c"
+case (-2): OperatingSystem_ShowTime('e'); 
+#line 652 "OperatingSystem.c"
+ComputerSystem_DebugMessage(104, 'e', (programList[i]->executableName), "invalid priority or size"); 
+#line 653 "OperatingSystem.c"
+break; 
+#line 655 "OperatingSystem.c"
+case (-4): OperatingSystem_ShowTime('e'); 
+#line 657 "OperatingSystem.c"
+ComputerSystem_DebugMessage(105, 'e', (programList[i]->executableName)); 
+#line 658 "OperatingSystem.c"
+break; 
+#line 660 "OperatingSystem.c"
+default: numberOfSuccessfullyCreatedProcesses++; 
+#line 664 "OperatingSystem.c"
+if ((programList[i]->type) == USERPROGRAM){
+{ 
+#line 665 "OperatingSystem.c"
+numberOfNotTerminatedUserProcesses++; } }
+#line 669 "OperatingSystem.c"
+OperatingSystem_MoveToTheREADYState(PID); } } } } 
+#line 674 "OperatingSystem.c"
+if (numberOfSuccessfullyCreatedProcesses){
+{ 
+#line 675 "OperatingSystem.c"
+OperatingSystem_PrintStatus(); } }
+#line 679 "OperatingSystem.c"
+
+# 2942 "OperatingSystemAspect.c"
+retValue_acc = numberOfSuccessfullyCreatedProcesses;
+# 2944 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ 
+# 2947 "OperatingSystemAspect.c"
+
+}
+
+# 2951 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+
+# 2954 "OperatingSystemAspect.c"
+
+}
+ 
+#line 685 "OperatingSystem.c"
+int OperatingSystem_ShortTermScheduler()  
+# 2960 "OperatingSystemAspect.c"
+{
+# 2962 "OperatingSystemAspect.c"
+int retValue_acc;
+
+
+
+
+# 2968 "OperatingSystemAspect.c"
+{
+
+#line 686 "OperatingSystem.c"
+
+#line 686 "OperatingSystem.c"
+int selectedProcess;
+#line 687 "OperatingSystem.c"
+selectedProcess = OperatingSystem_ExtractFromReadyToRun(); 
+#line 688 "OperatingSystem.c"
+
+# 2979 "OperatingSystemAspect.c"
+retValue_acc = selectedProcess;
+# 2981 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+ 
+# 2984 "OperatingSystemAspect.c"
+
+}
+
+# 2988 "OperatingSystemAspect.c"
+return (int )retValue_acc;
+
+# 2991 "OperatingSystemAspect.c"
+
+}
+ 
+#line 693 "OperatingSystem.c"
+void OperatingSystem_MoveToTheREADYState(int PID)  
+# 2997 "OperatingSystemAspect.c"
 {
 
 
 
-# 2360 "OperatingSystemAspect.c"
+# 3002 "OperatingSystemAspect.c"
 {
 
-#line 474 "OperatingSystem.c"
-executingProcessID = PID; 
-#line 477 "OperatingSystem.c"
+#line 695 "OperatingSystem.c"
 
-#line 477 "OperatingSystem.c"
+#line 695 "OperatingSystem.c"
+int queue = processTable[PID].queueID;
+#line 697 "OperatingSystem.c"
+if (Heap_add(PID, readyToRunQueue[queue], 1, (&numberOfReadyToRunProcesses[queue]), 4) == 0){
+{ 
+#line 698 "OperatingSystem.c"
+
+#line 698 "OperatingSystem.c"
 int lastState = processTable[PID].state;
-#line 480 "OperatingSystem.c"
-processTable[PID].state = EXECUTING; 
-#line 483 "OperatingSystem.c"
+#line 699 "OperatingSystem.c"
+processTable[PID].state = READY; 
+#line 700 "OperatingSystem.c"
 OperatingSystem_ShowTime('p'); 
-#line 484 "OperatingSystem.c"
-ComputerSystem_DebugMessage(110, 'p', PID, (programList[processTable[PID].programListIndex]->executableName), statesNames[lastState], statesNames[EXECUTING]); 
-#line 487 "OperatingSystem.c"
-OperatingSystem_RestoreContext(PID); 
-# 2377 "OperatingSystemAspect.c"
+#line 701 "OperatingSystem.c"
+ComputerSystem_DebugMessage(110, 'p', PID, (programList[processTable[PID].programListIndex]->executableName), statesNames[lastState], statesNames[READY]); } }
+# 3022 "OperatingSystemAspect.c"
 
 }
 
-# 2381 "OperatingSystemAspect.c"
+# 3026 "OperatingSystemAspect.c"
 
 }
  
-#line 491 "OperatingSystem.c"
-void OperatingSystem_RestoreContext(int PID)  
-# 2387 "OperatingSystemAspect.c"
+#line 707 "OperatingSystem.c"
+void OperatingSystem_MoveToTheBLOCKEDState(int PID)  
+# 3032 "OperatingSystemAspect.c"
 {
 
 
 
-# 2392 "OperatingSystemAspect.c"
+# 3037 "OperatingSystemAspect.c"
 {
 
-#line 494 "OperatingSystem.c"
-Processor_CopyInSystemStack(300 - 1, processTable[PID].copyOfPCRegister); 
-#line 495 "OperatingSystem.c"
-Processor_CopyInSystemStack(300 - 2, processTable[PID].copyOfPSWRegister); 
-#line 496 "OperatingSystem.c"
-Processor_SetAccumulator(processTable[PID].copyOfAccumulator); 
-#line 499 "OperatingSystem.c"
-MMU_SetBase(processTable[PID].initialPhysicalAddress); 
-#line 500 "OperatingSystem.c"
-MMU_SetLimit(processTable[PID].processSize); 
-# 2405 "OperatingSystemAspect.c"
-
-}
-
-# 2409 "OperatingSystemAspect.c"
-
-}
- 
-#line 505 "OperatingSystem.c"
-void OperatingSystem_PreemptRunningProcess()  
-# 2415 "OperatingSystemAspect.c"
-{
-
-
-
-# 2420 "OperatingSystemAspect.c"
-{
-
-#line 508 "OperatingSystem.c"
+#line 727 "OperatingSystem.c"
+if (Heap_add(PID, sleepingProcessesQueue, 0, (&numberOfSleepingProcesses), 4) == 0){
+{ 
+#line 712 "OperatingSystem.c"
 OperatingSystem_SaveContext(executingProcessID); 
-#line 510 "OperatingSystem.c"
-OperatingSystem_MoveToTheREADYState(executingProcessID); 
-#line 512 "OperatingSystem.c"
-executingProcessID = (-1); 
-# 2429 "OperatingSystemAspect.c"
+#line 715 "OperatingSystem.c"
 
-}
-
-# 2433 "OperatingSystemAspect.c"
-
-}
- 
-#line 517 "OperatingSystem.c"
-void OperatingSystem_SaveContext(int PID)  
-# 2439 "OperatingSystemAspect.c"
-{
-
-
-
-# 2444 "OperatingSystemAspect.c"
-{
-
-#line 520 "OperatingSystem.c"
-processTable[PID].copyOfPCRegister = Processor_CopyFromSystemStack(300 - 1); 
-#line 523 "OperatingSystem.c"
-processTable[PID].copyOfPSWRegister = Processor_CopyFromSystemStack(300 - 2); 
-#line 526 "OperatingSystem.c"
-processTable[PID].copyOfAccumulator = Processor_GetAccumulator(); 
-# 2453 "OperatingSystemAspect.c"
-
-}
-
-# 2457 "OperatingSystemAspect.c"
-
-}
- 
-#line 531 "OperatingSystem.c"
-void OperatingSystem_HandleException()  
-# 2463 "OperatingSystemAspect.c"
-{
-
-
-
-# 2468 "OperatingSystemAspect.c"
-{
-
-#line 534 "OperatingSystem.c"
-OperatingSystem_ShowTime('i'); 
-#line 535 "OperatingSystem.c"
-ComputerSystem_DebugMessage(140, 'i', executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName), exceptionNames[Processor_GetRegisterB()]); 
-#line 538 "OperatingSystem.c"
-OperatingSystem_TerminateProcess(); 
-#line 539 "OperatingSystem.c"
-OperatingSystem_PrintStatus(); 
-# 2479 "OperatingSystemAspect.c"
-
-}
-
-# 2483 "OperatingSystemAspect.c"
-
-}
- 
-#line 543 "OperatingSystem.c"
-void OperatingSystem_TerminateProcess()  
-# 2489 "OperatingSystemAspect.c"
-{
-
-
-
-# 2494 "OperatingSystemAspect.c"
-{
-
-#line 546 "OperatingSystem.c"
-
-#line 546 "OperatingSystem.c"
-int lastState = processTable[executingProcessID].state;
-#line 549 "OperatingSystem.c"
-processTable[executingProcessID].state = EXIT; 
-#line 552 "OperatingSystem.c"
+#line 715 "OperatingSystem.c"
+int lastState = processTable[PID].state;
+#line 718 "OperatingSystem.c"
+processTable[PID].state = BLOCKED; 
+#line 721 "OperatingSystem.c"
+processTable[PID].whenToWakeUp = OperatingSystem_GetWhenToWakeUpTime(); 
+#line 724 "OperatingSystem.c"
 OperatingSystem_ShowTime('p'); 
-#line 553 "OperatingSystem.c"
-ComputerSystem_DebugMessage(110, 'p', executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName), statesNames[lastState], statesNames[EXIT]); 
-#line 556 "OperatingSystem.c"
-OperatingSystem_ShowPartitionTable("before releasing memory"); 
-#line 559 "OperatingSystem.c"
+#line 725 "OperatingSystem.c"
+ComputerSystem_DebugMessage(110, 'p', PID, (programList[processTable[PID].programListIndex]->executableName), statesNames[lastState], statesNames[BLOCKED]); } }
+# 3057 "OperatingSystemAspect.c"
 
-#line 559 "OperatingSystem.c"
+}
+
+# 3061 "OperatingSystemAspect.c"
+
+}
+ 
+#line 730 "OperatingSystem.c"
+void OperatingSystem_TerminateProcess()  
+# 3067 "OperatingSystemAspect.c"
+{
+
+
+
+# 3072 "OperatingSystemAspect.c"
+{
+
+#line 733 "OperatingSystem.c"
+
+#line 733 "OperatingSystem.c"
+int lastState = processTable[executingProcessID].state;
+#line 736 "OperatingSystem.c"
+processTable[executingProcessID].state = EXIT; 
+#line 739 "OperatingSystem.c"
+OperatingSystem_ShowTime('p'); 
+#line 740 "OperatingSystem.c"
+ComputerSystem_DebugMessage(110, 'p', executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName), statesNames[lastState], statesNames[EXIT]); 
+#line 743 "OperatingSystem.c"
+OperatingSystem_ShowPartitionTable("before releasing memory"); 
+#line 746 "OperatingSystem.c"
+
+#line 746 "OperatingSystem.c"
 int releasedBlockIndex = OperatingSystem_ReleaseMainMemory(executingProcessID);
-#line 562 "OperatingSystem.c"
+#line 749 "OperatingSystem.c"
 OperatingSystem_ShowTime('m'); 
-#line 563 "OperatingSystem.c"
+#line 750 "OperatingSystem.c"
 ComputerSystem_DebugMessage(145, 'm', releasedBlockIndex, partitionsTable[releasedBlockIndex].initAddress, partitionsTable[releasedBlockIndex].size, executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName)); 
-#line 570 "OperatingSystem.c"
+#line 757 "OperatingSystem.c"
 OperatingSystem_ShowPartitionTable("after releasing memory"); 
-#line 573 "OperatingSystem.c"
+#line 760 "OperatingSystem.c"
 if ((programList[processTable[executingProcessID].programListIndex]->type) == USERPROGRAM){
 { 
-#line 575 "OperatingSystem.c"
+#line 762 "OperatingSystem.c"
 numberOfNotTerminatedUserProcesses--; } }
-#line 579 "OperatingSystem.c"
-if (OperatingSystem_checkIfShutdown()){
+#line 766 "OperatingSystem.c"
+if (OperatingSystem_CheckIfShutdown()){
 { 
-#line 581 "OperatingSystem.c"
+#line 768 "OperatingSystem.c"
 OperatingSystem_ReadyToShutdown(); } }
-#line 586 "OperatingSystem.c"
+#line 773 "OperatingSystem.c"
 OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler()); 
-# 2531 "OperatingSystemAspect.c"
+# 3109 "OperatingSystemAspect.c"
 
 }
 
-# 2535 "OperatingSystemAspect.c"
-
-}
- 
-#line 591 "OperatingSystem.c"
-void OperatingSystem_HandleSystemCall()  
-# 2541 "OperatingSystemAspect.c"
-{
-
-
-
-# 2546 "OperatingSystemAspect.c"
-{
-
-#line 594 "OperatingSystem.c"
-
-#line 594 "OperatingSystem.c"
-int systemCallID;
-#line 595 "OperatingSystem.c"
-
-#line 595 "OperatingSystem.c"
-int currentQueue,currentPriority;
-#line 596 "OperatingSystem.c"
-
-#line 596 "OperatingSystem.c"
-int oldProcessID,newProcessID;
-#line 599 "OperatingSystem.c"
-systemCallID = Processor_GetRegisterA(); 
-#line 602 "OperatingSystem.c"
-switch(systemCallID){ { 
-#line 606 "OperatingSystem.c"
-case SYSCALL_PRINTEXECPID: OperatingSystem_ShowTime('p'); 
-#line 607 "OperatingSystem.c"
-ComputerSystem_DebugMessage(24, 'p', executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName)); 
-#line 608 "OperatingSystem.c"
-break; 
-#line 610 "OperatingSystem.c"
-case SYSCALL_END: OperatingSystem_ShowTime('p'); 
-#line 613 "OperatingSystem.c"
-ComputerSystem_DebugMessage(25, 'p', executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName)); 
-#line 614 "OperatingSystem.c"
-OperatingSystem_TerminateProcess(); 
-#line 615 "OperatingSystem.c"
-OperatingSystem_PrintStatus(); 
-#line 616 "OperatingSystem.c"
-break; 
-#line 618 "OperatingSystem.c"
-case SYSCALL_YIELD: currentQueue = processTable[executingProcessID].queueID; 
-#line 623 "OperatingSystem.c"
-currentPriority = processTable[executingProcessID].priority; 
-#line 626 "OperatingSystem.c"
-if (numberOfReadyToRunProcesses[currentQueue] > 0 && processTable[readyToRunQueue[currentQueue][0]].priority == currentPriority){
-{ 
-#line 627 "OperatingSystem.c"
-oldProcessID = executingProcessID; 
-#line 628 "OperatingSystem.c"
-newProcessID = readyToRunQueue[currentQueue][0]; 
-#line 631 "OperatingSystem.c"
-OperatingSystem_ShowTime('s'); 
-#line 632 "OperatingSystem.c"
-ComputerSystem_DebugMessage(115, 's', oldProcessID, (programList[processTable[oldProcessID].programListIndex]->executableName), newProcessID, (programList[processTable[newProcessID].programListIndex]->executableName)); 
-#line 637 "OperatingSystem.c"
-OperatingSystem_PreemptRunningProcess(); 
-#line 640 "OperatingSystem.c"
-OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler()); 
-#line 642 "OperatingSystem.c"
-OperatingSystem_PrintStatus(); } }
-#line 645 "OperatingSystem.c"
-break; 
-#line 647 "OperatingSystem.c"
-case SYSCALL_SLEEP: oldProcessID = executingProcessID; 
-#line 650 "OperatingSystem.c"
-OperatingSystem_MoveToTheBLOCKEDState(executingProcessID); 
-#line 653 "OperatingSystem.c"
-OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler()); 
-#line 656 "OperatingSystem.c"
-OperatingSystem_PrintStatus(); 
-#line 657 "OperatingSystem.c"
-break; 
-#line 659 "OperatingSystem.c"
-case SYSCALL_IO: oldProcessID = executingProcessID; 
-#line 662 "OperatingSystem.c"
-OperatingSystem_IOScheduler(); 
-#line 665 "OperatingSystem.c"
-OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler()); 
-#line 668 "OperatingSystem.c"
-OperatingSystem_PrintStatus(); 
-#line 669 "OperatingSystem.c"
-break; 
-#line 671 "OperatingSystem.c"
-default: OperatingSystem_ShowTime('i'); 
-#line 673 "OperatingSystem.c"
-ComputerSystem_DebugMessage(141, 'i', executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName), systemCallID); 
-#line 674 "OperatingSystem.c"
-OperatingSystem_TerminateProcess(); 
-#line 675 "OperatingSystem.c"
-OperatingSystem_PrintStatus(); 
-#line 676 "OperatingSystem.c"
-break; } } 
-# 2634 "OperatingSystemAspect.c"
-
-}
-
-# 2638 "OperatingSystemAspect.c"
+# 3113 "OperatingSystemAspect.c"
 
 }
  
   void __utac_acc__Aspect__3 (void);
 
 
-#line 681 "OperatingSystem.c"
+#line 781 "OperatingSystem.c"
 void OperatingSystem_InterruptLogic(int entryPoint)  
-# 2647 "OperatingSystemAspect.c"
+# 3122 "OperatingSystemAspect.c"
 {
 
 
@@ -2653,566 +3128,237 @@ __utac_acc__Aspect__3();
 
 }
 
-# 2657 "OperatingSystemAspect.c"
+# 3132 "OperatingSystemAspect.c"
 {
 
-#line 696 "OperatingSystem.c"
+#line 795 "OperatingSystem.c"
 switch(entryPoint){ { 
-#line 684 "OperatingSystem.c"
+#line 784 "OperatingSystem.c"
 case SYSCALL_BIT: OperatingSystem_HandleSystemCall(); 
-#line 685 "OperatingSystem.c"
+#line 785 "OperatingSystem.c"
 break; 
-#line 686 "OperatingSystem.c"
+#line 786 "OperatingSystem.c"
 case EXCEPTION_BIT: OperatingSystem_HandleException(); 
-#line 688 "OperatingSystem.c"
-break; 
-#line 689 "OperatingSystem.c"
-case CLOCKINT_BIT: OperatingSystem_HandleClockInterrupt(); 
-#line 691 "OperatingSystem.c"
-break; 
-#line 692 "OperatingSystem.c"
-case IOEND_BIT: OperatingSystem_HandleIOEndInterrupt(); 
-#line 694 "OperatingSystem.c"
-break; } } 
-# 2678 "OperatingSystemAspect.c"
-
-}
-
-# 2682 "OperatingSystemAspect.c"
-
-}
- 
-#line 700 "OperatingSystem.c"
-void OperatingSystem_PrintReadyToRunQueue()  
-# 2688 "OperatingSystemAspect.c"
-{
-
-
-
-# 2693 "OperatingSystemAspect.c"
-{
-
-#line 705 "OperatingSystem.c"
-OperatingSystem_ShowTime('s'); 
-#line 706 "OperatingSystem.c"
-ComputerSystem_DebugMessage(106, 's'); 
-#line 707 "OperatingSystem.c"
-
-#line 707 "OperatingSystem.c"
-int i,processPID,queue;
-#line 710 "OperatingSystem.c"
-for(queue = 0;queue < 2;queue++) { { 
-#line 713 "OperatingSystem.c"
-ComputerSystem_DebugMessage(112, 's', queueNames[queue]); 
-#line 716 "OperatingSystem.c"
-if (numberOfReadyToRunProcesses[queue] == 0){
-{ 
-#line 717 "OperatingSystem.c"
-ComputerSystem_DebugMessage(113, 's'); } }
-#line 721 "OperatingSystem.c"
-for(i = 0;i < numberOfReadyToRunProcesses[queue];i++) { { 
-#line 723 "OperatingSystem.c"
-processPID = readyToRunQueue[queue][i]; 
-#line 726 "OperatingSystem.c"
-if (i == numberOfReadyToRunProcesses[queue] - 1){
-{ 
-#line 728 "OperatingSystem.c"
-ComputerSystem_DebugMessage(107, 's', processPID, processTable[processPID].priority, "\n"); } }else{
-{ 
-#line 730 "OperatingSystem.c"
-ComputerSystem_DebugMessage(107, 's', processPID, processTable[processPID].priority, ", "); } }} } } } 
-# 2725 "OperatingSystemAspect.c"
-
-}
-
-# 2729 "OperatingSystemAspect.c"
-
-}
- 
-#line 738 "OperatingSystem.c"
-void OperatingSystem_HandleClockInterrupt()  
-# 2735 "OperatingSystemAspect.c"
-{
-
-
-
-# 2740 "OperatingSystemAspect.c"
-{
-
-#line 741 "OperatingSystem.c"
-
-#line 741 "OperatingSystem.c"
-int currentNumberOfClockInterrupts = OperatingSystem_IncreseNumberOfClockInterrupts();
-#line 744 "OperatingSystem.c"
-OperatingSystem_ShowTime('i'); 
-#line 745 "OperatingSystem.c"
-ComputerSystem_DebugMessage(120, 'i', currentNumberOfClockInterrupts); 
-#line 748 "OperatingSystem.c"
-
-#line 748 "OperatingSystem.c"
-int unBLOCKEDProcesses = 0;
-#line 752 "OperatingSystem.c"
-while(Heap_getFirst(sleepingProcessesQueue, numberOfSleepingProcesses) != (-1) && processTable[Heap_getFirst(sleepingProcessesQueue, numberOfSleepingProcesses)].whenToWakeUp <= currentNumberOfClockInterrupts) { { 
-#line 754 "OperatingSystem.c"
-OperatingSystem_MoveToTheREADYState(Heap_poll(sleepingProcessesQueue, 0, (&numberOfSleepingProcesses))); 
-#line 756 "OperatingSystem.c"
-unBLOCKEDProcesses++; } } 
-#line 760 "OperatingSystem.c"
-if (unBLOCKEDProcesses || OperatingSystem_LongTermScheduler()){
-{ 
-#line 761 "OperatingSystem.c"
-OperatingSystem_UpdateProcessor(); } }else{
-if (OperatingSystem_checkIfShutdown()){
-{ 
-#line 764 "OperatingSystem.c"
-OperatingSystem_ReadyToShutdown(); } }}
-# 2770 "OperatingSystemAspect.c"
-
-}
-
-# 2774 "OperatingSystemAspect.c"
-
-}
- 
-#line 769 "OperatingSystem.c"
-void OperatingSystem_HandleIOEndInterrupt()  
-# 2780 "OperatingSystemAspect.c"
-{
-
-
-
-# 2785 "OperatingSystemAspect.c"
-{
-
-#line 772 "OperatingSystem.c"
-
-#line 772 "OperatingSystem.c"
-int finishedProcessPID = OperatingSystem_DeviceControlerEndIOOperation();
-#line 775 "OperatingSystem.c"
-if (finishedProcessPID != (-1)){
-{ 
-#line 777 "OperatingSystem.c"
-OperatingSystem_MoveToTheREADYState(finishedProcessPID); 
-#line 778 "OperatingSystem.c"
-OperatingSystem_PrintStatus(); 
-#line 781 "OperatingSystem.c"
-OperatingSystem_UpdateProcessor(); } }
-# 2801 "OperatingSystemAspect.c"
-
-}
-
-# 2805 "OperatingSystemAspect.c"
-
-}
- 
 #line 788 "OperatingSystem.c"
-void OperatingSystem_IOScheduler()  
-# 2811 "OperatingSystemAspect.c"
-{
+break; 
+#line 789 "OperatingSystem.c"
+case CLOCKINT_BIT: OperatingSystem_HandleClockInterrupt(); 
+#line 791 "OperatingSystem.c"
+break; 
+#line 792 "OperatingSystem.c"
+case IOEND_BIT: OperatingSystem_HandleIOEndInterrupt(); 
+#line 794 "OperatingSystem.c"
+break; } } 
+# 3153 "OperatingSystemAspect.c"
 
+}
 
+# 3157 "OperatingSystemAspect.c"
 
-# 2816 "OperatingSystemAspect.c"
-{
-
-#line 807 "OperatingSystem.c"
-if (QueueFIFO_add(executingProcessID, IOWaitingProcessesQueue, (&numberOfIOWaitingProcesses), 4) == 0){
-{ 
-#line 793 "OperatingSystem.c"
-OperatingSystem_SaveContext(executingProcessID); 
-#line 796 "OperatingSystem.c"
-
-#line 796 "OperatingSystem.c"
-int lastState = processTable[executingProcessID].state;
+}
+ 
 #line 799 "OperatingSystem.c"
-processTable[executingProcessID].state = BLOCKED; 
-#line 802 "OperatingSystem.c"
-OperatingSystem_ShowTime('p'); 
-#line 803 "OperatingSystem.c"
-ComputerSystem_DebugMessage(110, 'p', executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName), statesNames[lastState], statesNames[BLOCKED]); } }
-#line 807 "OperatingSystem.c"
-OperatingSystem_DeviceControlerStartIOOperation(); 
-# 2836 "OperatingSystemAspect.c"
-
-}
-
-# 2840 "OperatingSystemAspect.c"
-
-}
- 
-#line 811 "OperatingSystem.c"
-void OperatingSystem_DeviceControlerStartIOOperation()  
-# 2846 "OperatingSystemAspect.c"
+void OperatingSystem_HandleSystemCall()  
+# 3163 "OperatingSystemAspect.c"
 {
 
 
 
-# 2851 "OperatingSystemAspect.c"
-{
-
-#line 812 "OperatingSystem.c"
-
-#line 812 "OperatingSystem.c"
-int requestingProcessPID = QueueFIFO_getFirst(IOWaitingProcessesQueue, 4);
-#line 813 "OperatingSystem.c"
-if (Device_GetStatus() == FREE){
-{ 
-#line 817 "OperatingSystem.c"
-if (requestingProcessPID != (-1)){
-{ 
-#line 815 "OperatingSystem.c"
-Device_StartIO(requestingProcessPID); } }} }
-# 2866 "OperatingSystemAspect.c"
-
-}
-
-# 2870 "OperatingSystemAspect.c"
-
-}
- 
-#line 821 "OperatingSystem.c"
-int OperatingSystem_DeviceControlerEndIOOperation()  
-# 2876 "OperatingSystemAspect.c"
-{
-# 2878 "OperatingSystemAspect.c"
-int retValue_acc;
-
-
-
-
-# 2884 "OperatingSystemAspect.c"
-{
-
-#line 822 "OperatingSystem.c"
-
-#line 822 "OperatingSystem.c"
-int finishedProcessPID = QueueFIFO_poll(IOWaitingProcessesQueue, (&numberOfIOWaitingProcesses));
-#line 823 "OperatingSystem.c"
-if (numberOfIOWaitingProcesses > 0){
-{ 
-#line 824 "OperatingSystem.c"
-OperatingSystem_DeviceControlerStartIOOperation(); } }
-#line 826 "OperatingSystem.c"
-
-# 2898 "OperatingSystemAspect.c"
-retValue_acc = finishedProcessPID;
-# 2900 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- 
-# 2903 "OperatingSystemAspect.c"
-
-}
-
-# 2907 "OperatingSystemAspect.c"
-return (int )retValue_acc;
-
-# 2910 "OperatingSystemAspect.c"
-
-}
- 
-#line 834 "OperatingSystem.c"
-int OperatingSystem_GetExecutingProcessID()  
-# 2916 "OperatingSystemAspect.c"
-{
-# 2918 "OperatingSystemAspect.c"
-int retValue_acc;
-
-
-
-
-# 2924 "OperatingSystemAspect.c"
-{
-
-#line 835 "OperatingSystem.c"
-
-# 2929 "OperatingSystemAspect.c"
-retValue_acc = executingProcessID;
-# 2931 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- 
-# 2934 "OperatingSystemAspect.c"
-
-}
-
-# 2938 "OperatingSystemAspect.c"
-return (int )retValue_acc;
-
-# 2941 "OperatingSystemAspect.c"
-
-}
- 
-#line 841 "OperatingSystem.c"
-int OperatingSystem_GetWhenToWakeUpTime()  
-# 2947 "OperatingSystemAspect.c"
-{
-# 2949 "OperatingSystemAspect.c"
-int retValue_acc;
-
-
-
-
-# 2955 "OperatingSystemAspect.c"
-{
-
-#line 844 "OperatingSystem.c"
-
-# 2960 "OperatingSystemAspect.c"
-retValue_acc = abs(Processor_GetAccumulator()) + numberOfClockInterrupts + 1;
-# 2962 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- 
-# 2965 "OperatingSystemAspect.c"
-
-}
-
-# 2969 "OperatingSystemAspect.c"
-return (int )retValue_acc;
-
-# 2972 "OperatingSystemAspect.c"
-
-}
- 
-#line 848 "OperatingSystem.c"
-int OperatingSystem_IncreseNumberOfClockInterrupts()  
-# 2978 "OperatingSystemAspect.c"
-{
-# 2980 "OperatingSystemAspect.c"
-int retValue_acc;
-
-
-
-
-# 2986 "OperatingSystemAspect.c"
-{
-
-#line 851 "OperatingSystem.c"
-
-# 2991 "OperatingSystemAspect.c"
-retValue_acc = (++numberOfClockInterrupts);
-# 2993 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- 
-# 2996 "OperatingSystemAspect.c"
-
-}
-
-# 3000 "OperatingSystemAspect.c"
-return (int )retValue_acc;
-
-# 3003 "OperatingSystemAspect.c"
-
-}
- 
-#line 856 "OperatingSystem.c"
-int OperatingSystem_UpdateProcessor()  
-# 3009 "OperatingSystemAspect.c"
-{
-# 3011 "OperatingSystemAspect.c"
-int retValue_acc;
-
-
-
-
-# 3017 "OperatingSystemAspect.c"
-{
-
-#line 860 "OperatingSystem.c"
-
-#line 860 "OperatingSystem.c"
-int executingProcessQueue = processTable[executingProcessID].queueID,executingProcessPriority = processTable[executingProcessID].priority;
-#line 863 "OperatingSystem.c"
-
-#line 863 "OperatingSystem.c"
-int mostImportantREADYProcess = OperatingSystem_GetMostImportantREADYProcessInfo();
-#line 865 "OperatingSystem.c"
-if (processTable[mostImportantREADYProcess].queueID == executingProcessQueue){
-{ 
-#line 873 "OperatingSystem.c"
-if (processTable[mostImportantREADYProcess].priority < executingProcessPriority){
-{ 
-#line 869 "OperatingSystem.c"
-
-# 3036 "OperatingSystemAspect.c"
-retValue_acc = OperatingSystem_UpdateProcess();
-# 3038 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- } }else{
-{ 
-#line 872 "OperatingSystem.c"
-
-# 3044 "OperatingSystemAspect.c"
-retValue_acc = 0;
-# 3046 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- } }} }else{
-if (processTable[mostImportantREADYProcess].queueID < executingProcessQueue){
-{ 
-#line 877 "OperatingSystem.c"
-
-# 3053 "OperatingSystemAspect.c"
-retValue_acc = OperatingSystem_UpdateProcess();
-# 3055 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- } }else{
-{ 
-#line 880 "OperatingSystem.c"
-
-# 3061 "OperatingSystemAspect.c"
-retValue_acc = 0;
-# 3063 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- } }}
-# 3066 "OperatingSystemAspect.c"
-
-}
-
-# 3070 "OperatingSystemAspect.c"
-return (int )retValue_acc;
-
-# 3073 "OperatingSystemAspect.c"
-
-}
- 
-#line 886 "OperatingSystem.c"
-int OperatingSystem_UpdateProcess()  
-# 3079 "OperatingSystemAspect.c"
-{
-# 3081 "OperatingSystemAspect.c"
-int retValue_acc;
-
-
-
-
-# 3087 "OperatingSystemAspect.c"
-{
-
-#line 887 "OperatingSystem.c"
-
-#line 887 "OperatingSystem.c"
-int lastExecutingProcess = executingProcessID;
-#line 888 "OperatingSystem.c"
-
-#line 888 "OperatingSystem.c"
-int newExecutingProcess = OperatingSystem_ShortTermScheduler();
-#line 890 "OperatingSystem.c"
-OperatingSystem_ShowTime('s'); 
-#line 891 "OperatingSystem.c"
-ComputerSystem_DebugMessage(121, 's', lastExecutingProcess, (programList[processTable[lastExecutingProcess].programListIndex]->executableName), newExecutingProcess, (programList[processTable[newExecutingProcess].programListIndex]->executableName)); 
-#line 894 "OperatingSystem.c"
-OperatingSystem_PreemptRunningProcess(); 
-#line 895 "OperatingSystem.c"
-OperatingSystem_Dispatch(newExecutingProcess); 
-#line 898 "OperatingSystem.c"
-OperatingSystem_PrintStatus(); 
-#line 900 "OperatingSystem.c"
-
-# 3110 "OperatingSystemAspect.c"
-retValue_acc = 1;
-# 3112 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- 
-# 3115 "OperatingSystemAspect.c"
-
-}
-
-# 3119 "OperatingSystemAspect.c"
-return (int )retValue_acc;
-
-# 3122 "OperatingSystemAspect.c"
-
-}
- 
-#line 905 "OperatingSystem.c"
-int OperatingSystem_GetMostImportantREADYProcessInfo()  
-# 3128 "OperatingSystemAspect.c"
-{
-# 3130 "OperatingSystemAspect.c"
-int retValue_acc;
-
-
-
-
-# 3136 "OperatingSystemAspect.c"
-{
-
-#line 907 "OperatingSystem.c"
-
-#line 907 "OperatingSystem.c"
-int mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[USERPROCESSQUEUE], numberOfReadyToRunProcesses[USERPROCESSQUEUE]);
-#line 910 "OperatingSystem.c"
-if (mostImportantREADYProcess == (-1)){
-{ 
-#line 911 "OperatingSystem.c"
-mostImportantREADYProcess = Heap_getFirst(readyToRunQueue[DAEMONSQUEUE], numberOfReadyToRunProcesses[DAEMONSQUEUE]); } }
-#line 914 "OperatingSystem.c"
-
-# 3150 "OperatingSystemAspect.c"
-retValue_acc = mostImportantREADYProcess;
-# 3152 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- 
-# 3155 "OperatingSystemAspect.c"
-
-}
-
-# 3159 "OperatingSystemAspect.c"
-return (int )retValue_acc;
-
-# 3162 "OperatingSystemAspect.c"
-
-}
- 
-#line 918 "OperatingSystem.c"
-int OperatingSystem_checkIfShutdown()  
 # 3168 "OperatingSystemAspect.c"
 {
-# 3170 "OperatingSystemAspect.c"
-int retValue_acc;
 
+#line 802 "OperatingSystem.c"
 
+#line 802 "OperatingSystem.c"
+int systemCallID;
+#line 803 "OperatingSystem.c"
 
+#line 803 "OperatingSystem.c"
+int currentQueue,currentPriority;
+#line 804 "OperatingSystem.c"
 
-# 3176 "OperatingSystemAspect.c"
-{
-
-#line 919 "OperatingSystem.c"
-
-#line 919 "OperatingSystem.c"
-int arrivalTimeQueue = OperatingSystem_IsThereANewProgram();
-#line 920 "OperatingSystem.c"
-
-#line 920 "OperatingSystem.c"
-int sleepingQueue = Heap_getFirst(sleepingProcessesQueue, numberOfSleepingProcesses);
-#line 921 "OperatingSystem.c"
-
-#line 921 "OperatingSystem.c"
-int rTRQ = OperatingSystem_GetMostImportantREADYProcessInfo();
-#line 923 "OperatingSystem.c"
-if (arrivalTimeQueue == (-1) && sleepingQueue == (-1) && rTRQ == (-1) && numberOfIOWaitingProcesses == 0){
+#line 804 "OperatingSystem.c"
+int oldProcessID,newProcessID;
+#line 807 "OperatingSystem.c"
+systemCallID = Processor_GetRegisterA(); 
+#line 810 "OperatingSystem.c"
+switch(systemCallID){ { 
+#line 814 "OperatingSystem.c"
+case SYSCALL_PRINTEXECPID: OperatingSystem_ShowTime('p'); 
+#line 815 "OperatingSystem.c"
+ComputerSystem_DebugMessage(24, 'p', executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName)); 
+#line 816 "OperatingSystem.c"
+break; 
+#line 818 "OperatingSystem.c"
+case SYSCALL_END: OperatingSystem_ShowTime('p'); 
+#line 821 "OperatingSystem.c"
+ComputerSystem_DebugMessage(25, 'p', executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName)); 
+#line 822 "OperatingSystem.c"
+OperatingSystem_TerminateProcess(); 
+#line 823 "OperatingSystem.c"
+OperatingSystem_PrintStatus(); 
+#line 824 "OperatingSystem.c"
+break; 
+#line 826 "OperatingSystem.c"
+case SYSCALL_YIELD: currentQueue = processTable[executingProcessID].queueID; 
+#line 831 "OperatingSystem.c"
+currentPriority = processTable[executingProcessID].priority; 
+#line 834 "OperatingSystem.c"
+if (numberOfReadyToRunProcesses[currentQueue] > 0 && processTable[readyToRunQueue[currentQueue][0]].priority == currentPriority){
 { 
-#line 924 "OperatingSystem.c"
-
-# 3196 "OperatingSystemAspect.c"
-retValue_acc = 1;
-# 3198 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- } }else{
-{ 
-#line 926 "OperatingSystem.c"
-
-# 3204 "OperatingSystemAspect.c"
-retValue_acc = 0;
-# 3206 "OperatingSystemAspect.c"
-return (int )retValue_acc;
- } }
-# 3209 "OperatingSystemAspect.c"
+#line 835 "OperatingSystem.c"
+oldProcessID = executingProcessID; 
+#line 836 "OperatingSystem.c"
+newProcessID = readyToRunQueue[currentQueue][0]; 
+#line 839 "OperatingSystem.c"
+OperatingSystem_ShowTime('s'); 
+#line 840 "OperatingSystem.c"
+ComputerSystem_DebugMessage(115, 's', oldProcessID, (programList[processTable[oldProcessID].programListIndex]->executableName), newProcessID, (programList[processTable[newProcessID].programListIndex]->executableName)); 
+#line 845 "OperatingSystem.c"
+OperatingSystem_PreemptRunningProcess(); 
+#line 848 "OperatingSystem.c"
+OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler()); 
+#line 850 "OperatingSystem.c"
+OperatingSystem_PrintStatus(); } }
+#line 853 "OperatingSystem.c"
+break; 
+#line 855 "OperatingSystem.c"
+case SYSCALL_SLEEP: oldProcessID = executingProcessID; 
+#line 858 "OperatingSystem.c"
+OperatingSystem_MoveToTheBLOCKEDState(executingProcessID); 
+#line 861 "OperatingSystem.c"
+OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler()); 
+#line 864 "OperatingSystem.c"
+OperatingSystem_PrintStatus(); 
+#line 865 "OperatingSystem.c"
+break; 
+#line 867 "OperatingSystem.c"
+case SYSCALL_IO: oldProcessID = executingProcessID; 
+#line 870 "OperatingSystem.c"
+OperatingSystem_IOScheduler(); 
+#line 873 "OperatingSystem.c"
+OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler()); 
+#line 876 "OperatingSystem.c"
+OperatingSystem_PrintStatus(); 
+#line 877 "OperatingSystem.c"
+break; 
+#line 879 "OperatingSystem.c"
+default: OperatingSystem_ShowTime('i'); 
+#line 881 "OperatingSystem.c"
+ComputerSystem_DebugMessage(141, 'i', executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName), systemCallID); 
+#line 882 "OperatingSystem.c"
+OperatingSystem_TerminateProcess(); 
+#line 883 "OperatingSystem.c"
+OperatingSystem_PrintStatus(); 
+#line 884 "OperatingSystem.c"
+break; } } 
+# 3256 "OperatingSystemAspect.c"
 
 }
 
-# 3213 "OperatingSystemAspect.c"
-return (int )retValue_acc;
+# 3260 "OperatingSystemAspect.c"
 
-# 3216 "OperatingSystemAspect.c"
+}
+ 
+#line 889 "OperatingSystem.c"
+void OperatingSystem_HandleException()  
+# 3266 "OperatingSystemAspect.c"
+{
+
+
+
+# 3271 "OperatingSystemAspect.c"
+{
+
+#line 892 "OperatingSystem.c"
+OperatingSystem_ShowTime('i'); 
+#line 893 "OperatingSystem.c"
+ComputerSystem_DebugMessage(140, 'i', executingProcessID, (programList[processTable[executingProcessID].programListIndex]->executableName), exceptionNames[Processor_GetRegisterB()]); 
+#line 896 "OperatingSystem.c"
+OperatingSystem_TerminateProcess(); 
+#line 897 "OperatingSystem.c"
+OperatingSystem_PrintStatus(); 
+# 3282 "OperatingSystemAspect.c"
+
+}
+
+# 3286 "OperatingSystemAspect.c"
+
+}
+ 
+#line 902 "OperatingSystem.c"
+void OperatingSystem_HandleClockInterrupt()  
+# 3292 "OperatingSystemAspect.c"
+{
+
+
+
+# 3297 "OperatingSystemAspect.c"
+{
+
+#line 905 "OperatingSystem.c"
+
+#line 905 "OperatingSystem.c"
+int currentNumberOfClockInterrupts = OperatingSystem_IncreseNumberOfClockInterrupts();
+#line 908 "OperatingSystem.c"
+OperatingSystem_ShowTime('i'); 
+#line 909 "OperatingSystem.c"
+ComputerSystem_DebugMessage(120, 'i', currentNumberOfClockInterrupts); 
+#line 912 "OperatingSystem.c"
+
+#line 912 "OperatingSystem.c"
+int unBLOCKEDProcesses = 0;
+#line 916 "OperatingSystem.c"
+while(Heap_getFirst(sleepingProcessesQueue, numberOfSleepingProcesses) != (-1) && processTable[Heap_getFirst(sleepingProcessesQueue, numberOfSleepingProcesses)].whenToWakeUp <= currentNumberOfClockInterrupts) { { 
+#line 918 "OperatingSystem.c"
+OperatingSystem_MoveToTheREADYState(Heap_poll(sleepingProcessesQueue, 0, (&numberOfSleepingProcesses))); 
+#line 920 "OperatingSystem.c"
+unBLOCKEDProcesses++; } } 
+#line 924 "OperatingSystem.c"
+if (unBLOCKEDProcesses || OperatingSystem_LongTermScheduler()){
+{ 
+#line 925 "OperatingSystem.c"
+OperatingSystem_UpdateExecutingProcessor(); } }else{
+if (OperatingSystem_CheckIfShutdown()){
+{ 
+#line 928 "OperatingSystem.c"
+OperatingSystem_ReadyToShutdown(); } }}
+# 3327 "OperatingSystemAspect.c"
+
+}
+
+# 3331 "OperatingSystemAspect.c"
+
+}
+ 
+#line 933 "OperatingSystem.c"
+void OperatingSystem_HandleIOEndInterrupt()  
+# 3337 "OperatingSystemAspect.c"
+{
+
+
+
+# 3342 "OperatingSystemAspect.c"
+{
+
+#line 936 "OperatingSystem.c"
+
+#line 936 "OperatingSystem.c"
+int finishedProcessPID = OperatingSystem_DeviceControlerEndIOOperation();
+#line 939 "OperatingSystem.c"
+if (finishedProcessPID != (-1)){
+{ 
+#line 941 "OperatingSystem.c"
+OperatingSystem_MoveToTheREADYState(finishedProcessPID); 
+#line 942 "OperatingSystem.c"
+OperatingSystem_PrintStatus(); 
+#line 945 "OperatingSystem.c"
+OperatingSystem_UpdateExecutingProcessor(); } }
+# 3358 "OperatingSystemAspect.c"
+
+}
+
+# 3362 "OperatingSystemAspect.c"
 
 }
  
