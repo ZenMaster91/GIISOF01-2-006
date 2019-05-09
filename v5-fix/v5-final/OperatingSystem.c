@@ -12,6 +12,17 @@
 #include "QueueFIFO.h"
 #include "Device.h"
 
+// File structure. To jump to a section just search for the followin comments
+// in the code.
+// - FUNCTION DEFINITIONS
+// - VARIABLE DEFINITIONS
+// - OS MANAGEMENT
+// - MEMORY MANAGEMENT
+// - PROCESSOR MANAGEMENT
+// - I/O MANAGEMENT
+// - PROCESSES MANAGEMENT
+// - EXCEPTIONS / INTERRUPTS MANAGEMENT
+
 // -----------------------------------------------------------------------------
 // ------------------------- FUNCTION DEFINITIONS ------------------------------
 // -----------------------------------------------------------------------------
@@ -51,22 +62,22 @@ int OperatingSystem_GetBiggestMemoryBlockSize();
 // ------------------------- VARIABLE DEFINITIONS ------------------------------
 // -----------------------------------------------------------------------------
 
-// The process table
+// Table to store processes. It uses the defined structure process control block.
 PCB processTable[PROCESSTABLEMAXSIZE];
 
-// Address base for OS code in this version
+// Address base for OS code in this version.
 int OS_address_base = PROCESSTABLEMAXSIZE * MAINMEMORYSECTIONSIZE;
 
-// Identifier of the current executing process
+// Identifier of the current executing process.
 int executingProcessID = NOPROCESS;
 
-// Identifier of the System Idle Process
+// Identifier of the System Idle Process.
 int sipID;
 
-// Begin indes for daemons in programList
+// Begin indes for daemons in programList.
 int baseDaemonsInProgramList;
 
-// Variable containing the number of not terminated user processes
+// Variable containing the number of not terminated user processes.
 int numberOfNotTerminatedUserProcesses = 0;
 
 // States names.
@@ -75,7 +86,7 @@ char * statesNames[5] = {"NEW","READY","EXECUTING","BLOCKED","EXIT"};
 // Exception names.
 char * exceptionNames [4] = {"division by zero","invalid processor mode","invalid address","invalid instruction"};
 
-// Exercise 11
+// Ready to tun processes queues.
 int readyToRunQueue[NUMBEROFQUEUES][PROCESSTABLEMAXSIZE];
 int numberOfReadyToRunProcesses[NUMBEROFQUEUES] = {0,0};
 char * queueNames [NUMBEROFQUEUES] = {"USER","DAEMONS"};
@@ -88,6 +99,7 @@ int numberOfClockInterrupts = 0;
 int sleepingProcessesQueue[PROCESSTABLEMAXSIZE];
 int numberOfSleepingProcesses = 0;
 
+// The size of the partitions table.
 int partitionsTableSize = 0;
 
 // IORB FIFO queue.
@@ -157,7 +169,7 @@ void OperatingSystem_Initialize(int daemonsIndex) {
 	Processor_SetPC(OS_address_base);
 } // END OperatingSystem_Initialize.
 
-// Exercise 9 function, print the ready-to-run queue
+// Prints the rtrQ.
 void OperatingSystem_PrintReadyToRunQueue() {
 
 	// rTRQ contains 2,3,4,5,1 (PDIs)
