@@ -548,6 +548,7 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 	// Load program in the allocated memory
 	// If the process is too big
 	if( OperatingSystem_LoadProgram(programFile, initAddress, processSize) == TOOBIGPROCESS) {
+		OperatingSystem_ReleaseMainMemory(PID);
 		return TOOBIGPROCESS;
 	}
 	// PCB initialization

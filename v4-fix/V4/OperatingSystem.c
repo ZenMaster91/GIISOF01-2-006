@@ -489,6 +489,7 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 	// Load program in the allocated memory
 	// If the process is too big
 	if( OperatingSystem_LoadProgram(programFile, initAddress, processSize) == TOOBIGPROCESS) {
+		OperatingSystem_ReleaseMainMemory(PID);
 		return TOOBIGPROCESS;
 	}
 	// PCB initialization
@@ -602,7 +603,7 @@ int OperatingSystem_LongTermScheduler() {
 
 			case PROGRAMNOTVALID:
 				OperatingSystem_ShowTime(ERROR);
-    				ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"invalid priority or size");
+    		ComputerSystem_DebugMessage(104,ERROR,programList[i]->executableName,"invalid priority or size");
 				break;
 
 			case TOOBIGPROCESS:
